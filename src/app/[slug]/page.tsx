@@ -426,7 +426,7 @@ function CategoryCityView({
                 Every coaching centre listed above has been assessed on 7 core criteria before being awarded its verified ranking:
               </p>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+              <div className="responsive-form-grid-2" style={{ gap: '10px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: '#ffffff', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)', fontSize: '13.5px' }}>
                   <span>Faculty credentials & experience</span>
                   <strong style={{ color: 'var(--brand-blue)' }}>20 pts</strong>

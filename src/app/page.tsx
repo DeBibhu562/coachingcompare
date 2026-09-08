@@ -79,7 +79,7 @@ export default function HomePage() {
             </p>
 
             {/* CTAs */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '14px', marginBottom: '20px' }}>
+            <div className="responsive-btn-group" style={{ justifyContent: 'center', marginBottom: '20px' }}>
               <a href="#matrix-finder" className="btn btn-accent" style={{ fontSize: '15px', padding: '13px 26px' }}>
                 <Icons.Scales size={18} /> Launch Comparison Matrix
               </a>
@@ -285,7 +285,7 @@ export default function HomePage() {
             </div>
 
             {/* Pillar 7 (Wide Feature Card) */}
-            <div className="pillar-card" style={{ gridColumn: 'span 3', background: '#f8fafc', border: '1px solid var(--border-subtle)' }}>
+            <div className="pillar-card pillar-card-wide" style={{ background: '#f8fafc', border: '1px solid var(--border-subtle)' }}>
               <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px' }}>
                 <div style={{ maxWidth: '650px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
@@ -310,20 +310,13 @@ export default function HomePage() {
       {/* Free Academic Advisory & Fee Guidance Desk Section */}
       <section style={{ padding: '64px 0', background: 'var(--bg-main)', borderBottom: '1px solid var(--border-subtle)' }}>
         <div className="container">
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1.1fr 1fr',
-              gap: '48px',
-              alignItems: 'center',
-            }}
-          >
+          <div className="advisory-grid">
             {/* Left Explanation */}
             <div>
               <span className="badge badge-blue" style={{ marginBottom: '12px' }}>
                 <Icons.Users size={14} /> Unbiased Advisory Desk
               </span>
-              <h2 style={{ fontSize: '32px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '14px', lineHeight: '1.25' }}>
+              <h2 style={{ fontSize: 'clamp(24px, 4vw, 32px)', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '14px', lineHeight: '1.25' }}>
                 Need Help Choosing the Right Batch & Estimating Living Costs?
               </h2>
               <p style={{ fontSize: '15.5px', color: 'var(--text-body)', lineHeight: '1.65', marginBottom: '24px' }}>
@@ -374,7 +367,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div style={{ display: 'flex', gap: '12px' }}>
+              <div className="responsive-btn-group">
                 <Link href="/fees-calculator" className="btn btn-outline">
                   <Icons.Calculator size={16} /> Try Living Cost Calculator
                 </Link>

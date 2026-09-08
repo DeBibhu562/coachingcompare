@@ -248,7 +248,7 @@ export default function CoachingCard({ listing, onCompareToggle, isCompared = fa
           </div>
 
           {/* Action CTAs */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginTop: '14px' }}>
+          <div className="card-actions-grid">
             <Link
               href={`/institute/${listing.slug}`}
               className="btn btn-primary btn-sm"

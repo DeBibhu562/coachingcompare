@@ -118,7 +118,7 @@ export default function LeadConsultationForm({ examName = '', cityName = '', ins
           </div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
+        <div className="responsive-form-grid-2">
           <div className="form-group">
             <label className="form-label">Target Exam</label>
             <select

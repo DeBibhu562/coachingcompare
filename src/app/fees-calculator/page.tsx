@@ -156,7 +156,7 @@ export default function FeesCalculatorPage() {
               <label style={{ display: 'block', fontWeight: 700, fontSize: '14px', color: 'var(--text-dark)', marginBottom: '8px' }}>
                 Delivery Format / Learning Mode:
               </label>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
+              <div className="calc-options-grid">
                 {[
                   { id: 'classroom', title: 'Classroom', desc: 'Full Offline' },
                   { id: 'hybrid', title: 'Hybrid', desc: 'Weekend & LMS' },
@@ -189,7 +189,7 @@ export default function FeesCalculatorPage() {
               <label style={{ display: 'block', fontWeight: 700, fontSize: '14px', color: 'var(--text-dark)', marginBottom: '8px' }}>
                 Living & Accommodation Plan:
               </label>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
+              <div className="calc-options-grid">
                 {[
                   { id: 'home', title: 'Local Resident', desc: 'Live at Home' },
                   { id: 'pg', title: 'Shared PG', desc: 'Double/Triple Room' },

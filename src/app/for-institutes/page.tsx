@@ -157,7 +157,7 @@ export default function ForInstitutesPage() {
                     />
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="responsive-form-grid-2">
                     <div>
                       <label style={{ display: 'block', fontWeight: 700, fontSize: '13.5px', color: 'var(--text-dark)', marginBottom: '6px' }}>
                         Contact Person Name: *
@@ -191,7 +191,7 @@ export default function ForInstitutesPage() {
                     </div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="responsive-form-grid-2">
                     <div>
                       <label style={{ display: 'block', fontWeight: 700, fontSize: '13.5px', color: 'var(--text-dark)', marginBottom: '6px' }}>
                         Official Mobile / Direct Phone: *
@@ -223,7 +223,7 @@ export default function ForInstitutesPage() {
                     </div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="responsive-form-grid-2">
                     <div>
                       <label style={{ display: 'block', fontWeight: 700, fontSize: '13.5px', color: 'var(--text-dark)', marginBottom: '6px' }}>
                         City of Center: *
@@ -261,7 +261,7 @@ export default function ForInstitutesPage() {
                     </div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="responsive-form-grid-2">
                     <div>
                       <label style={{ display: 'block', fontWeight: 700, fontSize: '13.5px', color: 'var(--text-dark)', marginBottom: '6px' }}>
                         Website Portal URL:

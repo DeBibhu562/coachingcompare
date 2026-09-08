@@ -80,6 +80,9 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
   -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* Offset any hash anchor target so sticky header never cuts off content */
@@ -91,6 +94,21 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+main {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -778,6 +796,7 @@ input, select, textarea {
 @media (max-width: 640px) {
   .pillar-framework-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 
@@ -789,6 +808,25 @@ input, select, textarea {
   transition: all 0.25s ease;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.pillar-card-wide {
+  grid-column: span 3;
+}
+
+@media (max-width: 960px) {
+  .pillar-card-wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .pillar-card-wide {
+    grid-column: span 1;
+  }
 }
 
 .pillar-card:hover {
@@ -812,6 +850,99 @@ input, select, textarea {
   border: 1px solid var(--brand-primary-border);
   padding: 3px 10px;
   border-radius: var(--radius-full);
+}
+
+/* Advisory & Custom Responsive Layout Classes */
+.advisory-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 960px) {
+  .advisory-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .advisory-grid {
+    gap: 28px;
+  }
+}
+
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 36px;
+}
+
+@media (max-width: 960px) {
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.responsive-form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .responsive-form-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.responsive-btn-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .responsive-btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .responsive-btn-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.calc-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 640px) {
+  .calc-options-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.card-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+@media (max-width: 480px) {
+  .card-actions-grid {
+    grid-template-columns: 1fr;
+  }
+  .card-actions-grid .btn {
+    grid-column: span 1 !important;
+  }
 }
 
 /* Popular City Card */
@@ -1393,6 +1524,95 @@ input, select, textarea {
     flex-direction: column;
     gap: 12px;
     text-align: center;
+  }
+}
+
+/* Mobile Polish: Under 640px (Phones & Small Tablets) */
+@media (max-width: 640px) {
+  .container {
+    padding: 0 16px;
+  }
+  .site-header {
+    height: 64px;
+  }
+  .header-inner {
+    gap: 8px;
+  }
+  .header-cta {
+    display: none !important;
+  }
+  .logo-brand {
+    gap: 8px;
+  }
+  .logo-svg {
+    width: 32px;
+    height: 32px;
+  }
+  .logo-text {
+    font-size: 17px;
+  }
+  .card, .lead-card, .surface-card {
+    padding: 20px 16px !important;
+  }
+  .card-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+  .hero-section {
+    padding: 40px 0 48px;
+  }
+  .hero-title {
+    font-size: clamp(24px, 6.5vw, 34px) !important;
+    line-height: 1.25 !important;
+  }
+  .hero-subtitle {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 24px !important;
+  }
+  .hero-matrix-box {
+    padding: 18px 14px;
+  }
+  .hero-stats-strip {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px 8px !important;
+    padding-top: 18px !important;
+  }
+  .hero-stat-value {
+    font-size: 20px;
+  }
+  .hero-stat-label {
+    font-size: 11px;
+  }
+  .search-input {
+    padding: 14px 16px 14px 44px;
+    font-size: 14px;
+  }
+  .search-icon {
+    left: 14px;
+  }
+  .form-input, .form-select {
+    font-size: 16px !important; /* Prevents auto-zoom on iOS safari */
+  }
+  .btn {
+    padding: 11px 18px;
+    font-size: 14px;
+  }
+  .city-card {
+    padding: 12px 14px;
+  }
+  .comparison-table-wrapper {
+    margin: 20px 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .comparison-table th, .comparison-table td {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+  .mobile-drawer-inner {
+    padding: 20px 16px;
   }
 }
 

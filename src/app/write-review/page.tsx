@@ -116,7 +116,7 @@ export default function WriteReviewPage() {
                   />
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                <div className="responsive-form-grid-2">
                   <div>
                     <label style={{ display: 'block', fontWeight: 700, fontSize: '13.5px', color: 'var(--text-dark)', marginBottom: '6px' }}>
                       Exam Prepared:
@@ -154,7 +154,7 @@ export default function WriteReviewPage() {
                   </div>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                <div className="responsive-form-grid-2">
                   <div>
                     <label style={{ display: 'block', fontWeight: 700, fontSize: '13.5px', color: 'var(--text-dark)', marginBottom: '6px' }}>
                       Program Format:
