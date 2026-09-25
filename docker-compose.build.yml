@@ -1,0 +1,14 @@
+# OPTIONAL — only use when source is fully restored and reviewed.
+# Usage:
+#   docker compose -f docker-compose.yml -f docker-compose.build.yml build
+#
+# Never run this casually against production.
+
+services:
+  coachingcompare:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # After a successful verified build you may retag, e.g.:
+    #   docker tag coachingcompare-coachingcompare:latest coachingcompare:candidate-YYYYMMDD
+    image: coachingcompare:candidate-local

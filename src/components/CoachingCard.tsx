@@ -198,30 +198,34 @@ export default function CoachingCard({ listing, onCompareToggle, isCompared = fa
             </div>
 
             {/* Phone */}
-            <div className="venue-row">
-              <span className="venue-icon"><Icons.Phone size={17} /></span>
-              <div>
-                <a
-                  href={`tel:${listing.contact.phone}`}
-                  style={{ fontWeight: 600, color: 'var(--text-dark)' }}
-                >
-                  {listing.contact.phone}
-                </a>
+            {listing.contact.phone ? (
+              <div className="venue-row">
+                <span className="venue-icon"><Icons.Phone size={17} /></span>
+                <div>
+                  <a
+                    href={`tel:${listing.contact.phone}`}
+                    style={{ fontWeight: 600, color: 'var(--text-dark)' }}
+                  >
+                    {listing.contact.phone}
+                  </a>
+                </div>
               </div>
-            </div>
+            ) : null}
 
             {/* Email */}
-            <div className="venue-row">
-              <span className="venue-icon"><Icons.Mail size={17} /></span>
-              <div style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                <a
-                  href={`mailto:${listing.contact.email}`}
-                  style={{ color: 'var(--text-body)', wordBreak: 'break-all' }}
-                >
-                  {listing.contact.email}
-                </a>
+            {listing.contact.email ? (
+              <div className="venue-row">
+                <span className="venue-icon"><Icons.Mail size={17} /></span>
+                <div style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  <a
+                    href={`mailto:${listing.contact.email}`}
+                    style={{ color: 'var(--text-body)', wordBreak: 'break-all' }}
+                  >
+                    {listing.contact.email}
+                  </a>
+                </div>
               </div>
-            </div>
+            ) : null}
 
             {/* Website */}
             <div className="venue-row">
@@ -257,13 +261,17 @@ export default function CoachingCard({ listing, onCompareToggle, isCompared = fa
               <Icons.ShieldCheck size={15} /> View 100-Point Audit Profile →
             </Link>
 
-            <a href={`tel:${listing.contact.phone}`} className="btn btn-outline btn-sm">
-              <Icons.Phone size={14} /> Call Now
-            </a>
+            {listing.contact.phone ? (
+              <a href={`tel:${listing.contact.phone}`} className="btn btn-outline btn-sm">
+                <Icons.Phone size={14} /> Call Now
+              </a>
+            ) : null}
 
-            <a href={`mailto:${listing.contact.email}?subject=Admission%20Inquiry%20from%20CoachingCompare`} className="btn btn-outline btn-sm">
-              <Icons.Mail size={14} /> Email
-            </a>
+            {listing.contact.email ? (
+              <a href={`mailto:${listing.contact.email}?subject=Admission%20Inquiry%20from%20CoachingCompare`} className="btn btn-outline btn-sm">
+                <Icons.Mail size={14} /> Email
+              </a>
+            ) : null}
 
             <a
               href={listing.contact.mapUrl}
