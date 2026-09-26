@@ -75,10 +75,31 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
           style={{ whiteSpace: 'pre-line' }}
           dangerouslySetInnerHTML={{
             __html: post.content
-              .replace(/### (.*?)\n/g, '<h3 style="font-size: 20px; font-weight: 800; color: var(--text-dark); margin: 28px 0 12px;">$1</h3>')
+              .replace(/## (.*?)\n/g, '<h2 style="font-size: 24px; font-weight: 800; color: var(--text-dark); margin: 32px 0 14px;">$1</h2>')
+              .replace(/### (.*?)\n/g, '<h3 style="font-size: 20px; font-weight: 800; color: var(--text-dark); margin: 24px 0 10px;">$1</h3>')
               .replace(/- (.*?)\n/g, '<li style="margin-bottom: 6px; list-style-type: disc; margin-left: 20px;">$1</li>'),
           }}
         />
+
+        {post.faqs && post.faqs.length > 0 && (
+          <div style={{ marginTop: '36px', borderTop: '1px solid var(--border-subtle)', paddingTop: '28px' }}>
+            <h3 style={{ fontSize: '22px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '16px' }}>
+              Frequently Asked Questions
+            </h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              {post.faqs.map((f, i) => (
+                <div key={i} style={{ padding: '16px 20px', background: '#f8fafc', borderRadius: '10px', border: '1px solid var(--border-subtle)' }}>
+                  <h4 style={{ fontSize: '15.5px', fontWeight: 700, color: 'var(--text-dark)', margin: '0 0 8px' }}>
+                    {f.question}
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '14px', lineHeight: '1.6', color: 'var(--text-body)' }}>
+                    {f.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border-subtle)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Link href="/blog" className="btn btn-outline btn-sm">

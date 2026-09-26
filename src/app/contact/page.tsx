@@ -3,9 +3,12 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Icons } from '@/components/Icons';
+import { submitInquiry } from '@/lib/submitInquiry';
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -14,9 +17,23 @@ export default function ContactPage() {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError('');
+    setLoading(true);
+    const res = await submitInquiry({
+      formType: 'contact',
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      message: `[${form.type}] ${form.message}`,
+    });
+    setLoading(false);
+    if (res.ok) {
+      setSubmitted(true);
+    } else {
+      setError(res.error || 'Failed to send message. Please try again.');
+    }
   };
 
   return (
@@ -210,8 +227,14 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '6px' }}>
-                  Submit Inquiry →
+                {error && (
+                  <p style={{ color: '#dc2626', fontSize: '13px', margin: '8px 0', background: '#fee2e2', padding: '8px 12px', borderRadius: '6px' }}>
+                    {error}
+                  </p>
+                )}
+
+                <button type="submit" disabled={loading} className="btn btn-primary" style={{ width: '100%', marginTop: '6px' }}>
+                  {loading ? 'Submitting Inquiry...' : 'Submit Inquiry →'}
                 </button>
               </form>
             )}

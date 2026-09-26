@@ -1,0 +1,194 @@
+{
+  "named_chunks": {
+    "src/app/fees-calculator/page.tsx": "/tmp/cc-next/server/chunks/ssr/src_app_fees-calculator_page_tsx_00g4cee._.js",
+    "src/app/for-institutes/page.tsx": "/tmp/cc-next/server/chunks/ssr/src_app_for-institutes_page_tsx_1a45epq._.js",
+    "src/app/institute/[slug]/page.tsx": "/tmp/cc-next/server/chunks/ssr/src_app_institute_[slug]_page_tsx_0sidb0r._.js",
+    "src/app/institutes/[slug]/page.tsx": "/tmp/cc-next/server/chunks/ssr/src_app_institutes_[slug]_page_tsx_00kxy8j._.js",
+    "src/app/previous-year-papers/page.tsx": "/tmp/cc-next/server/chunks/ssr/src_app_previous-year-papers_page_tsx_1sm1r2y._.js",
+    "src/app/sitemap/page.tsx": "/tmp/cc-next/server/chunks/ssr/src_app_sitemap_page_tsx_20y7ldh._.js",
+    "src/app/study-materials/page.tsx": "/tmp/cc-next/server/chunks/ssr/src_app_study-materials_page_tsx_1aco75a._.js",
+    "src/components/CoachingCard.tsx": "/tmp/cc-next/server/chunks/ssr/src_components_CoachingCard_tsx_043iih3._.js",
+    "src/components/CompareTool.tsx": "/tmp/cc-next/server/chunks/ssr/src_components_CompareTool_tsx_1r3jy1i._.js",
+    "src/data/blogPosts.ts": "/tmp/cc-next/server/chunks/ssr/src_data_blogPosts_ts_16344-r._.js",
+    "src/data/coachingData.ts": "/tmp/cc-next/server/chunks/ssr/src_data_coachingData_ts_0abfbcy._.js",
+    "src/data/iasVsComparisons.ts": "/tmp/cc-next/server/chunks/ssr/src_data_iasVsComparisons_ts_1qejfm3._.js",
+    "src/lib/institutes.ts": "/tmp/cc-next/server/chunks/ssr/src_lib_institutes_ts_1n18qt5._.js",
+    "src/lib/submitInquiry.ts": "/tmp/cc-next/server/chunks/ssr/src_lib_submitInquiry_ts_1ft10oy._.js"
+  },
+  "project_refs": [
+    "src/app/[slug]/page.tsx",
+    "src/app/about/page.tsx",
+    "src/app/api/inquiry/route.ts",
+    "src/app/blog/[slug]/page.tsx",
+    "src/app/blog/page.tsx",
+    "src/app/compare/page.tsx",
+    "src/app/contact/page.tsx",
+    "src/app/correction-policy/page.tsx",
+    "src/app/disclaimer/page.tsx",
+    "src/app/editorial-policy/page.tsx",
+    "src/app/exams/page.tsx",
+    "src/app/fees-calculator/page.tsx",
+    "src/app/for-institutes/page.tsx",
+    "src/app/grievance-officer/page.tsx",
+    "src/app/institute/[slug]/page.tsx",
+    "src/app/institutes/[slug]/page.tsx",
+    "src/app/institutes/page.tsx",
+    "src/app/layout.tsx",
+    "src/app/legal-jurisdiction/page.tsx",
+    "src/app/methodology/page.tsx",
+    "src/app/page.tsx",
+    "src/app/partnership/page.tsx",
+    "src/app/previous-year-papers/page.tsx",
+    "src/app/privacy/page.tsx",
+    "src/app/refund-policy/page.tsx",
+    "src/app/sitemap/page.tsx",
+    "src/app/study-materials/page.tsx",
+    "src/app/terms/page.tsx",
+    "src/app/verified-faculty/page.tsx",
+    "src/app/write-review/page.tsx",
+    "src/components/CoachingCard.tsx",
+    "src/components/CompareTool.tsx",
+    "src/components/Header.tsx",
+    "src/components/HeroComparisonSelector.tsx",
+    "src/components/LeadConsultationForm.tsx",
+    "src/components/LiveCitySearch.tsx",
+    "src/components/StateAccordion.tsx"
+  ],
+  "recovered_files": [
+    {
+      "path": "src/app/fees-calculator/page.tsx",
+      "bytes": 11207
+    },
+    {
+      "path": "src/app/for-institutes/page.tsx",
+      "bytes": 15791
+    },
+    {
+      "path": "src/app/institute/[slug]/page.tsx",
+      "bytes": 27577
+    },
+    {
+      "path": "src/app/institutes/[slug]/page.tsx",
+      "bytes": 16600
+    },
+    {
+      "path": "src/app/previous-year-papers/page.tsx",
+      "bytes": 5476
+    },
+    {
+      "path": "src/app/sitemap/page.tsx",
+      "bytes": 23195
+    },
+    {
+      "path": "src/app/study-materials/page.tsx",
+      "bytes": 5503
+    },
+    {
+      "path": "src/components/CoachingCard.tsx",
+      "bytes": 7247
+    },
+    {
+      "path": "src/components/CompareTool.tsx",
+      "bytes": 6551
+    },
+    {
+      "path": "src/data/blogPosts.ts",
+      "bytes": 342605
+    },
+    {
+      "path": "src/data/coachingData.ts",
+      "bytes": 358217
+    },
+    {
+      "path": "src/data/iasVsComparisons.ts",
+      "bytes": 67378
+    },
+    {
+      "path": "src/lib/institutes.ts",
+      "bytes": 0
+    },
+    {
+      "path": "src/lib/submitInquiry.ts",
+      "bytes": 215
+    },
+    {
+      "path": "src/_bundled_chunks/src_06w_luz._.js",
+      "bytes": 13276
+    },
+    {
+      "path": "src/_bundled_chunks/src_1rvgpg_._.js",
+      "bytes": 5030
+    },
+    {
+      "path": "src/_bundled_chunks/src_0w-vh21._.js",
+      "bytes": 7885
+    },
+    {
+      "path": "src/_bundled_chunks/src_1name6k._.js",
+      "bytes": 242313
+    },
+    {
+      "path": "src/_bundled_chunks/src_11rqi_a._.js",
+      "bytes": 18726
+    },
+    {
+      "path": "src/_bundled_chunks/src_03i_2t_._.js",
+      "bytes": 12239
+    },
+    {
+      "path": "src/_bundled_chunks/src_1u1f8cm._.js",
+      "bytes": 16950
+    },
+    {
+      "path": "src/_bundled_chunks/src_20dtjf5._.js",
+      "bytes": 14426
+    },
+    {
+      "path": "src/_bundled_chunks/src_1fl_fh3._.js",
+      "bytes": 21252
+    },
+    {
+      "path": "src/_bundled_chunks/src_components_0bfakjz._.js",
+      "bytes": 18896
+    },
+    {
+      "path": "src/styles/globals.css",
+      "bytes": 50629
+    },
+    {
+      "path": "extracted/rankings.json",
+      "bytes": 963496
+    }
+  ],
+  "missing_with_chunk": [],
+  "missing_no_chunk": [
+    "src/app/[slug]/page.tsx",
+    "src/app/about/page.tsx",
+    "src/app/api/inquiry/route.ts",
+    "src/app/blog/[slug]/page.tsx",
+    "src/app/blog/page.tsx",
+    "src/app/compare/page.tsx",
+    "src/app/contact/page.tsx",
+    "src/app/correction-policy/page.tsx",
+    "src/app/disclaimer/page.tsx",
+    "src/app/editorial-policy/page.tsx",
+    "src/app/exams/page.tsx",
+    "src/app/grievance-officer/page.tsx",
+    "src/app/institutes/page.tsx",
+    "src/app/layout.tsx",
+    "src/app/legal-jurisdiction/page.tsx",
+    "src/app/methodology/page.tsx",
+    "src/app/page.tsx",
+    "src/app/partnership/page.tsx",
+    "src/app/privacy/page.tsx",
+    "src/app/refund-policy/page.tsx",
+    "src/app/terms/page.tsx",
+    "src/app/verified-faculty/page.tsx",
+    "src/app/write-review/page.tsx",
+    "src/components/Header.tsx",
+    "src/components/HeroComparisonSelector.tsx",
+    "src/components/LeadConsultationForm.tsx",
+    "src/components/LiveCitySearch.tsx",
+    "src/components/StateAccordion.tsx"
+  ]
+}

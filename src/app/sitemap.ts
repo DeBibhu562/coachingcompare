@@ -6,6 +6,7 @@ import {
   getAllInstituteSlugs,
   getAllStateSlugs,
 } from '@/data/coachingData';
+import { getAllInstituteBrandSlugs } from '@/data/instituteBrands';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://coachingcompare.in';
@@ -27,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/sitemap`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
+    { url: `${baseUrl}/institutes`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${baseUrl}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${baseUrl}/disclaimer`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
@@ -85,9 +87,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
+  // Institute Brand Hub routes
+  const brandRoutes: MetadataRoute.Sitemap = getAllInstituteBrandSlugs().map((slug) => ({
+    url: `${baseUrl}/institutes/${slug}`,
+    lastModified: now,
+    changeFrequency: 'weekly',
+    priority: 0.85,
+  }));
+
   return [
     ...staticRoutes,
     ...instituteRoutes,
+    ...brandRoutes,
     ...blogRoutes,
     ...stateRoutes,
     ...cityRoutes,

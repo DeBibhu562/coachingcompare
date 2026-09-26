@@ -4,9 +4,12 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { EXAM_CATEGORIES, CITIES_DATA } from '@/data/coachingData';
 import { Icons } from '@/components/Icons';
+import { submitInquiry } from '@/lib/submitInquiry';
 
 export default function WriteReviewPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [instituteName, setInstituteName] = useState('');
   const [exam, setExam] = useState('jee');
   const [city, setCity] = useState('delhi');
@@ -28,9 +31,27 @@ export default function WriteReviewPage() {
     setRatings((prev) => ({ ...prev, [key]: val }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError('');
+    setLoading(true);
+
+    const res = await submitInquiry({
+      formType: 'student_review',
+      name: studentName,
+      phone: rollNo || 'N/A',
+      instituteName,
+      exam,
+      city,
+      message: `[Title: ${reviewTitle}] [Batch: ${batchYear} ${courseType}] [Ratings: Faculty=${ratings.faculty}, Material=${ratings.material}, Tests=${ratings.tests}, Doubt=${ratings.doubt}] [Score: ${scoreAchievement}] Review: ${reviewText}`,
+    });
+
+    setLoading(false);
+    if (res.ok) {
+      setSubmitted(true);
+    } else {
+      setError(res.error || 'Failed to submit review. Please try again.');
+    }
   };
 
   return (
@@ -328,13 +349,20 @@ export default function WriteReviewPage() {
               </div>
             </div>
 
+            {error && (
+              <p style={{ color: '#dc2626', fontSize: '13px', margin: '8px 0', background: '#fee2e2', padding: '8px 12px', borderRadius: '6px' }}>
+                {error}
+              </p>
+            )}
+
             {/* Submit Button */}
             <button
               type="submit"
+              disabled={loading}
               className="btn btn-primary"
               style={{ width: '100%', justifyContent: 'center', padding: '14px', fontSize: '16px' }}
             >
-              Submit Verified Student Review →
+              {loading ? 'Submitting Verified Review...' : 'Submit Verified Student Review →'}
             </button>
           </form>
         )}

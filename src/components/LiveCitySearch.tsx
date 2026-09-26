@@ -12,7 +12,7 @@ export default function LiveCitySearch() {
   const [isOpen, setIsOpen] = useState(false);
 
   // Search results calculation
-  const results = useMemo<{ cities: typeof CITIES_DATA; exams: typeof EXAM_CATEGORIES }>(() => {
+  const results = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return { cities: [], exams: [] };
 

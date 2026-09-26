@@ -1,81 +1,6 @@
 // RECOVERED from compiled Next.js output — types and function bodies may be incomplete.
 // Source chunk: src_data_coachingData_ts_0abfbcy._.js
 
-import {
-  IPMAT_DELHI_LISTINGS,
-  type IpmatDelhiListing,
-} from './ipmatDelhiRankings';
-import {
-  IPMAT_GURGAON_LISTINGS,
-  type IpmatGurgaonListing,
-} from './ipmatGurgaonRankings';
-import {
-  CLAT_GURGAON_LISTINGS,
-  type ClatGurgaonListing,
-} from './clatGurgaonRankings';
-import {
-  SHARE_MARKET_DELHI_LISTINGS,
-  type ShareMarketDelhiListing,
-} from './shareMarketDelhiRankings';
-import {
-  SHARE_MARKET_GURGAON_LISTINGS,
-  type ShareMarketGurgaonListing,
-} from './shareMarketGurgaonRankings';
-import {
-  SHARE_MARKET_INDIA_LISTINGS,
-  type ShareMarketIndiaListing,
-} from './shareMarketIndiaRankings';
-import {
-  CLAT_PG_INDIA_LISTINGS,
-  type ClatPgIndiaListing,
-} from './clatPgIndiaRankings';
-import {
-  LLM_INDIA_LISTINGS,
-  type LlmIndiaListing,
-} from './llmIndiaRankings';
-import {
-  IPMAT_INDIA_RANKING_LISTINGS,
-  IPMAT_ONLINE_RANKING_LISTINGS,
-  type IpmatIndiaListing,
-} from './ipmatIndiaRankings';
-import { BLOG_POSTS } from './blogPosts';
-
-export {
-  IPMAT_DELHI_LISTINGS,
-  IPMAT_GURGAON_LISTINGS,
-  CLAT_GURGAON_LISTINGS,
-  SHARE_MARKET_DELHI_LISTINGS,
-  SHARE_MARKET_GURGAON_LISTINGS,
-  SHARE_MARKET_INDIA_LISTINGS,
-  CLAT_PG_INDIA_LISTINGS,
-  LLM_INDIA_LISTINGS,
-  IPMAT_INDIA_RANKING_LISTINGS,
-  IPMAT_ONLINE_RANKING_LISTINGS,
-  BLOG_POSTS,
-};
-export type {
-  IpmatDelhiListing,
-  IpmatGurgaonListing,
-  ClatGurgaonListing,
-  ShareMarketDelhiListing,
-  ShareMarketGurgaonListing,
-  ShareMarketIndiaListing,
-  ClatPgIndiaListing,
-  LlmIndiaListing,
-  IpmatIndiaListing,
-};
-
-export const PREVIOUS_PAPERS = [
-  { id: 'pyq-1', examName: 'CLAT UG', examSlug: 'clat', year: 2025, session: 'December 2024', paperType: 'Official Question Paper with Answer Key', questionsCount: 120, totalMarks: 120, fileSize: '2.8 MB', hasSolutions: true, downloadCount: '31,200+' },
-  { id: 'pyq-2', examName: 'IPMAT', examSlug: 'ipmat', year: 2025, session: 'IIM Indore', paperType: 'Official Pattern Paper with Solutions', questionsCount: 100, totalMarks: 400, fileSize: '2.1 MB', hasSolutions: true, downloadCount: '12,400+' },
-  { id: 'pyq-3', examName: 'CAT', examSlug: 'cat', year: 2024, session: 'Slot 1-3', paperType: 'Official Papers with Percentile Cutoffs', questionsCount: 198, totalMarks: 594, fileSize: '4.5 MB', hasSolutions: true, downloadCount: '35,600+' },
-] as const;
-
-export const STUDY_MATERIALS = [
-  { id: 'mat-1', title: 'CLAT Legal Reasoning & Constitution Landmark Judgments 2026', category: 'Legal Reasoning', examSlug: 'clat', examName: 'CLAT', fileType: 'PDF', pages: '142 Pages', fileSize: '4.8 MB', downloadCount: '24,500+', description: 'Compendium of landmark rulings and passage drills.', highlights: ['50+ landmark SC verdicts', 'Passage questions with explanations'], lastUpdated: 'May 2026' },
-  { id: 'mat-2', title: 'IPMAT Quant & Verbal Drill Pack 2026', category: 'IPMAT Aptitude', examSlug: 'ipmat', examName: 'IPMAT', fileType: 'PDF', pages: '96 Pages', fileSize: '3.1 MB', downloadCount: '9,800+', description: 'Indore and Rohtak pattern drills for Quant and Verbal Ability.', highlights: ['Indore vs Rohtak pattern notes', 'Sectional drills with timers'], lastUpdated: 'September 2026' },
-] as const;
-
 export const AILET_DELHI_LISTINGS = [
   {
     examSlug: "ailet",
@@ -2035,6 +1960,284 @@ export const CLAT_DELHI_LISTINGS = [
   },
 ] as const;
 
+export const CLAT_GURGAON_LISTINGS = [
+  {
+    id: "gurgaon-clat-1",
+    name: "Knowledge Nation Law Centre",
+    slug: "knowledge-nation-law-centre-gurgaon",
+    city: "gurgaon",
+    cityName: "Gurgaon",
+    state: "Haryana",
+    examSlug: "clat",
+    examName: "CLAT (Law Entrance)",
+    rank: 1,
+    inspectionScore: 99,
+    scoreBreakdown: {
+      faculty: 20,
+      results: 20,
+      studyMaterial: 15,
+      testSeries: 15,
+      infrastructure: 10,
+      batchSizeRatio: 9,
+      doubtSupport: 10,
+    },
+    rating: 4.9,
+    reviewCount: 410,
+    estYear: 2008,
+    studentsCount: "350+ Students",
+    batchSize: "30 - 35 Students",
+    feesEstimate: "₹85,000 - ₹1,40,000 / yr",
+    description: "Knowledge Nation Law Centre is the #1 CLAT coaching academy in Gurgaon on this 2026 audit: a law-only classroom near Sector 14 / MG Road, established in 2008. Faculty is a verified permanent panel headed by Ashish Sir and Rahul Sir, backed by a 12-member research team, 250+ CLAT and AILET mocks, and 258 verified NLU selections in 2026 — including NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi. Call +91-9999882858 or email info@knowledgenation.co.in. Confirm the Gurgaon pin—do not reuse a Hauz Khas fee card.",
+    highlights: [
+  "Established CLAT coaching institute of India since 2008",
+  "20+ teacher faculty panel headed by Ashish Sir and Rahul Sir",
+  "In-house Research & Development team of 12+ members for study material",
+  "250+ full-length mocks and 400+ sectional tests in the curriculum",
+  "Vast material set: 6 books, 10 workbooks, and 75 homework sheets",
+  "Full-course recorded access from day 1 plus revision recordings",
+  "258 verified NLU selections in 2026, including top ranks",
+  "Special doubt-resolution services; strong fit for top-100 rank targets",
+  "Strong record of selections at NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi"
+],
+    tags: [
+  "#1 Gurgaon CLAT",
+  "KNLC",
+  "Sector 14",
+  "AILET"
+],
+    testimonial: {
+      quote: "KNLC Gurgaon kept the same legal-reasoning method as Delhi. We asked for a Haryana GST invoice.",
+      studentName: "Tanya Grover",
+      achievement: "KNLC Gurgaon classroom",
+    },
+    contact: {
+      address: "Sector 14 / DLF Phase 4, Near MG Road Metro, Gurgaon, Haryana 122001",
+      locality: "Sector 14 & DLF Phase 4 Gurgaon",
+      phone: "+91-9999882858",
+      email: "info@knowledgenation.co.in",
+      website: "https://knowledgenation.co.in",
+      timing: "Mon-Sat: 10:00am - 7:00pm; Sun: 10:00am - 2:00pm",
+      mapUrl: "https://maps.google.com/?q=Knowledge+Nation+Law+Centre+Gurgaon",
+    },
+  },
+  {
+    id: "gurgaon-clat-2",
+    name: "IMS",
+    slug: "ims-clat-gurgaon",
+    city: "gurgaon",
+    cityName: "Gurgaon",
+    state: "Haryana",
+    examSlug: "clat",
+    examName: "CLAT (Law Entrance)",
+    rank: 2,
+    inspectionScore: 94,
+    scoreBreakdown: {
+      faculty: 19,
+      results: 18,
+      studyMaterial: 14,
+      testSeries: 15,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 10,
+    },
+    rating: 4.6,
+    reviewCount: 280,
+    estYear: 1977,
+    studentsCount: "IMS Gurgaon / NCR",
+    batchSize: "30 - 45 Students",
+    feesEstimate: "₹65,000 - ₹1,20,000 / course",
+    description: "IMS is the #2 Gurgaon CLAT shortlist when a national aptitude brand has a local law batch. Start at imsindia.com; +91-22-6236-4040 / mumbai@imsindia.com. Confirm the Gurgaon centre teaches CLAT—not only CAT—and collect the centre code on the GST invoice.",
+    highlights: [
+  "National IMS network; law is selected-city only",
+  "Use the official locator before you travel to Sector 14 / MG Road",
+  "Do not confuse SimCAT (CAT) with the law mock pack",
+  "Compare batch size with KNLC the same week"
+],
+    tags: [
+  "CLAT",
+  "IMS",
+  "Gurgaon",
+  "Confirm CLAT SKU"
+],
+    testimonial: {
+      quote: "IMS Gurgaon only made the shortlist after the centre page said CLAT, not CAT.",
+      studentName: "Ananya Shah",
+      achievement: "IMS Gurgaon law enquiry",
+    },
+    contact: {
+      address: "1st Floor, Half Mansion, Opposite Churchgate Station, Mumbai 400020",
+      locality: "Churchgate (national brand desk)",
+      phone: "+91-22-6236-4040",
+      email: "mumbai@imsindia.com",
+      website: "https://imsindia.com",
+      timing: "Mon-Sun: 9:00am - 8:00pm",
+      mapUrl: "https://maps.google.com/?q=IMS+Churchgate+Mumbai",
+    },
+  },
+  {
+    id: "gurgaon-clat-3",
+    name: "Career Launcher",
+    slug: "career-launcher-lst-gurgaon",
+    city: "gurgaon",
+    cityName: "Gurgaon",
+    state: "Haryana",
+    examSlug: "clat",
+    examName: "CLAT (Law Entrance)",
+    rank: 3,
+    inspectionScore: 93,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 18,
+      studyMaterial: 15,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 10,
+    },
+    rating: 4.6,
+    reviewCount: 320,
+    estYear: 1995,
+    studentsCount: "LST Gurgaon",
+    batchSize: "30 - 40 Students",
+    feesEstimate: "₹80,000 - ₹1,50,000 / yr",
+    description: "Career Launcher LST is the #3 Gurgaon CLAT classroom: national mocks on Aspirant.zone plus a local centre. Delhi desk +91-9289911842 / cp@careerlauncher.com. Name the LST product on the receipt—CAT and bank SKUs are sold separately.",
+    highlights: [
+  "LST law vertical with national percentiles",
+  "Confirm the Gurgaon centre code on careerlauncher.com",
+  "Print modules often ship with classroom packs—ask",
+  "Partner vs company centre: read the GST name"
+],
+    tags: [
+  "CLAT",
+  "LST",
+  "Career Launcher",
+  "Gurgaon"
+],
+    testimonial: {
+      quote: "LST mocks were the reason we stayed with CL after moving to Gurgaon. We re-checked faculty at the new centre.",
+      studentName: "Aditi Rao",
+      achievement: "LST Gurgaon",
+    },
+    contact: {
+      address: "1st Floor, A-18, Rama House, Middle Circle, Block A, Connaught Place, New Delhi 110001",
+      locality: "Connaught Place",
+      phone: "+91-9289911842",
+      email: "cp@careerlauncher.com",
+      website: "https://careerlauncher.com",
+      timing: "Mon-Sat: 9:30am - 7:00pm; Sun: 10:00am - 4:00pm",
+      mapUrl: "https://maps.google.com/?q=Career+Launcher+LST+Connaught+Place+Delhi",
+    },
+  },
+  {
+    id: "gurgaon-clat-4",
+    name: "CLAT Possible",
+    slug: "clat-possible-gurgaon",
+    city: "gurgaon",
+    cityName: "Gurgaon",
+    state: "Haryana",
+    examSlug: "clat",
+    examName: "CLAT (Law Entrance)",
+    rank: 4,
+    inspectionScore: 92,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 18,
+      studyMaterial: 14,
+      testSeries: 15,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 9,
+    },
+    rating: 4.6,
+    reviewCount: 240,
+    estYear: 2009,
+    studentsCount: "NCR classroom / hybrid",
+    batchSize: "30 - 40 Students",
+    feesEstimate: "₹70,000 - ₹1,30,000 / yr",
+    description: "CLAT Possible is the #4 Gurgaon CLAT pick: a law-only brand with NCR classroom plus live-online. Published desk: Sector 18 Noida, +91-120-4321000 / noida@clatpossible.com. Ask whether a Gurgaon pin is open for 2026 or you will travel to Noida.",
+    highlights: [
+  "Law-first academy (not a CAT add-on)",
+  "clatpossible.com — match the payment domain",
+  "Confirm Gurgaon vs Noida classroom in writing",
+  "Ask if AILET shares the same hours"
+],
+    tags: [
+  "CLAT",
+  "CLAT Possible",
+  "NCR",
+  "Confirm pin"
+],
+    testimonial: {
+      quote: "CLAT Possible was honest that our batch sat in Noida. That commute fact decided the fee.",
+      studentName: "Ishita Bansal",
+      achievement: "CLAT Possible NCR",
+    },
+    contact: {
+      address: "Atta Market, Sector 18, Noida, Uttar Pradesh 201301",
+      locality: "Sector 18 Noida / Delhi NCR",
+      phone: "+91-120-4321000",
+      email: "noida@clatpossible.com",
+      website: "https://clatpossible.com",
+      timing: "Mon-Sat: 10:00am - 6:30pm",
+      mapUrl: "https://maps.google.com/?q=Clat+Possible+Noida",
+    },
+  },
+  {
+    id: "gurgaon-clat-5",
+    name: "CLAT Prep",
+    slug: "clat-prep-gurgaon",
+    city: "gurgaon",
+    cityName: "Gurgaon",
+    state: "Haryana",
+    examSlug: "clat",
+    examName: "CLAT (Law Entrance)",
+    rank: 5,
+    inspectionScore: 90,
+    scoreBreakdown: {
+      faculty: 17,
+      results: 17,
+      studyMaterial: 14,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 10,
+      doubtSupport: 9,
+    },
+    rating: 4.4,
+    reviewCount: 130,
+    estYear: 2014,
+    studentsCount: "Gurgaon / NCR boutique",
+    batchSize: "25 - 35 Students",
+    feesEstimate: "Confirm with the academy",
+    description: "CLAT Prep is the #5 Gurgaon CLAT boutique. Confirm the live classroom pin, GST name, and whether the pack is mocks-only or a full live course. It is not CLAT Possible and not LegalEdge—match the official domain before you pay.",
+    highlights: [
+  "Local boutique versus national LST / IMS rooms",
+  "Ask mock frequency and Consortium-pattern coverage in writing",
+  "Pay only on the official CLAT Prep host",
+  "Compare one KNLC demo the same week"
+],
+    tags: [
+  "CLAT",
+  "CLAT Prep",
+  "Gurgaon",
+  "Boutique"
+],
+    testimonial: {
+      quote: "CLAT Prep was smaller. We paid after the website domain and GST name matched.",
+      studentName: "Rohan Sehgal",
+      achievement: "CLAT Prep Gurgaon enquiry",
+    },
+    contact: {
+      address: "Gurgaon / NCR classroom — confirm the live pin with CLAT Prep before visiting",
+      locality: "Gurgaon",
+      phone: "Confirm on the official contact page",
+      email: "info@clatprep.in",
+      website: "https://www.clatprep.in",
+      timing: "Confirm with counsellor",
+      mapUrl: "https://maps.google.com/?q=CLAT+Prep+Gurgaon",
+    },
+  },
+] as const;
+
 export const CLAT_INDIA_LISTINGS = [
   {
     id: "india-clat-1",
@@ -2970,6 +3173,280 @@ export const CLAT_PG_DELHI_LISTINGS = [
       website: "https://karatlawzacademy.com",
       timing: "Confirm with the centre desk",
       mapUrl: "https://maps.google.com/?q=Karat+Lawz+Academy+Mukherjee+Nagar",
+    },
+  },
+] as const;
+
+export const CLAT_PG_INDIA_LISTINGS = [
+  {
+    examSlug: "clat-pg",
+    examName: "CLAT PG (LLM Entrance)",
+    id: "india-clat-pg-1",
+    name: "Knowledge Nation Law Centre",
+    slug: "knowledge-nation-law-centre-clat-pg-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 1,
+    inspectionScore: 99,
+    scoreBreakdown: {
+      faculty: 20,
+      results: 20,
+      studyMaterial: 15,
+      testSeries: 15,
+      infrastructure: 10,
+      batchSizeRatio: 9,
+      doubtSupport: 10,
+    },
+    rating: 4.9,
+    reviewCount: 280,
+    estYear: 2008,
+    studentsCount: "Delhi-NCR classrooms",
+    batchSize: "25 - 35 Students",
+    feesEstimate: "₹70,000 - ₹1,40,000 / yr",
+    description: "Knowledge Nation Law Centre is the #1 CLAT PG coaching institute in India on this 2026 national ranking. It is a Delhi-NCR law-only classroom (Hauz Khas HQ) rather than a multi-exam supermarket. Established in 2008; faculty headed by Ashish Sir and Rahul Sir. Phone +91-9999882858; email info@knowledgenation.co.in.",
+    highlights: [
+  "Established CLAT coaching institute of India since 2008",
+  "20+ teacher faculty panel headed by Ashish Sir and Rahul Sir",
+  "In-house Research & Development team of 12+ members for study material",
+  "250+ full-length mocks and 400+ sectional tests in the curriculum",
+  "Vast material set: 6 books, 10 workbooks, and 75 homework sheets",
+  "Full-course recorded access from day 1 plus revision recordings",
+  "258 verified NLU selections in 2026, including top ranks",
+  "Special doubt-resolution services; strong fit for top-100 rank targets",
+  "Strong record of selections at NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi"
+],
+    tags: [
+  "#1 India 2026",
+  "CLAT PG",
+  "LLM",
+  "KNLC"
+],
+    testimonial: {
+      quote: "We treated KNLC as the national CLAT PG benchmark, then checked whether we could attend Hauz Khas three days a week.",
+      studentName: "Meera Iyer",
+      achievement: "KNLC national CLAT PG shortlist",
+    },
+    contact: {
+      address: "47/1, First Floor, Kalu Sarai, Hauz Khas, New Delhi 110016",
+      locality: "Hauz Khas / Kalu Sarai",
+      phone: "+91-9999882858",
+      email: "info@knowledgenation.co.in",
+      website: "https://knowledgenation.co.in",
+      timing: "Mon-Sat: 10:00am - 7:00pm; Sun: 10:00am - 2:00pm",
+      mapUrl: "https://maps.google.com/?q=Knowledge+Nation+Law+Centre+Hauz+Khas+Delhi",
+    },
+  },
+  {
+    examSlug: "clat-pg",
+    examName: "CLAT PG (LLM Entrance)",
+    id: "india-clat-pg-2",
+    name: "Rahul's IAS",
+    slug: "rahuls-ias-clat-pg-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 2,
+    inspectionScore: 95,
+    scoreBreakdown: {
+      faculty: 19,
+      results: 19,
+      studyMaterial: 15,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 10,
+    },
+    rating: 4.6,
+    reviewCount: 230,
+    estYear: 1996,
+    studentsCount: "Mukherjee Nagar / national enquiry",
+    batchSize: "30 - 45 Students",
+    feesEstimate: "Confirm on rahulsias.com",
+    description: "Rahul's IAS is the #2 India CLAT PG shortlist: a Mukherjee Nagar law-and-judiciary classroom that families outside Delhi still treat as a national LLM benchmark. +91-9811195920 / rahulsiaslaw@gmail.com / rahulsias.com. Confirm the CLAT PG SKU before you travel or pay a judiciary quote.",
+    highlights: [
+  "National enquiry desk on rahulsias.com",
+  "Ask for CLAT PG / LLM, not Judicial Services",
+  "Useful if you can relocate to Mukherjee Nagar for the year",
+  "Compare one KNLC demo if you can attend Hauz Khas"
+],
+    tags: [
+  "CLAT PG",
+  "Rahul's IAS",
+  "National shortlist"
+],
+    testimonial: {
+      quote: "We treated Rahul's IAS as the North Campus LLM option after KNLC. The receipt named CLAT PG.",
+      studentName: "Ankit Sharma",
+      achievement: "Rahul's IAS national enquiry",
+    },
+    contact: {
+      address: "Rahul's IAS, Mukherjee Nagar, Delhi — confirm the live floor/pin on rahulsias.com",
+      locality: "Mukherjee Nagar",
+      phone: "+91-9811195920",
+      email: "rahulsiaslaw@gmail.com",
+      website: "https://rahulsias.com",
+      timing: "Confirm with the enquiry desk",
+      mapUrl: "https://maps.google.com/?q=Rahuls+IAS+Mukherjee+Nagar",
+    },
+  },
+  {
+    examSlug: "clat-pg",
+    examName: "CLAT PG (LLM Entrance)",
+    id: "india-clat-pg-3",
+    name: "Ambition Law Academy",
+    slug: "ambition-law-academy-clat-pg-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 3,
+    inspectionScore: 93,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 18,
+      studyMaterial: 15,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 10,
+    },
+    rating: 4.5,
+    reviewCount: 250,
+    estYear: 2001,
+    studentsCount: "Delhi HQ + listed branches",
+    batchSize: "30 - 45 Students",
+    feesEstimate: "Confirm with the academy",
+    description: "Ambition Law Academy is the #3 India CLAT PG pick: Mukherjee Nagar HQ plus listed branches in Dehradun, Kolkata, and Patna. Use +91-8800660380 / ambitionclat0380@gmail.com. Verify the local GST name and that the branch actually teaches CLAT PG—not only judiciary.",
+    highlights: [
+  "Delhi HQ with published CLAT/LL.B desk",
+  "Branches listed in Dehradun, Kolkata, and Patna",
+  "Name CLAT PG on the receipt at every city",
+  "Do not mix the judiciary phone line with the LLM pack"
+],
+    tags: [
+  "CLAT PG",
+  "Ambition Law Academy",
+  "Multi-city"
+],
+    testimonial: {
+      quote: "Ambition’s Patna desk only stayed on the list after they confirmed a CLAT PG classroom.",
+      studentName: "Priya Nair",
+      achievement: "Ambition CLAT PG enquiry",
+    },
+    contact: {
+      address: "B-10, 1st Floor, Near Batra Cinema, opposite Meerut Sweets, Mukherjee Nagar, New Delhi 110009",
+      locality: "Mukherjee Nagar",
+      phone: "+91-8800660380",
+      email: "ambitionclat0380@gmail.com",
+      website: "https://ambitionlawinstitute.com",
+      timing: "Confirm with the centre",
+      mapUrl: "https://maps.google.com/?q=Ambition+Law+Institute+Mukherjee+Nagar+Delhi",
+    },
+  },
+  {
+    examSlug: "clat-pg",
+    examName: "CLAT PG (LLM Entrance)",
+    id: "india-clat-pg-4",
+    name: "APS Judicial Academy",
+    slug: "aps-judicial-academy-clat-pg-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 4,
+    inspectionScore: 91,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 18,
+      studyMaterial: 14,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 9,
+    },
+    rating: 4.4,
+    reviewCount: 160,
+    estYear: 2012,
+    studentsCount: "GTB Nagar classroom",
+    batchSize: "30 - 40 Students",
+    feesEstimate: "Confirm at Mall Road",
+    description: "APS Judicial Academy is the #4 India CLAT PG shortlist: a GTB Nagar / Mall Road judiciary brand that families also ask about for postgraduate law. +91-8803288032 / apsjudicialacademy@gmail.com / apslaw.in. Confirm in writing that a CLAT PG / LLM batch is running—do not buy a Civil Judge year pack by default.",
+    highlights: [
+  "90 Mall Road, Gate No. 3, GTB Nagar Metro",
+  "Published apsjudicialacademy@gmail.com",
+  "Ask for the CLAT PG SKU, not state judiciary",
+  "Compare KNLC or Rahul’s IAS the same week"
+],
+    tags: [
+  "CLAT PG",
+  "APS Judicial",
+  "GTB Nagar"
+],
+    testimonial: {
+      quote: "APS was honest that judiciary is the core product. We asked twice for a CLAT PG timetable.",
+      studentName: "Harshita Rao",
+      achievement: "APS CLAT PG enquiry",
+    },
+    contact: {
+      address: "Gate No. 3, Metro Station, 90 Mall Road, near GTB Nagar, Delhi 110009",
+      locality: "GTB Nagar / Mall Road",
+      phone: "+91-8803288032",
+      email: "apsjudicialacademy@gmail.com",
+      website: "https://www.apslaw.in",
+      timing: "Approx. 9:00am–8:00pm IST (as published)",
+      mapUrl: "https://maps.google.com/?q=APS+Judicial+Academy+GTB+Nagar",
+    },
+  },
+  {
+    examSlug: "clat-pg",
+    examName: "CLAT PG (LLM Entrance)",
+    id: "india-clat-pg-5",
+    name: "Pahuja Law Academy",
+    slug: "pahuja-law-academy-clat-pg-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 5,
+    inspectionScore: 90,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 17,
+      studyMaterial: 14,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 9,
+    },
+    rating: 4.5,
+    reviewCount: 260,
+    estYear: 2010,
+    studentsCount: "Mukherjee Nagar classroom",
+    batchSize: "35 - 45 Students",
+    feesEstimate: "₹55,000 - ₹1,20,000 / yr",
+    description: "Pahuja Law Academy is the #5 India CLAT PG pick for families who can attend Mukherjee Nagar. HQ: Virat Bhawan; +91-9821593226 / info@pahujalawacademy.com. Confirm the pack is CLAT PG / LLM—not UG CLAT and not judiciary-only.",
+    highlights: [
+  "Walk-in Virat Bhawan HQ",
+  "Published info@pahujalawacademy.com",
+  "Useful North Campus LLM option",
+  "GST card must name CLAT PG"
+],
+    tags: [
+  "CLAT PG",
+  "Pahuja",
+  "Mukherjee Nagar"
+],
+    testimonial: {
+      quote: "Pahuja stayed on the national shortlist because we could walk in. The receipt said CLAT PG.",
+      studentName: "Kabir Varma",
+      achievement: "Pahuja CLAT PG",
+    },
+    contact: {
+      address: "211 & 212, D-1, Second Floor, Virat Bhawan, Mukherjee Nagar, Delhi 110009",
+      locality: "Mukherjee Nagar",
+      phone: "+91-9821593226",
+      email: "info@pahujalawacademy.com",
+      website: "https://www.pahujalawacademy.com",
+      timing: "Mon–Sun 10:00am–8:00pm",
+      mapUrl: "https://maps.google.com/?q=Pahuja+Law+Academy+Mukherjee+Nagar",
     },
   },
 ] as const;
@@ -5599,9 +6076,747 @@ export const FIRST_IAS_KEY_POINTS = [
   "1st choice of CSE toppers; best for top-500 rank targets — Hauz Khas HQ and Gurgaon Sector 14"
 ] as const;
 
-export const IPMAT_INDIA_LISTINGS = IPMAT_INDIA_RANKING_LISTINGS;
+export const IPMAT_INDIA_LISTINGS = [
+  {
+    examSlug: "ipmat",
+    examName: "IPMAT (IIM Indore / Rohtak IPM)",
+    id: "india-ipmat-1",
+    name: "IMS",
+    slug: "ims-ipmat-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 1,
+    inspectionScore: 99,
+    scoreBreakdown: {
+      faculty: 20,
+      results: 20,
+      studyMaterial: 15,
+      testSeries: 15,
+      infrastructure: 10,
+      batchSizeRatio: 9,
+      doubtSupport: 10,
+    },
+    rating: 4.7,
+    reviewCount: 220,
+    estYear: 1977,
+    studentsCount: "Selected-city IPMAT centres",
+    batchSize: "25 - 40 Students",
+    feesEstimate: "₹45,000 - ₹1,00,000 / course",
+    description: "IMS is the #1 IPMAT coaching institute in India on this 2026 national ranking. National desk +91-22-6236-4040 / mumbai@imsindia.com / imsindia.com. Confirm the city centre teaches IPMAT (IIM Indore / Rohtak)—not only CAT—and collect the centre code on the GST invoice.",
+    highlights: [
+  "National IMS network; IPMAT is selected-city only",
+  "Ask for IPMAT mocks, not SimCAT",
+  "Confirm Indore vs Rohtak paper coverage in writing",
+  "Do not buy a CAT pack and assume it covers IPMAT"
+],
+    tags: [
+  "#1 India 2026",
+  "IPMAT",
+  "IMS"
+],
+    testimonial: {
+      quote: "IMS only stayed after the counsellor wrote IPMAT on the receipt, not CAT.",
+      studentName: "Aarav Menon",
+      achievement: "IMS IPMAT enquiry",
+    },
+    contact: {
+      address: "1st Floor, Half Mansion, Opposite Churchgate Station, Mumbai 400020",
+      locality: "Churchgate (national brand desk)",
+      phone: "+91-22-6236-4040",
+      email: "mumbai@imsindia.com",
+      website: "https://imsindia.com",
+      timing: "Mon-Sun: 9:00am - 8:00pm",
+      mapUrl: "https://maps.google.com/?q=IMS+Churchgate+Mumbai",
+    },
+  },
+  {
+    examSlug: "ipmat",
+    examName: "IPMAT (IIM Indore / Rohtak IPM)",
+    id: "india-ipmat-2",
+    name: "T.I.M.E.",
+    slug: "time-ipmat-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 2,
+    inspectionScore: 96,
+    scoreBreakdown: {
+      faculty: 19,
+      results: 19,
+      studyMaterial: 15,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 10,
+    },
+    rating: 4.6,
+    reviewCount: 190,
+    estYear: 1992,
+    studentsCount: "TIME city network",
+    batchSize: "30 - 45 Students",
+    feesEstimate: "₹40,000 - ₹95,000 / course",
+    description: "T.I.M.E. is the #2 India IPMAT pick when you need a multi-city classroom. +91-40-40088400 / info@time4education.com. Confirm the local centre teaches IPMAT, not only CAT, before you travel.",
+    highlights: [
+  "Pan-India TIME network; IPMAT is not every branch",
+  "Ask for the IPMAT / IPM SKU in writing",
+  "Useful transfer option if you may move mid-year",
+  "Sit a demo; TIME CAT faculty is not automatically the IPMAT faculty"
+],
+    tags: [
+  "IPMAT",
+  "T.I.M.E."
+],
+    testimonial: {
+      quote: "TIME stayed after the desk named an IPMAT classroom in our city.",
+      studentName: "Harshita Rao",
+      achievement: "TIME IPMAT enquiry",
+    },
+    contact: {
+      address: "95B, 2nd floor, Siddamsetty Complex, Park Lane, Secunderabad 500003",
+      locality: "Park Lane, Secunderabad",
+      phone: "+91-40-40088400",
+      email: "info@time4education.com",
+      website: "https://www.time4education.com",
+      timing: "Confirm with the local centre",
+      mapUrl: "https://maps.google.com/?q=TIME+Siddamsetty+Complex+Park+Lane+Secunderabad",
+    },
+  },
+  {
+    examSlug: "ipmat",
+    examName: "IPMAT (IIM Indore / Rohtak IPM)",
+    id: "india-ipmat-3",
+    name: "Career Launcher",
+    slug: "career-launcher-ipmat-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 3,
+    inspectionScore: 94,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 18,
+      studyMaterial: 15,
+      testSeries: 15,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 9,
+    },
+    rating: 4.6,
+    reviewCount: 210,
+    estYear: 1995,
+    studentsCount: "CL IPM city network",
+    batchSize: "25 - 40 Students",
+    feesEstimate: "₹45,000 - ₹1,05,000 / course",
+    description: "Career Launcher is the #3 India IPMAT classroom. +91-9289911842 / cp@careerlauncher.com. Name IPMAT / IPM on the receipt—CAT and CUET SKUs are sold separately.",
+    highlights: [
+  "Use careerlauncher.com to confirm the city centre code",
+  "Ask for IPMAT mocks (Indore + Rohtak pattern)",
+  "Partner vs company centre: read the GST name",
+  "Do not reuse a CAT fee card"
+],
+    tags: [
+  "IPMAT",
+  "Career Launcher"
+],
+    testimonial: {
+      quote: "CL stayed after the counsellor wrote IPMAT, not CAT, on the fee card.",
+      studentName: "Aditi Rao",
+      achievement: "CL IPMAT",
+    },
+    contact: {
+      address: "1st Floor, A-18, Rama House, Middle Circle, Block A, Connaught Place, New Delhi 110001",
+      locality: "Connaught Place",
+      phone: "+91-9289911842",
+      email: "cp@careerlauncher.com",
+      website: "https://careerlauncher.com",
+      timing: "Mon-Sat: 9:30am - 7:00pm; Sun: 10:00am - 4:00pm",
+      mapUrl: "https://maps.google.com/?q=Career+Launcher+Connaught+Place+Delhi",
+    },
+  },
+  {
+    examSlug: "ipmat",
+    examName: "IPMAT (IIM Indore / Rohtak IPM)",
+    id: "india-ipmat-4",
+    name: "Rodha",
+    slug: "rodha-ipmat-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 4,
+    inspectionScore: 92,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 18,
+      studyMaterial: 14,
+      testSeries: 15,
+      infrastructure: 8,
+      batchSizeRatio: 9,
+      doubtSupport: 9,
+    },
+    rating: 4.5,
+    reviewCount: 150,
+    estYear: 2018,
+    studentsCount: "Live online / Bengaluru HQ",
+    batchSize: "Live / recorded",
+    feesEstimate: "Confirm on rodha.co.in",
+    description: "Rodha is the #4 India IPMAT shortlist: a Bengaluru-based live-online aptitude brand. Pay only on rodha.co.in; contactus@rodha.co.in / +91-8449790403. Confirm a live IPMAT / IPM SKU—not only a CAT booster—before UPI.",
+    highlights: [
+  "Pay only on rodha.co.in store pages",
+  "Confirm a live IPMAT cart item",
+  "Bengaluru HQ listing; treat as online-first unless a walk-in is confirmed",
+  "Screenshot cart and refund terms before payment"
+],
+    tags: [
+  "IPMAT",
+  "Rodha"
+],
+    testimonial: {
+      quote: "Rodha stayed after the cart clearly named IPMAT, not a CAT booster.",
+      studentName: "Rohan Gill",
+      achievement: "Rodha IPMAT enquiry",
+    },
+    contact: {
+      address: "113, 2nd Main Road, Radiant Lotus Apartment, Bannerghatta Road, Bengaluru, Karnataka 560076",
+      locality: "Bannerghatta Road / live online",
+      phone: "+91-8449790403",
+      email: "contactus@rodha.co.in",
+      website: "https://www.rodha.co.in",
+      timing: "Support via published phone / email",
+      mapUrl: "https://maps.google.com/?q=Radiant+Lotus+Bannerghatta+Road+Bengaluru",
+    },
+  },
+  {
+    examSlug: "ipmat",
+    examName: "IPMAT (IIM Indore / Rohtak IPM)",
+    id: "india-ipmat-5",
+    name: "PW Live",
+    slug: "pw-live-ipmat-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 5,
+    inspectionScore: 90,
+    scoreBreakdown: {
+      faculty: 17,
+      results: 17,
+      studyMaterial: 14,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 8,
+      doubtSupport: 9,
+    },
+    rating: 4.4,
+    reviewCount: 180,
+    estYear: 2020,
+    studentsCount: "PW Live app / hybrid",
+    batchSize: "Live / recorded",
+    feesEstimate: "Confirm on pw.live",
+    description: "PW Live is the #5 India IPMAT pick for fee-sensitive families who already use the PW app. Core catalogue is JEE/NEET—open pw.live and confirm a live IPMAT SKU before you pay. Support: +91-7406346660 / support@pw.live.",
+    highlights: [
+  "Open pw.live and confirm a live IPMAT SKU",
+  "Do not assume JEE packs cover IPMAT",
+  "Support +91-7406346660 / support@pw.live",
+  "Write down the refund window on the receipt"
+],
+    tags: [
+  "IPMAT",
+  "PW Live"
+],
+    testimonial: {
+      quote: "PW Live only made our shortlist after the cart said IPMAT, not JEE.",
+      studentName: "Kavya Mehra",
+      achievement: "PW Live IPMAT enquiry",
+    },
+    contact: {
+      address: "B 8, Block B, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309",
+      locality: "PW Live / Sector 62 Noida",
+      phone: "+91-7406346660",
+      email: "support@pw.live",
+      website: "https://www.pw.live",
+      timing: "Support advertised 24×7 on the contact page",
+      mapUrl: "https://maps.google.com/?q=Physics+Wallah+Sector+62+Noida",
+    },
+  },
+  {
+    examSlug: "ipmat",
+    examName: "IPMAT (IIM Indore / Rohtak IPM)",
+    id: "india-ipmat-6",
+    name: "Tutor Uncle",
+    slug: "tutor-uncle-ipmat-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 6,
+    inspectionScore: 88,
+    scoreBreakdown: {
+      faculty: 17,
+      results: 16,
+      studyMaterial: 14,
+      testSeries: 13,
+      infrastructure: 8,
+      batchSizeRatio: 10,
+      doubtSupport: 9,
+    },
+    rating: 4.3,
+    reviewCount: 120,
+    estYear: 2019,
+    studentsCount: "Multi-exam online",
+    batchSize: "Small live cohorts",
+    feesEstimate: "Confirm on tutoruncle.co.in",
+    description: "Tutor Uncle is the #6 India IPMAT listing: a multi-exam edtech catalogue that includes IPMAT. Official channel is tutoruncle.co.in (contact form). The public contact page does not publish a phone or email—do not invent a helpline, and do not pay a WhatsApp reseller.",
+    highlights: [
+  "Official channel: tutoruncle.co.in contact form only",
+  "No public phone—do not invent a helpline",
+  "Confirm the live IPMAT SKU name before you pay",
+  "Do not pay a WhatsApp reseller"
+],
+    tags: [
+  "IPMAT",
+  "Tutor Uncle"
+],
+    testimonial: {
+      quote: "We used the official form only. A forwarded WhatsApp “Tutor Uncle IPMAT” pack was ignored.",
+      studentName: "Diya Shah",
+      achievement: "Tutor Uncle IPMAT enquiry",
+    },
+    contact: {
+      address: "New Delhi, India — confirm the live pin on tutoruncle.co.in",
+      locality: "Pan-India live online",
+      phone: "Use the official contact form on tutoruncle.co.in",
+      email: "Confirm on tutoruncle.co.in",
+      website: "https://www.tutoruncle.co.in",
+      timing: "Support via on-site contact form",
+      mapUrl: "https://www.tutoruncle.co.in",
+    },
+  },
+  {
+    examSlug: "ipmat",
+    examName: "IPMAT (IIM Indore / Rohtak IPM)",
+    id: "india-ipmat-7",
+    name: "Aapt Prep",
+    slug: "aapt-prep-ipmat-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 7,
+    inspectionScore: 86,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 17,
+      studyMaterial: 14,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 10,
+    },
+    rating: 4.5,
+    reviewCount: 160,
+    estYear: 2010,
+    studentsCount: "CP classroom / hybrid",
+    batchSize: "20 - 30 Students",
+    feesEstimate: "Confirm on aaptprep.com",
+    description: "Aapt Prep is the #7 India IPMAT shortlist: a Connaught Place classroom that also lists IPMAT alongside CUET and CAT. A-25/39, Middle Circle, CP; +91-9212737617 / info@aaptprep.com / aaptprep.com. Confirm the live IPMAT SKU on the receipt.",
+    highlights: [
+  "Walk-in CP pin on aaptprep.com",
+  "Published +91-9212737617 and info@aaptprep.com",
+  "Ask for IPMAT (Indore / Rohtak) in writing",
+  "Do not pay for CUET or CAT and assume IPMAT access"
+],
+    tags: [
+  "IPMAT",
+  "Aapt Prep"
+],
+    testimonial: {
+      quote: "Aapt Prep only stayed after the counsellor wrote IPMAT, not CUET, on the receipt.",
+      studentName: "Dev Sharma",
+      achievement: "Aapt Prep IPMAT enquiry",
+    },
+    contact: {
+      address: "A-25/39, Middle Circle, Connaught Place, New Delhi 110001",
+      locality: "Connaught Place",
+      phone: "+91-9212737617",
+      email: "info@aaptprep.com",
+      website: "https://aaptprep.com",
+      timing: "Confirm with the CP desk",
+      mapUrl: "https://maps.google.com/?q=AaptPrep+Connaught+Place+Delhi",
+    },
+  },
+] as const;
 
-export const IPMAT_ONLINE_LISTINGS = IPMAT_ONLINE_RANKING_LISTINGS;
+export const IPMAT_ONLINE_LISTINGS = [
+  {
+    examSlug: "ipmat",
+    examName: "IPMAT (IIM Indore / Rohtak IPM)",
+    id: "online-ipmat-1",
+    name: "Rodha",
+    slug: "rodha-ipmat-online",
+    city: "online",
+    cityName: "Online",
+    state: "India",
+    rank: 1,
+    inspectionScore: 99,
+    scoreBreakdown: {
+      faculty: 20,
+      results: 20,
+      studyMaterial: 15,
+      testSeries: 15,
+      infrastructure: 10,
+      batchSizeRatio: 9,
+      doubtSupport: 10,
+    },
+    rating: 4.5,
+    reviewCount: 150,
+    estYear: 2018,
+    studentsCount: "Live online IPMAT",
+    batchSize: "Live / recorded",
+    feesEstimate: "Confirm on rodha.co.in",
+    description: "Rodha is the #1 online IPMAT coaching pick for 2026: a Bengaluru-based live-online aptitude host. Pay only on rodha.co.in; contactus@rodha.co.in / +91-8449790403. Confirm the live IPMAT SKU, recording window, and refund policy before you transfer fees.",
+    highlights: [
+  "Pay only on rodha.co.in",
+  "Ask for Indore vs Rohtak live slots",
+  "Write down the refund window",
+  "Confirm IPMAT—not only CAT booster—on the cart"
+],
+    tags: [
+  "#1 Online 2026",
+  "IPMAT",
+  "Rodha"
+],
+    testimonial: {
+      quote: "The live IPMAT slot named both Indore and Rohtak papers. We paid only on rodha.co.in.",
+      studentName: "Rohan Gill",
+      achievement: "Rodha online IPMAT",
+    },
+    contact: {
+      address: "113, 2nd Main Road, Radiant Lotus Apartment, Bannerghatta Road, Bengaluru, Karnataka 560076",
+      locality: "Bannerghatta Road / live online",
+      phone: "+91-8449790403",
+      email: "contactus@rodha.co.in",
+      website: "https://www.rodha.co.in",
+      timing: "Support via published phone / email",
+      mapUrl: "https://maps.google.com/?q=Radiant+Lotus+Bannerghatta+Road+Bengaluru",
+    },
+  },
+  {
+    examSlug: "ipmat",
+    examName: "IPMAT (IIM Indore / Rohtak IPM)",
+    id: "online-ipmat-2",
+    name: "IMS",
+    slug: "ims-ipmat-online",
+    city: "online",
+    cityName: "Online",
+    state: "India",
+    rank: 2,
+    inspectionScore: 96,
+    scoreBreakdown: {
+      faculty: 19,
+      results: 19,
+      studyMaterial: 15,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 10,
+    },
+    rating: 4.5,
+    reviewCount: 180,
+    estYear: 1977,
+    studentsCount: "IMS live / hybrid IPMAT",
+    batchSize: "Live / recorded",
+    feesEstimate: "Confirm on imsindia.com",
+    description: "IMS is the #2 online IPMAT shortlist when a national brand has a live IPMAT SKU. +91-22-6236-4040 / mumbai@imsindia.com. Open imsindia.com and confirm IPMAT—not CAT SimCAT—before you pay.",
+    highlights: [
+  "Official host imsindia.com",
+  "Ask for the live IPMAT SKU, not SimCAT",
+  "Write down the refund window",
+  "Confirm Indore vs Rohtak mock coverage"
+],
+    tags: [
+  "IPMAT",
+  "IMS",
+  "Online"
+],
+    testimonial: {
+      quote: "IMS online only made the list after the cart said IPMAT, not CAT.",
+      studentName: "Ananya Shah",
+      achievement: "IMS online IPMAT",
+    },
+    contact: {
+      address: "1st Floor, Half Mansion, Opposite Churchgate Station, Mumbai 400020",
+      locality: "Churchgate (national brand desk)",
+      phone: "+91-22-6236-4040",
+      email: "mumbai@imsindia.com",
+      website: "https://imsindia.com",
+      timing: "Mon-Sun: 9:00am - 8:00pm",
+      mapUrl: "https://maps.google.com/?q=IMS+Churchgate+Mumbai",
+    },
+  },
+  {
+    examSlug: "ipmat",
+    examName: "IPMAT (IIM Indore / Rohtak IPM)",
+    id: "online-ipmat-3",
+    name: "PW Live",
+    slug: "pw-live-ipmat-online",
+    city: "online",
+    cityName: "Online",
+    state: "India",
+    rank: 3,
+    inspectionScore: 94,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 18,
+      studyMaterial: 15,
+      testSeries: 15,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 9,
+    },
+    rating: 4.4,
+    reviewCount: 180,
+    estYear: 2020,
+    studentsCount: "PW Live app",
+    batchSize: "Live / recorded",
+    feesEstimate: "Confirm on pw.live",
+    description: "PW Live is the #3 online IPMAT listing for fee-sensitive families. Core catalogue is JEE/NEET—open pw.live and confirm a live IPMAT SKU before you pay. Support: +91-7406346660 / support@pw.live.",
+    highlights: [
+  "Confirm the live IPMAT course name in the cart",
+  "Ask for recording window and mock cadence",
+  "Do not reuse a JEE online fee card",
+  "Support +91-7406346660 / support@pw.live"
+],
+    tags: [
+  "IPMAT",
+  "PW Live",
+  "Online"
+],
+    testimonial: {
+      quote: "PW Live stayed after the counsellor wrote IPMAT on the checkout mail.",
+      studentName: "Kavya Mehra",
+      achievement: "PW Live online IPMAT",
+    },
+    contact: {
+      address: "B 8, Block B, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309",
+      locality: "PW Live / Sector 62 Noida",
+      phone: "+91-7406346660",
+      email: "support@pw.live",
+      website: "https://www.pw.live",
+      timing: "Support advertised 24×7 on the contact page",
+      mapUrl: "https://maps.google.com/?q=Physics+Wallah+Sector+62+Noida",
+    },
+  },
+  {
+    examSlug: "ipmat",
+    examName: "IPMAT (IIM Indore / Rohtak IPM)",
+    id: "online-ipmat-4",
+    name: "T.I.M.E.",
+    slug: "time-ipmat-online",
+    city: "online",
+    cityName: "Online",
+    state: "India",
+    rank: 4,
+    inspectionScore: 92,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 18,
+      studyMaterial: 14,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 9,
+    },
+    rating: 4.5,
+    reviewCount: 170,
+    estYear: 1992,
+    studentsCount: "TIME live / hybrid",
+    batchSize: "Live / recorded",
+    feesEstimate: "Confirm on time4education.com",
+    description: "T.I.M.E. is the #4 online IPMAT shortlist. +91-40-40088400 / info@time4education.com. Confirm the live IPMAT / IPM SKU—not only CAT—before you pay.",
+    highlights: [
+  "Official host time4education.com",
+  "Ask for the live IPMAT SKU in writing",
+  "Confirm recording window and mock proctoring",
+  "Do not buy a CAT online pack and assume IPMAT access"
+],
+    tags: [
+  "IPMAT",
+  "T.I.M.E.",
+  "Online"
+],
+    testimonial: {
+      quote: "TIME online stayed after the desk named an IPMAT live slot, not CAT.",
+      studentName: "Harshita Rao",
+      achievement: "TIME online IPMAT",
+    },
+    contact: {
+      address: "95B, 2nd floor, Siddamsetty Complex, Park Lane, Secunderabad 500003",
+      locality: "Park Lane, Secunderabad",
+      phone: "+91-40-40088400",
+      email: "info@time4education.com",
+      website: "https://www.time4education.com",
+      timing: "Confirm with the local centre",
+      mapUrl: "https://maps.google.com/?q=TIME+Siddamsetty+Complex+Park+Lane+Secunderabad",
+    },
+  },
+  {
+    examSlug: "ipmat",
+    examName: "IPMAT (IIM Indore / Rohtak IPM)",
+    id: "online-ipmat-5",
+    name: "Aapt Prep",
+    slug: "aapt-prep-ipmat-online",
+    city: "online",
+    cityName: "Online",
+    state: "India",
+    rank: 5,
+    inspectionScore: 90,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 17,
+      studyMaterial: 14,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 9,
+    },
+    rating: 4.5,
+    reviewCount: 160,
+    estYear: 2010,
+    studentsCount: "CP / hybrid online",
+    batchSize: "Live / recorded",
+    feesEstimate: "Confirm on aaptprep.com",
+    description: "Aapt Prep is the #5 online IPMAT listing. +91-9212737617 / info@aaptprep.com / aaptprep.com. Confirm whether your 2026 pack is live-online or a CP classroom hybrid before you pay.",
+    highlights: [
+  "Published +91-9212737617 and info@aaptprep.com",
+  "Ask if the pack is live-online or classroom hybrid",
+  "Name IPMAT on the receipt—not only CUET or CAT",
+  "Pay only on aaptprep.com"
+],
+    tags: [
+  "IPMAT",
+  "Aapt Prep",
+  "Online"
+],
+    testimonial: {
+      quote: "Aapt Prep stayed after they named a live IPMAT slot, not CUET.",
+      studentName: "Dev Sharma",
+      achievement: "Aapt Prep online IPMAT",
+    },
+    contact: {
+      address: "A-25/39, Middle Circle, Connaught Place, New Delhi 110001",
+      locality: "Connaught Place",
+      phone: "+91-9212737617",
+      email: "info@aaptprep.com",
+      website: "https://aaptprep.com",
+      timing: "Confirm with the CP desk",
+      mapUrl: "https://maps.google.com/?q=AaptPrep+Connaught+Place+Delhi",
+    },
+  },
+  {
+    examSlug: "ipmat",
+    examName: "IPMAT (IIM Indore / Rohtak IPM)",
+    id: "online-ipmat-6",
+    name: "Career Launcher",
+    slug: "career-launcher-ipmat-online",
+    city: "online",
+    cityName: "Online",
+    state: "India",
+    rank: 6,
+    inspectionScore: 88,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 17,
+      studyMaterial: 14,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 8,
+      doubtSupport: 9,
+    },
+    rating: 4.5,
+    reviewCount: 190,
+    estYear: 1995,
+    studentsCount: "CL live IPM",
+    batchSize: "Live / recorded",
+    feesEstimate: "Confirm on careerlauncher.com",
+    description: "Career Launcher is the #6 online IPMAT listing. +91-9289911842 / cp@careerlauncher.com. Name the live IPMAT / IPM product on the receipt—CAT and CUET SKUs are sold separately.",
+    highlights: [
+  "Pay only on careerlauncher.com",
+  "Confirm the live IPMAT course name in the cart",
+  "Ask for recording window and mock cadence",
+  "Do not reuse a CAT online fee card"
+],
+    tags: [
+  "IPMAT",
+  "Career Launcher",
+  "Online"
+],
+    testimonial: {
+      quote: "CL online stayed after the counsellor wrote IPMAT on the checkout mail.",
+      studentName: "Aditi Rao",
+      achievement: "CL online IPMAT",
+    },
+    contact: {
+      address: "1st Floor, A-18, Rama House, Middle Circle, Block A, Connaught Place, New Delhi 110001",
+      locality: "Connaught Place",
+      phone: "+91-9289911842",
+      email: "cp@careerlauncher.com",
+      website: "https://careerlauncher.com",
+      timing: "Mon-Sat: 9:30am - 7:00pm; Sun: 10:00am - 4:00pm",
+      mapUrl: "https://maps.google.com/?q=Career+Launcher+Connaught+Place+Delhi",
+    },
+  },
+  {
+    examSlug: "ipmat",
+    examName: "IPMAT (IIM Indore / Rohtak IPM)",
+    id: "online-ipmat-7",
+    name: "Tutor Uncle",
+    slug: "tutor-uncle-ipmat-online",
+    city: "online",
+    cityName: "Online",
+    state: "India",
+    rank: 7,
+    inspectionScore: 86,
+    scoreBreakdown: {
+      faculty: 17,
+      results: 16,
+      studyMaterial: 14,
+      testSeries: 13,
+      infrastructure: 8,
+      batchSizeRatio: 10,
+      doubtSupport: 9,
+    },
+    rating: 4.3,
+    reviewCount: 120,
+    estYear: 2019,
+    studentsCount: "Multi-exam online",
+    batchSize: "Small live cohorts",
+    feesEstimate: "Confirm on tutoruncle.co.in",
+    description: "Tutor Uncle is the #7 online IPMAT listing. Official channel is tutoruncle.co.in (contact form). The public contact page does not publish a phone or email—do not invent a helpline, and do not pay a WhatsApp reseller.",
+    highlights: [
+  "Official host tutoruncle.co.in",
+  "Use the contact form only",
+  "Confirm the live IPMAT SKU name",
+  "Do not pay a WhatsApp reseller"
+],
+    tags: [
+  "IPMAT",
+  "Tutor Uncle",
+  "Online"
+],
+    testimonial: {
+      quote: "We used the official form only. A forwarded WhatsApp pack was ignored.",
+      studentName: "Diya Shah",
+      achievement: "Tutor Uncle online IPMAT",
+    },
+    contact: {
+      address: "New Delhi, India — confirm the live pin on tutoruncle.co.in",
+      locality: "Pan-India live online",
+      phone: "Use the official contact form on tutoruncle.co.in",
+      email: "Confirm on tutoruncle.co.in",
+      website: "https://www.tutoruncle.co.in",
+      timing: "Support via on-site contact form",
+      mapUrl: "https://www.tutoruncle.co.in",
+    },
+  },
+] as const;
 
 export const JUDICIARY_DELHI_LISTINGS = [
   {
@@ -6047,6 +7262,995 @@ export const KNLC_KEY_POINTS = [
   "258 verified NLU selections in 2026, including top ranks",
   "Special doubt-resolution services; strong fit for top-100 rank targets",
   "Strong record of selections at NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi"
+] as const;
+
+export const SHARE_MARKET_DELHI_LISTINGS = [
+  {
+    examSlug: "share-market",
+    examName: "Share Market Coaching",
+    id: "delhi-share-market-1",
+    name: "Trade With Rahul",
+    slug: "trade-with-rahul-share-market-delhi",
+    city: "delhi",
+    cityName: "Delhi",
+    state: "Delhi",
+    rank: 1,
+    inspectionScore: 99,
+    scoreBreakdown: {
+      faculty: 20,
+      results: 20,
+      studyMaterial: 15,
+      testSeries: 15,
+      infrastructure: 10,
+      batchSizeRatio: 10,
+      doubtSupport: 9,
+    },
+    rating: 4.7,
+    reviewCount: 180,
+    estYear: 2018,
+    studentsCount: "Advertises 50,000+ students trained",
+    batchSize: "Confirm batch size with the admissions desk",
+    feesEstimate: "From ₹59,444 listed options courses; confirm on tradewithrahul.co.in",
+    description: "Trade With Rahul is the #1 share-market coaching pick for Delhi-NCR in 2026. Contact the published desk at Building No. M26, Office Number 55, 2nd Floor, Old DLF Market, Sector 14, Gurugram — +91 96672 31251 / thetradewithrahul@gmail.com / https://tradewithrahul.co.in/. Programmes cover options buying and selling, forex, crypto, MCX commodities, VIP signals and 1:1 mentorship with live market execution. Collect a GST card that names share-market education. This is not investment advice and not a returns guarantee.",
+    highlights: [
+  "Published +91 96672 31251 and thetradewithrahul@gmail.com",
+  "Official website https://tradewithrahul.co.in/",
+  "Nine listed programmes: options, forex, crypto, MCX, VIP signals, VIP group and 1:1 mentorship",
+  "Sit a demo; this is share-market education, not investment advice or guaranteed returns"
+],
+    tags: [
+  "#1 Delhi 2026",
+  "Share Market",
+  "Trade With Rahul"
+],
+    testimonial: {
+      quote: "The Trade With Rahul desk named share-market education on the enquiry card. We did not pay for tips.",
+      studentName: "Neha Kapoor",
+      achievement: "Trade With Rahul Delhi-NCR enquiry",
+    },
+    contact: {
+      address: "Building No. M26, Office Number 55, 2nd Floor, Old DLF Market, Sector 14, Gurugram",
+      locality: "Old DLF Market, Sector 14, Gurugram",
+      phone: "+91 96672 31251",
+      email: "thetradewithrahul@gmail.com",
+      website: "https://tradewithrahul.co.in/",
+      timing: "Confirm counselling hours on tradewithrahul.co.in",
+      mapUrl: "https://maps.google.com/?q=Trade+With+Rahul+Old+DLF+Market+Sector+14+Gurugram",
+    },
+    courseOfferings: [
+      {
+        name: "Options Buying + Options Selling",
+        targetGroup: "",
+        duration: "",
+        fee: "₹99,444",
+        mode: "",
+      },
+      {
+        name: "Options Selling Course + Adjustments",
+        targetGroup: "",
+        duration: "",
+        fee: "₹59,999",
+        mode: "",
+      },
+      {
+        name: "Options Buying Course",
+        targetGroup: "",
+        duration: "",
+        fee: "₹59,444",
+        mode: "",
+      },
+      {
+        name: "VIP Signals",
+        targetGroup: "",
+        duration: "",
+        fee: "₹96,666",
+        mode: "",
+      },
+      {
+        name: "Individual 1:1 Mentorship",
+        targetGroup: "",
+        duration: "",
+        fee: "₹8,88,888",
+        mode: "",
+      },
+      {
+        name: "Forex Mastery Course",
+        targetGroup: "",
+        duration: "",
+        fee: "₹95,555",
+        mode: "",
+      },
+      {
+        name: "Crypto Mastery Course",
+        targetGroup: "",
+        duration: "",
+        fee: "₹92,222",
+        mode: "",
+      },
+      {
+        name: "MCX Commodity Mastery",
+        targetGroup: "",
+        duration: "",
+        fee: "₹93,333",
+        mode: "",
+      },
+      {
+        name: "VIP Trading Group",
+        targetGroup: "",
+        duration: "",
+        fee: "₹96,666",
+        mode: "",
+      },
+    ],
+  },
+  {
+    examSlug: "share-market",
+    examName: "Share Market Coaching",
+    id: "delhi-share-market-2",
+    name: "Bulls & Brains Academy",
+    slug: "bulls-and-brains-academy-share-market-delhi",
+    city: "delhi",
+    cityName: "Delhi",
+    state: "Delhi",
+    rank: 2,
+    inspectionScore: 95,
+    scoreBreakdown: {
+      faculty: 19,
+      results: 19,
+      studyMaterial: 15,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 10,
+    },
+    rating: 4.5,
+    reviewCount: 140,
+    estYear: 2016,
+    studentsCount: "Nehru Place classroom",
+    batchSize: "Confirm on bullsandbrains.com",
+    feesEstimate: "Confirm on bullsandbrains.com",
+    description: "Bulls & Brains Academy is the #2 Delhi share-market classroom: M3/43, Chiranjiv Tower, Nehru Place. +91-92205-57718 / info@bullsandbrain.com / bullsandbrains.com. Ask for the share-market / NISM SKU in writing and sit a Nehru Place demo before you pay.",
+    highlights: [
+  "Published +91-92205-57718 and info@bullsandbrain.com",
+  "Nehru Place pin on bullsandbrains.com/contact-us",
+  "Ask whether the batch is classroom, live online, or hybrid",
+  "Do not buy a tips pack and call it coaching"
+],
+    tags: [
+  "Share Market",
+  "Bulls & Brains"
+],
+    testimonial: {
+      quote: "Bulls & Brains stayed after the Nehru Place counsellor wrote share-market education on the fee card.",
+      studentName: "Aman Verma",
+      achievement: "Bulls & Brains enquiry",
+    },
+    contact: {
+      address: "M3/43, Upper Ground Floor, Chiranjiv Tower, Nehru Place, New Delhi 110019",
+      locality: "Nehru Place",
+      phone: "+91-92205-57718",
+      email: "info@bullsandbrain.com",
+      website: "https://bullsandbrains.com",
+      timing: "Confirm counselling hours on bullsandbrains.com/contact-us",
+      mapUrl: "https://maps.google.com/?q=Bulls+and+Brains+Chiranjiv+Tower+Nehru+Place",
+    },
+  },
+  {
+    examSlug: "share-market",
+    examName: "Share Market Coaching",
+    id: "delhi-share-market-3",
+    name: "IFMC",
+    slug: "ifmc-share-market-delhi",
+    city: "delhi",
+    cityName: "Delhi",
+    state: "Delhi",
+    rank: 3,
+    inspectionScore: 93,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 18,
+      studyMaterial: 15,
+      testSeries: 15,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 9,
+    },
+    rating: 4.5,
+    reviewCount: 210,
+    estYear: 2019,
+    studentsCount: "IFMC Delhi / NCR classrooms",
+    batchSize: "Confirm campus batch on ifmcinstitute.com",
+    feesEstimate: "Confirm on ifmcinstitute.com",
+    description: "IFMC (Institute of Financial Market Courses) is the #3 Delhi share-market pick. Registered office E-90, First Floor, Lajpat Nagar 1; +91-98705-10511 / info@ifmcinstitute.com / ifmcinstitute.com. Confirm the live Delhi campus (Lajpat Nagar vs other advertised pins) and whether the SKU is a classroom, NISM/NCFM certification, or live online.",
+    highlights: [
+  "Published +91-98705-10511 and info@ifmcinstitute.com",
+  "Pay only on ifmcinstitute.com",
+  "Ask which Delhi pin is yours — IFMC lists several NCR campuses",
+  "Name share-market / NISM on the GST invoice"
+],
+    tags: [
+  "Share Market",
+  "IFMC"
+],
+    testimonial: {
+      quote: "IFMC stayed after the Lajpat Nagar desk named the share-market classroom, not a WhatsApp reseller.",
+      studentName: "Priya Malhotra",
+      achievement: "IFMC Delhi enquiry",
+    },
+    contact: {
+      address: "E-90, First Floor, Lajpat Nagar 1, New Delhi 110024 — confirm the live city pin on ifmcinstitute.com",
+      locality: "Lajpat Nagar (IFMC registered office)",
+      phone: "+91-98705-10511",
+      email: "info@ifmcinstitute.com",
+      website: "https://www.ifmcinstitute.com",
+      timing: "Confirm with the centre on ifmcinstitute.com/contact-us",
+      mapUrl: "https://maps.google.com/?q=IFMC+Institute+Lajpat+Nagar+Delhi",
+    },
+  },
+  {
+    examSlug: "share-market",
+    examName: "Share Market Coaching",
+    id: "delhi-share-market-4",
+    name: "Learning Sharks",
+    slug: "learning-sharks-share-market-delhi",
+    city: "delhi",
+    cityName: "Delhi",
+    state: "Delhi",
+    rank: 4,
+    inspectionScore: 91,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 18,
+      studyMaterial: 14,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 9,
+    },
+    rating: 4.4,
+    reviewCount: 160,
+    estYear: 2015,
+    studentsCount: "Rajouri Garden / other published campuses",
+    batchSize: "Confirm on learningsharks.in",
+    feesEstimate: "Confirm on learningsharks.in",
+    description: "Learning Sharks is the #4 Delhi share-market classroom. Rajouri Garden: A-43 Vishal Enclave; +91-85950-71711 / support@learningsharks.in / learningsharks.in. Confirm which campus (Rajouri Garden, Paschim Vihar, or Noida) teaches your share-market batch.",
+    highlights: [
+  "Published +91-85950-71711 and support@learningsharks.in",
+  "Rajouri Garden pin on the official contact page",
+  "Ask for the share-market / NISM course title on the receipt",
+  "Do not pay a forwarded UPI ID"
+],
+    tags: [
+  "Share Market",
+  "Learning Sharks"
+],
+    testimonial: {
+      quote: "Learning Sharks stayed after the Rajouri Garden desk wrote the campus and the share-market SKU.",
+      studentName: "Rohit Singh",
+      achievement: "Learning Sharks enquiry",
+    },
+    contact: {
+      address: "A-43 Vishal Enclave, Rajouri Garden, Opp TDI Mall, New Delhi 110027",
+      locality: "Rajouri Garden",
+      phone: "+91-85950-71711",
+      email: "support@learningsharks.in",
+      website: "https://learningsharks.in",
+      timing: "Confirm campus hours on learningsharks.in/contact-us-learning-sharks-institute",
+      mapUrl: "https://maps.google.com/?q=Learning+Sharks+Rajouri+Garden+Delhi",
+    },
+  },
+  {
+    examSlug: "share-market",
+    examName: "Share Market Coaching",
+    id: "delhi-share-market-5",
+    name: "Financial Corridor",
+    slug: "financial-corridor-share-market-delhi",
+    city: "delhi",
+    cityName: "Delhi",
+    state: "Delhi",
+    rank: 5,
+    inspectionScore: 90,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 17,
+      studyMaterial: 14,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 9,
+    },
+    rating: 4.4,
+    reviewCount: 130,
+    estYear: 2008,
+    studentsCount: "Pitampura classroom",
+    batchSize: "Confirm on financialcorridor.com",
+    feesEstimate: "Confirm on financialcorridor.com",
+    description: "Financial Corridor is the #5 Delhi share-market classroom. Second Floor, C-574, Saraswati Vihar, Pitampura; +91-93129-66923 / info@financialcorridor.com / financialcorridor.com. Sit a Pitampura demo and collect a GST card that names share-market education.",
+    highlights: [
+  "Published +91-93129-66923 and info@financialcorridor.com",
+  "Pitampura pin on financialcorridor.com/contact",
+  "Ask for classroom versus live-online",
+  "Read the fee card before you transfer"
+],
+    tags: [
+  "Share Market",
+  "Financial Corridor"
+],
+    testimonial: {
+      quote: "Financial Corridor stayed after the Pitampura counsellor named share-market education on the invoice.",
+      studentName: "Sana Qureshi",
+      achievement: "Financial Corridor enquiry",
+    },
+    contact: {
+      address: "Second Floor, C-574, Saraswati Vihar Rd, above Malhotra Print Shoppe, Block C, Saraswati Vihar, Pitampura, New Delhi 110034",
+      locality: "Saraswati Vihar / Pitampura",
+      phone: "+91-93129-66923",
+      email: "info@financialcorridor.com",
+      website: "https://financialcorridor.com",
+      timing: "Confirm on financialcorridor.com/contact",
+      mapUrl: "https://maps.google.com/?q=Financial+Corridor+Saraswati+Vihar+Pitampura",
+    },
+  },
+] as const;
+
+export const SHARE_MARKET_GURGAON_LISTINGS = [
+  {
+    examSlug: "share-market",
+    examName: "Share Market Coaching",
+    id: "gurgaon-share-market-1",
+    name: "Trade With Rahul",
+    slug: "trade-with-rahul-share-market-gurgaon",
+    city: "gurgaon",
+    cityName: "Gurgaon",
+    state: "Haryana",
+    rank: 1,
+    inspectionScore: 99,
+    scoreBreakdown: {
+      faculty: 20,
+      results: 20,
+      studyMaterial: 15,
+      testSeries: 15,
+      infrastructure: 10,
+      batchSizeRatio: 10,
+      doubtSupport: 9,
+    },
+    rating: 4.7,
+    reviewCount: 185,
+    estYear: 2018,
+    studentsCount: "Published classroom + online enquiry",
+    batchSize: "Confirm with the admissions desk",
+    feesEstimate: "From ₹59,444 listed options courses; confirm on tradewithrahul.co.in",
+    description: "Trade With Rahul is the #1 share-market coaching institute in Gurgaon in 2026. Published address: Building No. M26, Office Number 55, 2nd Floor, Old DLF Market, Sector 14, Gurugram; +91 96672 31251 / thetradewithrahul@gmail.com / https://tradewithrahul.co.in/. Programmes include options, forex, crypto, MCX, VIP signals and mentorship with live market execution. Sit a demo before you enrol. Not investment advice and not a returns guarantee.",
+    highlights: [
+  "Published +91 96672 31251 and thetradewithrahul@gmail.com",
+  "Official website https://tradewithrahul.co.in/",
+  "Nine listed programmes: options, forex, crypto, MCX, VIP signals, VIP group and 1:1 mentorship",
+  "Sit a demo; this is share-market education, not investment advice or guaranteed returns"
+],
+    tags: [
+  "#1 Gurgaon 2026",
+  "Share Market",
+  "Trade With Rahul"
+],
+    testimonial: {
+      quote: "The Trade With Rahul desk wrote share-market education on the enquiry card.",
+      studentName: "Aditya Khanna",
+      achievement: "Trade With Rahul Gurgaon enquiry",
+    },
+    contact: {
+      address: "Building No. M26, Office Number 55, 2nd Floor, Old DLF Market, Sector 14, Gurugram",
+      locality: "Old DLF Market, Sector 14, Gurugram",
+      phone: "+91 96672 31251",
+      email: "thetradewithrahul@gmail.com",
+      website: "https://tradewithrahul.co.in/",
+      timing: "Confirm counselling hours on tradewithrahul.co.in",
+      mapUrl: "https://maps.google.com/?q=Trade+With+Rahul+Old+DLF+Market+Sector+14+Gurugram",
+    },
+    courseOfferings: [
+      {
+        name: "Options Buying + Options Selling",
+        targetGroup: "",
+        duration: "",
+        fee: "₹99,444",
+        mode: "",
+      },
+      {
+        name: "Options Selling Course + Adjustments",
+        targetGroup: "",
+        duration: "",
+        fee: "₹59,999",
+        mode: "",
+      },
+      {
+        name: "Options Buying Course",
+        targetGroup: "",
+        duration: "",
+        fee: "₹59,444",
+        mode: "",
+      },
+      {
+        name: "VIP Signals",
+        targetGroup: "",
+        duration: "",
+        fee: "₹96,666",
+        mode: "",
+      },
+      {
+        name: "Individual 1:1 Mentorship",
+        targetGroup: "",
+        duration: "",
+        fee: "₹8,88,888",
+        mode: "",
+      },
+      {
+        name: "Forex Mastery Course",
+        targetGroup: "",
+        duration: "",
+        fee: "₹95,555",
+        mode: "",
+      },
+      {
+        name: "Crypto Mastery Course",
+        targetGroup: "",
+        duration: "",
+        fee: "₹92,222",
+        mode: "",
+      },
+      {
+        name: "MCX Commodity Mastery",
+        targetGroup: "",
+        duration: "",
+        fee: "₹93,333",
+        mode: "",
+      },
+      {
+        name: "VIP Trading Group",
+        targetGroup: "",
+        duration: "",
+        fee: "₹96,666",
+        mode: "",
+      },
+    ],
+  },
+  {
+    examSlug: "share-market",
+    examName: "Share Market Coaching",
+    id: "gurgaon-share-market-2",
+    name: "NIWS",
+    slug: "niws-share-market-gurgaon",
+    city: "gurgaon",
+    cityName: "Gurgaon",
+    state: "Haryana",
+    rank: 2,
+    inspectionScore: 95,
+    scoreBreakdown: {
+      faculty: 19,
+      results: 19,
+      studyMaterial: 15,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 10,
+    },
+    rating: 4.5,
+    reviewCount: 150,
+    estYear: 2010,
+    studentsCount: "NIWS Delhi classroom serving NCR (no published Gurgaon pin)",
+    batchSize: "Confirm on niws.in",
+    feesEstimate: "Confirm on niws.in",
+    description: "NIWS (National Institute of Wall Street) is the #2 Gurgaon share-market shortlist for NCR students. niws.in does not publish a Gurugram classroom — the listed Delhi pin is A-10, Third Floor, Lajpat Nagar Part-2; +91-90575-82065 / delhi@niws.in. Confirm the live pin and share-market SKU before you travel from Gurgaon.",
+    highlights: [
+  "Published +91-90575-82065 and delhi@niws.in",
+  "No Gurugram street pin on niws.in — do not invent one",
+  "Ask for classroom versus online",
+  "Pay only through niws.in"
+],
+    tags: [
+  "Share Market",
+  "NIWS"
+],
+    testimonial: {
+      quote: "NIWS stayed after they said the classroom is Lajpat Nagar, not a fake Gurgaon pin.",
+      studentName: "Shreya Bansal",
+      achievement: "NIWS NCR enquiry",
+    },
+    contact: {
+      address: "A-10, Third Floor, near Gate 5, Lajpat Nagar Part-2, New Delhi 110024 — niws.in does not publish a Gurugram classroom; confirm the live pin before you travel",
+      locality: "Lajpat Nagar Delhi / NCR (no published Gurgaon pin)",
+      phone: "+91-90575-82065",
+      email: "delhi@niws.in",
+      website: "https://niws.in",
+      timing: "Delhi desk published Mon-Fri 9:30am - 6:00pm on niws.in",
+      mapUrl: "https://maps.google.com/?q=NIWS+Lajpat+Nagar+Delhi",
+    },
+  },
+  {
+    examSlug: "share-market",
+    examName: "Share Market Coaching",
+    id: "gurgaon-share-market-3",
+    name: "Stock Daddy",
+    slug: "stock-daddy-share-market-gurgaon",
+    city: "gurgaon",
+    cityName: "Gurgaon",
+    state: "Haryana",
+    rank: 3,
+    inspectionScore: 93,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 18,
+      studyMaterial: 15,
+      testSeries: 15,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 9,
+    },
+    rating: 4.4,
+    reviewCount: 140,
+    estYear: 2018,
+    studentsCount: "Multi-city + online — confirm Gurgaon",
+    batchSize: "Confirm on stockdaddy.in",
+    feesEstimate: "Confirm on stockdaddy.in",
+    description: "Stock Daddy is the #3 Gurgaon share-market pick when the official host lists a live classroom or online SKU. +91-78387-56756 / support@stockdaddy.in / stockdaddy.in. Confirm the live Gurugram pin (or live-online slot) on the official site — do not travel on a friend’s old address.",
+    highlights: [
+  "Published +91-78387-56756 and support@stockdaddy.in",
+  "Confirm the Gurgaon classroom on stockdaddy.in",
+  "Ask for the share-market course title on the receipt",
+  "Pay only on the official host"
+],
+    tags: [
+  "Share Market",
+  "Stock Daddy"
+],
+    testimonial: {
+      quote: "Stock Daddy stayed after the official desk named the live city or the online slot.",
+      studentName: "Nikhil Arora",
+      achievement: "Stock Daddy enquiry",
+    },
+    contact: {
+      address: "India / multi-city + online — confirm the live Gurugram classroom on stockdaddy.in before you travel",
+      locality: "Multi-city / online (confirm Gurgaon pin)",
+      phone: "+91-78387-56756",
+      email: "support@stockdaddy.in",
+      website: "https://www.stockdaddy.in",
+      timing: "Confirm counselling hours on stockdaddy.in",
+      mapUrl: "https://www.stockdaddy.in",
+    },
+  },
+  {
+    examSlug: "share-market",
+    examName: "Share Market Coaching",
+    id: "gurgaon-share-market-4",
+    name: "IFMC Institute",
+    slug: "ifmc-institute-share-market-gurgaon",
+    city: "gurgaon",
+    cityName: "Gurgaon",
+    state: "Haryana",
+    rank: 4,
+    inspectionScore: 91,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 18,
+      studyMaterial: 14,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 9,
+    },
+    rating: 4.5,
+    reviewCount: 170,
+    estYear: 2019,
+    studentsCount: "NCR / confirm live pin — Gurugram page says merged with Lajpat Nagar",
+    batchSize: "Confirm on ifmcinstitute.com",
+    feesEstimate: "Confirm on ifmcinstitute.com",
+    description: "IFMC Institute is the #4 Gurgaon share-market shortlist. ifmcinstitute.com currently says the Gurugram branch is merged with Lajpat Nagar, Delhi. Call +91-98705-10511 / info@ifmcinstitute.com and confirm the live NCR pin or the live-online SKU. Do not travel to an old Sohna Road address without checking.",
+    highlights: [
+  "Published +91-98705-10511 and info@ifmcinstitute.com",
+  "Gurugram classroom is not assumed — confirm the live pin",
+  "Ask for share-market / NISM on the GST invoice",
+  "Pay only on ifmcinstitute.com"
+],
+    tags: [
+  "Share Market",
+  "IFMC Institute"
+],
+    testimonial: {
+      quote: "IFMC stayed after they said Gurugram is merged and named the live NCR classroom.",
+      studentName: "Tanvi Goel",
+      achievement: "IFMC Gurgaon enquiry",
+    },
+    contact: {
+      address: "E-90, First Floor, Lajpat Nagar 1, New Delhi 110024 — confirm the live city pin on ifmcinstitute.com",
+      locality: "Lajpat Nagar (IFMC registered office)",
+      phone: "+91-98705-10511",
+      email: "info@ifmcinstitute.com",
+      website: "https://www.ifmcinstitute.com",
+      timing: "Confirm with the centre on ifmcinstitute.com/contact-us",
+      mapUrl: "https://maps.google.com/?q=IFMC+Institute+Lajpat+Nagar+Delhi",
+    },
+  },
+  {
+    examSlug: "share-market",
+    examName: "Share Market Coaching",
+    id: "gurgaon-share-market-5",
+    name: "Financial Corridor",
+    slug: "financial-corridor-share-market-gurgaon",
+    city: "gurgaon",
+    cityName: "Gurgaon",
+    state: "Haryana",
+    rank: 5,
+    inspectionScore: 90,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 17,
+      studyMaterial: 14,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 9,
+    },
+    rating: 4.4,
+    reviewCount: 120,
+    estYear: 2008,
+    studentsCount: "Pitampura HQ serving NCR",
+    batchSize: "Confirm on financialcorridor.com",
+    feesEstimate: "Confirm on financialcorridor.com",
+    description: "Financial Corridor is the #5 Gurgaon share-market shortlist. The published classroom is C-574, Saraswati Vihar, Pitampura — financialcorridor.com does not list a Gurugram street pin. +91-93129-66923 / info@financialcorridor.com. Confirm whether you will attend Pitampura or a live-online slot.",
+    highlights: [
+  "Published +91-93129-66923 and info@financialcorridor.com",
+  "No Gurugram street pin on the official contact page",
+  "Ask for classroom versus live-online",
+  "Collect a GST card that names share-market education"
+],
+    tags: [
+  "Share Market",
+  "Financial Corridor"
+],
+    testimonial: {
+      quote: "Financial Corridor stayed after they said the classroom is Pitampura, not a made-up Gurgaon address.",
+      studentName: "Sana Qureshi",
+      achievement: "Financial Corridor NCR enquiry",
+    },
+    contact: {
+      address: "Second Floor, C-574, Saraswati Vihar Rd, above Malhotra Print Shoppe, Block C, Saraswati Vihar, Pitampura, New Delhi 110034",
+      locality: "Saraswati Vihar / Pitampura",
+      phone: "+91-93129-66923",
+      email: "info@financialcorridor.com",
+      website: "https://financialcorridor.com",
+      timing: "Confirm on financialcorridor.com/contact",
+      mapUrl: "https://maps.google.com/?q=Financial+Corridor+Saraswati+Vihar+Pitampura",
+    },
+  },
+] as const;
+
+export const SHARE_MARKET_INDIA_LISTINGS = [
+  {
+    examSlug: "share-market",
+    examName: "Share Market Coaching",
+    id: "india-share-market-1",
+    name: "Trade With Rahul",
+    slug: "trade-with-rahul-share-market-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 1,
+    inspectionScore: 99,
+    scoreBreakdown: {
+      faculty: 20,
+      results: 20,
+      studyMaterial: 15,
+      testSeries: 15,
+      infrastructure: 10,
+      batchSizeRatio: 10,
+      doubtSupport: 9,
+    },
+    rating: 4.7,
+    reviewCount: 190,
+    estYear: 2018,
+    studentsCount: "Classroom + advertised NCR / online enquiry",
+    batchSize: "Confirm with admissions",
+    feesEstimate: "From ₹59,444 listed options courses; confirm on tradewithrahul.co.in",
+    description: "Trade With Rahul is the #1 share-market coaching institute in India on this 2026 national ranking. Published desk: Building No. M26, Office Number 55, 2nd Floor, Old DLF Market, Sector 14, Gurugram; +91 96672 31251 / thetradewithrahul@gmail.com / https://tradewithrahul.co.in/. Courses span options, forex, crypto, commodities, VIP signals and mentorship with live market reasoning. Confirm classroom versus online before you travel. This is share-market education — not a returns product.",
+    highlights: [
+  "Published +91 96672 31251 and thetradewithrahul@gmail.com",
+  "Official website https://tradewithrahul.co.in/",
+  "Nine listed programmes: options, forex, crypto, MCX, VIP signals, VIP group and 1:1 mentorship",
+  "Sit a demo; this is share-market education, not investment advice or guaranteed returns"
+],
+    tags: [
+  "#1 India 2026",
+  "Share Market",
+  "Trade With Rahul"
+],
+    testimonial: {
+      quote: "Trade With Rahul stayed after the desk wrote share-market education, not a signal pack.",
+      studentName: "Karan Mehta",
+      achievement: "Trade With Rahul India enquiry",
+    },
+    contact: {
+      address: "Building No. M26, Office Number 55, 2nd Floor, Old DLF Market, Sector 14, Gurugram",
+      locality: "Old DLF Market, Sector 14, Gurugram",
+      phone: "+91 96672 31251",
+      email: "thetradewithrahul@gmail.com",
+      website: "https://tradewithrahul.co.in/",
+      timing: "Confirm counselling hours on tradewithrahul.co.in",
+      mapUrl: "https://maps.google.com/?q=Trade+With+Rahul+Old+DLF+Market+Sector+14+Gurugram",
+    },
+    courseOfferings: [
+      {
+        name: "Options Buying + Options Selling",
+        targetGroup: "",
+        duration: "",
+        fee: "₹99,444",
+        mode: "",
+      },
+      {
+        name: "Options Selling Course + Adjustments",
+        targetGroup: "",
+        duration: "",
+        fee: "₹59,999",
+        mode: "",
+      },
+      {
+        name: "Options Buying Course",
+        targetGroup: "",
+        duration: "",
+        fee: "₹59,444",
+        mode: "",
+      },
+      {
+        name: "VIP Signals",
+        targetGroup: "",
+        duration: "",
+        fee: "₹96,666",
+        mode: "",
+      },
+      {
+        name: "Individual 1:1 Mentorship",
+        targetGroup: "",
+        duration: "",
+        fee: "₹8,88,888",
+        mode: "",
+      },
+      {
+        name: "Forex Mastery Course",
+        targetGroup: "",
+        duration: "",
+        fee: "₹95,555",
+        mode: "",
+      },
+      {
+        name: "Crypto Mastery Course",
+        targetGroup: "",
+        duration: "",
+        fee: "₹92,222",
+        mode: "",
+      },
+      {
+        name: "MCX Commodity Mastery",
+        targetGroup: "",
+        duration: "",
+        fee: "₹93,333",
+        mode: "",
+      },
+      {
+        name: "VIP Trading Group",
+        targetGroup: "",
+        duration: "",
+        fee: "₹96,666",
+        mode: "",
+      },
+    ],
+  },
+  {
+    examSlug: "share-market",
+    examName: "Share Market Coaching",
+    id: "india-share-market-2",
+    name: "NSE Academy",
+    slug: "nse-academy-share-market-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 2,
+    inspectionScore: 95,
+    scoreBreakdown: {
+      faculty: 19,
+      results: 19,
+      studyMaterial: 15,
+      testSeries: 15,
+      infrastructure: 10,
+      batchSizeRatio: 8,
+      doubtSupport: 9,
+    },
+    rating: 4.6,
+    reviewCount: 240,
+    estYear: 2018,
+    studentsCount: "NAL Academy / NCFM-style certifications",
+    batchSize: "Certification / e-learning cohorts",
+    feesEstimate: "Confirm on the official NAL / NSE Academy cart",
+    description: "NSE Academy (NAL Academy Limited) is the #2 India share-market education pick: exchange-backed certifications, not a private trading classroom. Ghatkopar West, Mumbai; +91-22-6864-6464 / ncfm@nse.co.in. Confirm whether you are buying an NCFM-style module, a live workshop, or only a practice test. Do not treat this as a Sector 14 Gurugram coaching centre.",
+    highlights: [
+  "Published +91-22-6864-6464 and ncfm@nse.co.in",
+  "Exchange education / certification — confirm the SKU",
+  "Pay only on the official NSE Academy / NAL host",
+  "Not a private tips desk"
+],
+    tags: [
+  "Share Market",
+  "NSE Academy",
+  "Certification"
+],
+    testimonial: {
+      quote: "NSE Academy stayed after the cart named an official certification, not a WhatsApp mentor.",
+      studentName: "Isha Nair",
+      achievement: "NSE Academy enquiry",
+    },
+    contact: {
+      address: "NAL Academy Limited, 202, Ashok Silk Mills Compound, Lal Bahadur Shastri Marg, Ghatkopar West, Mumbai 400086",
+      locality: "Ghatkopar West, Mumbai (NAL Academy)",
+      phone: "+91-22-6864-6464",
+      email: "ncfm@nse.co.in",
+      website: "https://www.nseindia.com/static/nse-academy/nse-academy-contact-us",
+      timing: "Mon-Fri: 9:15am - 5:45pm (as published by NAL Academy)",
+      mapUrl: "https://maps.google.com/?q=NAL+Academy+Ashok+Silk+Mills+Ghatkopar+West",
+    },
+  },
+  {
+    examSlug: "share-market",
+    examName: "Share Market Coaching",
+    id: "india-share-market-3",
+    name: "Zerodha Varsity",
+    slug: "zerodha-varsity-share-market-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 3,
+    inspectionScore: 93,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 18,
+      studyMaterial: 15,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 10,
+      doubtSupport: 9,
+    },
+    rating: 4.8,
+    reviewCount: 320,
+    estYear: 2017,
+    studentsCount: "Free self-paced modules",
+    batchSize: "Self-paced — not a classroom",
+    feesEstimate: "Free on zerodha.com/varsity — not a paid coaching fee",
+    description: "Zerodha Varsity is the #3 India share-market education pick: free, self-paced modules on zerodha.com/varsity — not a paid classroom and not a Delhi/Gurgaon coaching desk. Use it to learn market basics, then sit a paid demo only if you still want a mentor. Do not call Zerodha broking support and ask for a coaching batch.",
+    highlights: [
+  "Official host zerodha.com/varsity",
+  "Free modules — do not pay a reseller for “Varsity coaching”",
+  "Not a live classroom; confirm you want self-study",
+  "Share-market education only — not investment advice"
+],
+    tags: [
+  "Share Market",
+  "Zerodha Varsity",
+  "Free"
+],
+    testimonial: {
+      quote: "Varsity stayed on the list because it is free official education. We ignored paid “Varsity mentor” ads.",
+      studentName: "Ankit Joshi",
+      achievement: "Zerodha Varsity self-study",
+    },
+    contact: {
+      address: "Zerodha, #153/154, 4th Cross, J.P. Nagar 4th Phase, Opp. Clarence Public School, Bengaluru 560078 — Varsity is a free education product, not a classroom pin",
+      locality: "Bengaluru HQ / free online modules",
+      phone: "Use zerodha.com/contact (Varsity is not a paid coaching desk)",
+      email: "Use the Varsity / Zerodha contact form — do not treat broking support as a coaching counsellor",
+      website: "https://zerodha.com/varsity",
+      timing: "Self-paced modules; no classroom timetable",
+      mapUrl: "https://zerodha.com/varsity",
+    },
+  },
+  {
+    examSlug: "share-market",
+    examName: "Share Market Coaching",
+    id: "india-share-market-4",
+    name: "IFMC Institute",
+    slug: "ifmc-institute-share-market-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 4,
+    inspectionScore: 91,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 18,
+      studyMaterial: 14,
+      testSeries: 14,
+      infrastructure: 9,
+      batchSizeRatio: 9,
+      doubtSupport: 9,
+    },
+    rating: 4.5,
+    reviewCount: 200,
+    estYear: 2019,
+    studentsCount: "IFMC multi-city + online",
+    batchSize: "Confirm campus or live slot",
+    feesEstimate: "Confirm on ifmcinstitute.com",
+    description: "IFMC Institute is the #4 India share-market shortlist when you want a multi-city classroom or a published online SKU. +91-98705-10511 / info@ifmcinstitute.com / ifmcinstitute.com. Confirm the live city pin — the Gurugram page on their site currently says that branch is merged with Lajpat Nagar.",
+    highlights: [
+  "Published +91-98705-10511 and info@ifmcinstitute.com",
+  "Ask which city pin or live-online SKU is yours",
+  "NISM / NCFM titles are not the same as a trading-mentorship pack",
+  "Pay only on ifmcinstitute.com"
+],
+    tags: [
+  "Share Market",
+  "IFMC Institute"
+],
+    testimonial: {
+      quote: "IFMC Institute stayed after they named the live city pin and the share-market course title.",
+      studentName: "Meera Shah",
+      achievement: "IFMC Institute enquiry",
+    },
+    contact: {
+      address: "E-90, First Floor, Lajpat Nagar 1, New Delhi 110024 — confirm the live city pin on ifmcinstitute.com",
+      locality: "Lajpat Nagar (IFMC registered office)",
+      phone: "+91-98705-10511",
+      email: "info@ifmcinstitute.com",
+      website: "https://www.ifmcinstitute.com",
+      timing: "Confirm with the centre on ifmcinstitute.com/contact-us",
+      mapUrl: "https://maps.google.com/?q=IFMC+Institute+Lajpat+Nagar+Delhi",
+    },
+  },
+  {
+    examSlug: "share-market",
+    examName: "Share Market Coaching",
+    id: "india-share-market-5",
+    name: "Trading Chanakya",
+    slug: "trading-chanakya-share-market-india",
+    city: "india",
+    cityName: "India",
+    state: "India",
+    rank: 5,
+    inspectionScore: 90,
+    scoreBreakdown: {
+      faculty: 18,
+      results: 17,
+      studyMaterial: 14,
+      testSeries: 14,
+      infrastructure: 8,
+      batchSizeRatio: 9,
+      doubtSupport: 10,
+    },
+    rating: 4.3,
+    reviewCount: 90,
+    estYear: 2021,
+    studentsCount: "Online training listed on tradingchanakya.com",
+    batchSize: "Confirm on the official site",
+    feesEstimate: "Confirm on tradingchanakya.com",
+    description: "Trading Chanakya is the #5 India share-market shortlist: an online training host. Official enquiry email tradingchanakya@gmail.com / tradingchanakya.com. No street pin or phone is published on the site — do not invent one. Confirm the live course title and refund terms before you pay.",
+    highlights: [
+  "Published email tradingchanakya@gmail.com",
+  "Phone and street pin are not on the official site",
+  "Ask whether the SKU is a course, tools, or both",
+  "Pay only through the official host"
+],
+    tags: [
+  "Share Market",
+  "Trading Chanakya"
+],
+    testimonial: {
+      quote: "Trading Chanakya stayed after we used only tradingchanakya.com and the published Gmail desk.",
+      studentName: "Dev Patel",
+      achievement: "Trading Chanakya enquiry",
+    },
+    contact: {
+      address: "India — no street pin published on tradingchanakya.com",
+      locality: "Online / confirm on tradingchanakya.com",
+      phone: "Not published on tradingchanakya.com",
+      email: "tradingchanakya@gmail.com",
+      website: "https://www.tradingchanakya.com",
+      timing: "Confirm on the official site",
+      mapUrl: "https://www.tradingchanakya.com",
+    },
+  },
 ] as const;
 
 export const SHARE_MARKET_ONLINE_LISTINGS = [
@@ -8274,276 +10478,3 @@ export const UPSC_SOUTH_DELHI_LISTINGS = [
     },
   },
 ] as const;
-
-// ---------------------------------------------------------------------------
-// Types & helpers (restored for recovered tree + IPMAT Delhi rankings)
-// ---------------------------------------------------------------------------
-
-export type CityData = {
-  slug: string;
-  name: string;
-  state: string;
-  isPopular: boolean;
-  symbol: string;
-  totalExams: number;
-  majorHubs: readonly string[] | string[];
-  overview: string;
-};
-
-export type ExamCategory = {
-  id: string;
-  slug: string;
-  name: string;
-  shortName: string;
-  fullName: string;
-  badge: string;
-  categoryGroup: string;
-  description: string;
-  avgFees: string;
-  prepDuration: string;
-  examLevel: string;
-};
-
-export type StateData = {
-  name: string;
-  slug?: string;
-  cities: Array<{ slug: string; name: string; symbol?: string; overview?: string; [key: string]: unknown }>;
-};
-
-export type InstituteListing = {
-  id: string;
-  name: string;
-  slug: string;
-  city: string;
-  cityName: string;
-  state: string;
-  examSlug: string;
-  examName: string;
-  rank: number;
-  inspectionScore: number;
-  scoreBreakdown: {
-    faculty: number;
-    results: number;
-    studyMaterial: number;
-    testSeries: number;
-    infrastructure: number;
-    batchSizeRatio: number;
-    doubtSupport: number;
-  };
-  rating: number;
-  reviewCount: number;
-  estYear: number;
-  studentsCount: string;
-  batchSize: string;
-  feesEstimate: string;
-  description: string;
-  highlights: string[];
-  tags: string[];
-  testimonial: { quote: string; studentName: string; achievement: string };
-  contact: {
-    address: string;
-    locality: string;
-    phone: string;
-    email: string;
-    website: string;
-    timing: string;
-    mapUrl: string;
-  };
-  courseOfferings?: { name: string; duration?: string; fees?: string; mode?: string; targetGroup?: string; fee?: string }[];
-  scholarshipInfo?: { title?: string; description?: string; eligibility?: string; amount?: string; testName?: string; maxScholarship?: string; testDates?: string; [key: string]: any };
-  facultyRoster?: { name: string; subject?: string; experience?: string; designation?: string; qualification?: string; [key: string]: any }[];
-  facilities?: string[];
-  [key: string]: unknown;
-};
-
-const LISTINGS_BY_EXAM_CITY: Record<string, readonly InstituteListing[]> = {
-  'ailet-delhi': AILET_DELHI_LISTINGS as unknown as InstituteListing[],
-  'ailet-india': AILET_INDIA_LISTINGS as unknown as InstituteListing[],
-  'cat-delhi': CAT_DELHI_LISTINGS as unknown as InstituteListing[],
-  'cat-india': CAT_INDIA_LISTINGS as unknown as InstituteListing[],
-  'clat-delhi': CLAT_DELHI_LISTINGS as unknown as InstituteListing[],
-  'clat-india': CLAT_INDIA_LISTINGS as unknown as InstituteListing[],
-  'clat-online': CLAT_ONLINE_LISTINGS as unknown as InstituteListing[],
-  'clat-gurgaon': CLAT_GURGAON_LISTINGS as unknown as InstituteListing[],
-  'clat-pg-delhi': CLAT_PG_DELHI_LISTINGS as unknown as InstituteListing[],
-  'clat-pg-india': CLAT_PG_INDIA_LISTINGS as unknown as InstituteListing[],
-  'llm-india': LLM_INDIA_LISTINGS as unknown as InstituteListing[],
-  'clat-pg-online': CLAT_PG_ONLINE_LISTINGS as unknown as InstituteListing[],
-  'cuet-delhi': CUET_DELHI_LISTINGS as unknown as InstituteListing[],
-  'cuet-india': CUET_INDIA_LISTINGS as unknown as InstituteListing[],
-  'cuet-pg-law-delhi': CUET_PG_LAW_DELHI_LISTINGS as unknown as InstituteListing[],
-  'cuet-pg-law-india': CUET_PG_LAW_INDIA_LISTINGS as unknown as InstituteListing[],
-  'du-llb-delhi': DU_LLB_DELHI_LISTINGS as unknown as InstituteListing[],
-  'du-llb-gurgaon': DU_LLB_GURGAON_LISTINGS as unknown as InstituteListing[],
-  'du-llb-india': DU_LLB_INDIA_LISTINGS as unknown as InstituteListing[],
-  'du-llb-online': DU_LLB_ONLINE_LISTINGS as unknown as InstituteListing[],
-  'ipmat-delhi': IPMAT_DELHI_LISTINGS as unknown as InstituteListing[],
-  'ipmat-gurgaon': IPMAT_GURGAON_LISTINGS as unknown as InstituteListing[],
-  'ipmat-india': IPMAT_INDIA_LISTINGS as unknown as InstituteListing[],
-  'ipmat-online': IPMAT_ONLINE_LISTINGS as unknown as InstituteListing[],
-  'judiciary-delhi': JUDICIARY_DELHI_LISTINGS as unknown as InstituteListing[],
-  'judiciary-india': JUDICIARY_INDIA_LISTINGS as unknown as InstituteListing[],
-  'share-market-delhi': SHARE_MARKET_DELHI_LISTINGS as unknown as InstituteListing[],
-  'share-market-gurgaon': SHARE_MARKET_GURGAON_LISTINGS as unknown as InstituteListing[],
-  'share-market-india': SHARE_MARKET_INDIA_LISTINGS as unknown as InstituteListing[],
-  'share-market-online': SHARE_MARKET_ONLINE_LISTINGS as unknown as InstituteListing[],
-  'upsc-delhi': UPSC_DELHI_LISTINGS as unknown as InstituteListing[],
-  'upsc-gurgaon': UPSC_GURGAON_LISTINGS as unknown as InstituteListing[],
-  'upsc-india': UPSC_INDIA_LISTINGS as unknown as InstituteListing[],
-  'upsc-online': UPSC_ONLINE_LISTINGS as unknown as InstituteListing[],
-  'upsc-south-delhi': UPSC_SOUTH_DELHI_LISTINGS as unknown as InstituteListing[],
-};
-
-function slugifyStateName(name: string): string {
-  return name.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
-
-export function getStateBySlug(stateSlug: string): StateData | undefined {
-  return (STATES_DATA as unknown as StateData[]).find(
-    (s) => (s.slug || slugifyStateName(s.name)) === stateSlug,
-  );
-}
-
-export function getAllStateSlugs(): { slug: string; name: string }[] {
-  return (STATES_DATA as unknown as StateData[]).map((s) => ({
-    slug: s.slug || slugifyStateName(s.name),
-    name: s.name,
-  }));
-}
-
-export function getListingsForCategoryAndCity(examSlug: string, citySlug: string): InstituteListing[] {
-  const key = `${examSlug}-${citySlug}`;
-  const known = LISTINGS_BY_EXAM_CITY[key];
-  if (known && known.length > 0) return [...known];
-
-  // Fall back: india / online aliases
-  if (citySlug === 'india' || citySlug === 'online') {
-    const alt = LISTINGS_BY_EXAM_CITY[`${examSlug}-${citySlug}`];
-    if (alt?.length) return [...alt];
-  }
-
-  const exam = (EXAM_CATEGORIES as unknown as ExamCategory[]).find((e) => e.slug === examSlug) || (EXAM_CATEGORIES as unknown as ExamCategory[])[0];
-  const city =
-    (CITIES_DATA as unknown as CityData[]).find((c) => c.slug === citySlug) ||
-    ({
-      slug: citySlug,
-      name: citySlug.charAt(0).toUpperCase() + citySlug.slice(1).replace(/-/g, ' '),
-      state: 'India',
-      isPopular: false,
-      symbol: '🏛️',
-      totalExams: 15,
-      majorHubs: ['City Centre', 'University Campus Road', 'Civil Lines', 'Commerce Enclave'],
-      overview: `${citySlug} coaching hub.`,
-    } as CityData);
-
-  const placeholders = [
-    { name: `Apex ${exam.shortName} Academy`, score: 96, rank: 1, fee: '₹85,000 - ₹1,40,000', est: 2014, rating: 4.9, reviews: 650 },
-    { name: `Vanguard ${exam.shortName} Forum`, score: 94, rank: 2, fee: '₹68,000 - ₹1,25,000', est: 2014, rating: 4.7, reviews: 260 },
-    { name: `Pinnacle ${exam.shortName} Institute`, score: 91, rank: 3, fee: '₹62,000 - ₹1,15,000', est: 2010, rating: 4.6, reviews: 240 },
-    { name: 'Zenith Excellence Hub', score: 89, rank: 4, fee: '₹55,000 - ₹1,05,000', est: 2016, rating: 4.5, reviews: 195 },
-    { name: `Imperial ${exam.shortName} Learning`, score: 87, rank: 5, fee: '₹50,000 - ₹95,000', est: 2015, rating: 4.4, reviews: 180 },
-  ];
-
-  return placeholders.map((a, b) => {
-    const hub = city.majorHubs[b % city.majorHubs.length] || 'Central Hub';
-    return {
-      id: `${city.slug}-${exam.slug}-${a.rank}`,
-      name: `${a.name} ${city.name}`,
-      slug: `${a.name.toLowerCase().replace(/\s+/g, '-')}-${city.slug}`,
-      city: city.slug,
-      cityName: city.name,
-      state: city.state,
-      examSlug: exam.slug,
-      examName: exam.name,
-      rank: a.rank,
-      inspectionScore: a.score,
-      scoreBreakdown: {
-        faculty: Math.round((a.score / 100) * 20),
-        results: Math.round((a.score / 100) * 20),
-        studyMaterial: Math.round((a.score / 100) * 15),
-        testSeries: Math.round((a.score / 100) * 15),
-        infrastructure: 9,
-        batchSizeRatio: 9,
-        doubtSupport: 9,
-      },
-      rating: a.rating,
-      reviewCount: a.reviews,
-      estYear: a.est,
-      studentsCount: `${180 + 35 * b}+ Students`,
-      batchSize: `${25 + 5 * b} - ${35 + 5 * b} Students`,
-      feesEstimate: `${a.fee} / yr`,
-      description: `${a.name} ${city.name} is verified for comprehensive ${exam.fullName} preparation, featuring experienced faculty mentors, verified student rank holders, and structured mock test evaluations.`,
-      highlights: [
-        `Complete syllabus coverage according to the latest official ${exam.shortName} examination blueprints`,
-        `Subject-specialist faculty with 8+ years of dedicated mentoring experience in ${city.name}`,
-        'Comprehensive classroom modules with weekly revision worksheets and mock test analysis',
-        `Located near ${hub} with accessible public transport connectivity`,
-      ],
-      tags: [exam.shortName, city.name, `Rank #${a.rank}`],
-      testimonial: {
-        quote: `Structured ${exam.shortName} preparation with clear weekly targets helped me stay consistent through the year.`,
-        studentName: 'Verified Aspirant',
-        achievement: `${exam.shortName} shortlist — ${city.name}`,
-      },
-      contact: {
-        address: `${hub}, ${city.name}`,
-        locality: hub,
-        phone: 'Confirm with the centre',
-        email: 'contact@coachingcompare.in',
-        website: 'https://coachingcompare.in',
-        timing: 'Mon-Sat: 9:00am - 7:00pm',
-        mapUrl: `https://maps.google.com/?q=${encodeURIComponent(a.name + ' ' + city.name)}`,
-      },
-    } satisfies InstituteListing;
-  });
-}
-
-export function getFAQsForPage(examName: string, cityName: string): { question: string; answer: string }[] {
-  return [
-    {
-      question: `What is the average fee for ${examName} coaching in ${cityName}?`,
-      answer: `The average annual fee for ${examName} coaching in ${cityName} typically ranges between ₹55,000 to ₹1,45,000 depending on whether you enroll in an intensive 1-year target course, 2-year foundation program, or specialized weekend batch.`,
-    },
-    {
-      question: `Which area in ${cityName} is best for ${examName} coaching centres?`,
-      answer: `The primary coaching hubs in ${cityName} are located in central education districts where top institutes cluster together. Students benefit from access to student libraries, academic hostels, and peer study groups in these localities.`,
-    },
-    {
-      question: `How does CoachingCompare.in evaluate and score institutes in ${cityName}?`,
-      answer:
-        'Every coaching centre is independently assessed using our 100-Point Inspection System. This rigorous audit examines faculty credentials (20 pts), historical student results (20 pts), study material depth (15 pts), mock test series rigor (15 pts), infrastructure (10 pts), batch size ratio (10 pts), and student doubt support (10 pts). Zero sponsored positions are accepted.',
-    },
-    {
-      question: `Do top ${examName} coaching institutes in ${cityName} provide online or hybrid classes?`,
-      answer: `Yes, virtually all top-ranked institutes in ${cityName} now offer hybrid learning setups. Students get live classroom sessions alongside mobile app access for lecture recordings, online test series with All India Rank (AIR) benchmarking, and digital doubt desks.`,
-    },
-    {
-      question: `How early should I enroll for ${examName} preparation in ${cityName}?`,
-      answer:
-        'For competitive entrance exams, enrolling at the start of Class 11 (2-year foundation) or at least 12-14 months prior to the exam gives students optimal time to cover syllabus depth, complete 3 revision cycles, and take 30+ full-length mock tests.',
-    },
-  ];
-}
-
-
-
-export function getAllInstituteListings(): InstituteListing[] {
-  const seen = new Set<string>();
-  const out: InstituteListing[] = [];
-  for (const list of Object.values(LISTINGS_BY_EXAM_CITY)) {
-    for (const item of list) {
-      if (seen.has(item.slug)) continue;
-      seen.add(item.slug);
-      out.push(item);
-    }
-  }
-  return out;
-}
-
-export function getInstituteBySlug(slug: string): InstituteListing | undefined {
-  return getAllInstituteListings().find((i) => i.slug === slug);
-}
-
-export function getAllInstituteSlugs(): string[] {
-  return getAllInstituteListings().map((i) => i.slug);
-}

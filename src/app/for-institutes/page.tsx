@@ -4,9 +4,12 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { EXAM_CATEGORIES, CITIES_DATA } from '@/data/coachingData';
 import { Icons } from '@/components/Icons';
+import { submitInquiry } from '@/lib/submitInquiry';
 
 export default function ForInstitutesPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [instituteName, setInstituteName] = useState('');
   const [contactPerson, setContactPerson] = useState('');
   const [designation, setDesignation] = useState('Center Director');
@@ -18,9 +21,28 @@ export default function ForInstitutesPage() {
   const [estYear, setEstYear] = useState('2015');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError('');
+    setLoading(true);
+
+    const res = await submitInquiry({
+      formType: 'institute_audit_request',
+      name: contactPerson,
+      phone,
+      email,
+      instituteName,
+      city,
+      exam: primaryExam,
+      message: `[${designation}] Est: ${estYear}, Web: ${website}. Notes: ${message}`,
+    });
+
+    setLoading(false);
+    if (res.ok) {
+      setSubmitted(true);
+    } else {
+      setError(res.error || 'Failed to submit institute profile. Please try again.');
+    }
   };
 
   return (
@@ -305,12 +327,19 @@ export default function ForInstitutesPage() {
                     />
                   </div>
 
+                  {error && (
+                    <p style={{ color: '#dc2626', fontSize: '13px', margin: '8px 0', background: '#fee2e2', padding: '8px 12px', borderRadius: '6px' }}>
+                      {error}
+                    </p>
+                  )}
+
                   <button
                     type="submit"
+                    disabled={loading}
                     className="btn btn-primary"
                     style={{ justifyContent: 'center', padding: '14px', fontSize: '15.5px' }}
                   >
-                    Submit Institute for 100-Point Audit →
+                    {loading ? 'Submitting Institute Details...' : 'Submit Institute for 100-Point Audit →'}
                   </button>
                 </div>
               </form>

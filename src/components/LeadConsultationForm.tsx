@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { EXAM_CATEGORIES, CITIES_DATA } from '@/data/coachingData';
+import { submitInquiry } from '@/lib/submitInquiry';
 import { Icons } from './Icons';
 
 interface LeadConsultationFormProps {
@@ -12,6 +13,8 @@ interface LeadConsultationFormProps {
 
 export default function LeadConsultationForm({ examName = '', cityName = '', instituteName }: LeadConsultationFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -19,9 +22,29 @@ export default function LeadConsultationForm({ examName = '', cityName = '', ins
     city: cityName,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError('');
+    setLoading(true);
+
+    const res = await submitInquiry({
+      formType: 'consultation_lead',
+      name: formData.name,
+      phone: formData.phone,
+      exam: formData.exam,
+      city: formData.city,
+      instituteName,
+      message: instituteName
+        ? `Callback requested regarding ${instituteName}`
+        : `Personalized batch & living advisory callback request for ${formData.exam || 'exam'} in ${formData.city || 'city'}`,
+    });
+
+    setLoading(false);
+    if (res.ok) {
+      setSubmitted(true);
+    } else {
+      setError(res.error || 'Submission failed. Please try again.');
+    }
   };
 
   if (submitted) {
@@ -155,12 +178,19 @@ export default function LeadConsultationForm({ examName = '', cityName = '', ins
           </div>
         </div>
 
+        {error && (
+          <p style={{ color: '#dc2626', fontSize: '13px', margin: '8px 0', background: '#fee2e2', padding: '8px 12px', borderRadius: '6px' }}>
+            {error}
+          </p>
+        )}
+
         <button
           type="submit"
+          disabled={loading}
           className="btn btn-accent"
           style={{ width: '100%', marginTop: '6px', fontSize: '15px' }}
         >
-          Request Free Callback →
+          {loading ? 'Submitting Request...' : 'Request Free Callback →'}
         </button>
       </form>
     </div>

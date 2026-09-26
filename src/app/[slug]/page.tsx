@@ -842,7 +842,7 @@ function StateHubView({ state, currentSlug }: { state: StateData; currentSlug: s
                     </div>
                   </div>
                   <p style={{ fontSize: '13.5px', color: 'var(--text-body)', lineHeight: '1.5', marginBottom: '16px' }}>
-                    {city.overview.slice(0, 110)}...
+                    {(city.overview || `${city.name} coaching hub.`).slice(0, 110)}...
                   </p>
                 </div>
 
