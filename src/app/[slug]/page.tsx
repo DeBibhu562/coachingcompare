@@ -21,7 +21,8 @@ interface PageProps {
 }
 
 // Helper to parse slug patterns
-function parseSlug(slug: string) {
+function parseSlug(rawSlug: string) {
+  const slug = decodeURIComponent(rawSlug);
   // Pattern 1: coaching-centres-in-[city]
   if (slug.startsWith('coaching-centres-in-')) {
     const citySlug = slug.replace('coaching-centres-in-', '');

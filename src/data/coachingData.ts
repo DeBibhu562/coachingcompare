@@ -8399,8 +8399,9 @@ function slugifyStateName(name: string): string {
 }
 
 export function getStateBySlug(stateSlug: string): StateData | undefined {
+  const decoded = decodeURIComponent(stateSlug).toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   return (STATES_DATA as unknown as StateData[]).find(
-    (s) => (s.slug || slugifyStateName(s.name)) === stateSlug,
+    (s) => (s.slug || slugifyStateName(s.name)) === stateSlug || slugifyStateName(s.name) === decoded,
   );
 }
 
