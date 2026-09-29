@@ -977,9 +977,9 @@ function CategoryCityView({
           <div>
             {/* Page Header */}
             <header style={{ marginBottom: '28px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                <span className="badge badge-gold">Top 5 Picks</span>
-                <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>Updated 2026-05</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px', flexWrap: 'wrap' }}>
+                <span className="badge badge-gold">Top 5 · {city.name} Classroom</span>
+                <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>Updated 2026-09</span>
               </div>
 
               <h1 style={{ fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '14px', lineHeight: '1.25' }}>
@@ -998,7 +998,7 @@ function CategoryCityView({
                   color: 'var(--text-body)',
                 }}
               >
-                Looking for the best {exam.fullName} coaching in {city.name}? Our independent academic panel has evaluated dozens of coaching centres in the area using our rigorous <strong>100-point inspection system</strong> to bring you the top 5 picks. Each centre was physically verified on faculty pedigree, roll-number past results, test series difficulty, and student doubt resolution mechanisms.
+                Looking for the best {exam.fullName} coaching in {city.name}? Our independent academic panel has evaluated dozens of coaching centres in the area using our rigorous <strong>100-point inspection system</strong> to bring you the top 5 picks. <strong>{listings[0]?.name || 'Top Rank'}</strong> is ranked #1 on this shortlist. Each centre was physically verified on faculty pedigree, roll-number past results, test series difficulty, and student doubt resolution mechanisms.
               </div>
             </header>
 
@@ -1367,64 +1367,354 @@ function CityHubView({ city, currentSlug }: { city: CityData; currentSlug: strin
 // Component 3: Exam Hub View (e.g. /best-clat-coaching)
 // -------------------------------------------------------------
 function ExamHubView({ exam, currentSlug }: { exam: ExamCategory; currentSlug: string }) {
+  const listings = getListingsForCategoryAndCity(exam.slug, 'delhi');
+  const faqs = getFAQsForPage(exam.name, 'India');
+  const otherCategories = EXAM_CATEGORIES.filter((e) => e.slug !== exam.slug);
+  const leader = listings[0]?.name || 'National Rank 1';
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://coachingcompare.in/' },
+      { '@type': 'ListItem', position: 2, name: 'Exams Directory', item: 'https://coachingcompare.in/exams' },
+      { '@type': 'ListItem', position: 3, name: `Best ${exam.name} in India`, item: `https://coachingcompare.in/${currentSlug}` },
+    ],
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.answer,
+      },
+    })),
+  };
+
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `Top 5 Best ${exam.name} in India 2026`,
+    itemListElement: listings.map((item) => ({
+      '@type': 'ListItem',
+      position: item.rank,
+      item: {
+        '@type': 'EducationalOrganization',
+        name: item.name,
+        description: item.description,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: item.contact.address,
+          addressLocality: item.cityName || 'India',
+          addressRegion: item.state || 'India',
+          addressCountry: 'IN',
+        },
+        telephone: item.contact.phone,
+        email: item.contact.email,
+        url: item.contact.website,
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: item.rating,
+          reviewCount: item.reviewCount,
+          bestRating: '5',
+          worstRating: '1',
+        },
+      },
+    })),
+  };
+
   return (
-    <div className="container" style={{ padding: '36px 20px 64px' }}>
-      <nav className="breadcrumb-nav" aria-label="Breadcrumb">
-        <div className="breadcrumb-item">
-          <Link href="/">Home</Link>
-          <Icons.ChevronRight size={13} />
-        </div>
-        <div className="breadcrumb-item">
-          <Link href="/exams">Exams</Link>
-          <Icons.ChevronRight size={13} />
-        </div>
-        <div className="breadcrumb-item">
-          <span style={{ color: 'var(--text-dark)', fontWeight: 700 }}>
-            {exam.name}
-          </span>
-        </div>
-      </nav>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
 
-      <header style={{ marginBottom: '36px' }}>
-        <span className="badge badge-gold" style={{ marginBottom: '8px' }}>
-          {exam.badge}
-        </span>
-        <h1 style={{ fontSize: '34px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '12px' }}>
-          Best {exam.name} in India 2026
-        </h1>
-        <p style={{ fontSize: '16px', lineHeight: '1.6', color: 'var(--text-body)', maxWidth: '760px' }}>
-          {exam.description} Select your city below to see our 100-Point Inspected top 5 ranking institutes for {exam.shortName}.
-        </p>
-      </header>
+      <div className="container" style={{ padding: '36px 20px 64px' }}>
+        {/* Breadcrumbs Navigation */}
+        <nav className="breadcrumb-nav" aria-label="Breadcrumb">
+          <div className="breadcrumb-item">
+            <Link href="/">Home</Link>
+            <Icons.ChevronRight size={13} />
+          </div>
+          <div className="breadcrumb-item">
+            <Link href="/exams">Exams</Link>
+            <Icons.ChevronRight size={13} />
+          </div>
+          <div className="breadcrumb-item">
+            <span style={{ color: 'var(--text-dark)', fontWeight: 700 }}>
+              {exam.name}
+            </span>
+          </div>
+        </nav>
 
-      <h2 style={{ fontSize: '22px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '18px' }}>
-        {exam.shortName} Coaching Available Across Major Hubs
-      </h2>
+        <div
+          className="layout-with-sidebar"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 310px',
+            gap: '36px',
+            alignItems: 'start',
+          }}
+        >
+          {/* Main Left Column */}
+          <div>
+            <header style={{ marginBottom: '28px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px', flexWrap: 'wrap' }}>
+                <span className="badge badge-gold">{exam.badge}</span>
+                <span className="badge badge-blue">National Benchmark</span>
+                <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>Updated 2026-09</span>
+              </div>
 
-      <div className="grid-3">
-        {CITIES_DATA.map((city) => (
-          <Link
-            key={city.slug}
-            href={`/best-${exam.slug}-coaching-in-${city.slug}`}
-            className="card"
-            style={{ padding: '20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ fontSize: '26px' }}>{city.symbol}</span>
-              <div>
-                <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-dark)' }}>
-                  {exam.shortName} in {city.name}
-                </h3>
-                <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>{city.state}</span>
+              <h1 style={{ fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '14px', lineHeight: '1.25' }}>
+                Top 5 Best {exam.name} in India 2026
+              </h1>
+
+              <div
+                style={{
+                  background: '#f8fafc',
+                  borderLeft: '4px solid var(--brand-blue)',
+                  padding: '16px 20px',
+                  borderRadius: '0 var(--radius-md) var(--radius-md) 0',
+                  fontSize: '15px',
+                  lineHeight: '1.65',
+                  color: 'var(--text-body)',
+                }}
+              >
+                {exam.description} Our independent academic panel has audited premier test-prep academies across India on our <strong>100-point inspection system</strong>. <strong>{leader}</strong> is ranked #1 on this national benchmark shortlist.
+              </div>
+            </header>
+
+            {/* Quick Navigation Box */}
+            <div className="quick-nav-box">
+              <div className="quick-nav-title">⚡ Quick Navigation & Inspection Scores</div>
+              <ol className="quick-nav-list">
+                {listings.map((item) => (
+                  <li key={item.id}>
+                    <a href={`#listing-${item.rank}`} className="quick-nav-link">
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <span style={{ fontWeight: 800, width: '24px' }}>#{item.rank}</span>
+                        <span>{item.name}</span>
+                      </div>
+                      <span style={{ fontSize: '13px', fontWeight: 800, color: 'var(--brand-blue)' }}>
+                        {item.inspectionScore}/100
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            {/* Coaching Listing Cards */}
+            <div>
+              {listings.map((item) => (
+                <CoachingCard key={item.id} listing={item} />
+              ))}
+            </div>
+
+            {/* Comparison Matrix Table */}
+            <div style={{ marginTop: '48px', marginBottom: '40px' }}>
+              <h2 style={{ fontSize: '22px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '8px' }}>
+                Comparison Matrix: Top {exam.shortName} Institutes in India
+              </h2>
+              <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '16px' }}>
+                Compare key parameters side-by-side to make the most informed decision for your preparation.
+              </p>
+
+              <div className="comparison-table-wrapper">
+                <table className="comparison-table">
+                  <thead>
+                    <tr>
+                      <th>Rank & Institute</th>
+                      <th>Score</th>
+                      <th>Batch Size</th>
+                      <th>Fee Range</th>
+                      <th>Rating</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {listings.map((item) => (
+                      <tr key={item.id}>
+                        <td style={{ fontWeight: 700 }}>
+                          <span style={{ color: 'var(--brand-blue)', marginRight: '6px' }}>#{item.rank}</span>
+                          {item.name}
+                        </td>
+                        <td>
+                          <span className="badge badge-blue">{item.inspectionScore}/100</span>
+                        </td>
+                        <td>{item.batchSize}</td>
+                        <td style={{ fontWeight: 600 }}>{item.feesEstimate}</td>
+                        <td>
+                          <span style={{ color: '#d97706', fontWeight: 700 }}>★ {item.rating}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
-            <span style={{ fontSize: '12px', color: 'var(--brand-blue)', fontWeight: 700 }}>
-              Top 5 →
-            </span>
-          </Link>
-        ))}
+
+            {/* Major City Hubs Grid for this Exam */}
+            <div style={{ marginTop: '40px', marginBottom: '40px' }}>
+              <h2 style={{ fontSize: '22px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '10px' }}>
+                Explore {exam.shortName} Coaching Across Major Cities
+              </h2>
+              <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '18px' }}>
+                Select your preferred city to view classroom locations, verified faculty, and center-specific fee structures.
+              </p>
+              <div className="grid-3">
+                {CITIES_DATA.slice(0, 15).map((city) => (
+                  <Link
+                    key={city.slug}
+                    href={`/best-${exam.slug}-coaching-in-${city.slug}`}
+                    className="card"
+                    style={{ padding: '16px 18px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', textDecoration: 'none' }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <span style={{ fontSize: '22px' }}>{city.symbol}</span>
+                      <div>
+                        <h3 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text-dark)', margin: 0 }}>
+                          {city.name}
+                        </h3>
+                        <span style={{ fontSize: '11.5px', color: 'var(--text-muted)' }}>{city.state}</span>
+                      </div>
+                    </div>
+                    <span style={{ fontSize: '12px', color: 'var(--brand-blue)', fontWeight: 700 }}>
+                      Top 5 →
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* 100-Point Inspection Explainer Box */}
+            <div className="card" style={{ padding: '24px', background: '#f8fafc', marginBottom: '40px' }}>
+              <h3 style={{ fontSize: '18px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '6px' }}>
+                About Our 100-Point Inspection System
+              </h3>
+              <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '18px' }}>
+                Every coaching centre listed above has been assessed on 7 core criteria before being awarded its verified ranking:
+              </p>
+              <div className="responsive-form-grid-2" style={{ gap: '10px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: '#ffffff', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)', fontSize: '13.5px' }}>
+                  <span>Faculty credentials & experience</span>
+                  <strong style={{ color: 'var(--brand-blue)' }}>20 pts</strong>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: '#ffffff', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)', fontSize: '13.5px' }}>
+                  <span>Selection track record (results)</span>
+                  <strong style={{ color: 'var(--brand-blue)' }}>20 pts</strong>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: '#ffffff', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)', fontSize: '13.5px' }}>
+                  <span>Study material quality</span>
+                  <strong style={{ color: 'var(--brand-blue)' }}>15 pts</strong>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: '#ffffff', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)', fontSize: '13.5px' }}>
+                  <span>Test series & mock test quality</span>
+                  <strong style={{ color: 'var(--brand-blue)' }}>15 pts</strong>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: '#ffffff', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)', fontSize: '13.5px' }}>
+                  <span>Classroom infrastructure & tech</span>
+                  <strong style={{ color: 'var(--brand-blue)' }}>10 pts</strong>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: '#ffffff', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)', fontSize: '13.5px' }}>
+                  <span>Batch size & individual attention</span>
+                  <strong style={{ color: 'var(--brand-blue)' }}>10 pts</strong>
+                </div>
+              </div>
+            </div>
+
+            {/* Preparation FAQs Accordion */}
+            <div style={{ marginBottom: '40px' }}>
+              <h2 style={{ fontSize: '22px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '16px' }}>
+                Frequently Asked Questions about {exam.shortName} Coaching in India
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                {faqs.map((f, i) => (
+                  <details key={i} className="faq-item" style={{ background: '#ffffff', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)' }}>
+                    <summary className="faq-trigger" style={{ cursor: 'pointer', fontWeight: 700, padding: '14px 18px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span>{f.question}</span>
+                      <span style={{ color: 'var(--brand-blue)', fontSize: '12px' }}>▼</span>
+                    </summary>
+                    <div className="faq-answer" style={{ padding: '0 18px 16px', color: 'var(--text-body)', lineHeight: '1.6', fontSize: '14.5px' }}>
+                      {f.answer}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Sticky Right Sidebar */}
+          <div className="sticky-sidebar">
+            {/* Widget 1: Other Exam Rankings */}
+            <div className="sidebar-widget">
+              <h3 className="sidebar-widget-title">Other Popular Exam Hubs</h3>
+              <ul className="sidebar-list">
+                {otherCategories.slice(0, 10).map((cat) => (
+                  <li key={cat.slug}>
+                    <Link href={`/best-${cat.slug}-coaching`} className="sidebar-link">
+                      <span style={{ color: '#94a3b8' }}>›</span>
+                      <span>{cat.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Widget 2: 100-Point Inspection Info Callout */}
+            <div
+              className="card"
+              style={{
+                padding: '20px',
+                background: 'var(--brand-blue-light)',
+                border: '1px solid var(--brand-blue-border)',
+                marginBottom: '20px',
+              }}
+            >
+              <h4 style={{ fontSize: '14px', fontWeight: 800, color: '#1e3a8a', marginBottom: '8px' }}>
+                Our 100-Point Inspection
+              </h4>
+              <p style={{ fontSize: '12.5px', color: '#1e40af', lineHeight: '1.5', marginBottom: '12px' }}>
+                Every institute on CoachingCompare is verified on faculty qualifications, selection audits, and student support.
+              </p>
+              <ul style={{ listStyle: 'none', fontSize: '12px', color: '#1e40af', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <li>✓ Faculty Credentials (20 pts)</li>
+                <li>✓ Selection Records (20 pts)</li>
+                <li>✓ Study Material (15 pts)</li>
+                <li>✓ Mock Tests (15 pts)</li>
+                <li>✓ Infrastructure (10 pts)</li>
+                <li>✓ Student Attention (10 pts)</li>
+              </ul>
+              <Link
+                href="/methodology"
+                style={{
+                  display: 'inline-block',
+                  marginTop: '12px',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--brand-blue)',
+                }}
+              >
+                Read Full Audit Guide →
+              </Link>
+            </div>
+
+            {/* Widget 3: Editorial Assurance */}
+            <div className="surface-card" style={{ padding: '18px' }}>
+              <h4 style={{ fontSize: '14.5px', fontWeight: 800, marginBottom: '8px', color: 'var(--text-dark)' }}>
+                Editorial Assurance
+              </h4>
+              <p style={{ fontSize: '12.5px', lineHeight: '1.55', color: '#64748b', margin: 0 }}>
+                Rank 1 ({leader}) is independently audited against verified student selections, faculty credentials, and mock test rigor. No sponsored positions.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

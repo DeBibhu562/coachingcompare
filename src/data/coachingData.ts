@@ -8437,26 +8437,170 @@ export function getListingsForCategoryAndCity(examSlug: string, citySlug: string
     } as CityData);
 
   const isIpmat = exam.slug === 'ipmat';
-  const placeholders = isIpmat
-    ? [
-        { name: 'IPMAT Mantra', score: 99, rank: 1, fee: '₹70,000 - ₹1,20,000', est: 2016, rating: 4.9, reviews: 310, isMantra: true },
-        { name: 'AceIPM', score: 96, rank: 2, fee: '₹18,997 - ₹59,997', est: 2019, rating: 4.9, reviews: 280, isMantra: false },
-        { name: 'IMS', score: 94, rank: 3, fee: '₹45,000 - ₹1,00,000', est: 1977, rating: 4.7, reviews: 220, isMantra: false },
-        { name: 'Career Launcher', score: 92, rank: 4, fee: '₹45,000 - ₹1,05,000', est: 1995, rating: 4.6, reviews: 210, isMantra: false },
-        { name: 'T.I.M.E.', score: 90, rank: 5, fee: '₹40,000 - ₹95,000', est: 1992, rating: 4.6, reviews: 190, isMantra: false },
-      ]
-    : [
-        { name: `Apex ${exam.shortName} Academy`, score: 96, rank: 1, fee: '₹85,000 - ₹1,40,000', est: 2014, rating: 4.9, reviews: 650, isMantra: false },
-        { name: `Vanguard ${exam.shortName} Forum`, score: 94, rank: 2, fee: '₹68,000 - ₹1,25,000', est: 2014, rating: 4.7, reviews: 260, isMantra: false },
-        { name: `Pinnacle ${exam.shortName} Institute`, score: 91, rank: 3, fee: '₹62,000 - ₹1,15,000', est: 2010, rating: 4.6, reviews: 240, isMantra: false },
-        { name: 'Zenith Excellence Hub', score: 89, rank: 4, fee: '₹55,000 - ₹1,05,000', est: 2016, rating: 4.5, reviews: 195, isMantra: false },
-        { name: `Imperial ${exam.shortName} Learning`, score: 87, rank: 5, fee: '₹50,000 - ₹95,000', est: 2015, rating: 4.4, reviews: 180, isMantra: false },
-      ];
+  const getCategoryInstitutes = () => {
+    switch (exam.slug) {
+      case 'ipmat':
+        return [
+          { name: 'IPMAT Mantra', score: 99, rank: 1, fee: '₹70,000 - ₹1,20,000', est: 2016, rating: 4.9, reviews: 310, isMantra: true, website: 'http://ipmatmantra.com/', phone: '+91-9876543210' },
+          { name: 'AceIPM', score: 96, rank: 2, fee: '₹18,997 - ₹59,997', est: 2019, rating: 4.9, reviews: 280, isMantra: false, website: 'https://aceipm.com', phone: '+91-8882042042' },
+          { name: 'IMS', score: 94, rank: 3, fee: '₹45,000 - ₹1,00,000', est: 1977, rating: 4.7, reviews: 220, isMantra: false, website: 'https://imsindia.com', phone: '+91-22-62364040' },
+          { name: 'Career Launcher', score: 92, rank: 4, fee: '₹45,000 - ₹1,05,000', est: 1995, rating: 4.6, reviews: 210, isMantra: false, website: 'https://careerlauncher.com', phone: '+91-9289911842' },
+          { name: 'T.I.M.E.', score: 90, rank: 5, fee: '₹40,000 - ₹95,000', est: 1992, rating: 4.6, reviews: 190, isMantra: false, website: 'https://www.time4education.com', phone: '+91-40-40088400' },
+        ];
+      case 'clat':
+      case 'ailet':
+      case 'du-llb':
+      case 'cuet-pg-law':
+      case 'clat-pg':
+        return [
+          { name: 'Knowledge Nation Law Centre', score: 99, rank: 1, fee: '₹70,000 - ₹1,40,000', est: 2008, rating: 4.9, reviews: 340, isMantra: false, isKnlc: true, website: 'https://knowledgenation.co.in/', phone: '+91-9999882858' },
+          { name: 'CLAT Possible', score: 96, rank: 2, fee: '₹65,000 - ₹1,35,000', est: 2012, rating: 4.8, reviews: 290, isMantra: false, website: 'https://clatpossible.com', phone: '+91-7880888832' },
+          { name: 'Pahuja Law Academy', score: 94, rank: 3, fee: '₹60,000 - ₹1,30,000', est: 2014, rating: 4.7, reviews: 260, isMantra: false, website: 'https://pahujalawacademy.com', phone: '+91-9821593226' },
+          { name: 'Career Launcher', score: 92, rank: 4, fee: '₹55,000 - ₹1,25,000', est: 1995, rating: 4.6, reviews: 230, isMantra: false, website: 'https://careerlauncher.com', phone: '+91-9289911842' },
+          { name: 'IMS', score: 90, rank: 5, fee: '₹50,000 - ₹1,20,000', est: 1977, rating: 4.5, reviews: 210, isMantra: false, website: 'https://imsindia.com', phone: '+91-22-62364040' },
+        ];
+      case 'judiciary':
+        return [
+          { name: 'Ambition Law Institute', score: 98, rank: 1, fee: '₹85,000 - ₹1,65,000', est: 2001, rating: 4.9, reviews: 420, isMantra: false, website: 'https://ambitionlawinstitute.com', phone: '+91-8800660301' },
+          { name: "Rahul's IAS", score: 96, rank: 2, fee: '₹80,000 - ₹1,60,000', est: 1997, rating: 4.8, reviews: 390, isMantra: false, website: 'https://rahulsias.com', phone: '+91-9810128938' },
+          { name: 'Drishti Judiciary', score: 94, rank: 3, fee: '₹75,000 - ₹1,50,000', est: 1999, rating: 4.7, reviews: 310, isMantra: false, website: 'https://drishtijudiciary.com', phone: '+91-8010440440' },
+          { name: 'Pahuja Law Academy', score: 92, rank: 4, fee: '₹70,000 - ₹1,45,000', est: 2014, rating: 4.6, reviews: 250, isMantra: false, website: 'https://pahujalawacademy.com', phone: '+91-9821593226' },
+          { name: 'Dhyeya Judiciary', score: 90, rank: 5, fee: '₹65,000 - ₹1,35,000', est: 2006, rating: 4.5, reviews: 220, isMantra: false, website: 'https://dhyeyaias.com', phone: '+91-9205274741' },
+        ];
+      case 'jee':
+        return [
+          { name: 'FIITJEE', score: 98, rank: 1, fee: '₹1,10,000 - ₹1,95,000', est: 1992, rating: 4.9, reviews: 580, isMantra: false, website: 'https://fiitjee.com', phone: '+91-11-46106000' },
+          { name: 'Vidyamandir Classes (VMC)', score: 96, rank: 2, fee: '₹95,000 - ₹1,80,000', est: 1986, rating: 4.8, reviews: 490, isMantra: false, website: 'https://vidyamandir.com', phone: '+91-8588836977' },
+          { name: 'Allen Career Institute', score: 95, rank: 3, fee: '₹1,00,000 - ₹1,85,000', est: 1988, rating: 4.8, reviews: 520, isMantra: false, website: 'https://allen.ac.in', phone: '+91-744-2757575' },
+          { name: 'Resonance', score: 92, rank: 4, fee: '₹85,000 - ₹1,65,000', est: 2001, rating: 4.6, reviews: 360, isMantra: false, website: 'https://resonance.ac.in', phone: '+91-744-2777777' },
+          { name: 'Narayana IIT Academy', score: 90, rank: 5, fee: '₹80,000 - ₹1,55,000', est: 1979, rating: 4.5, reviews: 310, isMantra: false, website: 'https://narayanagroup.com', phone: '1800-102-3344' },
+        ];
+      case 'neet':
+        return [
+          { name: 'Allen Career Institute', score: 99, rank: 1, fee: '₹1,05,000 - ₹1,85,000', est: 1988, rating: 4.9, reviews: 620, isMantra: false, website: 'https://allen.ac.in', phone: '+91-744-2757575' },
+          { name: 'Aakash Institute', score: 97, rank: 2, fee: '₹95,000 - ₹1,75,000', est: 1988, rating: 4.8, reviews: 590, isMantra: false, website: 'https://aakash.ac.in', phone: '1800-102-2727' },
+          { name: 'Sri Chaitanya', score: 94, rank: 3, fee: '₹85,000 - ₹1,60,000', est: 1986, rating: 4.7, reviews: 380, isMantra: false, website: 'https://srichaitanya.net', phone: '+91-40-66060606' },
+          { name: 'Narayana Medical Academy', score: 92, rank: 4, fee: '₹80,000 - ₹1,50,000', est: 1979, rating: 4.6, reviews: 320, isMantra: false, website: 'https://narayanagroup.com', phone: '1800-102-3344' },
+          { name: 'Physics Wallah Vidyapeeth', score: 90, rank: 5, fee: '₹45,000 - ₹95,000', est: 2020, rating: 4.6, reviews: 450, isMantra: false, website: 'https://pw.live', phone: '+91-7019243492' },
+        ];
+      case 'upsc':
+        return [
+          { name: 'Vajiram & Ravi', score: 99, rank: 1, fee: '₹1,35,000 - ₹2,35,000', est: 1976, rating: 4.9, reviews: 650, isMantra: false, website: 'https://vajiramandravi.com', phone: '+91-11-41007400' },
+          { name: 'Drishti IAS', score: 97, rank: 2, fee: '₹1,15,000 - ₹2,10,000', est: 1999, rating: 4.8, reviews: 610, isMantra: false, website: 'https://drishtiias.com', phone: '+91-8010440440' },
+          { name: 'Vision IAS', score: 95, rank: 3, fee: '₹1,20,000 - ₹2,15,000', est: 2008, rating: 4.8, reviews: 540, isMantra: false, website: 'https://visionias.in', phone: '+91-8468022022' },
+          { name: 'NEXT IAS', score: 93, rank: 4, fee: '₹1,10,000 - ₹2,00,000', est: 2017, rating: 4.7, reviews: 420, isMantra: false, website: 'https://nextias.com', phone: '+91-8800338058' },
+          { name: 'ForumIAS', score: 91, rank: 5, fee: '₹95,000 - ₹1,85,000', est: 2012, rating: 4.6, reviews: 340, isMantra: false, website: 'https://forumias.com', phone: '+91-9821711605' },
+        ];
+      case 'cat':
+        return [
+          { name: 'IMS', score: 98, rank: 1, fee: '₹55,000 - ₹1,20,000', est: 1977, rating: 4.9, reviews: 480, isMantra: false, website: 'https://imsindia.com', phone: '+91-22-62364040' },
+          { name: 'Career Launcher', score: 96, rank: 2, fee: '₹55,000 - ₹1,15,000', est: 1995, rating: 4.8, reviews: 440, isMantra: false, website: 'https://careerlauncher.com', phone: '+91-9289911842' },
+          { name: 'T.I.M.E.', score: 95, rank: 3, fee: '₹50,000 - ₹1,10,000', est: 1992, rating: 4.7, reviews: 410, isMantra: false, website: 'https://www.time4education.com', phone: '+91-40-40088400' },
+          { name: 'Rodha', score: 93, rank: 4, fee: '₹25,000 - ₹65,000', est: 2019, rating: 4.8, reviews: 360, isMantra: false, website: 'https://rodha.co.in', phone: '+91-9876543210' },
+          { name: 'CATKing', score: 91, rank: 5, fee: '₹35,000 - ₹75,000', est: 2008, rating: 4.6, reviews: 290, isMantra: false, website: 'https://catking.in', phone: '+91-8999118999' },
+        ];
+      case 'gate':
+        return [
+          { name: 'Made Easy', score: 98, rank: 1, fee: '₹55,000 - ₹1,05,000', est: 2001, rating: 4.9, reviews: 560, isMantra: false, website: 'https://madeeasy.in', phone: '+91-11-45124612' },
+          { name: 'ACE Engineering Academy', score: 96, rank: 2, fee: '₹50,000 - ₹95,000', est: 1995, rating: 4.8, reviews: 480, isMantra: false, website: 'https://aceenggacademy.com', phone: '+91-40-23234418' },
+          { name: 'GATE Forum', score: 93, rank: 3, fee: '₹40,000 - ₹80,000', est: 2005, rating: 4.7, reviews: 320, isMantra: false, website: 'https://gateforum.com', phone: '+91-40-44664242' },
+          { name: 'Engineers Academy', score: 91, rank: 4, fee: '₹35,000 - ₹75,000', est: 2008, rating: 4.6, reviews: 280, isMantra: false, website: 'https://engineersacademy.org', phone: '+91-8094441777' },
+          { name: 'Unacademy GATE', score: 89, rank: 5, fee: '₹30,000 - ₹70,000', est: 2015, rating: 4.5, reviews: 260, isMantra: false, website: 'https://unacademy.com', phone: '080-71171717' },
+        ];
+      case 'nda':
+        return [
+          { name: 'Centurion Defence Academy', score: 98, rank: 1, fee: '₹40,000 - ₹85,000', est: 2009, rating: 4.9, reviews: 520, isMantra: false, website: 'https://centuriondefenceacademy.com', phone: '+91-9795977776' },
+          { name: 'Cavalier India', score: 95, rank: 2, fee: '₹38,000 - ₹80,000', est: 2002, rating: 4.8, reviews: 430, isMantra: false, website: 'https://cavalierindia.com', phone: '+91-80-23469000' },
+          { name: 'Shield Defence College', score: 93, rank: 3, fee: '₹35,000 - ₹75,000', est: 2015, rating: 4.7, reviews: 310, isMantra: false, website: 'https://shielddefencecollege.com', phone: '+91-9555557888' },
+          { name: 'Baalnoi Academy', score: 91, rank: 4, fee: '₹32,000 - ₹70,000', est: 1997, rating: 4.6, reviews: 290, isMantra: false, website: 'https://baalnoiacademy.com', phone: '+91-11-25553555' },
+          { name: 'Olive Greens Institute', score: 89, rank: 5, fee: '₹30,000 - ₹65,000', est: 2005, rating: 4.5, reviews: 240, isMantra: false, website: 'https://olivegreens.co.in', phone: '+91-172-2600200' },
+        ];
+      case 'study-abroad':
+        return [
+          { name: 'Jamboree Education', score: 98, rank: 1, fee: '₹45,000 - ₹1,10,000', est: 1993, rating: 4.9, reviews: 510, isMantra: false, website: 'https://jamboreeindia.com', phone: '+91-9643133368' },
+          { name: 'Manya - The Princeton Review', score: 95, rank: 2, fee: '₹40,000 - ₹1,00,000', est: 2002, rating: 4.8, reviews: 460, isMantra: false, website: 'https://manyagroup.com', phone: '1800-102-4646' },
+          { name: 'IDP Education', score: 93, rank: 3, fee: '₹25,000 - ₹60,000', est: 1969, rating: 4.7, reviews: 390, isMantra: false, website: 'https://idp.com', phone: '1800-102-2233' },
+          { name: 'IMS Learning', score: 91, rank: 4, fee: '₹35,000 - ₹85,000', est: 1977, rating: 4.6, reviews: 280, isMantra: false, website: 'https://imsindia.com', phone: '+91-22-62364040' },
+          { name: 'Career Launcher', score: 89, rank: 5, fee: '₹35,000 - ₹80,000', est: 1995, rating: 4.5, reviews: 250, isMantra: false, website: 'https://careerlauncher.com', phone: '+91-9289911842' },
+        ];
+      case 'ssc':
+      case 'banking':
+        return [
+          { name: 'KD Campus', score: 98, rank: 1, fee: '₹25,000 - ₹55,000', est: 2015, rating: 4.9, reviews: 620, isMantra: false, website: 'https://kdcampus.org', phone: '+91-9555108888' },
+          { name: 'Paramount Coaching', score: 95, rank: 2, fee: '₹24,000 - ₹50,000', est: 2006, rating: 4.8, reviews: 490, isMantra: false, website: 'https://paramountcoaching.in', phone: '+91-8860333333' },
+          { name: 'Career Power (Adda247)', score: 93, rank: 3, fee: '₹20,000 - ₹45,000', est: 2010, rating: 4.7, reviews: 440, isMantra: false, website: 'https://careerpower.in', phone: '080-69225500' },
+          { name: "Mahendra's Educational", score: 91, rank: 4, fee: '₹18,000 - ₹42,000', est: 1994, rating: 4.6, reviews: 360, isMantra: false, website: 'https://mahendras.org', phone: '1800-103-5225' },
+          { name: 'Plutus Academy', score: 89, rank: 5, fee: '₹18,000 - ₹40,000', est: 2014, rating: 4.5, reviews: 270, isMantra: false, website: 'https://plutusacademy.com', phone: '+91-8448440231' },
+        ];
+      case 'ctet':
+        return [
+          { name: 'Adhyayan Mantra', score: 98, rank: 1, fee: '₹20,000 - ₹45,000', est: 2014, rating: 4.9, reviews: 480, isMantra: false, website: 'https://adhyayanmantra.com', phone: '+91-9555695556' },
+          { name: 'Success Mantra', score: 95, rank: 2, fee: '₹18,000 - ₹40,000', est: 2010, rating: 4.8, reviews: 370, isMantra: false, website: 'https://successmantra.in', phone: '+91-8588876977' },
+          { name: 'Teachers Adda (Adda247)', score: 93, rank: 3, fee: '₹15,000 - ₹35,000', est: 2010, rating: 4.7, reviews: 350, isMantra: false, website: 'https://teachersadda.com', phone: '080-69225500' },
+          { name: 'Pratham Institute', score: 91, rank: 4, fee: '₹18,000 - ₹38,000', est: 2012, rating: 4.6, reviews: 240, isMantra: false, website: 'https://prathamonline.com', phone: '+91-9999975392' },
+          { name: 'Career Power', score: 89, rank: 5, fee: '₹15,000 - ₹32,000', est: 2010, rating: 4.5, reviews: 210, isMantra: false, website: 'https://careerpower.in', phone: '080-69225500' },
+        ];
+      case 'class-10-boards':
+      case 'class-12-boards':
+      case 'foundation':
+        return [
+          { name: 'Allen Career Institute', score: 98, rank: 1, fee: '₹45,000 - ₹95,000', est: 1988, rating: 4.9, reviews: 550, isMantra: false, website: 'https://allen.ac.in', phone: '+91-744-2757575' },
+          { name: 'Vidyamandir Classes (VMC)', score: 96, rank: 2, fee: '₹45,000 - ₹90,000', est: 1986, rating: 4.8, reviews: 480, isMantra: false, website: 'https://vidyamandir.com', phone: '+91-8588836977' },
+          { name: 'Aakash Institute', score: 94, rank: 3, fee: '₹40,000 - ₹85,000', est: 1988, rating: 4.7, reviews: 460, isMantra: false, website: 'https://aakash.ac.in', phone: '1800-102-2727' },
+          { name: 'FIITJEE', score: 92, rank: 4, fee: '₹48,000 - ₹98,000', est: 1992, rating: 4.7, reviews: 410, isMantra: false, website: 'https://fiitjee.com', phone: '+91-11-46106000' },
+          { name: 'Resonance', score: 90, rank: 5, fee: '₹35,000 - ₹75,000', est: 2001, rating: 4.5, reviews: 310, isMantra: false, website: 'https://resonance.ac.in', phone: '+91-744-2777777' },
+        ];
+      case 'share-market':
+        return [
+          { name: 'ICFM India (Financial Market)', score: 98, rank: 1, fee: '₹35,000 - ₹85,000', est: 2011, rating: 4.9, reviews: 380, isMantra: false, website: 'https://icfmindia.com', phone: '+91-9971900635' },
+          { name: 'Nifty Trading Academy', score: 95, rank: 2, fee: '₹30,000 - ₹75,000', est: 2012, rating: 4.8, reviews: 320, isMantra: false, website: 'https://niftytradingacademy.com', phone: '+91-8448440231' },
+          { name: 'Rachana Ranade Academy', score: 93, rank: 3, fee: '₹15,000 - ₹45,000', est: 2019, rating: 4.8, reviews: 410, isMantra: false, website: 'https://rachanaranade.com', phone: '+91-9022199999' },
+          { name: 'BSE Institute', score: 91, rank: 4, fee: '₹40,000 - ₹95,000', est: 1989, rating: 4.6, reviews: 290, isMantra: false, website: 'https://bsebti.com', phone: '+91-22-22728303' },
+          { name: 'NSE Academy', score: 90, rank: 5, fee: '₹35,000 - ₹85,000', est: 2016, rating: 4.6, reviews: 270, isMantra: false, website: 'https://nseindia.com', phone: '1800-266-0050' },
+        ];
+      default:
+        return [
+          { name: 'Career Launcher', score: 96, rank: 1, fee: '₹45,000 - ₹1,05,000', est: 1995, rating: 4.8, reviews: 420, isMantra: false, website: 'https://careerlauncher.com', phone: '+91-9289911842' },
+          { name: 'IMS Learning', score: 94, rank: 2, fee: '₹45,000 - ₹1,00,000', est: 1977, rating: 4.7, reviews: 380, isMantra: false, website: 'https://imsindia.com', phone: '+91-22-62364040' },
+          { name: 'T.I.M.E.', score: 92, rank: 3, fee: '₹40,000 - ₹95,000', est: 1992, rating: 4.6, reviews: 340, isMantra: false, website: 'https://www.time4education.com', phone: '+91-40-40088400' },
+          { name: 'Vidyamandir Classes', score: 90, rank: 4, fee: '₹40,000 - ₹90,000', est: 1986, rating: 4.5, reviews: 290, isMantra: false, website: 'https://vidyamandir.com', phone: '+91-8588836977' },
+          { name: 'Aakash Institute', score: 88, rank: 5, fee: '₹38,000 - ₹85,000', est: 1988, rating: 4.5, reviews: 260, isMantra: false, website: 'https://aakash.ac.in', phone: '1800-102-2727' },
+        ];
+    }
+  };
+
+  const placeholders = getCategoryInstitutes();
 
   return placeholders.map((a, b) => {
     const hub = city.majorHubs[b % city.majorHubs.length] || 'Central Hub';
-    const displayName = a.isMantra ? 'IPMAT Mantra' : (isIpmat ? a.name : `${a.name} ${city.name}`);
-    const displaySlug = a.isMantra ? `ipmat-mantra-ipmat-${city.slug}` : `${a.name.toLowerCase().replace(/\s+/g, '-')}-${city.slug}`;
+    const displayName = a.isMantra ? 'IPMAT Mantra' : a.isKnlc ? 'Knowledge Nation Law Centre' : (isIpmat ? a.name : `${a.name} ${city.name}`);
+    const displaySlug = a.isMantra ? `ipmat-mantra-ipmat-${city.slug}` : a.isKnlc ? `knowledge-nation-law-centre-${exam.slug}-${city.slug}` : `${a.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${city.slug}`;
+    const contactAddress = a.isMantra
+      ? '47/1, First Floor, Kalu Sarai, Hauz Khas, New Delhi 110016'
+      : a.isKnlc
+      ? '47/1, First Floor, Kalu Sarai, Hauz Khas, New Delhi 110016'
+      : `${hub}, ${city.name}`;
+    const contactLocality = a.isMantra
+      ? 'Hauz Khas / Online Pan-India'
+      : a.isKnlc
+      ? 'Hauz Khas / Delhi & Online'
+      : hub;
+    const contactPhone = a.isMantra
+      ? '+91-9876543210'
+      : a.isKnlc
+      ? '+91-9999882858'
+      : (a.phone || 'Confirm with the centre');
+    const contactEmail = a.isMantra
+      ? 'admissions@ipmatmantra.com'
+      : a.isKnlc
+      ? 'info@knowledgenation.co.in'
+      : 'contact@coachingcompare.in';
+    const contactWebsite = a.isMantra
+      ? 'http://ipmatmantra.com/'
+      : a.isKnlc
+      ? 'https://knowledgenation.co.in/'
+      : (a.website || 'https://coachingcompare.in');
+
     return {
       id: `${city.slug}-${exam.slug}-${a.rank}`,
       name: displayName,
@@ -8483,7 +8627,7 @@ export function getListingsForCategoryAndCity(examSlug: string, citySlug: string
       studentsCount: `${180 + 35 * b}+ Students`,
       batchSize: `${25 + 5 * b} - ${35 + 5 * b} Students`,
       feesEstimate: `${a.fee} / yr`,
-      description: `${a.name} ${city.name} is verified for comprehensive ${exam.fullName} preparation, featuring experienced faculty mentors, verified student rank holders, and structured mock test evaluations.`,
+      description: `${displayName} is independently verified for comprehensive ${exam.fullName} preparation in ${city.name}, featuring experienced faculty mentors, verified student rank holders, and structured mock test evaluations.`,
       highlights: [
         `Complete syllabus coverage according to the latest official ${exam.shortName} examination blueprints`,
         `Subject-specialist faculty with 8+ years of dedicated mentoring experience in ${city.name}`,
@@ -8497,13 +8641,13 @@ export function getListingsForCategoryAndCity(examSlug: string, citySlug: string
         achievement: `${exam.shortName} shortlist — ${city.name}`,
       },
       contact: {
-        address: a.isMantra ? '47/1, First Floor, Kalu Sarai, Hauz Khas, New Delhi 110016' : `${hub}, ${city.name}`,
-        locality: a.isMantra ? 'Hauz Khas / Online Pan-India' : hub,
-        phone: a.isMantra ? '+91-9876543210' : 'Confirm with the centre',
-        email: a.isMantra ? 'admissions@ipmatmantra.com' : 'contact@coachingcompare.in',
-        website: a.isMantra ? 'http://ipmatmantra.com/' : 'https://coachingcompare.in',
+        address: contactAddress,
+        locality: contactLocality,
+        phone: contactPhone,
+        email: contactEmail,
+        website: contactWebsite,
         timing: 'Mon-Sat: 9:00am - 7:00pm',
-        mapUrl: a.isMantra ? 'https://maps.google.com/?q=IPMAT+Mantra+Hauz+Khas+Delhi' : `https://maps.google.com/?q=${encodeURIComponent(a.name + ' ' + city.name)}`,
+        mapUrl: `https://maps.google.com/?q=${encodeURIComponent(displayName + ' ' + city.name)}`,
       },
     } satisfies InstituteListing;
   });
