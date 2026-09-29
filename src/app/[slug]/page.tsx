@@ -33,6 +33,12 @@ import {
   type ClatGurgaonRankingPage,
 } from '@/data/clatGurgaonRankings';
 import {
+  buildClatDelhiListingsForPage,
+  getAllClatDelhiRankingSlugs,
+  getClatDelhiRankingPage,
+  type ClatDelhiRankingPage,
+} from '@/data/clatDelhiRankings';
+import {
   buildShareMarketDelhiListingsForPage,
   getAllShareMarketDelhiRankingSlugs,
   getShareMarketDelhiRankingPage,
@@ -92,6 +98,7 @@ import { Icons } from '@/components/Icons';
 type ExamCityRankingPage =
   | IpmatDelhiRankingPage
   | IpmatGurgaonRankingPage
+  | ClatDelhiRankingPage
   | ClatGurgaonRankingPage
   | ShareMarketDelhiRankingPage
   | ShareMarketGurgaonRankingPage
@@ -136,6 +143,21 @@ function parseSlug(slug: string) {
       hubLabel: 'Gurgaon Coaching',
       fixedRank5: true,
       buildListings: buildGurgaonListingsForPage,
+    };
+  }
+  const clatDelhiPage = getClatDelhiRankingPage(slug);
+  if (clatDelhiPage) {
+    return {
+      type: 'exam-city-ranking' as const,
+      page: clatDelhiPage,
+      examLabel: 'CLAT',
+      citySlug: 'delhi',
+      cityName: 'Delhi',
+      regionName: 'Delhi',
+      hubHref: '/coaching-centres-in-delhi',
+      hubLabel: 'Delhi Coaching',
+      fixedRank5: false,
+      buildListings: buildClatDelhiListingsForPage,
     };
   }
   const clatGurgaonPage = getClatGurgaonRankingPage(slug);
@@ -343,6 +365,7 @@ export async function generateStaticParams() {
   // Dedicated ranking suites (richer hand-authored modules win at parse time)
   getAllIpmatDelhiRankingSlugs().forEach(add);
   getAllIpmatGurgaonRankingSlugs().forEach(add);
+  getAllClatDelhiRankingSlugs().forEach(add);
   getAllClatGurgaonRankingSlugs().forEach(add);
   getAllShareMarketDelhiRankingSlugs().forEach(add);
   getAllShareMarketGurgaonRankingSlugs().forEach(add);
