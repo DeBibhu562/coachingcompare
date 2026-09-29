@@ -70,7 +70,7 @@ export default function InstitutesIndexPage() {
                 {b.name}
               </h3>
               <p style={{ fontSize: '13px', color: 'var(--text-muted)', lineHeight: '1.5', margin: 0 }}>
-                {(b.description || b.title).slice(0, 115)}...
+                {(b.description || b.title || b.name || '').slice(0, 115)}...
               </p>
             </div>
             <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border-subtle)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '13px', color: 'var(--brand-primary)', fontWeight: 600 }}>

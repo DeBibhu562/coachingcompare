@@ -6,6 +6,9 @@ import {
   getAllInstituteSlugs,
   getAllStateSlugs,
 } from '@/data/coachingData';
+import { getAllIpmatIndiaRankingSlugs } from '@/data/ipmatIndiaRankings';
+import { getAllIpmatDelhiRankingSlugs } from '@/data/ipmatDelhiRankings';
+import { getAllIpmatGurgaonRankingSlugs } from '@/data/ipmatGurgaonRankings';
 import { getAllInstituteBrandSlugs } from '@/data/instituteBrands';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -33,6 +36,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${baseUrl}/disclaimer`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ];
+
+  // IPMAT Ranking Suites (National, Criteria, Delhi, Gurgaon)
+  const ipmatRankingRoutes: MetadataRoute.Sitemap = [
+    ...getAllIpmatIndiaRankingSlugs(),
+    ...getAllIpmatDelhiRankingSlugs(),
+    ...getAllIpmatGurgaonRankingSlugs(),
+  ].map((slug) => ({
+    url: `${baseUrl}/${slug}`,
+    lastModified: now,
+    changeFrequency: 'weekly',
+    priority: 0.9,
+  }));
+
+  // IPMAT City Ranking combinations for all cities
+  const ipmatCityRoutes: MetadataRoute.Sitemap = CITIES_DATA.map((city) => ({
+    url: `${baseUrl}/best-ipmat-coaching-in-${city.slug}`,
+    lastModified: now,
+    changeFrequency: 'weekly',
+    priority: 0.85,
+  }));
+
+  // Institute Brand routes (/institutes/[slug])
+  const brandRoutes: MetadataRoute.Sitemap = getAllInstituteBrandSlugs().map((slug) => ({
+    url: `${baseUrl}/institutes/${slug}`,
+    lastModified: now,
+    changeFrequency: 'weekly',
+    priority: 0.85,
+  }));
 
   // Institute Profile routes
   const instituteRoutes: MetadataRoute.Sitemap = getAllInstituteSlugs().map((slug) => ({
@@ -87,22 +118,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  // Institute Brand Hub routes
-  const brandRoutes: MetadataRoute.Sitemap = getAllInstituteBrandSlugs().map((slug) => ({
-    url: `${baseUrl}/institutes/${slug}`,
-    lastModified: now,
-    changeFrequency: 'weekly',
-    priority: 0.85,
-  }));
-
-  return [
+  const allRoutes = [
     ...staticRoutes,
-    ...instituteRoutes,
+    ...ipmatRankingRoutes,
+    ...ipmatCityRoutes,
     ...brandRoutes,
+    ...instituteRoutes,
     ...blogRoutes,
     ...stateRoutes,
     ...cityRoutes,
     ...examRoutes,
     ...catCityRoutes,
   ];
+
+  const seen = new Set<string>();
+  return allRoutes.filter((item) => {
+    if (seen.has(item.url)) return false;
+    seen.add(item.url);
+    return true;
+  });
 }

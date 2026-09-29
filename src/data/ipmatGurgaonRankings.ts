@@ -109,7 +109,7 @@ const INSTITUTES: Record<IpmatGurgaonInstituteKey, InstituteBase> = {
       locality: 'Sector 14 / Old DLF Colony',
       phone: '',
       email: '',
-      website: 'https://www.ipmatmantra.com/',
+      website: 'http://ipmatmantra.com/',
       timing: 'Mon-Sat: 10:00am - 7:00pm; Sun: 10:00am - 2:00pm',
       mapUrl: 'https://maps.google.com/?q=IPMAT+Mantra+Sector+14+Gurgaon',
     },

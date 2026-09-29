@@ -106,9 +106,9 @@ const INSTITUTES: Record<IpmatDelhiInstituteKey, InstituteBase> = {
       locality: 'Hauz Khas / Kalu Sarai',
       phone: '',
       email: '',
-      website: 'https://www.ipmatmantra.com/',
+      website: 'http://ipmatmantra.com/',
       timing: 'Mon-Sat: 10:00am - 7:00pm; Sun: 10:00am - 2:00pm',
-      mapUrl: 'https://maps.google.com/?q=Knowledge+Nation+Law+Centre+Hauz+Khas+Delhi',
+      mapUrl: 'https://maps.google.com/?q=IPMAT+Mantra+Hauz+Khas+Delhi',
     },
     baseHighlights: [
       'IPMAT-focused brand (est. 2016); MD Rahul Tayal Sir — ipmatmantra.com',

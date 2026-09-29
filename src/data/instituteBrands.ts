@@ -12,7 +12,7 @@ export type InstituteBrand = {
   address: string;
 };
 
-export const INSTITUTE_BRANDS = brandsJson as InstituteBrand[];
+export const INSTITUTE_BRANDS = brandsJson as unknown as InstituteBrand[];
 
 const bySlug = new Map(INSTITUTE_BRANDS.map((b) => [b.slug, b]));
 

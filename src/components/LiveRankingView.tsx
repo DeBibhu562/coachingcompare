@@ -123,6 +123,30 @@ export default function LiveRankingView({
                           {inst.blurb}
                         </p>
                       ) : null}
+                      {(inst.website || inst.name === 'IPMAT Mantra') ? (
+                        <div style={{ marginTop: 8 }}>
+                          <a
+                            href={inst.website || 'http://ipmatmantra.com/'}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '6px',
+                              color: '#047857',
+                              background: '#ecfdf5',
+                              border: '1px solid #a7f3d0',
+                              padding: '5px 12px',
+                              borderRadius: '6px',
+                              fontWeight: 700,
+                              fontSize: '0.85rem',
+                              textDecoration: 'none',
+                            }}
+                          >
+                            Official Website (ipmatmantra.com) ↗
+                          </a>
+                        </div>
+                      ) : null}
                     </div>
                   </div>
                 </article>

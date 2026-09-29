@@ -9,6 +9,10 @@ import {
   EXAM_CATEGORIES,
   CITIES_DATA,
 } from '@/data/coachingData';
+import {
+  getAllInstituteProfileSlugs,
+  getInstituteProfileMeta,
+} from '@/data/instituteProfiles';
 import { Icons } from '@/components/Icons';
 import LeadConsultationForm from '@/components/LeadConsultationForm';
 
@@ -17,39 +21,53 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const slugs = getAllInstituteSlugs();
-  return slugs.map((slug) => ({ slug }));
+  const seen = new Set<string>();
+  const slugs: { slug: string }[] = [];
+  const add = (slug: string) => {
+    if (!slug || seen.has(slug)) return;
+    seen.add(slug);
+    slugs.push({ slug });
+  };
+  getAllInstituteSlugs().forEach(add);
+  getAllInstituteProfileSlugs().forEach(add);
+  return slugs;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const institute = getInstituteBySlug(slug);
 
-  if (!institute) {
-    return { title: 'Institute Profile Not Found | CoachingCompare.in' };
+  if (institute) {
+    const title = `${institute.name} - 100-Point Audit Score, Fees, Batches & Reviews 2026`;
+    const description = `Read the verified 100-point inspection audit of ${institute.name} in ${institute.cityName}. Details on faculty credentials, fee structures, batch sizes, scholarship tests, and student reviews.`;
+    return {
+      title,
+      description,
+      alternates: { canonical: `/institute/${slug}` },
+      openGraph: {
+        title,
+        description,
+        url: `https://coachingcompare.in/institute/${slug}`,
+        type: 'article',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title,
+        description,
+      },
+    };
   }
 
-  const title = `${institute.name} - 100-Point Audit Score, Fees, Batches & Reviews 2026`;
-  const description = `Read the verified 100-point inspection audit of ${institute.name} in ${institute.cityName}. Details on faculty credentials, fee structures, batch sizes, scholarship tests, and student reviews.`;
+  const meta = getInstituteProfileMeta(slug);
+  if (meta) {
+    return {
+      title: meta.title,
+      description: meta.description || meta.title,
+      alternates: { canonical: `/institute/${slug}` },
+    };
+  }
 
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: `/institute/${slug}`,
-    },
-    openGraph: {
-      title,
-      description,
-      url: `https://coachingcompare.in/institute/${slug}`,
-      type: 'article',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-    },
-  };
+  return { title: 'Institute Profile Not Found | CoachingCompare.in' };
 }
 
 export default async function InstituteDetailPage({ params }: PageProps) {
@@ -57,7 +75,40 @@ export default async function InstituteDetailPage({ params }: PageProps) {
   const institute = getInstituteBySlug(slug);
 
   if (!institute) {
-    notFound();
+    const meta = getInstituteProfileMeta(slug);
+    if (!meta) notFound();
+    return (
+      <section className="section">
+        <div className="container">
+          <nav style={{ marginBottom: 14, fontSize: 14 }}>
+            <Link href="/">Home</Link> / <span>{meta.h1 || meta.title}</span>
+          </nav>
+          <h1 style={{ marginBottom: 12 }}>{meta.h1 || meta.title.split('|')[0].trim()}</h1>
+          <aside
+            style={{
+              borderLeft: '4px solid #4f46e5',
+              background: '#eef2ff',
+              padding: '14px 16px',
+              borderRadius: 12,
+              marginBottom: 24,
+              maxWidth: 820,
+            }}
+          >
+            <strong style={{ display: 'block', fontSize: 12, letterSpacing: '0.05em', marginBottom: 6 }}>
+              DIRECT ANSWER
+            </strong>
+            <p style={{ margin: 0, lineHeight: 1.55 }}>
+              {meta.description || `${meta.h1} profile on CoachingCompare.in.`}
+            </p>
+          </aside>
+          <p>
+            <Link href="/compare">Compare institutes</Link>
+            {' · '}
+            <Link href="/exams">Browse exams</Link>
+          </p>
+        </div>
+      </section>
+    );
   }
 
   const exam = EXAM_CATEGORIES.find((e) => e.slug === institute.examSlug) || EXAM_CATEGORIES[0];

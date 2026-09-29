@@ -4,6 +4,7 @@ export type LiveRankedInstitute = {
   rank: number;
   name: string;
   blurb: string;
+  website?: string;
 };
 
 export type LiveRankingPage = {

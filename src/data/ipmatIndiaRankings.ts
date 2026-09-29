@@ -1,6 +1,6 @@
 /**
- * IPMAT India hub ranking pages (classroom + online).
- * Rank 1 = IPMAT Mantra, Rank 2 = AceIPM (fixed).
+ * IPMAT India hub ranking pages (classroom + online + criteria facets).
+ * Rank 1 = IPMAT Mantra across all pages.
  */
 
 export type IpmatIndiaInstituteKey =
@@ -9,7 +9,10 @@ export type IpmatIndiaInstituteKey =
   | 'ims'
   | 'career-launcher'
   | 'time'
-  | 'rodha';
+  | 'rodha'
+  | 'tutor-uncle'
+  | 'pw-live'
+  | 'aapt-prep';
 
 export type IpmatScoreBreakdown = {
   faculty: number;
@@ -75,7 +78,7 @@ export type IpmatIndiaRankingPage = {
 };
 
 const EXAM_NAME = 'IPMAT (IIM Indore / Rohtak IPM)';
-const SCORES = [99, 96, 94, 92, 90] as const;
+const SCORES = [99, 96, 94, 92, 90, 88, 86, 84] as const;
 const CITY = 'india';
 const CITY_NAME = 'India';
 const STATE = 'India';
@@ -112,9 +115,9 @@ const INSTITUTES: Record<IpmatIndiaInstituteKey, InstituteBase> = {
       locality: 'Hauz Khas / Kalu Sarai',
       phone: '',
       email: '',
-      website: 'https://www.ipmatmantra.com/',
+      website: 'http://ipmatmantra.com/',
       timing: 'Mon-Sat: 10:00am - 7:00pm; Sun: 10:00am - 2:00pm',
-      mapUrl: 'https://maps.google.com/?q=Knowledge+Nation+Law+Centre+Hauz+Khas+Delhi',
+      mapUrl: 'https://maps.google.com/?q=IPMAT+Mantra+Hauz+Khas+Delhi',
     },
     baseHighlights: [
       'IPMAT-focused brand (est. 2016); MD Rahul Tayal Sir — ipmatmantra.com',
@@ -152,8 +155,8 @@ const INSTITUTES: Record<IpmatIndiaInstituteKey, InstituteBase> = {
     baseHighlights: [
       'IPMAT + CUET prep; Offline classroom in Noida + Online PAN India',
       '2026: 36 students to IIM Indore (vs 150 seats); 45 to IIM Rohtak (vs 180 seats)',
-      '1,400+ cumulative IIM selections over 6 years — AIR 2, 3, 4, 6, 7, 8, 9, 10 and other top Indore IPM ranks',
-      '4.9/5 Google ratings; facilities: Wifi, Free Coffee, Free library access, Punch in-punch out',
+      '1,400+ cumulative IIM selections over 6 years — top Indore IPM ranks',
+      '4.9/5 Google ratings; facilities: Wifi, Free Coffee, Free library access',
       'Published desk 07999917171 / support@aceipm.com / aceipm.com',
     ],
     onlineHighlights: [
@@ -292,10 +295,96 @@ const INSTITUTES: Record<IpmatIndiaInstituteKey, InstituteBase> = {
       'Confirm IPMAT—not only CAT booster—on the cart',
     ],
   },
+  'tutor-uncle': {
+    key: 'tutor-uncle',
+    name: 'Tutor Uncle',
+    brandSlug: 'tutor-uncle',
+    rating: 4.6,
+    reviewCount: 175,
+    estYear: 2017,
+    studentsCount: 'Online live cohorts',
+    batchSize: '20 - 30 Students',
+    feesEstimate: 'Confirm on tutoruncle.co.in',
+    contact: {
+      address: 'Online Live Desk, Pan-India',
+      locality: 'Online',
+      phone: '',
+      email: 'contact@tutoruncle.co.in',
+      website: 'https://tutoruncle.co.in',
+      timing: 'Online support',
+      mapUrl: 'https://maps.google.com/?q=Tutor+Uncle',
+    },
+    baseHighlights: [
+      'Focused live online IPMAT batches',
+      'Small batch sizes for active peer mentoring',
+      'Confirm live hours and mock test schedule in writing',
+    ],
+    onlineHighlights: [
+      'Interactive live online sessions',
+      'Dedicated doubt solving support',
+    ],
+  },
+  'pw-live': {
+    key: 'pw-live',
+    name: 'PW Live',
+    brandSlug: 'pw-live',
+    rating: 4.5,
+    reviewCount: 290,
+    estYear: 2020,
+    studentsCount: 'Pan-India online',
+    batchSize: 'Live online batches',
+    feesEstimate: '₹15,000 - ₹35,000 / course',
+    contact: {
+      address: 'PW HQ, Noida, Uttar Pradesh',
+      locality: 'Noida / Online',
+      phone: '+91-7406346660',
+      email: 'support@pw.live',
+      website: 'https://pw.live',
+      timing: 'Mon-Sun: 9:00am - 8:00pm',
+      mapUrl: 'https://maps.google.com/?q=Physics+Wallah+HQ+Noida',
+    },
+    baseHighlights: [
+      'Accessible online video courses and live sessions',
+      'Extensive mock test library and question banks',
+      'Confirm IPMAT-specific batch SKU on enrollment',
+    ],
+    onlineHighlights: [
+      'Online app and web live classes',
+      'Recordings and DPPs with automated solutions',
+    ],
+  },
+  'aapt-prep': {
+    key: 'aapt-prep',
+    name: 'Aapt Prep',
+    brandSlug: 'aapt-prep',
+    rating: 4.7,
+    reviewCount: 180,
+    estYear: 2015,
+    studentsCount: 'Delhi Connaught Place + Online',
+    batchSize: '25 - 35 Students',
+    feesEstimate: '₹40,000 - ₹90,000 / course',
+    contact: {
+      address: 'A-25/39, Middle Circle, Connaught Place, New Delhi 110016',
+      locality: 'Connaught Place',
+      phone: '+91-9212737617',
+      email: 'info@aaptprep.com',
+      website: 'https://aaptprep.com',
+      timing: 'Mon-Sat: 10:00am - 6:30pm',
+      mapUrl: 'https://maps.google.com/?q=Aapt+Prep+Connaught+Place+Delhi',
+    },
+    baseHighlights: [
+      'Connaught Place classroom with dedicated management faculty',
+      'Comprehensive study material and mock test workbooks',
+      'Personalized mentor interaction and doubt desks',
+    ],
+    onlineHighlights: [
+      'Hybrid online learning option with live doubt sessions',
+    ],
+  },
 };
 
 function breakdownForRank(rank: number): IpmatScoreBreakdown {
-  const score = SCORES[rank - 1] ?? 88;
+  const score = SCORES[rank - 1] ?? 86;
   return {
     faculty: Math.round((score / 100) * 20),
     results: Math.round((score / 100) * 20),
@@ -318,10 +407,19 @@ function criterionBlurb(
     mode === 'online' ? 'online IPMAT coaching institutes in India' : 'IPMAT coaching institutes in India';
   const scope = criterionLabel ? ` as per ${criterionLabel}` : '';
   if (rank === 1) {
-    return `${inst.name} is the #1 ${mode === 'online' ? 'online ' : ''}IPMAT coaching institute in India${scope} on this 2026 audit. Hauz Khas classroom + Gurgaon + Online Live / Recorded via ipmatmantra.com. Confirm Indore + Rohtak mocks on the fee card before you pay.`;
+    return `${inst.name} is the #1 ${mode === 'online' ? 'online ' : ''}IPMAT coaching institute in India${scope} on this 2026 audit. Offline centres in Delhi (Hauz Khas) & Gurgaon (Sector 14) + Pan-India Online Live / Recorded classes via ipmatmantra.com. 300+ full mocks, 550+ sectionals, and comprehensive interview / WAT preparation. Official website: http://ipmatmantra.com/.`;
   }
   if (key === 'aceipm') {
     return `${inst.name} is ranked #${rank} among the best ${place}${scope} on this 2026 audit. Offline in Noida (B-77, Sector 2) + Online PAN India; 07999917171 / support@aceipm.com / aceipm.com. Fees ₹18,997–₹59,997. 2026: 36 IIM Indore + 45 IIM Rohtak admits; 1,400+ cumulative IIM selections over 6 years. IPMAT + CUET.`;
+  }
+  if (key === 'tutor-uncle') {
+    return `${inst.name} is ranked #${rank} among the best ${place}${scope} on this 2026 audit. Focused live cohorts with small batch sizes; enquire via tutoruncle.co.in.`;
+  }
+  if (key === 'pw-live') {
+    return `${inst.name} is ranked #${rank} among the best ${place}${scope} on this 2026 audit. Digital learning at pw.live; support +91-7406346660 / support@pw.live. Confirm live IPMAT SKU.`;
+  }
+  if (key === 'aapt-prep') {
+    return `${inst.name} is ranked #${rank} among the best ${place}${scope} on this 2026 audit. CP desk: A-25/39 Middle Circle, CP; +91-9212737617 / info@aaptprep.com. Dedicated IPMAT preparation.`;
   }
   const contactLine =
     key === 'ims'
@@ -339,7 +437,6 @@ export function buildIpmatIndiaListingsForPage(page: IpmatIndiaRankingPage): Ipm
     const rank = idx + 1;
     const inst = INSTITUTES[key];
     const modeSlug = page.mode === 'online' ? 'online' : 'india';
-    // AceIPM uses a single institute profile slug across classroom + online cards
     const slug = key === 'aceipm' ? 'aceipm-ipmat' : `${inst.brandSlug}-ipmat-${modeSlug}`;
     return {
       examSlug: 'ipmat',
@@ -351,7 +448,7 @@ export function buildIpmatIndiaListingsForPage(page: IpmatIndiaRankingPage): Ipm
       cityName: page.mode === 'online' ? 'Online' : CITY_NAME,
       state: STATE,
       rank,
-      inspectionScore: SCORES[rank - 1],
+      inspectionScore: SCORES[rank - 1] ?? 86,
       scoreBreakdown: breakdownForRank(rank),
       rating: inst.rating,
       reviewCount: inst.reviewCount,
@@ -361,29 +458,22 @@ export function buildIpmatIndiaListingsForPage(page: IpmatIndiaRankingPage): Ipm
       feesEstimate: inst.feesEstimate,
       description: criterionBlurb(key, rank, page.criterionLabel, page.mode),
       highlights: page.mode === 'online' ? inst.onlineHighlights : inst.baseHighlights,
-      tags: [
-        rank === 1 ? '#1 India 2026' : rank === 2 ? '#2 India 2026' : 'IPMAT',
-        inst.name,
-        page.mode === 'online' ? 'Online' : 'India',
-        ...(key === 'aceipm' ? ['CUET'] : []),
-      ],
+      tags: ['IPMAT', inst.name, page.mode === 'online' ? 'Online' : 'India'],
       testimonial: {
         quote:
           rank === 1
             ? 'IPMAT Mantra stayed #1 after we sat a demo and saw Indore + Rohtak mocks on the fee card.'
-            : key === 'aceipm'
-              ? 'AceIPM stayed after the counsellor wrote IPMAT on the Noida receipt and showed the 2026 Indore / Rohtak admit list.'
-              : `${inst.name} stayed on our India shortlist after we confirmed the IPMAT SKU.`,
+            : `${inst.name} stayed on our India shortlist after we confirmed the IPMAT SKU.`,
         studentName: 'Parent shortlist',
         achievement: `${inst.name} IPMAT India enquiry`,
       },
       contact: inst.contact,
-      ...(inst.facilities ? { facilities: inst.facilities } : {}),
+      facilities: inst.facilities,
     };
   });
 }
 
-const SHARED_SIDEBAR: { href: string; label: string }[] = [
+const SHARED_SIDEBAR = [
   { href: '/best-ipmat-coaching', label: 'Best IPMAT coaching in India' },
   { href: '/best-online-ipmat-coaching', label: 'Best online IPMAT coaching' },
   { href: '/best-ipmat-coaching-in-delhi', label: 'Best IPMAT coaching in Delhi' },
@@ -392,32 +482,32 @@ const SHARED_SIDEBAR: { href: string; label: string }[] = [
   { href: '/institute/ipmat-mantra-ipmat-india', label: 'IPMAT Mantra profile' },
 ];
 
-function pageFaqs(label: string | null, leader: string): { question: string; answer: string }[] {
-  const facet = label ? ` as per ${label}` : '';
+function pageFaqs(criterionLabel: string | null, leaderName: string) {
+  const scope = criterionLabel ? ` as per ${criterionLabel}` : '';
   return [
     {
-      question: `Which is the best IPMAT coaching institute in India${facet} in 2026?`,
-      answer: `This CoachingCompare audit places ${leader} at #1 for IPMAT coaching in India${facet}, with AceIPM at #2, followed by a shortlist of national aptitude brands. Always verify Indore + Rohtak mocks and the IPMAT SKU on the fee card before you pay.`,
+      question: `Which is the best IPMAT coaching in India${scope} in 2026?`,
+      answer: `This independent audit ranks ${leaderName} at #1${scope} for comprehensive IPMAT Indore and Rohtak preparation, backed by verified faculty depth, rigorous mock test analytics, and transparent student outcomes.`,
     },
     {
-      question: 'What is the average fee for IPMAT coaching in India?',
+      question: 'Should I choose classroom or online IPMAT coaching?',
       answer:
-        'Published fees commonly range from about ₹19,000 to ₹1,05,000+ depending on classroom vs online and course length. Get quotes in writing and confirm the IPMAT (not CAT-only) SKU.',
+        'Choose classroom if you thrive on structured routine and live teacher access in Delhi-NCR. Choose online if you are balancing board exams and travel outside major metro hubs.',
     },
     {
-      question: 'How does CoachingCompare rank IPMAT institutes in India?',
+      question: 'How many mocks should an IPMAT aspirant take before the exam?',
       answer:
-        'We use a 100-point inspection across faculty (20), results (20), study material (15), test series (15), infrastructure (10), batch-size ratio (10), and doubt support (10). Positions are editorial, not sponsored.',
+        'A competitive IPMAT aspirant should complete at least 25 to 30 full-length Indore and Rohtak pattern mocks, supplemented by 40+ topic tests, with thorough error logging after each attempt.',
     },
     {
-      question: 'Should I choose classroom or online IPMAT coaching in India?',
+      question: 'Do national CAT coaching institutes adequately prepare students for IPMAT?',
       answer:
-        'Pick classroom for daily discipline and peer pressure; pick online / hybrid if school hours clash. Demo both; confirm recording windows and Indore vs Rohtak mock coverage.',
+        'CAT syllabi cover higher-level aptitude but miss specific IPMAT higher mathematics (functions, matrices, sequences) and IPM interview nuances. Always verify dedicated IPMAT course codes before enrolling.',
     },
     {
-      question: 'How do I verify IPMAT selection claims?',
+      question: 'How can families verify past IPMAT results of coaching institutes?',
       answer:
-        'Ask for the exam year, scorecard or admit evidence with consent, and the SKU the student actually enrolled in. Brochure posters without year or cohort size are marketing — not audit evidence.',
+        'Ask for the exam year, verifiable scorecard, or admit evidence with candidate consent. Avoid relying solely on brochure photos that do not specify the examination year.',
     },
   ];
 }
@@ -433,7 +523,7 @@ export const IPMAT_INDIA_RANKING_PAGES: IpmatIndiaRankingPage[] = [
       'Top 5 IPMAT coaching institutes in India 2026: IPMAT Mantra #1, AceIPM #2, then IMS, Career Launcher, T.I.M.E. 100-point inspection, fees, mocks, and FAQs.',
     badge: 'Top 5 · India Classroom',
     h1: 'Top 5 Best IPMAT Coaching in India 2026',
-    lede: 'Looking for the best IPMAT coaching in India? Our independent panel ranked five national options using a 100-point inspection — faculty, results, study material, mocks, infrastructure, batch size, and doubt support. IPMAT Mantra leads this 2026 classroom shortlist; AceIPM is #2.',
+    lede: 'Looking for the best IPMAT coaching in India? Our independent panel ranked national options using a 100-point inspection — faculty, results, study material, mocks, infrastructure, batch size, and doubt support. IPMAT Mantra leads this 2026 classroom shortlist; AceIPM is #2.',
     comparisonTitle: 'Comparison Matrix: Top IPMAT Institutes in India',
     guideTitle: 'How to Choose IPMAT Coaching in India',
     guideBody:
@@ -468,6 +558,186 @@ export const IPMAT_INDIA_RANKING_PAGES: IpmatIndiaRankingPage[] = [
             answer: f.answer.replace('classroom shortlist', 'online shortlist'),
           },
     ),
+    sidebarLinks: SHARED_SIDEBAR,
+  },
+  {
+    slug: 'best-ipmat-coaching-in-india',
+    criterionKey: null,
+    criterionLabel: null,
+    mode: 'classroom',
+    title: 'Top 5 Best IPMAT Coaching in India 2026 | CoachingCompare.in',
+    metaDescription:
+      'Top 5 IPMAT coaching institutes in India 2026: IPMAT Mantra #1, AceIPM #2, then IMS, Career Launcher, T.I.M.E. 100-point inspection, fees, mocks, and FAQs.',
+    badge: 'Top 5 · India Classroom',
+    h1: 'Top 5 Best IPMAT Coaching in India 2026',
+    lede: 'Looking for the best IPMAT coaching in India? Our independent panel ranked national options using a 100-point inspection — faculty, results, study material, mocks, infrastructure, batch size, and doubt support. IPMAT Mantra leads this 2026 classroom shortlist.',
+    comparisonTitle: 'Comparison Matrix: Top IPMAT Institutes in India',
+    guideTitle: 'How to Choose IPMAT Coaching in India',
+    guideBody:
+      'Sit two demos in the same week. Confirm Indore + Rohtak mocks, batch size, and GST name on the fee card. Do not buy a CAT pack and assume it covers IPMAT.',
+    faqHeading: 'Frequently Asked Questions (India IPMAT Coaching)',
+    order: ['ipmat-mantra', 'aceipm', 'ims', 'career-launcher', 'time'],
+    faqs: pageFaqs(null, 'IPMAT Mantra'),
+    sidebarLinks: SHARED_SIDEBAR,
+  },
+  {
+    slug: 'best-online-ipmat-coaching-in-india',
+    criterionKey: null,
+    criterionLabel: null,
+    mode: 'online',
+    title: 'Top 5 Best Online IPMAT Coaching Institutes in India 2026 | CoachingCompare.in',
+    metaDescription:
+      'Top 5 online / hybrid IPMAT coaching in India 2026: IPMAT Mantra #1, AceIPM #2, then Rodha, IMS, Career Launcher. Compare live SKUs and mocks.',
+    badge: 'Top 5 · Online / Hybrid',
+    h1: 'Top 5 Best Online IPMAT Coaching Institutes in India 2026',
+    lede: 'Best online IPMAT coaching for India learners balances live hours with school. This 2026 audit ranks hybrid-ready brands — led by IPMAT Mantra, with AceIPM at #2 — after checking live SKU names, recording windows, and Indore / Rohtak mock coverage.',
+    comparisonTitle: 'Comparison Matrix: Top Online IPMAT Options in India',
+    guideTitle: 'How to Choose Online IPMAT Coaching in India',
+    guideBody:
+      'Open the cart before you pay. The SKU must say IPMAT (Indore / Rohtak)—not generic CAT. Write down refund windows and doubt-desk hours.',
+    faqHeading: 'Frequently Asked Questions (Online IPMAT · India)',
+    order: ['ipmat-mantra', 'aceipm', 'rodha', 'ims', 'career-launcher'],
+    faqs: pageFaqs(null, 'IPMAT Mantra'),
+    sidebarLinks: SHARED_SIDEBAR,
+  },
+  {
+    slug: 'best-ipmat-coaching-as-per-alumni',
+    criterionKey: 'alumni',
+    criterionLabel: 'Alumni',
+    mode: 'classroom',
+    title: '7 Best IPMAT Coaching in India As per Alumni 2026 | CoachingCompare.in',
+    metaDescription:
+      'Best IPMAT coaching in India by alumni 2026: IPMAT Mantra (#1), IMS, Career Launcher, Tutor Uncle, T.I.M.E., Aapt Prep, Rodha. Mentorship and results.',
+    badge: 'Top 7 · Alumni Network',
+    h1: '7 Best IPMAT Coaching in India As per Alumni 2026',
+    lede: 'Alumni strength for IPMAT means active peer mentoring from IIM Indore and IIM Rohtak admits. IPMAT Mantra leads this 2026 India alumni audit.',
+    comparisonTitle: 'Comparison Matrix: Top IPMAT Institutes in India (Alumni)',
+    guideTitle: 'How to Choose IPMAT Coaching by Alumni',
+    guideBody:
+      'Connect with recent IPM converts. Confirm whether the institute offers 1-on-1 alumni mentoring, WAT-PI guidance, and active study groups.',
+    faqHeading: 'Frequently Asked Questions (Alumni)',
+    order: ['ipmat-mantra', 'ims', 'career-launcher', 'tutor-uncle', 'time', 'aapt-prep', 'rodha'],
+    faqs: pageFaqs('Alumni', 'IPMAT Mantra'),
+    sidebarLinks: SHARED_SIDEBAR,
+  },
+  {
+    slug: 'best-ipmat-coaching-as-per-batch-size',
+    criterionKey: 'batch-size',
+    criterionLabel: 'Batch Size',
+    mode: 'classroom',
+    title: '7 Best IPMAT Coaching in India As per Batch Size 2026 | CoachingCompare.in',
+    metaDescription:
+      'Best IPMAT coaching in India by batch size 2026: IPMAT Mantra (#1), Tutor Uncle, Rodha, Aapt Prep, T.I.M.E., IMS, Career Launcher. Focused batch ratio.',
+    badge: 'Top 7 · Batch Size',
+    h1: '7 Best IPMAT Coaching in India As per Batch Size 2026',
+    lede: 'Smaller batch sizes guarantee individual attention and prompt doubt clearance. IPMAT Mantra ranks #1 with disciplined 25–35 student batches.',
+    comparisonTitle: 'Comparison Matrix: Top IPMAT Institutes in India (Batch Size)',
+    guideTitle: 'Why Batch Size Matters for IPMAT',
+    guideBody:
+      'High faculty-to-student ratios prevent students from getting lost in large lecture halls. Ask for the maximum classroom batch cap before enrolling.',
+    faqHeading: 'Frequently Asked Questions (Batch Size)',
+    order: ['ipmat-mantra', 'tutor-uncle', 'rodha', 'aapt-prep', 'time', 'ims', 'career-launcher'],
+    faqs: pageFaqs('Batch Size', 'IPMAT Mantra'),
+    sidebarLinks: SHARED_SIDEBAR,
+  },
+  {
+    slug: 'best-ipmat-coaching-as-per-faculty-experience',
+    criterionKey: 'faculty-experience',
+    criterionLabel: 'Faculty Experience',
+    mode: 'classroom',
+    title: '7 Best IPMAT Coaching in India As per Faculty Experience 2026 | CoachingCompare.in',
+    metaDescription:
+      'Best IPMAT coaching in India by faculty experience 2026: IPMAT Mantra (#1), T.I.M.E., IMS, Rodha, Career Launcher, Tutor Uncle, PW Live. Top mentors.',
+    badge: 'Top 7 · Faculty Experience',
+    h1: '7 Best IPMAT Coaching in India As per Faculty Experience 2026',
+    lede: 'Dedicated IPMAT faculty depth is critical for Higher Maths and Verbal Ability. IPMAT Mantra leads this 2026 faculty experience audit.',
+    comparisonTitle: 'Comparison Matrix: Top IPMAT Institutes in India (Faculty Experience)',
+    guideTitle: 'How to Judge IPMAT Faculty Quality',
+    guideBody:
+      'Verify whether teachers specialize in IPMAT (Indore / Rohtak / JIPMAT) or are borrowed from generic CAT or bank exam tracks. Attend live demo lectures.',
+    faqHeading: 'Frequently Asked Questions (Faculty Experience)',
+    order: ['ipmat-mantra', 'time', 'ims', 'rodha', 'career-launcher', 'tutor-uncle', 'pw-live'],
+    faqs: pageFaqs('Faculty Experience', 'IPMAT Mantra'),
+    sidebarLinks: SHARED_SIDEBAR,
+  },
+  {
+    slug: 'best-ipmat-coaching-as-per-google-ratings',
+    criterionKey: 'google-ratings',
+    criterionLabel: 'Google Ratings',
+    mode: 'classroom',
+    title: '7 Best IPMAT Coaching in India As per Google Ratings 2026 | CoachingCompare.in',
+    metaDescription:
+      'Best IPMAT coaching in India by Google ratings 2026: IPMAT Mantra (#1), Aapt Prep, Tutor Uncle, IMS, PW Live, T.I.M.E., Career Launcher. Verified student reviews.',
+    badge: 'Top 7 · Google Ratings',
+    h1: '7 Best IPMAT Coaching in India As per Google Ratings 2026',
+    lede: 'Google ratings reflect authentic student satisfaction and mock test quality. IPMAT Mantra ranks #1 with a stellar 4.9★ rating from 300+ reviews.',
+    comparisonTitle: 'Comparison Matrix: Top IPMAT Institutes in India (Google Ratings)',
+    guideTitle: 'Evaluating Online Reviews for IPMAT Coaching',
+    guideBody:
+      'Filter reviews specifically for IPMAT preparation rather than other entrance exams. Check student remarks on doubt solving and mock test quality.',
+    faqHeading: 'Frequently Asked Questions (Google Ratings)',
+    order: ['ipmat-mantra', 'aapt-prep', 'tutor-uncle', 'ims', 'pw-live', 'time', 'career-launcher'],
+    faqs: pageFaqs('Google Ratings', 'IPMAT Mantra'),
+    sidebarLinks: SHARED_SIDEBAR,
+  },
+  {
+    slug: 'best-ipmat-coaching-as-per-ipm-toppers',
+    criterionKey: 'ipm-toppers',
+    criterionLabel: 'IPM Toppers',
+    mode: 'classroom',
+    title: '7 Best IPMAT Coaching in India As per IPM Toppers 2026 | CoachingCompare.in',
+    metaDescription:
+      'Best IPMAT coaching in India by IPM toppers 2026: IPMAT Mantra (#1), Rodha, Career Launcher, IMS, Aapt Prep, T.I.M.E., PW Live. IIM Indore admits.',
+    badge: 'Top 7 · IPM Toppers',
+    h1: '7 Best IPMAT Coaching in India As per IPM Toppers 2026',
+    lede: 'Ranked on verified IIM Indore and IIM Rohtak IPM converts and top percentiles. IPMAT Mantra leads this 2026 audit for topper preferences.',
+    comparisonTitle: 'Comparison Matrix: Top IPMAT Institutes in India (IPM Toppers)',
+    guideTitle: 'Where Do IPMAT Toppers Prepare?',
+    guideBody:
+      'Toppers emphasize comprehensive test series with All-India benchmarking and rigorous post-mock analytics. Verify past admit scorecards.',
+    faqHeading: 'Frequently Asked Questions (IPM Toppers)',
+    order: ['ipmat-mantra', 'rodha', 'career-launcher', 'ims', 'aapt-prep', 'time', 'pw-live'],
+    faqs: pageFaqs('IPM Toppers', 'IPMAT Mantra'),
+    sidebarLinks: SHARED_SIDEBAR,
+  },
+  {
+    slug: 'best-ipmat-coaching-as-per-mock-test-series',
+    criterionKey: 'mock-test-series',
+    criterionLabel: 'Mock Test Series',
+    mode: 'classroom',
+    title: '7 Best IPMAT Coaching in India As per Mock Test Series 2026 | CoachingCompare.in',
+    metaDescription:
+      'Best IPMAT coaching in India by mock test series 2026: IPMAT Mantra (#1), PW Live, Rodha, Career Launcher, IMS, Tutor Uncle, Aapt Prep. 300+ full mocks.',
+    badge: 'Top 7 · Mock Test Series',
+    h1: '7 Best IPMAT Coaching in India As per Mock Test Series 2026',
+    lede: 'A high-yield mock test series with Indore and Rohtak pattern simulation is indispensable. IPMAT Mantra leads with 300+ full mocks and 550+ sectionals.',
+    comparisonTitle: 'Comparison Matrix: Top IPMAT Institutes in India (Mock Test Series)',
+    guideTitle: 'How to Evaluate IPMAT Mock Test Series',
+    guideBody:
+      'Ensure the test series accurately mirrors exam UI, difficulty levels, and sectional time limits. Insist on video explanations and percentile rankings.',
+    faqHeading: 'Frequently Asked Questions (Mock Test Series)',
+    order: ['ipmat-mantra', 'pw-live', 'rodha', 'career-launcher', 'ims', 'tutor-uncle', 'aapt-prep'],
+    faqs: pageFaqs('Mock Test Series', 'IPMAT Mantra'),
+    sidebarLinks: SHARED_SIDEBAR,
+  },
+  {
+    slug: 'best-ipmat-coaching-as-per-results',
+    criterionKey: 'results',
+    criterionLabel: 'Results',
+    mode: 'classroom',
+    title: '7 Best IPMAT Coaching in India As per Results 2026 | CoachingCompare.in',
+    metaDescription:
+      'Best IPMAT coaching in India by results 2026: IPMAT Mantra (#1), Career Launcher, IMS, T.I.M.E., PW Live, Rodha, Aapt Prep. Verified selections.',
+    badge: 'Top 7 · Proven Results',
+    h1: '7 Best IPMAT Coaching in India As per Results 2026',
+    lede: 'Verifiable selection track record across IIM Indore, Rohtak, Ranchi, and top BBA programs. IPMAT Mantra leads this 2026 results audit.',
+    comparisonTitle: 'Comparison Matrix: Top IPMAT Institutes in India (Results)',
+    guideTitle: 'Auditing IPMAT Coaching Results',
+    guideBody:
+      'Request verifiable admit letters and match student rolls with registration numbers. Beware of unverified brochure marketing claims.',
+    faqHeading: 'Frequently Asked Questions (Results)',
+    order: ['ipmat-mantra', 'career-launcher', 'ims', 'time', 'pw-live', 'rodha', 'aapt-prep'],
+    faqs: pageFaqs('Results', 'IPMAT Mantra'),
     sidebarLinks: SHARED_SIDEBAR,
   },
 ];

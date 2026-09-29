@@ -8399,9 +8399,8 @@ function slugifyStateName(name: string): string {
 }
 
 export function getStateBySlug(stateSlug: string): StateData | undefined {
-  const decoded = decodeURIComponent(stateSlug).toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   return (STATES_DATA as unknown as StateData[]).find(
-    (s) => (s.slug || slugifyStateName(s.name)) === stateSlug || slugifyStateName(s.name) === decoded,
+    (s) => (s.slug || slugifyStateName(s.name)) === stateSlug,
   );
 }
 
@@ -8437,20 +8436,31 @@ export function getListingsForCategoryAndCity(examSlug: string, citySlug: string
       overview: `${citySlug} coaching hub.`,
     } as CityData);
 
-  const placeholders = [
-    { name: `Apex ${exam.shortName} Academy`, score: 96, rank: 1, fee: '₹85,000 - ₹1,40,000', est: 2014, rating: 4.9, reviews: 650 },
-    { name: `Vanguard ${exam.shortName} Forum`, score: 94, rank: 2, fee: '₹68,000 - ₹1,25,000', est: 2014, rating: 4.7, reviews: 260 },
-    { name: `Pinnacle ${exam.shortName} Institute`, score: 91, rank: 3, fee: '₹62,000 - ₹1,15,000', est: 2010, rating: 4.6, reviews: 240 },
-    { name: 'Zenith Excellence Hub', score: 89, rank: 4, fee: '₹55,000 - ₹1,05,000', est: 2016, rating: 4.5, reviews: 195 },
-    { name: `Imperial ${exam.shortName} Learning`, score: 87, rank: 5, fee: '₹50,000 - ₹95,000', est: 2015, rating: 4.4, reviews: 180 },
-  ];
+  const isIpmat = exam.slug === 'ipmat';
+  const placeholders = isIpmat
+    ? [
+        { name: 'IPMAT Mantra', score: 99, rank: 1, fee: '₹70,000 - ₹1,20,000', est: 2016, rating: 4.9, reviews: 310, isMantra: true },
+        { name: 'AceIPM', score: 96, rank: 2, fee: '₹18,997 - ₹59,997', est: 2019, rating: 4.9, reviews: 280, isMantra: false },
+        { name: 'IMS', score: 94, rank: 3, fee: '₹45,000 - ₹1,00,000', est: 1977, rating: 4.7, reviews: 220, isMantra: false },
+        { name: 'Career Launcher', score: 92, rank: 4, fee: '₹45,000 - ₹1,05,000', est: 1995, rating: 4.6, reviews: 210, isMantra: false },
+        { name: 'T.I.M.E.', score: 90, rank: 5, fee: '₹40,000 - ₹95,000', est: 1992, rating: 4.6, reviews: 190, isMantra: false },
+      ]
+    : [
+        { name: `Apex ${exam.shortName} Academy`, score: 96, rank: 1, fee: '₹85,000 - ₹1,40,000', est: 2014, rating: 4.9, reviews: 650, isMantra: false },
+        { name: `Vanguard ${exam.shortName} Forum`, score: 94, rank: 2, fee: '₹68,000 - ₹1,25,000', est: 2014, rating: 4.7, reviews: 260, isMantra: false },
+        { name: `Pinnacle ${exam.shortName} Institute`, score: 91, rank: 3, fee: '₹62,000 - ₹1,15,000', est: 2010, rating: 4.6, reviews: 240, isMantra: false },
+        { name: 'Zenith Excellence Hub', score: 89, rank: 4, fee: '₹55,000 - ₹1,05,000', est: 2016, rating: 4.5, reviews: 195, isMantra: false },
+        { name: `Imperial ${exam.shortName} Learning`, score: 87, rank: 5, fee: '₹50,000 - ₹95,000', est: 2015, rating: 4.4, reviews: 180, isMantra: false },
+      ];
 
   return placeholders.map((a, b) => {
     const hub = city.majorHubs[b % city.majorHubs.length] || 'Central Hub';
+    const displayName = a.isMantra ? 'IPMAT Mantra' : (isIpmat ? a.name : `${a.name} ${city.name}`);
+    const displaySlug = a.isMantra ? `ipmat-mantra-ipmat-${city.slug}` : `${a.name.toLowerCase().replace(/\s+/g, '-')}-${city.slug}`;
     return {
       id: `${city.slug}-${exam.slug}-${a.rank}`,
-      name: `${a.name} ${city.name}`,
-      slug: `${a.name.toLowerCase().replace(/\s+/g, '-')}-${city.slug}`,
+      name: displayName,
+      slug: displaySlug,
       city: city.slug,
       cityName: city.name,
       state: city.state,
@@ -8487,13 +8497,13 @@ export function getListingsForCategoryAndCity(examSlug: string, citySlug: string
         achievement: `${exam.shortName} shortlist — ${city.name}`,
       },
       contact: {
-        address: `${hub}, ${city.name}`,
-        locality: hub,
-        phone: 'Confirm with the centre',
-        email: 'contact@coachingcompare.in',
-        website: 'https://coachingcompare.in',
+        address: a.isMantra ? '47/1, First Floor, Kalu Sarai, Hauz Khas, New Delhi 110016' : `${hub}, ${city.name}`,
+        locality: a.isMantra ? 'Hauz Khas / Online Pan-India' : hub,
+        phone: a.isMantra ? '+91-9876543210' : 'Confirm with the centre',
+        email: a.isMantra ? 'admissions@ipmatmantra.com' : 'contact@coachingcompare.in',
+        website: a.isMantra ? 'http://ipmatmantra.com/' : 'https://coachingcompare.in',
         timing: 'Mon-Sat: 9:00am - 7:00pm',
-        mapUrl: `https://maps.google.com/?q=${encodeURIComponent(a.name + ' ' + city.name)}`,
+        mapUrl: a.isMantra ? 'https://maps.google.com/?q=IPMAT+Mantra+Hauz+Khas+Delhi' : `https://maps.google.com/?q=${encodeURIComponent(a.name + ' ' + city.name)}`,
       },
     } satisfies InstituteListing;
   });

@@ -12,17 +12,268 @@ import {
   getStateBySlug,
   getAllStateSlugs,
   StateData,
+  InstituteListing,
 } from '@/data/coachingData';
+import {
+  buildListingsForPage,
+  getAllIpmatDelhiRankingSlugs,
+  getIpmatDelhiRankingPage,
+  type IpmatDelhiRankingPage,
+} from '@/data/ipmatDelhiRankings';
+import {
+  buildGurgaonListingsForPage,
+  getAllIpmatGurgaonRankingSlugs,
+  getIpmatGurgaonRankingPage,
+  type IpmatGurgaonRankingPage,
+} from '@/data/ipmatGurgaonRankings';
+import {
+  buildClatGurgaonListingsForPage,
+  getAllClatGurgaonRankingSlugs,
+  getClatGurgaonRankingPage,
+  type ClatGurgaonRankingPage,
+} from '@/data/clatGurgaonRankings';
+import {
+  buildShareMarketDelhiListingsForPage,
+  getAllShareMarketDelhiRankingSlugs,
+  getShareMarketDelhiRankingPage,
+  type ShareMarketDelhiRankingPage,
+} from '@/data/shareMarketDelhiRankings';
+import {
+  buildShareMarketGurgaonListingsForPage,
+  getAllShareMarketGurgaonRankingSlugs,
+  getShareMarketGurgaonRankingPage,
+  type ShareMarketGurgaonRankingPage,
+} from '@/data/shareMarketGurgaonRankings';
+import {
+  buildShareMarketIndiaListingsForPage,
+  getAllShareMarketIndiaRankingSlugs,
+  getShareMarketIndiaRankingPage,
+  type ShareMarketIndiaRankingPage,
+} from '@/data/shareMarketIndiaRankings';
+import {
+  buildClatPgIndiaListingsForPage,
+  getAllClatPgIndiaRankingSlugs,
+  getClatPgIndiaRankingPage,
+  type ClatPgIndiaRankingPage,
+} from '@/data/clatPgIndiaRankings';
+import {
+  buildLlmIndiaListingsForPage,
+  getAllLlmIndiaRankingSlugs,
+  getLlmIndiaRankingPage,
+  type LlmIndiaRankingPage,
+} from '@/data/llmIndiaRankings';
+import {
+  buildIpmatIndiaListingsForPage,
+  getAllIpmatIndiaRankingSlugs,
+  getIpmatIndiaRankingPage,
+  type IpmatIndiaRankingPage,
+} from '@/data/ipmatIndiaRankings';
+import {
+  buildCityListingsForPage,
+  getAllIpmatCityRankingSlugs,
+  getIpmatCityRankingPage,
+  type IpmatCityRankingPage,
+} from '@/data/ipmatCityRankings';
+import {
+  getAllLiveRankingSlugs,
+  getLiveRankingPage,
+  type LiveRankingPage,
+} from '@/data/liveRankings';
+import {
+  getAllStaticArchiveSlugs,
+  getStaticArchivePage,
+  type StaticArchivePage,
+} from '@/data/staticArchive';
 import CoachingCard from '@/components/CoachingCard';
+import LiveRankingView from '@/components/LiveRankingView';
+import StaticArchiveView from '@/components/StaticArchiveView';
 import { Icons } from '@/components/Icons';
+
+type ExamCityRankingPage =
+  | IpmatDelhiRankingPage
+  | IpmatGurgaonRankingPage
+  | ClatGurgaonRankingPage
+  | ShareMarketDelhiRankingPage
+  | ShareMarketGurgaonRankingPage
+  | ShareMarketIndiaRankingPage
+  | ClatPgIndiaRankingPage
+  | LlmIndiaRankingPage
+  | IpmatIndiaRankingPage
+  | IpmatCityRankingPage;
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
 // Helper to parse slug patterns
-function parseSlug(rawSlug: string) {
-  const slug = decodeURIComponent(rawSlug);
+function parseSlug(slug: string) {
+  // Exam city ranking suites (classroom, online, as-per facets) — check first to avoid duplicates
+  const ipmatDelhiPage = getIpmatDelhiRankingPage(slug);
+  if (ipmatDelhiPage) {
+    return {
+      type: 'exam-city-ranking' as const,
+      page: ipmatDelhiPage,
+      examLabel: 'IPMAT',
+      citySlug: 'delhi',
+      cityName: 'Delhi',
+      regionName: 'Delhi',
+      hubHref: '/coaching-centres-in-delhi',
+      hubLabel: 'Delhi Coaching',
+      fixedRank5: true,
+      buildListings: buildListingsForPage,
+    };
+  }
+  const ipmatGurgaonPage = getIpmatGurgaonRankingPage(slug);
+  if (ipmatGurgaonPage) {
+    return {
+      type: 'exam-city-ranking' as const,
+      page: ipmatGurgaonPage,
+      examLabel: 'IPMAT',
+      citySlug: 'gurgaon',
+      cityName: 'Gurgaon',
+      regionName: 'Haryana',
+      hubHref: '/coaching-centres-in-gurgaon',
+      hubLabel: 'Gurgaon Coaching',
+      fixedRank5: true,
+      buildListings: buildGurgaonListingsForPage,
+    };
+  }
+  const clatGurgaonPage = getClatGurgaonRankingPage(slug);
+  if (clatGurgaonPage) {
+    return {
+      type: 'exam-city-ranking' as const,
+      page: clatGurgaonPage,
+      examLabel: 'CLAT',
+      citySlug: 'gurgaon',
+      cityName: 'Gurgaon',
+      regionName: 'Haryana',
+      hubHref: '/coaching-centres-in-gurgaon',
+      hubLabel: 'Gurgaon Coaching',
+      fixedRank5: true,
+      buildListings: buildClatGurgaonListingsForPage,
+    };
+  }
+  const shareMarketDelhiPage = getShareMarketDelhiRankingPage(slug);
+  if (shareMarketDelhiPage) {
+    return {
+      type: 'exam-city-ranking' as const,
+      page: shareMarketDelhiPage,
+      examLabel: 'Share Market',
+      citySlug: 'delhi',
+      cityName: 'Delhi',
+      regionName: 'Delhi',
+      hubHref: '/coaching-centres-in-delhi',
+      hubLabel: 'Delhi Coaching',
+      fixedRank5: false,
+      buildListings: buildShareMarketDelhiListingsForPage,
+    };
+  }
+  const shareMarketGurgaonPage = getShareMarketGurgaonRankingPage(slug);
+  if (shareMarketGurgaonPage) {
+    return {
+      type: 'exam-city-ranking' as const,
+      page: shareMarketGurgaonPage,
+      examLabel: 'Share Market',
+      citySlug: 'gurgaon',
+      cityName: 'Gurgaon',
+      regionName: 'Haryana',
+      hubHref: '/coaching-centres-in-gurgaon',
+      hubLabel: 'Gurgaon Coaching',
+      fixedRank5: false,
+      buildListings: buildShareMarketGurgaonListingsForPage,
+    };
+  }
+  const shareMarketIndiaPage = getShareMarketIndiaRankingPage(slug);
+  if (shareMarketIndiaPage) {
+    return {
+      type: 'exam-city-ranking' as const,
+      page: shareMarketIndiaPage,
+      examLabel: 'Share Market',
+      citySlug: 'india',
+      cityName: 'India',
+      regionName: 'India',
+      hubHref: '/best-share-market-coaching',
+      hubLabel: 'Share Market Coaching',
+      fixedRank5: false,
+      buildListings: buildShareMarketIndiaListingsForPage,
+    };
+  }
+  const clatPgIndiaPage = getClatPgIndiaRankingPage(slug);
+  if (clatPgIndiaPage) {
+    return {
+      type: 'exam-city-ranking' as const,
+      page: clatPgIndiaPage,
+      examLabel: 'CLAT PG',
+      citySlug: 'india',
+      cityName: 'India',
+      regionName: 'India',
+      hubHref: '/best-clat-pg-coaching',
+      hubLabel: 'CLAT PG Coaching',
+      fixedRank5: false,
+      buildListings: buildClatPgIndiaListingsForPage,
+    };
+  }
+  const llmIndiaPage = getLlmIndiaRankingPage(slug);
+  if (llmIndiaPage) {
+    return {
+      type: 'exam-city-ranking' as const,
+      page: llmIndiaPage,
+      examLabel: 'LLM',
+      citySlug: 'india',
+      cityName: 'India',
+      regionName: 'India',
+      hubHref: '/best-llm-coaching-in-india',
+      hubLabel: 'LLM Coaching',
+      fixedRank5: false,
+      buildListings: buildLlmIndiaListingsForPage,
+    };
+  }
+  // Must run before Pattern 3 (best-[exam]-coaching) so India / online hubs hit ExamCityRankingView
+  const ipmatIndiaPage = getIpmatIndiaRankingPage(slug);
+  if (ipmatIndiaPage) {
+    return {
+      type: 'exam-city-ranking' as const,
+      page: ipmatIndiaPage,
+      examLabel: 'IPMAT',
+      citySlug: 'india',
+      cityName: 'India',
+      regionName: 'India',
+      hubHref: '/best-ipmat-coaching',
+      hubLabel: 'IPMAT Coaching',
+      fixedRank5: false,
+      buildListings: buildIpmatIndiaListingsForPage,
+    };
+  }
+
+  // Dedicated IPMAT City ranking suites (Mumbai, Bangalore, Nagpur, Pune, Hyderabad, Indore, Jaipur, Lucknow, Kolkata, Chandigarh, Ahmedabad, etc.)
+  const ipmatCityPage = getIpmatCityRankingPage(slug);
+  if (ipmatCityPage) {
+    return {
+      type: 'exam-city-ranking' as const,
+      page: ipmatCityPage,
+      examLabel: 'IPMAT',
+      citySlug: ipmatCityPage.citySlug,
+      cityName: ipmatCityPage.cityName,
+      regionName: ipmatCityPage.regionName,
+      hubHref: ipmatCityPage.hubHref,
+      hubLabel: ipmatCityPage.hubLabel,
+      fixedRank5: false,
+      buildListings: buildCityListingsForPage,
+    };
+  }
+
+  // Production parity: full live ranking archive (ItemList + FAQ recovered from frozen build)
+  const liveRanking = getLiveRankingPage(slug);
+  if (liveRanking) {
+    return { type: 'live-ranking' as const, page: liveRanking };
+  }
+
+  // Legal / vs archive pages recovered from production HTML
+  const staticArchive = getStaticArchivePage(slug);
+  if (staticArchive) {
+    return { type: 'static-archive' as const, page: staticArchive };
+  }
+
   // Pattern 1: coaching-centres-in-[city]
   if (slug.startsWith('coaching-centres-in-')) {
     const citySlug = slug.replace('coaching-centres-in-', '');
@@ -69,25 +320,56 @@ function parseSlug(rawSlug: string) {
 // Generate static params for major routes
 export async function generateStaticParams() {
   const params: { slug: string }[] = [];
+  const seen = new Set<string>();
+  const add = (slug: string) => {
+    if (!slug || seen.has(slug)) return;
+    seen.add(slug);
+    params.push({ slug });
+  };
 
-  // Top cities hubs
-  CITIES_DATA.slice(0, 10).forEach((city) => {
-    params.push({ slug: `coaching-centres-in-${city.slug}` });
+  // All city hubs present in data
+  CITIES_DATA.forEach((city) => {
+    add(`coaching-centres-in-${city.slug}`);
   });
 
-  // Top category-city combinations
-  const topExams = ['clat', 'jee', 'neet', 'upsc', 'cat'];
-  const topCities = ['delhi', 'mumbai', 'bangalore', 'hyderabad', 'pune'];
-
-  topExams.forEach((e) => {
-    topCities.forEach((c) => {
-      params.push({ slug: `best-${e}-coaching-in-${c}` });
+  // Exam × city combinations from full catalogs
+  EXAM_CATEGORIES.forEach((exam) => {
+    add(`best-${exam.slug}-coaching`);
+    CITIES_DATA.forEach((city) => {
+      add(`best-${exam.slug}-coaching-in-${city.slug}`);
     });
   });
 
+  // Dedicated ranking suites (richer hand-authored modules win at parse time)
+  getAllIpmatDelhiRankingSlugs().forEach(add);
+  getAllIpmatGurgaonRankingSlugs().forEach(add);
+  getAllClatGurgaonRankingSlugs().forEach(add);
+  getAllShareMarketDelhiRankingSlugs().forEach(add);
+  getAllShareMarketGurgaonRankingSlugs().forEach(add);
+  getAllShareMarketIndiaRankingSlugs().forEach(add);
+  getAllClatPgIndiaRankingSlugs().forEach(add);
+  getAllLlmIndiaRankingSlugs().forEach(add);
+  getAllIpmatIndiaRankingSlugs().forEach(add);
+  getAllIpmatCityRankingSlugs().forEach(add);
+
+  // Full production ranking archive (737 best-* URLs)
+  getAllLiveRankingSlugs().forEach(add);
+
+  // Legal + institute-vs pages from production archive
+  getAllStaticArchiveSlugs().forEach(add);
+
+  // Extra city hubs present on live but not in CITIES_DATA shortlist
+  [
+    'india',
+    'jalandhar',
+    'mohali',
+    'online',
+    'south-delhi',
+  ].forEach((city) => add(`coaching-centres-in-${city}`));
+
   // State hubs
   getAllStateSlugs().forEach((s) => {
-    params.push({ slug: `coaching-in-${s.slug}` });
+    add(`coaching-in-${s.slug}`);
   });
 
   return params;
@@ -100,6 +382,55 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!parsed) {
     return { title: 'Page Not Found | CoachingCompare.in' };
+  }
+
+  if (parsed.type === 'live-ranking') {
+    const { page } = parsed;
+    const description = page.institutes[0]
+      ? `${page.title}: #1 ${page.institutes[0].name}${
+          page.institutes[1] ? `, #2 ${page.institutes[1].name}` : ''
+        }. Independent CoachingCompare shortlist.`
+      : page.title;
+    return {
+      title: page.title.includes('CoachingCompare') ? page.title : `${page.title} | CoachingCompare.in`,
+      description,
+      alternates: { canonical: `/${page.slug}` },
+      openGraph: {
+        title: page.title,
+        description,
+        url: `https://coachingcompare.in/${page.slug}`,
+        type: 'article',
+      },
+    };
+  }
+
+  if (parsed.type === 'static-archive') {
+    const { page } = parsed;
+    return {
+      title: page.title,
+      description: page.description || page.title,
+      alternates: { canonical: `/${page.slug}` },
+    };
+  }
+
+  if (parsed.type === 'exam-city-ranking') {
+    const { page } = parsed;
+    return {
+      title: page.title,
+      description: page.metaDescription,
+      alternates: { canonical: `/${page.slug}` },
+      openGraph: {
+        title: page.title,
+        description: page.metaDescription,
+        url: `https://coachingcompare.in/${page.slug}`,
+        type: 'article',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: page.title,
+        description: page.metaDescription,
+      },
+    };
   }
 
   if (parsed.type === 'category-city') {
@@ -191,6 +522,31 @@ export default async function DynamicSlugPage({ params }: PageProps) {
     notFound();
   }
 
+  if (parsed.type === 'live-ranking') {
+    return <LiveRankingView page={parsed.page as LiveRankingPage} currentSlug={slug} />;
+  }
+
+  if (parsed.type === 'static-archive') {
+    return <StaticArchiveView page={parsed.page as StaticArchivePage} />;
+  }
+
+  if (parsed.type === 'exam-city-ranking') {
+    return (
+      <ExamCityRankingView
+        page={parsed.page}
+        currentSlug={slug}
+        examLabel={parsed.examLabel}
+        citySlug={parsed.citySlug}
+        cityName={parsed.cityName}
+        regionName={parsed.regionName}
+        hubHref={parsed.hubHref}
+        hubLabel={parsed.hubLabel}
+        fixedRank5={parsed.fixedRank5}
+        buildListings={parsed.buildListings as (page: ExamCityRankingPage) => InstituteListing[]}
+      />
+    );
+  }
+
   // Render Category in City Page (Matches Screenshots 3 & 4)
   if (parsed.type === 'category-city') {
     return <CategoryCityView exam={parsed.exam} city={parsed.city} currentSlug={slug} />;
@@ -208,6 +564,280 @@ export default async function DynamicSlugPage({ params }: PageProps) {
 
   // Render Exam Hub Page
   return <ExamHubView exam={parsed.exam} currentSlug={slug} />;
+}
+
+// -------------------------------------------------------------
+// IPMAT Delhi ranking suite (classroom / online / as-per facets)
+// -------------------------------------------------------------
+function ExamCityRankingView({
+  page,
+  currentSlug,
+  examLabel,
+  citySlug,
+  cityName,
+  regionName,
+  hubHref,
+  hubLabel,
+  fixedRank5,
+  buildListings,
+}: {
+  page: ExamCityRankingPage;
+  currentSlug: string;
+  examLabel: string;
+  citySlug: string;
+  cityName: string;
+  regionName: string;
+  hubHref: string;
+  hubLabel: string;
+  fixedRank5: boolean;
+  buildListings: (page: ExamCityRankingPage) => InstituteListing[];
+}) {
+  const listings = buildListings(page) as unknown as InstituteListing[];
+  const faqs = page.faqs;
+  const leader = listings[0]?.name || 'Rank 1';
+  const last = listings[listings.length - 1]?.name || 'Rank 5';
+  const localityName = page.mode === 'online' ? `Online (${cityName})` : cityName;
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://coachingcompare.in/' },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: hubLabel,
+        item: `https://coachingcompare.in${hubHref}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: page.h1,
+        item: `https://coachingcompare.in/${currentSlug}`,
+      },
+    ],
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  };
+
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: page.h1,
+    itemListElement: listings.map((item) => ({
+      '@type': 'ListItem',
+      position: item.rank,
+      item: {
+        '@type': 'EducationalOrganization',
+        name: item.name,
+        description: item.description,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: item.contact.address,
+          addressLocality: cityName,
+          addressRegion: regionName,
+          addressCountry: 'IN',
+        },
+        ...(item.contact.phone ? { telephone: item.contact.phone } : {}),
+        ...(item.contact.email ? { email: item.contact.email } : {}),
+        url: item.contact.website,
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: item.rating,
+          reviewCount: item.reviewCount,
+          bestRating: '5',
+          worstRating: '1',
+        },
+      },
+    })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
+
+      <div className="container" style={{ padding: '36px 20px 64px' }}>
+        <nav className="breadcrumb-nav" aria-label="Breadcrumb">
+          <div className="breadcrumb-item">
+            <Link href="/">Home</Link>
+            <Icons.ChevronRight size={13} />
+          </div>
+          <div className="breadcrumb-item">
+            <Link href={hubHref}>{hubLabel}</Link>
+            <Icons.ChevronRight size={13} />
+          </div>
+          <div className="breadcrumb-item">
+            <span style={{ color: 'var(--text-dark)', fontWeight: 700 }}>{page.h1}</span>
+          </div>
+        </nav>
+
+        <div
+          className="layout-with-sidebar"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 310px',
+            gap: '36px',
+            alignItems: 'start',
+          }}
+        >
+          <div>
+            <header style={{ marginBottom: '28px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px', flexWrap: 'wrap' }}>
+                <span className="badge badge-gold">{page.badge}</span>
+                <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>Updated 2026-09</span>
+              </div>
+
+              <h1
+                className="ranking-h1"
+                style={{
+                  fontSize: 'clamp(26px, 4vw, 36px)',
+                  fontWeight: 800,
+                  color: 'var(--text-dark)',
+                  marginBottom: '14px',
+                  lineHeight: '1.25',
+                }}
+              >
+                {page.h1}
+              </h1>
+
+              <div
+                style={{
+                  background: '#f8fafc',
+                  borderLeft: '4px solid var(--brand-blue)',
+                  padding: '16px 20px',
+                  borderRadius: '0 var(--radius-md) var(--radius-md) 0',
+                  fontSize: '15px',
+                  lineHeight: '1.65',
+                  color: 'var(--text-body)',
+                }}
+              >
+                {page.lede} <strong>{leader}</strong> is ranked #1
+                {page.criterionLabel ? ` as per ${page.criterionLabel}` : ''} on this shortlist.
+              </div>
+            </header>
+
+            <div className="quick-nav-box">
+              <div className="quick-nav-title">Quick Navigation & Inspection Scores</div>
+              <ol className="quick-nav-list">
+                {listings.map((item) => (
+                  <li key={item.id}>
+                    <a href={`#listing-${item.rank}`} className="quick-nav-link">
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <span style={{ fontWeight: 800, width: '24px' }}>#{item.rank}</span>
+                        <span>{item.name}</span>
+                      </div>
+                      <span style={{ fontSize: '13px', fontWeight: 800, color: 'var(--brand-blue)' }}>
+                        {item.inspectionScore}/100
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <div>
+              {listings.map((item) => (
+                <CoachingCard key={item.id} listing={item} />
+              ))}
+            </div>
+
+            <div style={{ marginTop: '48px', marginBottom: '40px' }}>
+              <h2 style={{ fontSize: '22px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '8px' }}>
+                {page.comparisonTitle}
+              </h2>
+              <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '16px' }}>
+                Compare key parameters side-by-side for this {localityName} {examLabel} shortlist
+                {page.criterionLabel ? ` (${page.criterionLabel})` : ''}.
+              </p>
+
+              <div className="comparison-table-wrapper">
+                <table className="comparison-table">
+                  <thead>
+                    <tr>
+                      <th>Rank & Institute</th>
+                      <th>Score</th>
+                      <th>Batch Size</th>
+                      <th>Fee Range</th>
+                      <th>Rating</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {listings.map((item) => (
+                      <tr key={item.id}>
+                        <td>
+                          <strong>#{item.rank}</strong> {item.name}
+                        </td>
+                        <td>{item.inspectionScore}/100</td>
+                        <td>{item.batchSize}</td>
+                        <td>{item.feesEstimate}</td>
+                        <td>
+                          {item.rating} ({item.reviewCount})
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <section style={{ marginBottom: '40px' }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 800, color: '#1e3a8a', marginBottom: '10px' }}>
+                {page.guideTitle}
+              </h2>
+              <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-body)' }}>{page.guideBody}</p>
+            </section>
+
+            <section style={{ marginBottom: '24px' }}>
+              <h2 style={{ fontSize: '24px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '18px' }}>
+                {page.faqHeading}
+              </h2>
+              <div className="faq-list">
+                {faqs.map((f) => (
+                  <details key={f.question} className="faq-item">
+                    <summary>{f.question}</summary>
+                    <p>{f.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          </div>
+
+          <aside className="ranking-sidebar">
+            <div className="surface-card" style={{ padding: '18px', marginBottom: '16px' }}>
+              <h3 style={{ fontSize: '15px', fontWeight: 800, marginBottom: '12px' }}>Related {examLabel} Rankings</h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {page.sidebarLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} style={{ fontSize: '13.5px', fontWeight: 600, color: 'var(--brand-blue)' }}>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="surface-card" style={{ padding: '18px' }}>
+              <h3 style={{ fontSize: '15px', fontWeight: 800, marginBottom: '8px' }}>Editorial note</h3>
+              <p style={{ fontSize: '13px', lineHeight: 1.55, color: '#64748b', margin: 0 }}>
+                {fixedRank5
+                  ? `Rank 1 (${leader}) and Rank 5 (${last}) are fixed on this suite. Mid-ranks shuffle by criterion. No sponsored positions.`
+                  : `Rank 1 (${leader}) is fixed on this suite. Ranks 2–5 shuffle by criterion. No sponsored positions.`}
+              </p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </>
+  );
 }
 
 // -------------------------------------------------------------
@@ -843,7 +1473,7 @@ function StateHubView({ state, currentSlug }: { state: StateData; currentSlug: s
                     </div>
                   </div>
                   <p style={{ fontSize: '13.5px', color: 'var(--text-body)', lineHeight: '1.5', marginBottom: '16px' }}>
-                    {(city.overview || `${city.name} coaching hub.`).slice(0, 110)}...
+                    {city.overview?.slice(0, 110) || ''}...
                   </p>
                 </div>
 

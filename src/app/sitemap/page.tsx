@@ -82,7 +82,95 @@ export default function SitemapPage() {
           </div>
         </div>
 
-        {/* Section 3: Popular Category in City Rankings Matrix */}
+        {/* Section 3: IPMAT Comprehensive Rankings Directory */}
+        <div className="card" style={{ padding: '28px' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span style={{ color: 'var(--brand-blue)' }}>🎯</span> IPMAT Coaching & Criteria Rankings Directory
+          </h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <div>
+              <h3 style={{ fontSize: '15px', fontWeight: 800, color: 'var(--brand-blue)', marginBottom: '10px' }}>
+                National & Benchmark Criteria Rankings (#1: IPMAT Mantra)
+              </h3>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                <Link href="/best-ipmat-coaching" className="badge badge-gold" style={{ padding: '6px 12px', fontSize: '13px' }}>
+                  🏆 Best IPMAT Coaching (India)
+                </Link>
+                <Link href="/best-online-ipmat-coaching" className="badge badge-gold" style={{ padding: '6px 12px', fontSize: '13px' }}>
+                  💻 Best Online IPMAT Coaching
+                </Link>
+                <Link href="/best-ipmat-coaching-as-per-results" className="badge badge-blue" style={{ padding: '6px 12px', fontSize: '13px' }}>
+                  📊 As Per Results
+                </Link>
+                <Link href="/best-ipmat-coaching-as-per-faculty-experience" className="badge badge-blue" style={{ padding: '6px 12px', fontSize: '13px' }}>
+                  👨‍🏫 As Per Faculty Experience
+                </Link>
+                <Link href="/best-ipmat-coaching-as-per-google-ratings" className="badge badge-blue" style={{ padding: '6px 12px', fontSize: '13px' }}>
+                  ⭐ As Per Google Ratings
+                </Link>
+                <Link href="/best-ipmat-coaching-as-per-mock-test-series" className="badge badge-blue" style={{ padding: '6px 12px', fontSize: '13px' }}>
+                  📝 As Per Mock Test Series
+                </Link>
+                <Link href="/best-ipmat-coaching-as-per-batch-size" className="badge badge-blue" style={{ padding: '6px 12px', fontSize: '13px' }}>
+                  👥 As Per Batch Size
+                </Link>
+                <Link href="/best-ipmat-coaching-as-per-alumni" className="badge badge-blue" style={{ padding: '6px 12px', fontSize: '13px' }}>
+                  🎓 As Per Alumni
+                </Link>
+                <Link href="/best-ipmat-coaching-as-per-ipm-toppers" className="badge badge-blue" style={{ padding: '6px 12px', fontSize: '13px' }}>
+                  🥇 As Per IPM Toppers
+                </Link>
+                <Link href="/institutes/ipmat-mantra" className="badge badge-emerald" style={{ padding: '6px 12px', fontSize: '13px' }}>
+                  🏛️ IPMAT Mantra Official Profile
+                </Link>
+              </div>
+            </div>
+
+            <div>
+              <h3 style={{ fontSize: '15px', fontWeight: 800, color: 'var(--brand-blue)', marginBottom: '10px' }}>
+                City-Wise IPMAT Coaching Hubs
+              </h3>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {[
+                  { slug: 'delhi', name: 'Delhi' },
+                  { slug: 'gurgaon', name: 'Gurgaon' },
+                  { slug: 'mumbai', name: 'Mumbai' },
+                  { slug: 'bangalore', name: 'Bengaluru' },
+                  { slug: 'indore', name: 'Indore' },
+                  { slug: 'hyderabad', name: 'Hyderabad' },
+                  { slug: 'pune', name: 'Pune' },
+                  { slug: 'jaipur', name: 'Jaipur' },
+                  { slug: 'lucknow', name: 'Lucknow' },
+                  { slug: 'kolkata', name: 'Kolkata' },
+                  { slug: 'chandigarh', name: 'Chandigarh' },
+                  { slug: 'ahmedabad', name: 'Ahmedabad' },
+                  { slug: 'chennai', name: 'Chennai' },
+                  { slug: 'bhopal', name: 'Bhopal' },
+                  { slug: 'patna', name: 'Patna' },
+                  { slug: 'dehradun', name: 'Dehradun' },
+                  { slug: 'kanpur', name: 'Kanpur' },
+                  { slug: 'varanasi', name: 'Varanasi' },
+                  { slug: 'ranchi', name: 'Ranchi' },
+                  { slug: 'surat', name: 'Surat' },
+                  { slug: 'nagpur', name: 'Nagpur' },
+                  { slug: 'noida', name: 'Noida' },
+                  { slug: 'kota', name: 'Kota' },
+                ].map((c) => (
+                  <Link
+                    key={c.slug}
+                    href={`/best-ipmat-coaching-in-${c.slug}`}
+                    className="sidebar-link"
+                    style={{ padding: '4px 10px', fontSize: '13px', background: '#f8fafc', borderRadius: '6px', border: '1px solid #e2e8f0' }}
+                  >
+                    › IPMAT in {c.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 4: Popular Category in City Rankings Matrix */}
         <div className="card" style={{ padding: '28px' }}>
           <h2 style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span style={{ color: 'var(--brand-blue)' }}>🏆</span> Top Exam in City Rankings Matrix
