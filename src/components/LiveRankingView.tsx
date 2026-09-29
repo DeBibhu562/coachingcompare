@@ -384,6 +384,19 @@ export default function LiveRankingView({
       })),
   ];
 
+  const criteriaLinks = sidebarLinks.filter((l) =>
+    l.label.toLowerCase().startsWith('as per')
+  );
+  const otherCityLinks = sidebarLinks.filter(
+    (l) =>
+      !l.label.toLowerCase().startsWith('as per') &&
+      (l.label.toLowerCase().includes('in ') || l.label.toLowerCase().includes('coaching in')) &&
+      !l.label.toLowerCase().includes(cityName.toLowerCase())
+  );
+  const hubLinks = sidebarLinks.filter(
+    (l) => !criteriaLinks.includes(l) && !otherCityLinks.includes(l)
+  );
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -592,16 +605,14 @@ export default function LiveRankingView({
                 <h2 style={{ fontSize: '24px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '18px' }}>
                   Frequently Asked Questions ({cityName} {examShort})
                 </h2>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <div className="faq-list">
                   {page.faqs.map((f, i) => (
                     <details key={i} className="faq-item" open={i === 0}>
-                      <summary className="faq-trigger" style={{ cursor: 'pointer', fontWeight: 700, padding: '14px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <summary className="faq-trigger">
                         <span>{f.question}</span>
-                        <span style={{ color: 'var(--brand-blue)', fontSize: '12px' }}>▼</span>
+                        <span className="faq-chevron">▼</span>
                       </summary>
-                      <div className="faq-answer" style={{ padding: '0 16px 14px', color: 'var(--text-body)', lineHeight: 1.6 }}>
-                        {f.answer}
-                      </div>
+                      <div className="faq-answer">{f.answer}</div>
                     </details>
                   ))}
                 </div>
@@ -610,33 +621,135 @@ export default function LiveRankingView({
           </div>
 
           {/* Sticky Right Sidebar */}
-          <aside className="ranking-sidebar">
-            <div className="surface-card" style={{ padding: '18px', marginBottom: '16px' }}>
-              <h3 style={{ fontSize: '15px', fontWeight: 800, marginBottom: '12px', color: 'var(--text-dark)' }}>
-                Related {examShort} Rankings
-              </h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                {sidebarLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      style={{ fontSize: '13.5px', fontWeight: 600, color: 'var(--brand-blue)', textDecoration: 'none' }}
-                      className="hover:underline"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <aside className="sticky-sidebar">
+            {/* Widget 1: Criteria / Evaluation shortlists */}
+            {criteriaLinks.length > 0 && (
+              <div className="sidebar-widget">
+                <h3 className="sidebar-widget-title">Evaluation Benchmarks</h3>
+                <ul className="sidebar-list">
+                  {criteriaLinks.map((link) => {
+                    const isActive = currentSlug === link.href.replace(/^\//, '');
+                    return (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className={`sidebar-link ${isActive ? 'active' : ''}`}
+                          style={
+                            isActive
+                              ? {
+                                  background: 'var(--brand-blue-light)',
+                                  color: 'var(--brand-blue)',
+                                  fontWeight: 700,
+                                }
+                              : undefined
+                          }
+                        >
+                          <span style={{ color: isActive ? 'var(--brand-blue)' : '#94a3b8' }}>›</span>
+                          <span>{link.label}</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
 
-            <div className="surface-card" style={{ padding: '18px' }}>
-              <h3 style={{ fontSize: '15px', fontWeight: 800, marginBottom: '8px', color: 'var(--text-dark)' }}>
-                Editorial Assurance
-              </h3>
-              <p style={{ fontSize: '13px', lineHeight: 1.55, color: '#64748b', margin: 0 }}>
-                Rank 1 ({leader}) is independently audited against verified student selections, faculty credentials, and mock test rigor. No sponsored positions.
+            {/* Widget 2: Other Major Coaching Cities */}
+            {otherCityLinks.length > 0 && (
+              <div className="sidebar-widget">
+                <h3 className="sidebar-widget-title">{examShort} in Other Cities</h3>
+                <ul className="sidebar-list">
+                  {otherCityLinks.map((link) => {
+                    const isActive = currentSlug === link.href.replace(/^\//, '');
+                    return (
+                      <li key={link.href}>
+                        <Link href={link.href} className={`sidebar-link ${isActive ? 'active' : ''}`}>
+                          <span style={{ color: '#94a3b8' }}>›</span>
+                          <span>{link.label}</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
+
+            {/* Widget 3: National & Hub Links */}
+            {hubLinks.length > 0 && (
+              <div className="sidebar-widget">
+                <h3 className="sidebar-widget-title">National & Hub Links</h3>
+                <ul className="sidebar-list">
+                  {hubLinks.map((link) => {
+                    const isActive = currentSlug === link.href.replace(/^\//, '');
+                    return (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className={`sidebar-link ${isActive ? 'active' : ''}`}
+                          style={
+                            isActive
+                              ? {
+                                  background: 'var(--brand-blue-light)',
+                                  color: 'var(--brand-blue)',
+                                  fontWeight: 700,
+                                }
+                              : undefined
+                          }
+                        >
+                          <span style={{ color: isActive ? 'var(--brand-blue)' : '#94a3b8' }}>›</span>
+                          <span>{link.label}</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
+
+            {/* Widget 4: Editorial Assurance Card */}
+            <div
+              className="card"
+              style={{
+                padding: '20px',
+                background: '#ffffff',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: 'var(--radius-lg)',
+                boxShadow: 'var(--shadow-sm)',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                <span style={{ fontSize: '17px' }}>🛡️</span>
+                <h4
+                  style={{
+                    fontSize: '13px',
+                    fontWeight: 800,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.04em',
+                    color: 'var(--text-dark)',
+                    margin: 0,
+                  }}
+                >
+                  Editorial Assurance
+                </h4>
+              </div>
+              <p style={{ fontSize: '12.5px', lineHeight: 1.6, color: '#64748b', marginBottom: '14px' }}>
+                Rank 1 ({leader}) is independently audited against verified student selections, faculty credentials, and mock test rigor. Zero sponsored positions.
               </p>
+              <Link
+                href="/methodology"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--brand-blue)',
+                  textDecoration: 'none',
+                }}
+              >
+                <span>Read Audit Methodology</span>
+                <span>→</span>
+              </Link>
             </div>
           </aside>
         </div>

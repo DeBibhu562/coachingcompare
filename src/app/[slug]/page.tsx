@@ -621,6 +621,20 @@ function ExamCityRankingView({
   const last = listings[listings.length - 1]?.name || 'Rank 5';
   const localityName = page.mode === 'online' ? `Online (${cityName})` : cityName;
 
+  // Split sidebar links into logical widgets
+  const criteriaLinks = page.sidebarLinks.filter((l) =>
+    l.label.toLowerCase().startsWith('as per')
+  );
+  const otherCityLinks = page.sidebarLinks.filter(
+    (l) =>
+      !l.label.toLowerCase().startsWith('as per') &&
+      (l.label.toLowerCase().includes('in ') || l.label.toLowerCase().includes('coaching in')) &&
+      !l.label.toLowerCase().includes(cityName.toLowerCase())
+  );
+  const hubLinks = page.sidebarLinks.filter(
+    (l) => !criteriaLinks.includes(l) && !otherCityLinks.includes(l)
+  );
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -813,48 +827,185 @@ function ExamCityRankingView({
               </div>
             </div>
 
-            <section style={{ marginBottom: '40px' }}>
+            {/* Guide Advisory Box */}
+            <div
+              className="card"
+              style={{
+                padding: '24px',
+                background: 'linear-gradient(180deg, #f0f7ff 0%, #f8fafc 100%)',
+                border: '1px solid #bfdbfe',
+                borderRadius: 'var(--radius-lg)',
+                marginBottom: '40px',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                <span className="badge badge-blue">Advisory Guide</span>
+              </div>
               <h2 style={{ fontSize: '20px', fontWeight: 800, color: '#1e3a8a', marginBottom: '10px' }}>
                 {page.guideTitle}
               </h2>
-              <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-body)' }}>{page.guideBody}</p>
-            </section>
+              <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-body)', margin: 0 }}>
+                {page.guideBody}
+              </p>
+            </div>
 
-            <section style={{ marginBottom: '24px' }}>
+            {/* FAQ Accordion Section */}
+            <section style={{ marginBottom: '32px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                <span className="badge badge-emerald">Audited Q&A</span>
+              </div>
               <h2 style={{ fontSize: '24px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '18px' }}>
                 {page.faqHeading}
               </h2>
               <div className="faq-list">
-                {faqs.map((f) => (
-                  <details key={f.question} className="faq-item">
-                    <summary>{f.question}</summary>
-                    <p>{f.answer}</p>
+                {faqs.map((f, i) => (
+                  <details key={f.question} className="faq-item" open={i === 0}>
+                    <summary className="faq-trigger">
+                      <span>{f.question}</span>
+                      <span className="faq-chevron">▼</span>
+                    </summary>
+                    <div className="faq-answer">{f.answer}</div>
                   </details>
                 ))}
               </div>
             </section>
           </div>
 
-          <aside className="ranking-sidebar">
-            <div className="surface-card" style={{ padding: '18px', marginBottom: '16px' }}>
-              <h3 style={{ fontSize: '15px', fontWeight: 800, marginBottom: '12px' }}>Related {examLabel} Rankings</h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                {page.sidebarLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} style={{ fontSize: '13.5px', fontWeight: 600, color: 'var(--brand-blue)' }}>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="surface-card" style={{ padding: '18px' }}>
-              <h3 style={{ fontSize: '15px', fontWeight: 800, marginBottom: '8px' }}>Editorial note</h3>
-              <p style={{ fontSize: '13px', lineHeight: 1.55, color: '#64748b', margin: 0 }}>
+          {/* Sticky Right Sidebar */}
+          <aside className="sticky-sidebar">
+            {/* Widget 1: Criteria / Evaluation shortlists */}
+            {criteriaLinks.length > 0 && (
+              <div className="sidebar-widget">
+                <h3 className="sidebar-widget-title">Evaluation Benchmarks</h3>
+                <ul className="sidebar-list">
+                  {criteriaLinks.map((link) => {
+                    const isActive = currentSlug === link.href.replace(/^\//, '');
+                    return (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className={`sidebar-link ${isActive ? 'active' : ''}`}
+                          style={
+                            isActive
+                              ? {
+                                  background: 'var(--brand-blue-light)',
+                                  color: 'var(--brand-blue)',
+                                  fontWeight: 700,
+                                }
+                              : undefined
+                          }
+                        >
+                          <span style={{ color: isActive ? 'var(--brand-blue)' : '#94a3b8' }}>›</span>
+                          <span>{link.label}</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
+
+            {/* Widget 2: Other Major Coaching Cities */}
+            {otherCityLinks.length > 0 && (
+              <div className="sidebar-widget">
+                <h3 className="sidebar-widget-title">{examLabel} in Other Cities</h3>
+                <ul className="sidebar-list">
+                  {otherCityLinks.map((link) => {
+                    const isActive = currentSlug === link.href.replace(/^\//, '');
+                    return (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className={`sidebar-link ${isActive ? 'active' : ''}`}
+                        >
+                          <span style={{ color: '#94a3b8' }}>›</span>
+                          <span>{link.label}</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
+
+            {/* Widget 3: National & Hub Links */}
+            {hubLinks.length > 0 && (
+              <div className="sidebar-widget">
+                <h3 className="sidebar-widget-title">National & Hub Links</h3>
+                <ul className="sidebar-list">
+                  {hubLinks.map((link) => {
+                    const isActive = currentSlug === link.href.replace(/^\//, '');
+                    return (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className={`sidebar-link ${isActive ? 'active' : ''}`}
+                          style={
+                            isActive
+                              ? {
+                                  background: 'var(--brand-blue-light)',
+                                  color: 'var(--brand-blue)',
+                                  fontWeight: 700,
+                                }
+                              : undefined
+                          }
+                        >
+                          <span style={{ color: isActive ? 'var(--brand-blue)' : '#94a3b8' }}>›</span>
+                          <span>{link.label}</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
+
+            {/* Widget 4: Editorial Assurance Card */}
+            <div
+              className="card"
+              style={{
+                padding: '20px',
+                background: '#ffffff',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: 'var(--radius-lg)',
+                boxShadow: 'var(--shadow-sm)',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                <span style={{ fontSize: '17px' }}>🛡️</span>
+                <h4
+                  style={{
+                    fontSize: '13px',
+                    fontWeight: 800,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.04em',
+                    color: 'var(--text-dark)',
+                    margin: 0,
+                  }}
+                >
+                  Editorial Assurance
+                </h4>
+              </div>
+              <p style={{ fontSize: '12.5px', lineHeight: 1.6, color: '#64748b', marginBottom: '14px' }}>
                 {fixedRank5
-                  ? `Rank 1 (${leader}) and Rank 5 (${last}) are fixed on this suite. Mid-ranks shuffle by criterion. No sponsored positions.`
-                  : `Rank 1 (${leader}) is fixed on this suite. Ranks 2–5 shuffle by criterion. No sponsored positions.`}
+                  ? `Rank 1 (${leader}) and Rank 5 (${last}) are fixed on this suite. Mid-ranks shuffle strictly by audited criteria. Zero sponsored or paid positions.`
+                  : `Rank 1 (${leader}) is independently audited against verified student selections, faculty credentials, and mock test rigor. Zero sponsored positions.`}
               </p>
+              <Link
+                href="/methodology"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--brand-blue)',
+                  textDecoration: 'none',
+                }}
+              >
+                <span>Read Audit Methodology</span>
+                <span>→</span>
+              </Link>
             </div>
           </aside>
         </div>
@@ -1138,12 +1289,12 @@ function CategoryCityView({
                 Frequently Asked Questions ({city.name})
               </h2>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div className="faq-list">
                 {faqs.map((f, i) => (
                   <details key={i} className="faq-item" open={i === 0}>
                     <summary className="faq-trigger">
                       <span>{f.question}</span>
-                      <span style={{ color: 'var(--brand-blue)' }}>▼</span>
+                      <span className="faq-chevron">▼</span>
                     </summary>
                     <div className="faq-answer">{f.answer}</div>
                   </details>
@@ -1631,14 +1782,14 @@ function ExamHubView({ exam, currentSlug }: { exam: ExamCategory; currentSlug: s
               <h2 style={{ fontSize: '22px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '16px' }}>
                 Frequently Asked Questions about {exam.shortName} Coaching in India
               </h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div className="faq-list">
                 {faqs.map((f, i) => (
-                  <details key={i} className="faq-item" style={{ background: '#ffffff', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)' }}>
-                    <summary className="faq-trigger" style={{ cursor: 'pointer', fontWeight: 700, padding: '14px 18px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <details key={i} className="faq-item" open={i === 0}>
+                    <summary className="faq-trigger">
                       <span>{f.question}</span>
-                      <span style={{ color: 'var(--brand-blue)', fontSize: '12px' }}>▼</span>
+                      <span className="faq-chevron">▼</span>
                     </summary>
-                    <div className="faq-answer" style={{ padding: '0 18px 16px', color: 'var(--text-body)', lineHeight: '1.6', fontSize: '14.5px' }}>
+                    <div className="faq-answer">
                       {f.answer}
                     </div>
                   </details>
