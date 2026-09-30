@@ -106,7 +106,7 @@ export default function FeesCalculatorPage() {
         </div>
 
         {/* Interactive Calculator Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 1fr)', gap: '32px' }} className="institute-layout-grid">
+        <div className="institute-layout-grid">
           {/* Controls Column */}
           <div className="surface-card" style={{ padding: '30px' }}>
             <h2 style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '24px' }}>

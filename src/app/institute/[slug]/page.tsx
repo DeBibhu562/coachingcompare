@@ -284,7 +284,7 @@ export default async function InstituteDetailPage({ params }: PageProps) {
 
         {/* Main Content Layout */}
         <div className="container" style={{ marginTop: '36px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 360px', gap: '32px' }} className="institute-layout-grid">
+          <div className="institute-layout-grid">
             {/* Left Column: Deep Audit Details */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '36px' }}>
               

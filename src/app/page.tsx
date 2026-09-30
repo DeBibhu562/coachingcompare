@@ -483,8 +483,12 @@ export default function HomePage() {
             ].map((faq, idx) => (
               <details key={idx} className="faq-item" open={idx === 0}>
                 <summary className="faq-trigger">
-                  <span>{faq.q}</span>
-                  <span style={{ color: 'var(--brand-primary)' }}>▼</span>
+                  <span className="faq-question-text">{faq.q}</span>
+                  <span className="faq-chevron">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </span>
                 </summary>
                 <div className="faq-answer">
                   {faq.a}

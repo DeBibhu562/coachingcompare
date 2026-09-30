@@ -422,15 +422,7 @@ export default function LiveRankingView({
         </nav>
 
         {/* Dual Column Layout with Sticky Sidebar */}
-        <div
-          className="layout-with-sidebar"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 310px',
-            gap: '36px',
-            alignItems: 'start',
-          }}
-        >
+        <div className="layout-with-sidebar">
           {/* Main Left Column */}
           <div>
             <header style={{ marginBottom: '28px' }}>
@@ -609,8 +601,12 @@ export default function LiveRankingView({
                   {page.faqs.map((f, i) => (
                     <details key={i} className="faq-item" open={i === 0}>
                       <summary className="faq-trigger">
-                        <span>{f.question}</span>
-                        <span className="faq-chevron">▼</span>
+                        <span className="faq-question-text">{f.question}</span>
+                        <span className="faq-chevron">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                          </svg>
+                        </span>
                       </summary>
                       <div className="faq-answer">{f.answer}</div>
                     </details>

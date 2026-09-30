@@ -120,7 +120,7 @@ export default function ForInstitutesPage() {
         </div>
 
         {/* Form and Process Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 1fr)', gap: '32px' }} className="institute-layout-grid">
+        <div className="institute-layout-grid">
           {/* Audit Request Form */}
           <div className="surface-card" style={{ padding: '32px' }}>
             {submitted ? (

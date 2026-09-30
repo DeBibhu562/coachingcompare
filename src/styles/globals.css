@@ -1113,9 +1113,12 @@ input, select, textarea {
 .card-body {
   padding: 24px;
   display: grid;
-  grid-template-columns: 1fr 340px;
+  grid-template-columns: minmax(0, 1fr) 340px;
   gap: 32px;
+  min-width: 0;
+  width: 100%;
 }
+
 
 /* Inspection Score Gauge */
 .score-gauge-box {
@@ -1392,30 +1395,50 @@ input, select, textarea {
 
 .faq-item[open] {
   border-color: #93c5fd;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.05);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.06);
+}
+
+/* Universal Native Disclosure Marker Reset */
+details summary::-webkit-details-marker,
+details summary::marker,
+summary::-webkit-details-marker,
+summary::marker {
+  display: none !important;
+  content: "" !important;
+  font-size: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+summary {
+  list-style: none !important;
+  list-style-type: none !important;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .faq-trigger {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
   padding: 16px 20px;
   font-size: 15.5px;
   font-weight: 700;
   color: var(--text-dark);
   text-align: left;
   cursor: pointer;
-  list-style: none;
+  list-style: none !important;
   background: transparent;
   user-select: none;
   transition: background-color 0.15s ease, color 0.15s ease;
+  gap: 12px;
 }
 
-.faq-trigger::-webkit-details-marker,
-.faq-trigger::marker {
-  display: none !important;
-  content: "" !important;
+.faq-question-text {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.45;
 }
 
 .faq-trigger:hover {
@@ -1432,16 +1455,20 @@ input, select, textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
   border-radius: 50%;
   background: #f1f5f9;
   color: var(--brand-blue);
-  font-size: 11px;
-  font-weight: 800;
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s ease, color 0.15s ease;
   flex-shrink: 0;
-  margin-left: 12px;
+  margin-left: 8px;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s ease, color 0.15s ease;
+}
+
+.faq-chevron svg {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
 }
 
 .faq-trigger:hover .faq-chevron {
@@ -1450,9 +1477,12 @@ input, select, textarea {
 }
 
 .faq-item[open] .faq-chevron {
-  transform: rotate(180deg);
   background: var(--brand-blue);
   color: #ffffff;
+}
+
+.faq-item[open] .faq-chevron svg {
+  transform: rotate(180deg);
 }
 
 .faq-answer {
@@ -1536,7 +1566,57 @@ input, select, textarea {
   color: var(--brand-blue);
 }
 
-/* Responsive Media Queries */
+/* ══════════════════════════════════════════════════════
+   LAYOUT CLASSES — Two-column layouts with sidebar
+   These MUST be defined here (not as inline styles)
+   so CSS media queries can override them on mobile.
+══════════════════════════════════════════════════════ */
+
+.layout-with-sidebar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 36px;
+  align-items: start;
+  min-width: 0;
+  width: 100%;
+}
+
+.institute-layout-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 32px;
+  align-items: start;
+  min-width: 0;
+  width: 100%;
+}
+
+.exams-page-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 36px;
+  align-items: start;
+  min-width: 0;
+  width: 100%;
+}
+
+.exam-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  min-width: 0;
+  width: 100%;
+}
+
+.exam-category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ══════════════════════════════════════════════════════
+   DESKTOP ONLY — Show nav, hide mobile elements
+══════════════════════════════════════════════════════ */
 @media (min-width: 1024px) {
   .nav-links {
     display: flex !important;
@@ -1549,7 +1629,11 @@ input, select, textarea {
   }
 }
 
+/* ══════════════════════════════════════════════════════
+   TABLET & MOBILE ≤1023px — Single-column stacked layouts
+══════════════════════════════════════════════════════ */
 @media (max-width: 1023px) {
+  /* Hide desktop nav, show hamburger */
   .nav-links {
     display: none !important;
   }
@@ -1559,21 +1643,54 @@ input, select, textarea {
   .logo-pill {
     display: none;
   }
+
+  /* Hero: single column */
   .hero-grid {
     grid-template-columns: 1fr !important;
     gap: 40px !important;
   }
-  .layout-with-sidebar, .institute-layout-grid {
-    grid-template-columns: 1fr !important;
+
+  /* Collapse all two-column layouts to clean single column */
+  .layout-with-sidebar,
+  .exams-page-layout,
+  .institute-layout-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 28px !important;
   }
-  .sticky-sidebar {
-    display: none;
+
+  /* Sidebars stack naturally below main content as related resources */
+  .sticky-sidebar,
+  .ranking-sidebar,
+  aside.sticky-sidebar,
+  .layout-with-sidebar > .sticky-sidebar,
+  .exams-page-layout > .sticky-sidebar,
+  .institute-layout-grid > .sticky-sidebar {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    margin-top: 16px !important;
   }
+
+  /* Grid 3 becomes 2-column on tablet */
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  /* Footer: 2-col on tablet */
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* ══════════════════════════════════════════════════════
+   MEDIUM MOBILE ≤768px
+══════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
   .header-cta span {
     display: none;
@@ -1581,113 +1698,313 @@ input, select, textarea {
   .header-cta {
     padding: 8px 12px;
   }
-  .grid-2, .grid-3, .grid-4 {
-    grid-template-columns: 1fr;
+
+  /* Collapse simple grids */
+  .grid-2, .grid-4 {
+    grid-template-columns: 1fr !important;
   }
+
+  /* Sidebar link lists become touch-friendly 2-col buttons */
+  .sidebar-list {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  /* Card body single column */
   .card-body {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 16px !important;
+    gap: 20px !important;
+    width: 100% !important;
+    min-width: 0 !important;
   }
+
+  /* Exam cards: single column */
+  .exam-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Category tabs: touch scrollable pill strip */
+  .exam-category-tabs {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 6px !important;
+    gap: 6px !important;
+    scrollbar-width: none !important;
+  }
+  .exam-category-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+  .exam-category-tabs button {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 7px 13px !important;
+    font-size: 12.5px !important;
+  }
+
+  /* Footer: single column */
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
   .footer-bottom {
     flex-direction: column;
     gap: 12px;
     text-align: center;
   }
+
+  /* Remove horizontal overflow from all containers */
+  .container {
+    overflow-x: hidden;
+  }
 }
 
-/* Mobile Polish: Under 640px (Phones & Small Tablets) */
+/* ══════════════════════════════════════════════════════
+   SMALL PHONE ≤640px — Comprehensive mobile polish
+══════════════════════════════════════════════════════ */
 @media (max-width: 640px) {
+  /* Container padding */
   .container {
-    padding: 0 16px;
+    padding: 0 16px !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
   }
+
+  /* Header */
   .site-header {
-    height: 64px;
+    height: 60px;
   }
   .header-inner {
     gap: 8px;
+    padding: 0;
   }
   .header-cta {
     display: none !important;
   }
   .logo-brand {
-    gap: 8px;
+    gap: 6px;
   }
   .logo-svg {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
   }
   .logo-text {
-    font-size: 17px;
+    font-size: 15px;
   }
+
+  /* Cards */
   .card, .lead-card, .surface-card {
-    padding: 20px 16px !important;
+    padding: 16px !important;
   }
+
+  /* Card topbar: stack vertically with proper alignment */
   .card-topbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 14px 16px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    padding: 12px 14px !important;
   }
+  .card-topbar > div:first-child {
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+  .card-topbar > div:last-child {
+    align-self: flex-start !important;
+  }
+
+  /* Hero */
   .hero-section {
-    padding: 40px 0 48px;
+    padding: 36px 0 44px;
   }
   .hero-title {
-    font-size: clamp(24px, 6.5vw, 34px) !important;
+    font-size: clamp(22px, 6vw, 32px) !important;
     line-height: 1.25 !important;
   }
   .hero-subtitle {
-    font-size: 15px !important;
+    font-size: 14px !important;
     line-height: 1.55 !important;
-    margin-bottom: 24px !important;
+    margin-bottom: 20px !important;
   }
   .hero-matrix-box {
-    padding: 18px 14px;
+    padding: 16px 12px;
   }
   .hero-stats-strip {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 14px 8px !important;
-    padding-top: 18px !important;
+    gap: 12px 8px !important;
+    padding-top: 16px !important;
   }
   .hero-stat-value {
-    font-size: 20px;
+    font-size: 19px;
   }
   .hero-stat-label {
-    font-size: 11px;
+    font-size: 10.5px;
   }
+
+  /* Search */
   .search-input {
-    padding: 14px 16px 14px 44px;
+    padding: 12px 14px 12px 42px;
     font-size: 14px;
   }
   .search-icon {
-    left: 14px;
+    left: 12px;
   }
   .form-input, .form-select {
-    font-size: 16px !important; /* Prevents auto-zoom on iOS safari */
+    font-size: 16px !important;
   }
+
+  /* Buttons */
   .btn {
-    padding: 11px 18px;
-    font-size: 14px;
+    padding: 10px 16px;
+    font-size: 13.5px;
   }
+
+  /* City card */
   .city-card {
-    padding: 12px 14px;
+    padding: 10px 12px;
   }
+
+  /* Comparison table: horizontal scroll with subtle hint */
   .comparison-table-wrapper {
-    margin: 20px 0;
+    margin: 16px 0 !important;
     -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    border-radius: var(--radius-md) !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .comparison-table th, .comparison-table td {
-    padding: 12px 14px;
-    font-size: 13px;
+    padding: 10px 12px !important;
+    font-size: 12.5px !important;
+    white-space: nowrap;
   }
+
+  /* Mobile drawer */
   .mobile-drawer-inner {
-    padding: 20px 16px;
+    padding: 16px 12px;
+  }
+
+  /* FAQ: mobile padding & sizing */
+  .faq-trigger {
+    font-size: 14px !important;
+    padding: 13px 14px !important;
+    gap: 10px !important;
+  }
+  .faq-chevron {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    margin-left: 6px !important;
+  }
+  .faq-chevron svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  .faq-answer {
+    padding: 12px 14px 14px !important;
+    font-size: 13.5px !important;
+  }
+
+  /* Quick nav */
+  .quick-nav-box {
+    padding: 14px;
+  }
+  .quick-nav-link {
+    font-size: 12.5px;
+    padding: 5px 8px;
+  }
+
+  /* Sidebar widget */
+  .sidebar-widget {
+    padding: 14px 16px;
+  }
+  .sidebar-list {
+    grid-template-columns: 1fr !important;
+  }
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* Card actions: stack buttons full width */
+  .card-actions-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .card-actions-grid .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Venue box */
+  .venue-box {
+    padding: 12px;
+    font-size: 12.5px;
+  }
+  .venue-row {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb-nav {
+    font-size: 11.5px;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  /* Pillar framework */
+  .pillar-framework-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .pillar-card-wide {
+    grid-column: span 1 !important;
+  }
+
+  /* Advisory grid */
+  .advisory-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  /* Contact layout */
+  .contact-layout-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* Responsive form grid: single col */
+  .responsive-form-grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  /* Badge on mobile */
+  .badge {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  /* Section headings */
+  h2 {
+    font-size: clamp(18px, 5vw, 24px);
+  }
+  h3 {
+    font-size: clamp(15px, 4.5vw, 20px);
   }
 }
 
-/* Production Polish: Hide Next.js Dev Indicator & Overlay Badge */
+
+/* ══════════════════════════════════════════════════════
+   Production Polish: Hide Next.js Dev Badge
+══════════════════════════════════════════════════════ */
 nextjs-portal,
 [data-nextjs-dev-indicator],
 #nextjs-dev-indicator,
@@ -1698,3 +2015,4 @@ div[data-nextjs-dev-indicator] {
   pointer-events: none !important;
   visibility: hidden !important;
 }
+

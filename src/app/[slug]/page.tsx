@@ -718,15 +718,7 @@ function ExamCityRankingView({
           </div>
         </nav>
 
-        <div
-          className="layout-with-sidebar"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 310px',
-            gap: '36px',
-            alignItems: 'start',
-          }}
-        >
+        <div className="layout-with-sidebar">
           <div>
             <header style={{ marginBottom: '28px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px', flexWrap: 'wrap' }}>
@@ -861,8 +853,12 @@ function ExamCityRankingView({
                 {faqs.map((f, i) => (
                   <details key={f.question} className="faq-item" open={i === 0}>
                     <summary className="faq-trigger">
-                      <span>{f.question}</span>
-                      <span className="faq-chevron">▼</span>
+                      <span className="faq-question-text">{f.question}</span>
+                      <span className="faq-chevron">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                      </span>
                     </summary>
                     <div className="faq-answer">{f.answer}</div>
                   </details>
@@ -1115,15 +1111,7 @@ function CategoryCityView({
           </div>
         </nav>
 
-        <div
-          className="layout-with-sidebar"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 310px',
-            gap: '36px',
-            alignItems: 'start',
-          }}
-        >
+        <div className="layout-with-sidebar">
           {/* Main Left Content Area */}
           <div>
             {/* Page Header */}
@@ -1293,8 +1281,12 @@ function CategoryCityView({
                 {faqs.map((f, i) => (
                   <details key={i} className="faq-item" open={i === 0}>
                     <summary className="faq-trigger">
-                      <span>{f.question}</span>
-                      <span className="faq-chevron">▼</span>
+                      <span className="faq-question-text">{f.question}</span>
+                      <span className="faq-chevron">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                      </span>
                     </summary>
                     <div className="faq-answer">{f.answer}</div>
                   </details>
@@ -1304,7 +1296,7 @@ function CategoryCityView({
           </div>
 
           {/* Sticky Right Sidebar (Dual Tree Links as in Screenshots) */}
-          <div className="sticky-sidebar">
+          <aside className="sticky-sidebar">
             {/* Widget 1: More Coaching in same city */}
             <div className="sidebar-widget">
               <h3 className="sidebar-widget-title">More Coaching in {city.name}</h3>
@@ -1342,42 +1334,42 @@ function CategoryCityView({
             </div>
 
             {/* Widget 3: 100-Point Inspection Info Callout */}
-            <div
-              className="card"
-              style={{
-                padding: '20px',
-                background: 'var(--brand-blue-light)',
-                border: '1px solid var(--brand-blue-border)',
-              }}
-            >
-              <h4 style={{ fontSize: '14px', fontWeight: 800, color: '#1e3a8a', marginBottom: '8px' }}>
-                Our 100-Point Inspection
-              </h4>
-              <p style={{ fontSize: '12.5px', color: '#1e40af', lineHeight: '1.5', marginBottom: '12px' }}>
+            <div className="sidebar-widget" style={{ background: '#f8fafc' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                <span style={{ fontSize: '18px' }}>🛡️</span>
+                <h3 className="sidebar-widget-title" style={{ margin: 0, padding: 0, border: 'none' }}>
+                  100-Point Inspection
+                </h3>
+              </div>
+              <p style={{ fontSize: '12.5px', color: 'var(--text-muted)', lineHeight: '1.55', marginBottom: '12px' }}>
                 Every institute on CoachingCompare is verified on faculty qualifications, selection audits, and student support.
               </p>
-              <ul style={{ listStyle: 'none', fontSize: '12px', color: '#1e40af', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                <li>✓ Faculty Credentials (20 pts)</li>
-                <li>✓ Selection Records (20 pts)</li>
-                <li>✓ Study Material (15 pts)</li>
-                <li>✓ Mock Tests (15 pts)</li>
-                <li>✓ Infrastructure (10 pts)</li>
-                <li>✓ Student Attention (10 pts)</li>
+              <ul style={{ listStyle: 'none', fontSize: '12px', color: 'var(--text-body)', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Faculty Credentials</span><strong style={{ color: 'var(--brand-blue)' }}>20 pts</strong></li>
+                <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Selection Records</span><strong style={{ color: 'var(--brand-blue)' }}>20 pts</strong></li>
+                <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Study Material</span><strong style={{ color: 'var(--brand-blue)' }}>15 pts</strong></li>
+                <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Mock Test Series</span><strong style={{ color: 'var(--brand-blue)' }}>15 pts</strong></li>
+                <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Infrastructure</span><strong style={{ color: 'var(--brand-blue)' }}>10 pts</strong></li>
+                <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Student Attention</span><strong style={{ color: 'var(--brand-blue)' }}>10 pts</strong></li>
               </ul>
               <Link
                 href="/methodology"
                 style={{
-                  display: 'inline-block',
-                  marginTop: '12px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  marginTop: '14px',
                   fontSize: '12px',
                   fontWeight: 700,
                   color: 'var(--brand-blue)',
+                  textDecoration: 'none',
                 }}
               >
-                Read Full Audit Guide →
+                <span>Read Full Audit Guide</span>
+                <span>→</span>
               </Link>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </>
@@ -1602,15 +1594,7 @@ function ExamHubView({ exam, currentSlug }: { exam: ExamCategory; currentSlug: s
           </div>
         </nav>
 
-        <div
-          className="layout-with-sidebar"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 310px',
-            gap: '36px',
-            alignItems: 'start',
-          }}
-        >
+        <div className="layout-with-sidebar">
           {/* Main Left Column */}
           <div>
             <header style={{ marginBottom: '28px' }}>
@@ -1786,8 +1770,12 @@ function ExamHubView({ exam, currentSlug }: { exam: ExamCategory; currentSlug: s
                 {faqs.map((f, i) => (
                   <details key={i} className="faq-item" open={i === 0}>
                     <summary className="faq-trigger">
-                      <span>{f.question}</span>
-                      <span className="faq-chevron">▼</span>
+                      <span className="faq-question-text">{f.question}</span>
+                      <span className="faq-chevron">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                      </span>
                     </summary>
                     <div className="faq-answer">
                       {f.answer}
@@ -1799,7 +1787,7 @@ function ExamHubView({ exam, currentSlug }: { exam: ExamCategory; currentSlug: s
           </div>
 
           {/* Sticky Right Sidebar */}
-          <div className="sticky-sidebar">
+          <aside className="sticky-sidebar">
             {/* Widget 1: Other Exam Rankings */}
             <div className="sidebar-widget">
               <h3 className="sidebar-widget-title">Other Popular Exam Hubs</h3>
@@ -1808,7 +1796,7 @@ function ExamHubView({ exam, currentSlug }: { exam: ExamCategory; currentSlug: s
                   <li key={cat.slug}>
                     <Link href={`/best-${cat.slug}-coaching`} className="sidebar-link">
                       <span style={{ color: '#94a3b8' }}>›</span>
-                      <span>{cat.name}</span>
+                      <span>{cat.shortName} Coaching</span>
                     </Link>
                   </li>
                 ))}
@@ -1816,53 +1804,50 @@ function ExamHubView({ exam, currentSlug }: { exam: ExamCategory; currentSlug: s
             </div>
 
             {/* Widget 2: 100-Point Inspection Info Callout */}
-            <div
-              className="card"
-              style={{
-                padding: '20px',
-                background: 'var(--brand-blue-light)',
-                border: '1px solid var(--brand-blue-border)',
-                marginBottom: '20px',
-              }}
-            >
-              <h4 style={{ fontSize: '14px', fontWeight: 800, color: '#1e3a8a', marginBottom: '8px' }}>
-                Our 100-Point Inspection
-              </h4>
-              <p style={{ fontSize: '12.5px', color: '#1e40af', lineHeight: '1.5', marginBottom: '12px' }}>
+            <div className="sidebar-widget" style={{ background: '#f8fafc' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                <span style={{ fontSize: '18px' }}>🛡️</span>
+                <h3 className="sidebar-widget-title" style={{ margin: 0, padding: 0, border: 'none' }}>
+                  100-Point Inspection
+                </h3>
+              </div>
+              <p style={{ fontSize: '12.5px', color: 'var(--text-muted)', lineHeight: '1.55', marginBottom: '12px' }}>
                 Every institute on CoachingCompare is verified on faculty qualifications, selection audits, and student support.
               </p>
-              <ul style={{ listStyle: 'none', fontSize: '12px', color: '#1e40af', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                <li>✓ Faculty Credentials (20 pts)</li>
-                <li>✓ Selection Records (20 pts)</li>
-                <li>✓ Study Material (15 pts)</li>
-                <li>✓ Mock Tests (15 pts)</li>
-                <li>✓ Infrastructure (10 pts)</li>
-                <li>✓ Student Attention (10 pts)</li>
+              <ul style={{ listStyle: 'none', fontSize: '12px', color: 'var(--text-body)', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Faculty Credentials</span><strong style={{ color: 'var(--brand-blue)' }}>20 pts</strong></li>
+                <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Selection Records</span><strong style={{ color: 'var(--brand-blue)' }}>20 pts</strong></li>
+                <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Study Material</span><strong style={{ color: 'var(--brand-blue)' }}>15 pts</strong></li>
+                <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Mock Test Series</span><strong style={{ color: 'var(--brand-blue)' }}>15 pts</strong></li>
+                <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Infrastructure</span><strong style={{ color: 'var(--brand-blue)' }}>10 pts</strong></li>
+                <li style={{ display: 'flex', justifyContent: 'space-between' }}><span>Student Attention</span><strong style={{ color: 'var(--brand-blue)' }}>10 pts</strong></li>
               </ul>
               <Link
                 href="/methodology"
                 style={{
-                  display: 'inline-block',
-                  marginTop: '12px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  marginTop: '14px',
                   fontSize: '12px',
                   fontWeight: 700,
                   color: 'var(--brand-blue)',
+                  textDecoration: 'none',
                 }}
               >
-                Read Full Audit Guide →
+                <span>Read Full Audit Guide</span>
+                <span>→</span>
               </Link>
             </div>
 
             {/* Widget 3: Editorial Assurance */}
-            <div className="surface-card" style={{ padding: '18px' }}>
-              <h4 style={{ fontSize: '14.5px', fontWeight: 800, marginBottom: '8px', color: 'var(--text-dark)' }}>
-                Editorial Assurance
-              </h4>
-              <p style={{ fontSize: '12.5px', lineHeight: '1.55', color: '#64748b', margin: 0 }}>
-                Rank 1 ({leader}) is independently audited against verified student selections, faculty credentials, and mock test rigor. No sponsored positions.
+            <div className="sidebar-widget">
+              <h3 className="sidebar-widget-title">Editorial Assurance</h3>
+              <p style={{ fontSize: '12.5px', lineHeight: '1.6', color: 'var(--text-muted)', margin: 0 }}>
+                Rank 1 ({leader}) is independently audited against verified student selections, faculty credentials, and mock test rigor. Zero sponsored positions.
               </p>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </>

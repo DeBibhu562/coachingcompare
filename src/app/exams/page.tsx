@@ -153,14 +153,7 @@ export default function ExamsOverviewPage() {
         </header>
 
         {/* 2-Column Layout: Main Content + Sidebar */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 268px',
-            gap: '40px',
-            alignItems: 'start',
-          }}
-        >
+        <div className="exams-page-layout">
           {/* ── MAIN CONTENT ── */}
           <main>
             <ExamsClient exams={EXAM_CATEGORIES} cities={CITIES_DATA} />
@@ -190,7 +183,7 @@ export default function ExamsOverviewPage() {
               <h2 style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '14px' }}>
                 Frequently Asked Questions
               </h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div className="faq-list">
                 {[
                   {
                     q: 'Which is the best coaching for CLAT in India?',
@@ -211,34 +204,18 @@ export default function ExamsOverviewPage() {
                 ].map((faq, i) => (
                   <details
                     key={i}
-                    className="card"
-                    style={{ padding: 0, overflow: 'hidden', border: '1px solid var(--border-subtle)' }}
+                    className="faq-item"
+                    open={i === 0}
                   >
-                    <summary
-                      style={{
-                        padding: '14px 18px',
-                        cursor: 'pointer',
-                        fontWeight: 700,
-                        fontSize: '14.5px',
-                        color: 'var(--text-dark)',
-                        listStyle: 'none',
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        gap: '10px',
-                      }}
-                    >
-                      {faq.q}
-                      <span style={{ fontSize: '18px', color: 'var(--brand-blue)', flexShrink: 0 }}>+</span>
+                    <summary className="faq-trigger">
+                      <span className="faq-question-text">{faq.q}</span>
+                      <span className="faq-chevron">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                      </span>
                     </summary>
-                    <div
-                      style={{
-                        padding: '0 18px 16px',
-                        fontSize: '14px',
-                        lineHeight: '1.7',
-                        color: 'var(--text-body)',
-                      }}
-                    >
+                    <div className="faq-answer">
                       {faq.a}
                     </div>
                   </details>
@@ -248,7 +225,7 @@ export default function ExamsOverviewPage() {
           </main>
 
           {/* ── RIGHT SIDEBAR — link listings only ── */}
-          <aside style={{ position: 'sticky', top: '88px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <aside className="sticky-sidebar">
 
             {/* Exams by Category */}
             {examsByGroup.map((group) => (

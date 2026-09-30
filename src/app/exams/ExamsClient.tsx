@@ -55,11 +55,11 @@ export default function ExamsClient({ exams, cities }: ExamsClientProps) {
           border: '1px solid var(--border-subtle, #e2e8f0)',
           padding: '20px 24px',
           boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
-          marginBottom: '36px',
+          marginBottom: '32px',
         }}
       >
         {/* Search Input Box */}
-        <div style={{ position: 'relative', marginBottom: '20px' }}>
+        <div style={{ position: 'relative', marginBottom: '18px' }}>
           <div
             style={{
               position: 'absolute',
@@ -127,14 +127,7 @@ export default function ExamsClient({ exams, cities }: ExamsClientProps) {
         </div>
 
         {/* Category Tabs */}
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '8px',
-            alignItems: 'center',
-          }}
-        >
+        <div className="exam-category-tabs">
           {groups.map((group) => {
             const isActive = activeGroup === group.id;
             return (
@@ -153,6 +146,8 @@ export default function ExamsClient({ exams, cities }: ExamsClientProps) {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '6px',
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0,
                   transition: 'all 0.15s ease',
                 }}
               >
@@ -204,13 +199,7 @@ export default function ExamsClient({ exams, cities }: ExamsClientProps) {
 
       {/* Exam Cards Grid */}
       {filteredExams.length > 0 ? (
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
-            gap: '24px',
-          }}
-        >
+        <div className="exam-cards-grid">
           {filteredExams.map((exam) => (
             <div
               key={exam.id}
@@ -289,14 +278,16 @@ export default function ExamsClient({ exams, cities }: ExamsClientProps) {
                   style={{
                     background: '#f8fafc',
                     border: '1px solid #e2e8f0',
-                    padding: '10px 14px',
+                    padding: '10px 12px',
                     borderRadius: 'var(--radius-sm, 8px)',
                     fontSize: '12.5px',
                     color: 'var(--text-muted, #64748b)',
-                    marginBottom: '18px',
+                    marginBottom: '16px',
                     display: 'flex',
+                    flexWrap: 'wrap',
                     justifyContent: 'space-between',
                     alignItems: 'center',
+                    gap: '6px',
                   }}
                 >
                   <span>
@@ -350,8 +341,10 @@ export default function ExamsClient({ exams, cities }: ExamsClientProps) {
                     borderTop: '1px solid var(--border-subtle, #e2e8f0)',
                     paddingTop: '12px',
                     display: 'flex',
+                    flexWrap: 'wrap',
                     justifyContent: 'space-between',
                     alignItems: 'center',
+                    gap: '8px',
                   }}
                 >
                   <Link
