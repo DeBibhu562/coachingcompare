@@ -424,7 +424,7 @@ export default function LiveRankingView({
         {/* Dual Column Layout with Sticky Sidebar */}
         <div className="layout-with-sidebar">
           {/* Main Left Column */}
-          <div>
+          <div className="layout-main-content">
             <header style={{ marginBottom: '28px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px', flexWrap: 'wrap' }}>
                 <span className="badge badge-gold">{badgeText}</span>
@@ -446,6 +446,7 @@ export default function LiveRankingView({
 
               {/* AEO Summary Lede Box */}
               <div
+                className="ranking-lede-box"
                 style={{
                   background: '#f8fafc',
                   borderLeft: '4px solid var(--brand-blue)',

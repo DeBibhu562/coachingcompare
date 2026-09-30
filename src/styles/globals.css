@@ -1581,6 +1581,19 @@ summary {
   width: 100%;
 }
 
+.layout-with-sidebar > div:first-child,
+.layout-with-sidebar > main,
+.layout-main-content,
+.exams-page-layout > main,
+.exams-page-layout > div:first-child,
+.institute-layout-grid > div:first-child,
+.institute-layout-grid > main {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .institute-layout-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 340px;
@@ -1657,7 +1670,23 @@ summary {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
     gap: 28px !important;
+    box-sizing: border-box !important;
+  }
+
+  .layout-with-sidebar > div:first-child,
+  .layout-with-sidebar > main,
+  .layout-main-content,
+  .exams-page-layout > main,
+  .exams-page-layout > div:first-child,
+  .institute-layout-grid > div:first-child,
+  .institute-layout-grid > main {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   /* Sidebars stack naturally below main content as related resources */
@@ -1718,7 +1747,16 @@ summary {
     padding: 16px !important;
     gap: 20px !important;
     width: 100% !important;
+    max-width: 100% !important;
     min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .card-body > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
   }
 
   /* Exam cards: single column */
@@ -1764,13 +1802,38 @@ summary {
 
 /* ══════════════════════════════════════════════════════
    SMALL PHONE ≤640px — Comprehensive mobile polish
-══════════════════════════════════════════════════════ */
+   ══════════════════════════════════════════════════════ */
 @media (max-width: 640px) {
   /* Container padding */
   .container {
     padding: 0 16px !important;
+    width: 100% !important;
     max-width: 100vw !important;
     overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Main column & layout containment */
+  .layout-with-sidebar,
+  .exams-page-layout,
+  .institute-layout-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .layout-with-sidebar > div:first-child,
+  .layout-with-sidebar > main,
+  .layout-main-content,
+  .exams-page-layout > main,
+  .exams-page-layout > div:first-child,
+  .institute-layout-grid > div:first-child,
+  .institute-layout-grid > main {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
   }
 
   /* Header */
@@ -1798,23 +1861,274 @@ summary {
   /* Cards */
   .card, .lead-card, .surface-card {
     padding: 16px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
-  /* Card topbar: stack vertically with proper alignment */
+  /* Institute Card */
+  .institute-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    border-radius: var(--radius-md) !important;
+    margin-bottom: 20px !important;
+    overflow: hidden !important;
+  }
+
+  /* Card topbar: mobile layout with score widget on right */
   .card-topbar {
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: stretch !important;
     gap: 10px !important;
     padding: 12px 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   .card-topbar > div:first-child {
-    width: 100% !important;
+    display: flex !important;
     flex-wrap: wrap !important;
+    align-items: center !important;
     gap: 8px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  .card-topbar h2 {
+    font-size: 16.5px !important;
+    line-height: 1.3 !important;
+    font-weight: 800 !important;
+    margin: 0 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
   }
   .card-topbar > div:last-child {
-    align-self: flex-start !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding-top: 8px !important;
+    border-top: 1px dashed var(--border-subtle) !important;
+  }
+
+  /* Card body */
+  .card-body {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 14px !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .card-body > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Metrics badges in card */
+  .card-body .badge {
+    font-size: 11px !important;
+    padding: 4px 8px !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+
+  /* Ranking H1 */
+  .ranking-h1 {
+    font-size: clamp(20px, 5.5vw, 26px) !important;
+    line-height: 1.25 !important;
+    font-weight: 800 !important;
+    margin-bottom: 12px !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+  }
+
+  /* Ranking lede box */
+  .ranking-lede-box {
+    padding: 13px 15px !important;
+    font-size: 13.5px !important;
+    line-height: 1.6 !important;
+    box-sizing: border-box !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    margin-bottom: 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Quick Navigation Box */
+  .quick-nav-box {
+    padding: 14px 12px !important;
+    margin-bottom: 24px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .quick-nav-title {
+    font-size: 11px !important;
+    letter-spacing: 0.05em !important;
+    margin-bottom: 10px !important;
+  }
+  .quick-nav-list {
+    width: 100% !important;
+    list-style: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 7px !important;
+  }
+  .quick-nav-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    font-size: 12.5px !important;
+    padding: 8px 10px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    border-radius: var(--radius-sm) !important;
+  }
+  .quick-nav-link > div:first-child {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    min-width: 0 !important;
+    flex: 1 !important;
+    overflow: hidden !important;
+  }
+  .quick-nav-link > div:first-child span:first-child {
+    font-weight: 800 !important;
+    width: 20px !important;
+    flex-shrink: 0 !important;
+  }
+  .quick-nav-link > div:first-child span:last-child {
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    min-width: 0 !important;
+  }
+  .quick-nav-link > span:last-child {
+    flex-shrink: 0 !important;
+    font-size: 11.5px !important;
+    font-weight: 800 !important;
+    color: var(--brand-blue) !important;
+    background: rgba(79, 70, 229, 0.08) !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Comparison table: strict horizontal containment & scroll */
+  .comparison-table-wrapper {
+    display: block !important;
+    margin: 16px 0 24px 0 !important;
+    -webkit-overflow-scrolling: touch !important;
+    overflow-x: auto !important;
+    border-radius: var(--radius-md) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    border: 1px solid var(--border-subtle) !important;
+  }
+  .comparison-table {
+    width: 100% !important;
+    min-width: 520px !important;
+    border-collapse: collapse !important;
+  }
+  .comparison-table th, .comparison-table td {
+    padding: 9px 12px !important;
+    font-size: 12px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Venue Box */
+  .venue-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 12px 14px !important;
+    border-radius: var(--radius-md) !important;
+    background: #f8fafc !important;
+    border: 1px solid var(--border-subtle) !important;
+    margin-bottom: 12px !important;
+    overflow: hidden !important;
+  }
+  .venue-row {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    margin-bottom: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .venue-row:last-child {
+    margin-bottom: 0 !important;
+  }
+  .venue-icon {
+    flex-shrink: 0 !important;
+    margin-top: 2px !important;
+    color: var(--brand-primary) !important;
+  }
+  .venue-row > div {
+    flex: 1 !important;
+    min-width: 0 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    font-size: 12.5px !important;
+  }
+  .venue-row > div a {
+    word-break: break-all !important;
+  }
+
+  /* Card action CTAs: full width vertical stack */
+  .card-actions-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-top: 12px !important;
+  }
+  .card-actions-grid .btn,
+  .card-actions-grid a,
+  .card-actions-grid button {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    grid-column: span 1 !important;
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Guide Advisory Box */
+  .guide-advisory-box {
+    padding: 16px 14px !important;
+    border-radius: var(--radius-md) !important;
+    margin-bottom: 28px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .guide-advisory-box h2 {
+    font-size: 17px !important;
+    margin-bottom: 8px !important;
+  }
+  .guide-advisory-box p {
+    font-size: 13.5px !important;
+    line-height: 1.6 !important;
   }
 
   /* Hero */
@@ -1868,36 +2182,36 @@ summary {
     padding: 10px 12px;
   }
 
-  /* Comparison table: horizontal scroll with subtle hint */
-  .comparison-table-wrapper {
-    margin: 16px 0 !important;
-    -webkit-overflow-scrolling: touch;
-    overflow-x: auto;
-    border-radius: var(--radius-md) !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  .comparison-table th, .comparison-table td {
-    padding: 10px 12px !important;
-    font-size: 12.5px !important;
-    white-space: nowrap;
-  }
-
   /* Mobile drawer */
   .mobile-drawer-inner {
     padding: 16px 12px;
   }
 
-  /* FAQ: mobile padding & sizing */
+  /* FAQ Accordion */
+  .faq-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 8px !important;
+  }
   .faq-trigger {
-    font-size: 14px !important;
-    padding: 13px 14px !important;
-    gap: 10px !important;
+    font-size: 13.5px !important;
+    padding: 12px 14px !important;
+    gap: 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .faq-question-text {
+    flex: 1 !important;
+    min-width: 0 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
   }
   .faq-chevron {
-    width: 24px !important;
-    height: 24px !important;
-    min-width: 24px !important;
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    flex-shrink: 0 !important;
     margin-left: 6px !important;
   }
   .faq-chevron svg {
@@ -1905,17 +2219,13 @@ summary {
     height: 12px !important;
   }
   .faq-answer {
-    padding: 12px 14px 14px !important;
-    font-size: 13.5px !important;
-  }
-
-  /* Quick nav */
-  .quick-nav-box {
-    padding: 14px;
-  }
-  .quick-nav-link {
-    font-size: 12.5px;
-    padding: 5px 8px;
+    padding: 12px 14px !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
   }
 
   /* Sidebar widget */
@@ -1928,28 +2238,6 @@ summary {
   .grid-3 {
     grid-template-columns: 1fr !important;
     gap: 10px !important;
-  }
-
-  /* Card actions: stack buttons full width */
-  .card-actions-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-    width: 100% !important;
-  }
-  .card-actions-grid .btn {
-    width: 100% !important;
-    justify-content: center !important;
-  }
-
-  /* Venue box */
-  .venue-box {
-    padding: 12px;
-    font-size: 12.5px;
-  }
-  .venue-row {
-    gap: 6px;
-    margin-bottom: 8px;
   }
 
   /* Breadcrumb */
@@ -1985,6 +2273,12 @@ summary {
     grid-template-columns: 1fr !important;
     gap: 8px !important;
   }
+  .responsive-form-grid-2 > div {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
 
   /* Badge on mobile */
   .badge {
@@ -1994,13 +2288,18 @@ summary {
 
   /* Section headings */
   h2 {
-    font-size: clamp(18px, 5vw, 24px);
+    font-size: clamp(17px, 5vw, 21px) !important;
+    line-height: 1.3 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
   }
   h3 {
-    font-size: clamp(15px, 4.5vw, 20px);
+    font-size: clamp(14.5px, 4vw, 17.5px) !important;
+    line-height: 1.35 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
   }
 }
-
 
 /* ══════════════════════════════════════════════════════
    Production Polish: Hide Next.js Dev Badge

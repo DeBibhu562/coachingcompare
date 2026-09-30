@@ -719,7 +719,7 @@ function ExamCityRankingView({
         </nav>
 
         <div className="layout-with-sidebar">
-          <div>
+          <div className="layout-main-content">
             <header style={{ marginBottom: '28px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px', flexWrap: 'wrap' }}>
                 <span className="badge badge-gold">{page.badge}</span>
@@ -740,6 +740,7 @@ function ExamCityRankingView({
               </h1>
 
               <div
+                className="ranking-lede-box"
                 style={{
                   background: '#f8fafc',
                   borderLeft: '4px solid var(--brand-blue)',
@@ -1113,7 +1114,7 @@ function CategoryCityView({
 
         <div className="layout-with-sidebar">
           {/* Main Left Content Area */}
-          <div>
+          <div className="layout-main-content">
             {/* Page Header */}
             <header style={{ marginBottom: '28px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px', flexWrap: 'wrap' }}>
@@ -1121,12 +1122,13 @@ function CategoryCityView({
                 <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>Updated 2026-09</span>
               </div>
 
-              <h1 style={{ fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '14px', lineHeight: '1.25' }}>
+              <h1 className="ranking-h1" style={{ fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '14px', lineHeight: '1.25' }}>
                 Top 5 Best {exam.name} in {city.name} 2026
               </h1>
 
               {/* AEO Definitive Summary Answer */}
               <div
+                className="ranking-lede-box"
                 style={{
                   background: '#f8fafc',
                   borderLeft: '4px solid var(--brand-blue)',
@@ -1596,7 +1598,7 @@ function ExamHubView({ exam, currentSlug }: { exam: ExamCategory; currentSlug: s
 
         <div className="layout-with-sidebar">
           {/* Main Left Column */}
-          <div>
+          <div className="layout-main-content">
             <header style={{ marginBottom: '28px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px', flexWrap: 'wrap' }}>
                 <span className="badge badge-gold">{exam.badge}</span>
@@ -1604,11 +1606,12 @@ function ExamHubView({ exam, currentSlug }: { exam: ExamCategory; currentSlug: s
                 <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>Updated 2026-09</span>
               </div>
 
-              <h1 style={{ fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '14px', lineHeight: '1.25' }}>
+              <h1 className="ranking-h1" style={{ fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '14px', lineHeight: '1.25' }}>
                 Top 5 Best {exam.name} in India 2026
               </h1>
 
               <div
+                className="ranking-lede-box"
                 style={{
                   background: '#f8fafc',
                   borderLeft: '4px solid var(--brand-blue)',
