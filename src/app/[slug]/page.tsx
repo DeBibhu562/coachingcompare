@@ -290,6 +290,30 @@ function parseSlug(slug: string) {
     return { type: 'live-ranking' as const, page: liveRanking };
   }
 
+  // Aliases for ranking slugs without leading 'best-' (e.g. online-upsc-coaching -> best-online-upsc-coaching)
+  if (!slug.startsWith('best-')) {
+    const withBest = `best-${slug}`;
+    const ipmatIndiaWithBest = getIpmatIndiaRankingPage(withBest);
+    if (ipmatIndiaWithBest) {
+      return {
+        type: 'exam-city-ranking' as const,
+        page: ipmatIndiaWithBest,
+        examLabel: 'IPMAT',
+        citySlug: 'india',
+        cityName: 'India',
+        regionName: 'India',
+        hubHref: '/best-ipmat-coaching',
+        hubLabel: 'IPMAT Coaching',
+        fixedRank5: false,
+        buildListings: buildIpmatIndiaListingsForPage,
+      };
+    }
+    const liveWithBest = getLiveRankingPage(withBest);
+    if (liveWithBest) {
+      return { type: 'live-ranking' as const, page: liveWithBest };
+    }
+  }
+
   // Legal / vs archive pages recovered from production HTML
   const staticArchive = getStaticArchivePage(slug);
   if (staticArchive) {
@@ -377,6 +401,13 @@ export async function generateStaticParams() {
 
   // Full production ranking archive (737 best-* URLs)
   getAllLiveRankingSlugs().forEach(add);
+
+  // Online slug aliases without leading 'best-' (e.g. online-upsc-coaching)
+  getAllLiveRankingSlugs()
+    .filter((s) => s.startsWith('best-online-'))
+    .forEach((s) => {
+      add(s.replace(/^best-/, ''));
+    });
 
   // Legal + institute-vs pages from production archive
   getAllStaticArchiveSlugs().forEach(add);

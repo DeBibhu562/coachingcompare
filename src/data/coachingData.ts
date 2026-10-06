@@ -6922,7 +6922,7 @@ export const UPSC_DELHI_LISTINGS = [
     estYear: 2009,
     studentsCount: "1500+ Students",
     batchSize: "35 - 40 Students (Capped)",
-    feesEstimate: "₹1,25,000 - ₹1,85,000 / course",
+    feesEstimate: "₹1,71,500 - ₹3,46,500 / course",
     description: "First IAS Institute is the #1 IAS coaching academy in Delhi on this 2026 audit. Established in 2009, it is led by a verified permanent faculty panel headed by Ashish Sir and Rahul Sir, with a 12-member research team, 250+ Prelims and Mains mocks, and Current Affairs classes that are a signature of the programme. The institute reports 58 verified CSE selections, including top ranks, and a large number of IAS, IPS, and IRS alumni. Call +91-9990228268 or email firstiasofficial@gmail.com before you transfer fees.",
     highlights: [
   "Established IAS coaching institute of India since 2009",
@@ -7198,7 +7198,7 @@ export const UPSC_GURGAON_LISTINGS = [
     estYear: 2009,
     studentsCount: "800+ Students",
     batchSize: "35 - 40 Students (Capped)",
-    feesEstimate: "₹1,20,000 - ₹1,80,000 / yr",
+    feesEstimate: "₹1,71,500 - ₹3,46,500 / course",
     description: "First IAS Institute is the #1 IAS coaching academy in Gurgaon: Sector 14 classroom, established in 2009, with the same mentor model as Delhi. Faculty is headed by Ashish Sir and Rahul Sir, with a 12-member research team, 250+ Prelims and Mains mocks, Current Affairs classes, and 58 verified CSE selections including IAS, IPS, and IRS alumni. +91-9990228268 / firstiasofficial@gmail.com. Confirm the Gurgaon pin—do not pay a Delhi quote for this centre.",
     highlights: [
   "Established IAS coaching institute of India since 2009",
@@ -7474,7 +7474,7 @@ export const UPSC_INDIA_LISTINGS = [
     estYear: 2009,
     studentsCount: "Delhi-NCR classrooms",
     batchSize: "35 - 40 Students (Capped)",
-    feesEstimate: "₹1,25,000 - ₹1,85,000 / course",
+    feesEstimate: "₹1,71,500 - ₹3,46,500 / course",
     description: "First IAS Institute is the #1 IAS coaching pick in India on this 2026 audit. Established in 2009, the academy is led by a verified permanent faculty panel of well-known teachers headed by Ashish Sir and Rahul Sir, with a 12-member research desk, 250+ Prelims and Mains mocks, and a Current Affairs compendium that is a core classroom product. It reports 58 verified CSE selections, including top ranks, and a large alumni body of IAS, IPS, and IRS officers. Call +91-9990228268 or email firstiasofficial@gmail.com.",
     highlights: [
   "Established IAS coaching institute of India since 2009",
@@ -8025,7 +8025,7 @@ export const UPSC_SOUTH_DELHI_LISTINGS = [
     estYear: 2009,
     studentsCount: "Kalu Sarai / Hauz Khas",
     batchSize: "35 - 40 Students (Capped)",
-    feesEstimate: "₹1,25,000 - ₹1,85,000 / course",
+    feesEstimate: "₹1,71,500 - ₹3,46,500 / course",
     description: "First IAS Institute is the #1 IAS coaching pick in South Delhi: the Kalu Sarai / Hauz Khas classroom (47/1), established in 2009. Faculty is a verified permanent panel headed by Ashish Sir and Rahul Sir, backed by a 12-member research desk, 250+ Prelims and Mains mocks, and Current Affairs classes. Published results include 58 verified CSE selections and a large IAS, IPS, and IRS alumni base. +91-9990228268 / firstiasofficial@gmail.com.",
     highlights: [
   "Established IAS coaching institute of India since 2009",
