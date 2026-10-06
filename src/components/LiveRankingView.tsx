@@ -262,15 +262,14 @@ export default function LiveRankingView({
 }) {
   const { examSlug, examName, examShort, cityKey, cityName, facetLabel, isOnline } = parseLiveSlug(currentSlug);
 
-  // Look up known catalog listings for higher fidelity
+  // Look up known catalog listings for higher fidelity (prioritize matching city/online)
   const allKnownListings = getAllInstituteListings();
-  const knownMap = new Map<string, InstituteListing>();
-  for (const item of allKnownListings) {
-    knownMap.set(item.name.toLowerCase().trim(), item);
-  }
-
   const listings: InstituteListing[] = page.institutes.map((inst) => {
-    const known = knownMap.get(inst.name.toLowerCase().trim());
+    const targetName = inst.name.toLowerCase().trim();
+    const known =
+      allKnownListings.find(
+        (item) => item.name.toLowerCase().trim() === targetName && (isOnline ? item.city === 'online' : item.city === cityKey),
+      ) || allKnownListings.find((item) => item.name.toLowerCase().trim() === targetName);
     return buildListingFromLive(inst, examShort, cityName, known);
   });
 
