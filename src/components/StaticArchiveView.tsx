@@ -23,10 +23,11 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
 
   // If this is a VS comparison page, render the rich comparison layout
   if (vs) {
-    const isClat = !('firstIas' in (vs.rows[0] || {}));
-    const leftName = vs.leftName || (isClat ? 'Knowledge Nation Law Centre' : 'First IAS Institute');
-    const rightName = vs.rightName || vs.competitorName;
-    const competitor = vs.competitorContact;
+    const v: any = vs;
+    const isClat = Boolean(v.rows?.[0]?.knlc || !v.rows?.[0]?.firstIas);
+    const leftName: string = v.leftName || (isClat ? 'Knowledge Nation Law Centre' : 'First IAS Institute');
+    const rightName: string = v.rightName || v.competitorName || 'Competitor';
+    const competitor: any = v.competitorContact;
 
     return (
       <>
@@ -64,7 +65,7 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
             {/* Page Header */}
             <header style={{ marginBottom: 28 }}>
               <h1 style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', fontWeight: 800, color: '#0f172a', lineHeight: 1.25, margin: '0 0 10px' }}>
-                {vs.title.split('|')[0].trim()}
+                {v.title.split('|')[0].trim()}
               </h1>
               <p style={{ fontSize: 16, color: '#475569', margin: 0, lineHeight: 1.6 }}>
                 An independent, data-backed comparative audit evaluating faculty continuity, batch size ratios, mock test calibration, and verified NLU outcomes.
@@ -91,7 +92,7 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: 15.5, lineHeight: 1.7, color: '#064e3b', fontWeight: 500 }}>
-                {vs.lede}
+                {v.lede}
               </p>
             </aside>
 
@@ -260,8 +261,8 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                     </tr>
                   </thead>
                   <tbody>
-                    {vs.rows.map((row, idx) => {
-                      const leftVal = (row as any).knlc || (row as any).firstIas || (row as any).left || '';
+                    {v.rows.map((row: any, idx: number) => {
+                      const leftVal = row.knlc || row.firstIas || row.left || '';
                       return (
                         <tr key={idx} style={{ borderBottom: '1px solid #f1f5f9' }}>
                           <td style={{ padding: '14px 20px', fontWeight: 700, color: '#1e293b' }}>
@@ -294,7 +295,7 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                   <span>🎯</span> Where {rightName} Is Useful
                 </h3>
                 <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.65, color: '#475569' }}>
-                  {vs.competitorStrength}
+                  {v.competitorStrength}
                 </p>
               </div>
 
@@ -303,7 +304,7 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                   <span>⭐</span> Why {leftName} Is Superior
                 </h3>
                 <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.65, color: '#5b21b6', fontWeight: 500 }}>
-                  {vs.competitorTradeoff}
+                  {v.competitorTradeoff}
                 </p>
               </div>
             </section>
