@@ -10,6 +10,8 @@ import { getAllIpmatIndiaRankingSlugs } from '@/data/ipmatIndiaRankings';
 import { getAllIpmatDelhiRankingSlugs } from '@/data/ipmatDelhiRankings';
 import { getAllIpmatGurgaonRankingSlugs } from '@/data/ipmatGurgaonRankings';
 import { getAllInstituteBrandSlugs } from '@/data/instituteBrands';
+import { getAllStaticArchiveSlugs } from '@/data/staticArchive';
+import { getAllVsComparisonSlugs } from '@/data/iasVsComparisons';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://coachingcompare.in';
@@ -118,6 +120,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
+  // Static Archive & VS Comparison routes
+  const staticArchiveRoutes: MetadataRoute.Sitemap = [
+    ...getAllStaticArchiveSlugs(),
+    ...getAllVsComparisonSlugs(),
+  ].map((slug) => ({
+    url: `${baseUrl}/${slug}`,
+    lastModified: now,
+    changeFrequency: 'weekly',
+    priority: 0.85,
+  }));
+
   const allRoutes = [
     ...staticRoutes,
     ...ipmatRankingRoutes,
@@ -125,6 +138,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...brandRoutes,
     ...instituteRoutes,
     ...blogRoutes,
+    ...staticArchiveRoutes,
     ...stateRoutes,
     ...cityRoutes,
     ...examRoutes,

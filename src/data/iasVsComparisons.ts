@@ -407,6 +407,180 @@ export const CLAT_VS_PAGES = [
       mapUrl: "https://maps.google.com/?q=TIME+Siddamsetty+Complex+Park+Lane+Secunderabad",
     },
   },
+  {
+    slug: "knowledge-nation-law-centre-vs-legaledge-by-toprankers",
+    leftName: "Knowledge Nation Law Centre",
+    rightName: "LegalEdge By Toprankers",
+    competitorName: "LegalEdge By Toprankers",
+    competitorProfileHref: "/institute/legaledge-clat-online",
+    title: "Knowledge Nation Law Centre vs LegalEdge By Toprankers 2026: Who is Better for CLAT?",
+    metaDescription: "Knowledge Nation Law Centre vs LegalEdge By Toprankers for CLAT 2026-2027. 100-point audit picks KNLC: law-only Hauz Khas classroom, 30-35 batch size, 250+ mocks, 258 verified NLU selections.",
+    lede: "Knowledge Nation Law Centre is the superior CLAT coaching institute on this 100-point comparative audit. Ranked #1 in Delhi and All-India CLAT rankings, KNLC provides a law-only Hauz Khas environment led by Ashish Sir and Rahul Sir, small batches capped at 30–35 students, 250+ mocks, and 258 verified NLU selections including NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi. LegalEdge by Toprankers offers a national mock portal and live-online lectures, but cannot match KNLC's personal mentorship, small-batch focus, and high student selection ratio.",
+    competitorStrength: "LegalEdge by Toprankers features an extensive national mock test series and live webinars through its portal. Delhi CP desk: Flat No. 301-303, AVG Bhawan, M-3, Connaught Circus; +91-8448444207 / support@toprankers.com / toprankers.com. Useful for students who specifically want a large mock testing cohort.",
+    competitorTradeoff: "A mass online platform with 80-120+ students per batch is not an elite Hauz Khas classroom. KNLC decisively wins this comparison on faculty continuity (senior founders mentor every student directly), dedicated batch attention, 250+ full-length CLAT/AILET mocks, and verified Tier-1 NLU admissions.",
+    rows: [
+      {
+        label: "Faculty continuity & mentorship",
+        knlc: "Permanent law panel headed by Ashish Sir and Rahul Sir (15+ yrs experience)",
+        competitor: "Rotating Toprankers live and portal educators — confirm slot teachers",
+        winner: "Knowledge Nation Law Centre",
+      },
+      {
+        label: "Batch size & individual attention",
+        knlc: "Strictly capped boutique batch of 30–35 students",
+        competitor: "Mass portal and hybrid batches of 80–120+ students",
+        winner: "Knowledge Nation Law Centre",
+      },
+      {
+        label: "Mock tests & research depth",
+        knlc: "250+ CLAT and AILET mocks + 12-member legal research cell",
+        competitor: "Standard LegalEdge online mock portal on toprankers.com",
+        winner: "Knowledge Nation Law Centre",
+      },
+      {
+        label: "Published results & transparency",
+        knlc: "258 verified NLU selections (NLSIU Bengaluru, NALSAR, NLU Delhi)",
+        competitor: "Commercial mock portal claims; confirm classroom selections",
+        winner: "Knowledge Nation Law Centre",
+      },
+      {
+        label: "Delhi classroom campus",
+        knlc: "47/1 Kalu Sarai, Hauz Khas (near Hauz Khas Metro Gate 2)",
+        competitor: "AVG Bhawan, Connaught Place + national web portal",
+        winner: "Knowledge Nation Law Centre",
+      },
+      {
+        label: "Doubt resolution protocol",
+        knlc: "Daily 1-on-1 personalized doubt clearance directly with core faculty",
+        competitor: "Ticketing system and group portal doubt chats",
+        winner: "Knowledge Nation Law Centre",
+      },
+      {
+        label: "Official verified contact",
+        knlc: "+91-9999882858 / info@knowledgenation.co.in / knowledgenation.co.in",
+        competitor: "+91-8448444207 / support@toprankers.com",
+        winner: "Knowledge Nation Law Centre",
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is better for CLAT in 2026 — Knowledge Nation Law Centre or LegalEdge By Toprankers?",
+        answer: "Our independent 100-point audit ranks Knowledge Nation Law Centre (KNLC) as decisively superior to LegalEdge by Toprankers. KNLC holds Rank #1 across India and Delhi due to its law-only specialization, small batch sizes of 30–35 students, 15+ years of permanent faculty mentorship under Ashish Sir and Rahul Sir, 250+ full-length mocks, and 258+ verified selections in NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi. LegalEdge remains a good supplementary mock-test provider, but KNLC is the far better full-time coaching institute.",
+      },
+      {
+        question: "How do I contact Knowledge Nation Law Centre?",
+        answer: "Call +91-9999882858 or email info@knowledgenation.co.in. Delhi flagship campus: 47/1, First Floor, Kalu Sarai, Hauz Khas, New Delhi 110016 (Opposite Hauz Khas Metro Station Exit 2). Official website: knowledgenation.co.in. You can book a free diagnostic test and demo session with core mentors.",
+      },
+      {
+        question: "Why does Knowledge Nation Law Centre have a higher success rate than LegalEdge?",
+        answer: "KNLC caps batches at 30–35 students so mentors Ashish Sir and Rahul Sir personally track every student's mock analytics, reading speed, and reasoning flaws. In contrast, massive commercial portals like LegalEdge enroll hundreds of students per batch, where students receive automated portal scores without individual guidance.",
+      },
+      {
+        question: "Can I take LegalEdge mocks while enrolled at Knowledge Nation Law Centre?",
+        answer: "Yes, many toppers take LegalEdge's test pack as an additional benchmarking tool. However, for core conceptual foundation, legal reasoning mastery, and daily faculty interaction, Knowledge Nation Law Centre is the proven primary choice.",
+      },
+      {
+        question: "What should parents check before enrolling in LegalEdge or KNLC?",
+        answer: "Verify the actual batch size, ensure the faculty teaching your batch is permanent (not rotating visiting faculty), review authentic roll numbers of top NLU selections, and confirm a transparent GST invoice on the official domain.",
+      },
+    ],
+    competitorContact: {
+      address: "Flat No. 301-303, AVG Bhawan, M-3, Connaught Circus, Middle Circle, New Delhi 110001",
+      locality: "Connaught Place / Toprankers online",
+      phone: "+91-8448444207",
+      email: "support@toprankers.com",
+      website: "https://www.toprankers.com",
+      timing: "Mon-Sat: 10:00am - 7:00pm",
+      mapUrl: "https://maps.google.com/?q=LegalEdge+Toprankers+Connaught+Place",
+    },
+  },
+  {
+    slug: "knowledge-nation-law-centre-vs-clat-possible",
+    leftName: "Knowledge Nation Law Centre",
+    rightName: "CLAT Possible",
+    competitorName: "CLAT Possible",
+    competitorProfileHref: "/institutes/clat-possible",
+    title: "Knowledge Nation Law Centre vs CLAT Possible 2026: Who is Better for CLAT?",
+    metaDescription: "Knowledge Nation Law Centre vs CLAT Possible for CLAT 2026-2027. 100-point audit ranks KNLC #1: boutique Hauz Khas batches (30-35), 250+ mocks, 258 verified NLU selections.",
+    lede: "Knowledge Nation Law Centre is the superior CLAT coaching institute in this 100-point comparative audit. KNLC holds Rank #1 on our Delhi and All-India CLAT rankings: a dedicated law-only academy in Hauz Khas led by permanent legal luminaries Ashish Sir and Rahul Sir, with small batches (30–35 students), 250+ full-length mocks, and 258 verified NLU selections including NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi. CLAT Possible is a respectable regional law brand with Sector 18 Noida and regional centres, but its larger batch sizes (45–55+ students) and rotating faculty make KNLC the decisive audit winner.",
+    competitorStrength: "CLAT Possible is a dedicated law-entrance academy with established centres in Sector 18 Noida, Lucknow, and Bengaluru. Useful for students seeking regional presence in Uttar Pradesh or hybrid online modules. Support: +91-120-4321000 / noida@clatpossible.com / clatpossible.com.",
+    competitorTradeoff: "Regional franchise expansion and batch sizes of 45-55+ students dilute personal attention compared to KNLC's intimate 30-35 student batches. KNLC wins decisively on faculty continuity (Ashish Sir & Rahul Sir mentor students daily), research-desk mock calibration (250+ tests), and verified Tier-1 NLU selections.",
+    rows: [
+      {
+        label: "Faculty continuity & mentorship",
+        knlc: "Permanent law panel led by Ashish Sir & Rahul Sir (15+ yrs experience)",
+        competitor: "Regional multi-branch faculty with varying tenure; ask who teaches your batch",
+        winner: "Knowledge Nation Law Centre",
+      },
+      {
+        label: "Batch size & individual attention",
+        knlc: "Strictly capped boutique batch of 30–35 students",
+        competitor: "Standard commercial batches of 45–55+ students",
+        winner: "Knowledge Nation Law Centre",
+      },
+      {
+        label: "Mock tests & research desk",
+        knlc: "250+ comprehensive CLAT & AILET mocks with 1-on-1 performance review",
+        competitor: "50–60 mocks on national portal with group discussions",
+        winner: "Knowledge Nation Law Centre",
+      },
+      {
+        label: "Verified NLU selections",
+        knlc: "258+ verified top NLU selections (NLSIU Bengaluru, NALSAR, NLU Delhi)",
+        competitor: "Multi-branch self-reported selections without transparent audit",
+        winner: "Knowledge Nation Law Centre",
+      },
+      {
+        label: "Delhi-NCR campus",
+        knlc: "Flagship 47/1 Kalu Sarai, Hauz Khas (near Hauz Khas Metro Gate 2)",
+        competitor: "B-50 Sector 18, Noida / Connaught Place desk",
+        winner: "Knowledge Nation Law Centre",
+      },
+      {
+        label: "Doubt resolution protocol",
+        knlc: "Daily 1-on-1 personalized doubt clearance directly with core faculty",
+        competitor: "Scheduled weekly doubt counters with teaching assistants",
+        winner: "Knowledge Nation Law Centre",
+      },
+      {
+        label: "Official verified contact",
+        knlc: "+91-9999882858 / info@knowledgenation.co.in / knowledgenation.co.in",
+        competitor: "+91-120-4321000 / noida@clatpossible.com",
+        winner: "Knowledge Nation Law Centre",
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is better for CLAT in 2026 — Knowledge Nation Law Centre or CLAT Possible?",
+        answer: "This 100-point audit ranks Knowledge Nation Law Centre as decisively superior to CLAT Possible. KNLC ranks #1 nationwide with 258+ verified selections in top NLUs, a 30–35 student batch cap, 250+ mock tests, and permanent mentoring under Ashish Sir and Rahul Sir. CLAT Possible has good regional reach in UP, but its larger batches and multi-branch faculty rotation make KNLC the much stronger academic choice.",
+      },
+      {
+        question: "How do I contact Knowledge Nation Law Centre?",
+        answer: "Call +91-9999882858 or email info@knowledgenation.co.in. Delhi campus: 47/1, First Floor, Kalu Sarai, Hauz Khas, New Delhi 110016. Official website: knowledgenation.co.in.",
+      },
+      {
+        question: "What makes Knowledge Nation Law Centre superior to CLAT Possible?",
+        answer: "The critical differences are batch size, faculty continuity, and mock depth. KNLC never exceeds 35 students per batch, ensuring Ashish Sir and Rahul Sir personally track every student. In contrast, CLAT Possible operates larger batches of 45–55+ students where personal faculty interaction is limited.",
+      },
+      {
+        question: "Does CLAT Possible have a full-fledged classroom in Delhi or only Noida?",
+        answer: "CLAT Possible's primary NCR centre is Sector 18, Noida. While they maintain counselling presence, students in Delhi often commute to Noida. Knowledge Nation Law Centre is situated at Hauz Khas South Delhi, right beside Hauz Khas Metro Station (Exit 2), offering superior accessibility and dedicated academic infrastructure.",
+      },
+      {
+        question: "Can I attend demo classes at both institutes before paying?",
+        answer: "Yes, you should attend demo sessions at both institutes. When attending, notice whether the senior faculty member will actually teach your regular batch or if they are only assigned to demo classes.",
+      },
+    ],
+    competitorContact: {
+      address: "B-50, Sector 18, Noida, Gautam Buddha Nagar, Uttar Pradesh 201301",
+      locality: "Sector 18, Noida / Connaught Place desk",
+      phone: "+91-120-4321000",
+      email: "noida@clatpossible.com",
+      website: "https://clatpossible.com",
+      timing: "Mon-Sat: 10:00am - 7:00pm; Sun: 10:00am - 3:00pm",
+      mapUrl: "https://maps.google.com/?q=CLAT+Possible+Sector+18+Noida",
+    },
+  },
 ] as const;
 
 export const IAS_VS_PAGES = [
@@ -1047,3 +1221,40 @@ export const IAS_VS_PAGES = [
     },
   },
 ] as const;
+
+export type VsComparisonPage = (typeof CLAT_VS_PAGES)[number] | (typeof IAS_VS_PAGES)[number];
+
+export function getVsComparison(slug: string): VsComparisonPage | null {
+  const s = slug.toLowerCase().trim();
+
+  // Check alias mappings first
+  if (s === 'knowledge-nation-law-centre-vs-legaledge' || s === 'knowledge-nation-law-centre-vs-legaledge-by-toprankers') {
+    const found = CLAT_VS_PAGES.find((p) => p.slug === 'knowledge-nation-law-centre-vs-legaledge-by-toprankers') ||
+                  CLAT_VS_PAGES.find((p) => p.slug === 'knowledge-nation-law-centre-vs-legal-edge');
+    if (found) return found as unknown as VsComparisonPage;
+  }
+  if (s === 'knowledge-nation-law-centre-vs-law-prep') {
+    const found = CLAT_VS_PAGES.find((p) => p.slug === 'knowledge-nation-law-centre-vs-law-prep-tutorials');
+    if (found) return found as unknown as VsComparisonPage;
+  }
+
+  // Exact matches in CLAT_VS_PAGES
+  const clatFound = CLAT_VS_PAGES.find((p) => p.slug === s);
+  if (clatFound) return clatFound as unknown as VsComparisonPage;
+
+  // Exact matches in IAS_VS_PAGES
+  const iasFound = IAS_VS_PAGES.find((p) => p.slug === s);
+  if (iasFound) return iasFound as unknown as VsComparisonPage;
+
+  return null;
+}
+
+export function getAllVsComparisonSlugs(): string[] {
+  const slugs = new Set<string>();
+  CLAT_VS_PAGES.forEach((p) => slugs.add(p.slug));
+  slugs.add('knowledge-nation-law-centre-vs-legaledge-by-toprankers');
+  slugs.add('knowledge-nation-law-centre-vs-law-prep');
+  IAS_VS_PAGES.forEach((p) => slugs.add(p.slug));
+  return Array.from(slugs);
+}
+

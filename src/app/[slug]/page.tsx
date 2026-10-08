@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import {
   CITIES_DATA,
   EXAM_CATEGORIES,
@@ -90,6 +90,8 @@ import {
   getStaticArchivePage,
   type StaticArchivePage,
 } from '@/data/staticArchive';
+import { getAllVsComparisonSlugs } from '@/data/iasVsComparisons';
+import { BLOG_POSTS } from '@/data/blogPosts';
 import CoachingCard from '@/components/CoachingCard';
 import LiveRankingView from '@/components/LiveRankingView';
 import StaticArchiveView from '@/components/StaticArchiveView';
@@ -314,6 +316,12 @@ function parseSlug(slug: string) {
     }
   }
 
+  // Editorial blog post redirect to canonical /blog/[slug]
+  const blog = BLOG_POSTS.find((p) => p.slug === slug);
+  if (blog) {
+    return { type: 'blog-redirect' as const, blog };
+  }
+
   // Legal / vs archive pages recovered from production HTML
   const staticArchive = getStaticArchivePage(slug);
   if (staticArchive) {
@@ -409,8 +417,10 @@ export async function generateStaticParams() {
       add(s.replace(/^best-/, ''));
     });
 
-  // Legal + institute-vs pages from production archive
+  // Legal + institute-vs pages from production archive and comparison definitions
   getAllStaticArchiveSlugs().forEach(add);
+  getAllVsComparisonSlugs().forEach(add);
+  BLOG_POSTS.forEach((b) => add(b.slug));
 
   // Extra city hubs present on live but not in CITIES_DATA shortlist
   [
@@ -455,6 +465,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         url: `https://coachingcompare.in/${page.slug}`,
         type: 'article',
       },
+    };
+  }
+
+  if (parsed.type === 'blog-redirect') {
+    const { blog } = parsed;
+    return {
+      title: `${blog.title} | CoachingCompare.in`,
+      description: blog.excerpt,
+      alternates: { canonical: `/blog/${blog.slug}` },
     };
   }
 
@@ -574,6 +593,10 @@ export default async function DynamicSlugPage({ params }: PageProps) {
 
   if (!parsed) {
     notFound();
+  }
+
+  if (parsed.type === 'blog-redirect') {
+    redirect(`/blog/${slug}`);
   }
 
   if (parsed.type === 'live-ranking') {
