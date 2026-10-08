@@ -5846,17 +5846,12 @@ Preparing for CLAT 2029 starting in Class 9 is not about high-stress memorizatio
 
 ## The 4-Tier Competency Pyramid for CLAT 2029
 
-\`\`\`
-                 ▲
-                / \
-               /   \  Tier 4: Speed Drills & 50+ Full-Length Mocks (Class 12)
-              /     \
-             /───────\ Tier 3: Core Legal & Critical Reasoning Heuristics (Class 11)
-            /         \
-           /───────────\ Tier 2: Analytical Logic & Current Affairs Tracking (Class 10)
-          /             \
-         /───────────────\ Tier 1: Advanced Reading Stamina & Cognitive Acumen (Class 9)
-\`\`\`
+| Competency Tier | Focus Academic Stage | Strategic Objective | Core Milestone |
+|---|---|---|---|
+| **Tier 4: Mock Mastery** | **Class 12** | Exam stamina & timing precision | 50+ proctored full-length mocks, error audit & Board balance |
+| **Tier 3: Core Jurisprudence** | **Class 11** | Legal reasoning & critical logic | Constitutional, Torts, Contracts & 25 timed sectional tests |
+| **Tier 2: Analytical Logic** | **Class 10** | Syllogisms, deductive puzzles & GK mapping | Monthly legal dossiers, premise-conclusion deconstruction |
+| **Tier 1: Speed Reading** | **Class 9** | Reading velocity & cognitive stamina | 320+ WPM reading velocity, non-fiction literature & editorials |
 
 ### Tier 1: Advanced Reading Stamina & Vocabulary in Context (Class 9)
 - **Target Reading Velocity:** Progress gradually from 220 WPM to 320+ WPM.
