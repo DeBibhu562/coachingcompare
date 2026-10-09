@@ -183,6 +183,7 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
   }
 
   const headings = extractHeadings(post.content);
+  const isUpsc = post.relatedExam === 'upsc' || (post.category && post.category.toLowerCase().includes('upsc')) || post.slug.includes('upsc');
 
   const faqSchema =
     post.faqs && post.faqs.length > 0
@@ -393,131 +394,267 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
               </div>
             )}
 
-            {/* 2. Audited Rank #1 Spotlight Card: Knowledge Nation Law Centre */}
-            <div
-              style={{
-                background: 'linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%)',
-                padding: '24px 20px',
-                borderRadius: 14,
-                border: '2px solid #10b981',
-                boxShadow: '0 8px 20px -4px rgba(16, 185, 129, 0.12)',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
-                <span style={{ background: '#10b981', color: '#fff', fontSize: 11, fontWeight: 800, padding: '3px 8px', borderRadius: 6, letterSpacing: '0.04em' }}>
-                  🏆 AUDIT RANK #1
-                </span>
-                <span style={{ fontSize: 12.5, fontWeight: 700, color: '#047857' }}>
-                  Score: 99/100
-                </span>
+            {/* 2. Audited Rank #1 Spotlight Card */}
+            {isUpsc ? (
+              <div
+                style={{
+                  background: 'linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%)',
+                  padding: '24px 20px',
+                  borderRadius: 14,
+                  border: '2px solid #10b981',
+                  boxShadow: '0 8px 20px -4px rgba(16, 185, 129, 0.12)',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
+                  <span style={{ background: '#10b981', color: '#fff', fontSize: 11, fontWeight: 800, padding: '3px 8px', borderRadius: 6, letterSpacing: '0.04em' }}>
+                    🏆 AUDIT RANK #1
+                  </span>
+                  <span style={{ fontSize: 12.5, fontWeight: 700, color: '#047857' }}>
+                    Score: 99/100
+                  </span>
+                </div>
+
+                <h4 style={{ fontSize: 17, fontWeight: 800, margin: '0 0 6px', color: '#064e3b' }}>
+                  First IAS Institute
+                </h4>
+                <p style={{ margin: '0 0 14px', fontSize: 12.5, color: '#047857', lineHeight: 1.45 }}>
+                  Top-rated UPSC Civil Services academy with 58+ verified CSE selections and personal mentor guidance.
+                </p>
+
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'grid', gap: 7, fontSize: 12.5, color: '#166534' }}>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>
+                    <span><strong>Small Batch:</strong> 35–45 students strictly</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>
+                    <span><strong>Mentors:</strong> Ashish Sir & Rahul Sir (15+ yrs)</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>
+                    <span><strong>Mocks:</strong> 250+ Prelims & Mains mocks + 48-hr review</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>
+                    <span><strong>Campus:</strong> Hauz Khas, Karol Bagh & Gurgaon</span>
+                  </li>
+                </ul>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  <a
+                    href="tel:+919990228268"
+                    className="sidebar-action-btn"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: 6,
+                      background: '#10b981',
+                      color: '#fff',
+                      padding: '10px 14px',
+                      borderRadius: 8,
+                      fontWeight: 700,
+                      fontSize: 13,
+                      textDecoration: 'none',
+                      textAlign: 'center',
+                    }}
+                  >
+                    <Icons.Phone size={14} /> Call: +91-9990228268
+                  </a>
+                  <a
+                    href="https://firstias.co.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="sidebar-action-btn"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: 6,
+                      background: '#fff',
+                      color: '#064e3b',
+                      border: '1px solid #10b981',
+                      padding: '9px 14px',
+                      borderRadius: 8,
+                      fontWeight: 700,
+                      fontSize: 13,
+                      textDecoration: 'none',
+                      textAlign: 'center',
+                    }}
+                  >
+                    <Icons.Globe size={14} /> Visit firstias.co.in
+                  </a>
+                </div>
               </div>
+            ) : (
+              <div
+                style={{
+                  background: 'linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%)',
+                  padding: '24px 20px',
+                  borderRadius: 14,
+                  border: '2px solid #10b981',
+                  boxShadow: '0 8px 20px -4px rgba(16, 185, 129, 0.12)',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
+                  <span style={{ background: '#10b981', color: '#fff', fontSize: 11, fontWeight: 800, padding: '3px 8px', borderRadius: 6, letterSpacing: '0.04em' }}>
+                    🏆 AUDIT RANK #1
+                  </span>
+                  <span style={{ fontSize: 12.5, fontWeight: 700, color: '#047857' }}>
+                    Score: 99/100
+                  </span>
+                </div>
 
-              <h4 style={{ fontSize: 17, fontWeight: 800, margin: '0 0 6px', color: '#064e3b' }}>
-                Knowledge Nation Law Centre
-              </h4>
-              <p style={{ margin: '0 0 14px', fontSize: 12.5, color: '#047857', lineHeight: 1.45 }}>
-                Top-rated CLAT academy with 258+ verified NLU selections and permanent mentor guidance.
-              </p>
+                <h4 style={{ fontSize: 17, fontWeight: 800, margin: '0 0 6px', color: '#064e3b' }}>
+                  Knowledge Nation Law Centre
+                </h4>
+                <p style={{ margin: '0 0 14px', fontSize: 12.5, color: '#047857', lineHeight: 1.45 }}>
+                  Top-rated CLAT academy with 258+ verified NLU selections and permanent mentor guidance.
+                </p>
 
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'grid', gap: 7, fontSize: 12.5, color: '#166534' }}>
-                <li style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>
-                  <span><strong>Small Batch:</strong> 30–35 students strictly</span>
-                </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>
-                  <span><strong>Mentors:</strong> Ashish Sir & Rahul Sir (15+ yrs)</span>
-                </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>
-                  <span><strong>Mocks:</strong> 250+ full-length tests & 1-on-1 review</span>
-                </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>
-                  <span><strong>Campus:</strong> Hauz Khas, South Delhi</span>
-                </li>
-              </ul>
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'grid', gap: 7, fontSize: 12.5, color: '#166534' }}>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>
+                    <span><strong>Small Batch:</strong> 30–35 students strictly</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>
+                    <span><strong>Mentors:</strong> Ashish Sir & Rahul Sir (15+ yrs)</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>
+                    <span><strong>Mocks:</strong> 250+ full-length tests & 1-on-1 review</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>
+                    <span><strong>Campus:</strong> Hauz Khas, South Delhi</span>
+                  </li>
+                </ul>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                <a
-                  href="tel:+919999882858"
-                  className="sidebar-action-btn"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: 6,
-                    background: '#10b981',
-                    color: '#fff',
-                    padding: '10px 14px',
-                    borderRadius: 8,
-                    fontWeight: 700,
-                    fontSize: 13,
-                    textDecoration: 'none',
-                    textAlign: 'center',
-                  }}
-                >
-                  <Icons.Phone size={14} /> Call: +91-9999882858
-                </a>
-                <a
-                  href="https://knowledgenation.co.in"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="sidebar-action-btn"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: 6,
-                    background: '#fff',
-                    color: '#064e3b',
-                    border: '1px solid #10b981',
-                    padding: '9px 14px',
-                    borderRadius: 8,
-                    fontWeight: 700,
-                    fontSize: 13,
-                    textDecoration: 'none',
-                    textAlign: 'center',
-                  }}
-                >
-                  <Icons.Globe size={14} /> Visit knowledgenation.co.in
-                </a>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  <a
+                    href="tel:+919999882858"
+                    className="sidebar-action-btn"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: 6,
+                      background: '#10b981',
+                      color: '#fff',
+                      padding: '10px 14px',
+                      borderRadius: 8,
+                      fontWeight: 700,
+                      fontSize: 13,
+                      textDecoration: 'none',
+                      textAlign: 'center',
+                    }}
+                  >
+                    <Icons.Phone size={14} /> Call: +91-9999882858
+                  </a>
+                  <a
+                    href="https://knowledgenation.co.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="sidebar-action-btn"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: 6,
+                      background: '#fff',
+                      color: '#064e3b',
+                      border: '1px solid #10b981',
+                      padding: '9px 14px',
+                      borderRadius: 8,
+                      fontWeight: 700,
+                      fontSize: 13,
+                      textDecoration: 'none',
+                      textAlign: 'center',
+                    }}
+                  >
+                    <Icons.Globe size={14} /> Visit knowledgenation.co.in
+                  </a>
+                </div>
               </div>
-            </div>
+            )}
 
             {/* 3. Quick Head-to-Head Comparisons Widget */}
             <div style={{ background: '#fff', padding: '20px', borderRadius: 14, border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
                 <span style={{ fontSize: 17 }}>⚖️</span>
                 <h4 style={{ fontSize: 14.5, fontWeight: 800, margin: 0, color: '#0f172a' }}>
-                  CLAT Institute Comparisons
+                  {isUpsc ? 'UPSC Institute Comparisons' : 'CLAT Institute Comparisons'}
                 </h4>
               </div>
               <div style={{ display: 'grid', gap: 8, fontSize: 13 }}>
-                <Link
-                  href="/knowledge-nation-law-centre-vs-legaledge-by-toprankers"
-                  style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
-                >
-                  KNLC vs LegalEdge By Toprankers →
-                </Link>
-                <Link
-                  href="/knowledge-nation-law-centre-vs-career-launcher"
-                  style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
-                >
-                  KNLC vs Career Launcher LST →
-                </Link>
-                <Link
-                  href="/knowledge-nation-law-centre-vs-law-prep-tutorials"
-                  style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
-                >
-                  KNLC vs Law Prep Tutorials →
-                </Link>
-                <Link
-                  href="/knowledge-nation-law-centre-vs-clat-possible"
-                  style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
-                >
-                  KNLC vs CLAT Possible →
-                </Link>
+                {isUpsc ? (
+                  <>
+                    <Link
+                      href="/first-ias-institute-vs-vision-ias"
+                      style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
+                    >
+                      First IAS vs Vision IAS →
+                    </Link>
+                    <Link
+                      href="/vajiram-and-ravi-ias-vs-first-ias-institute"
+                      style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
+                    >
+                      First IAS vs Vajiram & Ravi →
+                    </Link>
+                    <Link
+                      href="/forumias-vs-first-ias-institute"
+                      style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
+                    >
+                      First IAS vs ForumIAS →
+                    </Link>
+                    <Link
+                      href="/next-ias-vs-first-ias-institute"
+                      style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
+                    >
+                      First IAS vs Next IAS →
+                    </Link>
+                    <Link
+                      href="/raus-ias-vs-first-ias-institute"
+                      style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
+                    >
+                      First IAS vs Rau's IAS →
+                    </Link>
+                    <Link
+                      href="/drishti-ias-vs-first-ias-institute"
+                      style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
+                    >
+                      First IAS vs Drishti IAS →
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      href="/knowledge-nation-law-centre-vs-legaledge-by-toprankers"
+                      style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
+                    >
+                      KNLC vs LegalEdge By Toprankers →
+                    </Link>
+                    <Link
+                      href="/knowledge-nation-law-centre-vs-career-launcher"
+                      style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
+                    >
+                      KNLC vs Career Launcher LST →
+                    </Link>
+                    <Link
+                      href="/knowledge-nation-law-centre-vs-law-prep-tutorials"
+                      style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
+                    >
+                      KNLC vs Law Prep Tutorials →
+                    </Link>
+                    <Link
+                      href="/knowledge-nation-law-centre-vs-clat-possible"
+                      style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
+                    >
+                      KNLC vs CLAT Possible →
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
 
@@ -526,77 +663,126 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
                 <span style={{ fontSize: 17 }}>🎯</span>
                 <h4 style={{ fontSize: 14.5, fontWeight: 800, margin: 0, color: '#0f172a' }}>
-                  CLAT Rankings & Blueprints
+                  {isUpsc ? 'UPSC Strategy & Rankings' : 'CLAT Rankings & Blueprints'}
                 </h4>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 7, fontSize: 13 }}>
-                <Link
-                  href="/blog/top-5-best-clat-ailet-coaching-in-india"
-                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
-                >
-                  • Top 5 CLAT + AILET in India
-                </Link>
-                <Link
-                  href="/blog/top-5-best-clat-ailet-coaching-in-delhi"
-                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
-                >
-                  • Top 5 CLAT + AILET in Delhi
-                </Link>
-                <Link
-                  href="/blog/top-5-best-online-clat-ailet-coaching-institutes"
-                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
-                >
-                  • Top 5 Online CLAT + AILET
-                </Link>
-                <Link
-                  href="/blog/top-5-best-clat-ailet-coaching-in-south-delhi"
-                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
-                >
-                  • Top 5 CLAT in South Delhi
-                </Link>
-                <Link
-                  href="/blog/top-5-best-clat-ailet-coaching-in-gurgaon"
-                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
-                >
-                  • Top 5 CLAT in Gurgaon
-                </Link>
-                <Link
-                  href="/blog/top-5-best-clat-ailet-coaching-in-delhi-ncr"
-                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
-                >
-                  • Top 5 CLAT in Delhi NCR
-                </Link>
-                <Link
-                  href="/blog/clat-2027-strategy-to-crack"
-                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
-                >
-                  • CLAT 2027 : 2-Year Roadmap
-                </Link>
-                <Link
-                  href="/blog/clat-2028-strategy-to-crack"
-                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
-                >
-                  • CLAT 2028 : 3-Year Foundation
-                </Link>
-                <Link
-                  href="/blog/clat-2029-strategy-to-crack"
-                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
-                >
-                  • CLAT 2029 : 4-Year Architecture
-                </Link>
+                {isUpsc ? (
+                  <>
+                    <Link
+                      href="/best-ias-coaching-in-delhi"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • Best IAS Coaching in Delhi
+                    </Link>
+                    <Link
+                      href="/best-ias-coaching-in-india"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • Best IAS Coaching in India
+                    </Link>
+                    <Link
+                      href="/online-upsc-coaching"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • Online UPSC Coaching Rankings
+                    </Link>
+                    <Link
+                      href="/blog/upsc-cse-2027-strategy-to-crack"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • UPSC CSE 2027 : Strategy to Crack
+                    </Link>
+                    <Link
+                      href="/blog/upsc-cse-2028-strategy-to-crack"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • UPSC CSE 2028 : Strategy to Crack
+                    </Link>
+                    <Link
+                      href="/blog/upsc-cse-2029-strategy-to-crack"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • UPSC CSE 2029 : Strategy to Crack
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      href="/blog/top-5-best-clat-ailet-coaching-in-india"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • Top 5 CLAT + AILET in India
+                    </Link>
+                    <Link
+                      href="/blog/top-5-best-clat-ailet-coaching-in-delhi"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • Top 5 CLAT + AILET in Delhi
+                    </Link>
+                    <Link
+                      href="/blog/top-5-best-online-clat-ailet-coaching-institutes"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • Top 5 Online CLAT + AILET
+                    </Link>
+                    <Link
+                      href="/blog/top-5-best-clat-ailet-coaching-in-south-delhi"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • Top 5 CLAT in South Delhi
+                    </Link>
+                    <Link
+                      href="/blog/top-5-best-clat-ailet-coaching-in-gurgaon"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • Top 5 CLAT in Gurgaon
+                    </Link>
+                    <Link
+                      href="/blog/top-5-best-clat-ailet-coaching-in-delhi-ncr"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • Top 5 CLAT in Delhi NCR
+                    </Link>
+                    <Link
+                      href="/blog/clat-2027-strategy-to-crack"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • CLAT 2027 : 2-Year Roadmap
+                    </Link>
+                    <Link
+                      href="/blog/clat-2028-strategy-to-crack"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • CLAT 2028 : 3-Year Foundation
+                    </Link>
+                    <Link
+                      href="/blog/clat-2029-strategy-to-crack"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • CLAT 2029 : 4-Year Architecture
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
 
             {/* 5. Free Mentorship Consultation Box */}
             <div style={{ background: '#eef2ff', padding: '20px', borderRadius: 14, border: '1px solid #c7d2fe', textAlign: 'center' }}>
               <h4 style={{ fontSize: 15, fontWeight: 800, color: '#312e81', margin: '0 0 6px' }}>
-                Need 1-on-1 CLAT Guidance?
+                {isUpsc ? 'Need 1-on-1 UPSC Guidance?' : 'Need 1-on-1 CLAT Guidance?'}
               </h4>
               <p style={{ margin: '0 0 14px', fontSize: 12.5, color: '#4338ca', lineHeight: 1.5 }}>
-                Speak directly with senior mentors at Knowledge Nation Law Centre for a free diagnostic assessment.
+                {isUpsc
+                  ? 'Speak directly with senior mentors at First IAS Institute for a free profile assessment.'
+                  : 'Speak directly with senior mentors at Knowledge Nation Law Centre for a free diagnostic assessment.'}
               </p>
               <a
-                href="https://wa.me/919999882858?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20free%20CLAT%20counselling%20session"
+                href={
+                  isUpsc
+                    ? 'https://wa.me/919990228268?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20free%20UPSC%20counselling%20session'
+                    : 'https://wa.me/919999882858?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20free%20CLAT%20counselling%20session'
+                }
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

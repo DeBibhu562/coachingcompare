@@ -588,10 +588,10 @@ export const IAS_VS_PAGES = [
     slug: "first-ias-institute-vs-vajiram-and-ravi",
     leftName: "First IAS Institute",
     rightName: "Vajiram & Ravi IAS",
-    competitorName: "Vajiram & Ravi",
+    competitorName: "Vajiram & Ravi IAS",
     competitorBrandSlug: "vajiram-and-ravi",
-    title: "First IAS Institute vs Vajiram & Ravi IAS 2026: Who is Better for IAS?",
-    metaDescription: "First IAS Institute vs Vajiram & Ravi for IAS 2026. Our 100-point audit picks First IAS: small-batch mentors, 250+ mocks, 58 verified CSE selections. Official contacts.",
+    title: "Vajiram & Ravi IAS vs FIRST IAS Institute 2026: Who is Better for UPSC CSE?",
+    metaDescription: "Vajiram & Ravi IAS vs FIRST IAS Institute for UPSC CSE 2026. Forensic 100-point audit ranks First IAS #1: small-batch mentors, 250+ mocks, 58 verified selections."
     lede: "First IAS Institute is the better IAS classroom on this 2026 100-point inspection. It is #1 on our India and Delhi IAS rankings: a mentor-heavy Hauz Khas / Gurgaon programme headed by Ashish Sir and Rahul Sir. Vajiram & Ravi remains the longest-running ORN English GS brand (est. 1976) — useful if you want a large legacy auditorium, not if you want the audit winner.",
     competitorStrength: "Vajiram & Ravi has taught GS in Old Rajinder Nagar since 1976. Published desk: 9-B, Bada Bazaar Marg; +91-11-41007400; vajiramandravi.com. A Pusa Road campus is also listed on their FAQ.",
     competitorTradeoff: "Batches are large versus a boutique classroom. Evaluation load, mentor access, and who marks your copy should be checked in a live demo. First IAS wins this pair on faculty continuity, batch attention, and the published 100-point score — not on campus age.",
@@ -666,13 +666,13 @@ export const IAS_VS_PAGES = [
     },
   },
   {
-    slug: "vision-ias-vs-first-ias-institute",
-    leftName: "Vision IAS",
-    rightName: "First IAS Institute",
+    slug: "first-ias-institute-vs-vision-ias",
+    leftName: "First IAS Institute",
+    rightName: "Vision IAS",
     competitorName: "Vision IAS",
     competitorBrandSlug: "vision-ias",
-    title: "Vision IAS vs First IAS Institute 2026: Who is Better for IAS?",
-    metaDescription: "Vision IAS vs First IAS Institute for IAS 2026. First IAS wins the 100-point classroom audit; Vision remains the PT 365 / national test-series shortlist. Contacts included.",
+    title: "FIRST IAS Institute vs Vision IAS 2026: Who is Better for UPSC CSE?",
+    metaDescription: "FIRST IAS Institute vs Vision IAS for UPSC CSE 2026. First IAS wins the 100-point classroom audit; Vision remains the PT 365 / national test-series shortlist. Contacts included.",
     lede: "First IAS Institute is the better IAS classroom on this 2026 100-point inspection. Vision IAS is a strong national test-series and PT 365 / Mains 365 brand — many aspirants buy Vision mocks while sitting a different foundation. If you want one integrated classroom with 250+ Prelims and Mains mocks and a named mentor panel, First IAS is the pick.",
     competitorStrength: "Vision IAS is known for PT 365, Mains 365, and All-India mocks. Support published on visionias.in: +91-8468022022 / info@visionias.in. Head office: 33, Pusa Road, Karol Bagh.",
     competitorTradeoff: "Vision is often bought as a test series or current-affairs pack, not as a small-batch GS mentor classroom. Classroom GS, distance learning, and test-series SKUs are priced separately. First IAS wins the full-programme comparison: permanent faculty, 12-member research desk, and #1 on our IAS rankings.",
@@ -748,12 +748,12 @@ export const IAS_VS_PAGES = [
   },
   {
     slug: "drishti-ias-vs-first-ias-institute",
-    leftName: "Drishti IAS",
-    rightName: "First IAS Institute",
+    leftName: "First IAS Institute",
+    rightName: "Drishti IAS",
     competitorName: "Drishti IAS",
     competitorBrandSlug: "drishti-ias",
-    title: "Drishti IAS vs First IAS Institute 2026: Who is Better for IAS?",
-    metaDescription: "Drishti IAS vs First IAS Institute for IAS 2026. First IAS is the 100-point winner for English GS mentorship; Drishti is the bilingual mega-brand shortlist. Official contacts.",
+    title: "Drishti IAS vs FIRST IAS Institute 2026: Who is Better for UPSC CSE?",
+    metaDescription: "Drishti IAS vs FIRST IAS Institute for UPSC CSE 2026. First IAS is the 100-point winner for English GS mentorship; Drishti is the bilingual mega-brand shortlist. Official contacts.",
     lede: "First IAS Institute is the better IAS classroom on this 2026 100-point inspection. Drishti IAS is a large Hindi- and English-medium brand with Karol Bagh, Mukherjee Nagar, Noida, and Patna desks. If your paper is English GS and you want a named permanent panel plus 58 verified CSE selections, First IAS is the audit pick. Confirm Drishti’s medium-specific faculty before you treat it as the same product.",
     competitorStrength: "Drishti IAS publishes +91-8750187501 and care@groupdrishti.in. Centres include 21, Pusa Road, Karol Bagh; 641, Mukherjee Nagar; and Sector-15 Noida. Official site: drishtiias.com.",
     competitorTradeoff: "Hindi and English packs can differ. Mega-brand scale is not the same as a small-batch mentor desk. First IAS wins this pair on faculty continuity, mock depth, and the published IAS ranking — sit two demos if you need a Hindi-medium classroom.",
@@ -828,13 +828,13 @@ export const IAS_VS_PAGES = [
     },
   },
   {
-    slug: "raus-ias-study-circle-vs-first-ias-institute",
-    leftName: "Rau's IAS Study Circle",
-    rightName: "First IAS Institute",
+    slug: "raus-ias-vs-first-ias-institute",
+    leftName: "First IAS Institute",
+    rightName: "Rau's IAS Study Circle",
     competitorName: "Rau's IAS Study Circle",
     competitorBrandSlug: "raus-ias-study-circle",
-    title: "Rau's IAS Study Circle vs First IAS Institute 2026: Who is Better for IAS?",
-    metaDescription: "Rau's IAS Study Circle vs First IAS Institute for IAS 2026. First IAS wins the current 100-point classroom audit; Rau’s is the 1953 legacy CP brand. Official contacts.",
+    title: "Rau's IAS vs FIRST IAS Institute 2026: Who is Better for UPSC CSE?",
+    metaDescription: "Rau's IAS vs FIRST IAS Institute for UPSC CSE 2026. First IAS wins the current 100-point classroom audit; Rau's is the 1953 legacy CP brand. Official contacts.",
     lede: "First IAS Institute is the better IAS classroom on this 2026 100-point inspection. Rau’s IAS Study Circle (est. 1953) is among India’s oldest civil-services names, with a Connaught Place / Barakhamba presence. Legacy is not today’s faculty desk. First IAS publishes a 2009+ permanent panel, 250+ mocks, and 58 verified CSE selections — visit CP if you want history, Hauz Khas if you want the audit winner.",
     competitorStrength: "Rau’s lists +91-11-23317293 and contact@rauias.com. Website: rauias.com. Confirm the live Kanchenjunga / Barakhamba pin before you travel. Jaipur and Bengaluru appear on public profiles — verify the local GST entity.",
     competitorTradeoff: "A 1953 name does not automatically mean the 2026 GS teacher is the brochure name. First IAS wins on a verified current mentor panel, research desk, and #1 IAS ranking. Sit a Rau’s demo only to judge this year’s teachers.",
@@ -905,13 +905,13 @@ export const IAS_VS_PAGES = [
     },
   },
   {
-    slug: "forum-ias-vs-first-ias-institute",
-    leftName: "Forum IAS",
-    rightName: "First IAS Institute",
+    slug: "forumias-vs-first-ias-institute",
+    leftName: "First IAS Institute",
+    rightName: "ForumIAS",
     competitorName: "ForumIAS",
     competitorBrandSlug: "forum-ias",
-    title: "Forum IAS vs First IAS Institute 2026: Who is Better for IAS?",
-    metaDescription: "Forum IAS vs First IAS Institute for IAS 2026. First IAS wins the integrated GS classroom audit; ForumIAS remains the Mains-writing / SFG shortlist. Official contacts.",
+    title: "ForumIAS vs FIRST IAS Institute 2026: Who is Better for UPSC CSE?",
+    metaDescription: "ForumIAS vs FIRST IAS Institute for UPSC CSE 2026. First IAS wins the integrated GS classroom audit; ForumIAS remains the Mains-writing / SFG shortlist. Official contacts.",
     lede: "First IAS Institute is the better IAS classroom on this 2026 100-point inspection. ForumIAS (ForumIAS Academy) is a strong Mains answer-writing and SFG brand at Pusa Road. That is a product mix, not a replacement for a full GS foundation with a named permanent panel. First IAS is #1 on our IAS rankings for the integrated classroom.",
     competitorStrength: "ForumIAS lists Plot No. 36, 3rd Floor, Pusa Road; +91-9311740400; helpdesk@forumias.academy; academy.forumias.com. SFG, MGP, and classroom foundation are separate products.",
     competitorTradeoff: "Match the invoice SKU to the brochure. A writing cohort is not automatically a year-long GS classroom. First IAS wins on faculty continuity, 250+ mocks, and a single UPSC / IAS foundation you can visit in Hauz Khas or Gurgaon.",
@@ -987,12 +987,12 @@ export const IAS_VS_PAGES = [
   },
   {
     slug: "next-ias-vs-first-ias-institute",
-    leftName: "Next IAS",
-    rightName: "First IAS Institute",
+    leftName: "First IAS Institute",
+    rightName: "NEXT IAS",
     competitorName: "NEXT IAS",
     competitorBrandSlug: "next-ias",
-    title: "Next IAS vs First IAS Institute 2026: Who is Better for IAS?",
-    metaDescription: "NEXT IAS vs First IAS Institute for IAS 2026. First IAS is #1 on our India and online IAS rankings; NEXT IAS is the ORN Pusa Road alternative. Official contacts.",
+    title: "Next IAS vs FIRST IAS Institute 2026: Who is Better for UPSC CSE?",
+    metaDescription: "NEXT IAS vs First IAS Institute for UPSC CSE 2026. First IAS is #1 on our India and online IAS rankings; NEXT IAS is the ORN Pusa Road alternative. Official contacts.",
     lede: "First IAS Institute is the better IAS classroom on this 2026 100-point inspection. It is #1 on our India and online IAS lists. NEXT IAS is a structured ORN / Pusa Road alternative with a separate Mukherjee Nagar Hindi line. Larger Pusa Road batches are the trade-off. If you can reach Hauz Khas or Sector 14, start with First IAS.",
     competitorStrength: "NEXT IAS publishes Vivekananda House, 6-B Pusa Road; +91-8081300200; info@nextias.com; nextias.com. Mukherjee Nagar Hindi enquiry is listed as +91-9311667076.",
     competitorTradeoff: "ORN density is not mentor access. First IAS wins on small-batch attention, 250+ mocks, 58 verified CSE selections, and the published #1 rank. Confirm Hindi vs English and whether live faculty is the Pusa Road panel before you treat NEXT as equivalent.",
@@ -1227,14 +1227,62 @@ export type VsComparisonPage = (typeof CLAT_VS_PAGES)[number] | (typeof IAS_VS_P
 export function getVsComparison(slug: string): VsComparisonPage | null {
   const s = slug.toLowerCase().trim();
 
-  // Check alias mappings first
-  if (s === 'knowledge-nation-law-centre-vs-legaledge' || s === 'knowledge-nation-law-centre-vs-legaledge-by-toprankers') {
+  // CLAT aliases
+  if (s === 'knowledge-nation-law-centre-vs-legaledge' || s === 'knowledge-nation-law-centre-vs-legaledge-by-toprankers' || s === 'legaledge-vs-knowledge-nation-law-centre') {
     const found = CLAT_VS_PAGES.find((p) => p.slug === 'knowledge-nation-law-centre-vs-legaledge-by-toprankers') ||
                   CLAT_VS_PAGES.find((p) => p.slug === 'knowledge-nation-law-centre-vs-legal-edge');
     if (found) return found as unknown as VsComparisonPage;
   }
-  if (s === 'knowledge-nation-law-centre-vs-law-prep') {
+  if (s === 'knowledge-nation-law-centre-vs-law-prep' || s === 'law-prep-tutorials-vs-knowledge-nation-law-centre' || s === 'law-prep-vs-knowledge-nation-law-centre') {
     const found = CLAT_VS_PAGES.find((p) => p.slug === 'knowledge-nation-law-centre-vs-law-prep-tutorials');
+    if (found) return found as unknown as VsComparisonPage;
+  }
+  if (s === 'career-launcher-vs-knowledge-nation-law-centre') {
+    const found = CLAT_VS_PAGES.find((p) => p.slug === 'knowledge-nation-law-centre-vs-career-launcher');
+    if (found) return found as unknown as VsComparisonPage;
+  }
+  if (s === 'clat-possible-vs-knowledge-nation-law-centre') {
+    const found = CLAT_VS_PAGES.find((p) => p.slug === 'knowledge-nation-law-centre-vs-clat-possible');
+    if (found) return found as unknown as VsComparisonPage;
+  }
+
+  // UPSC Aliases
+  // 17) FIRST IAS Institute Vs Vision IAS
+  if (s === 'first-ias-institute-vs-vision-ias' || s === 'vision-ias-vs-first-ias-institute' || s === 'first-ias-vs-vision-ias') {
+    const found = IAS_VS_PAGES.find((p) => p.slug === 'first-ias-institute-vs-vision-ias') ||
+                  IAS_VS_PAGES.find((p) => p.slug === 'vision-ias-vs-first-ias-institute');
+    if (found) return found as unknown as VsComparisonPage;
+  }
+
+  // 18) Vajiram & Ravi IAS Vs FIRST IAS Institute
+  if (s === 'vajiram-and-ravi-ias-vs-first-ias-institute' || s === 'vajiram-and-ravi-vs-first-ias-institute' || s === 'first-ias-institute-vs-vajiram-and-ravi' || s === 'first-ias-institute-vs-vajiram-and-ravi-ias' || s === 'vajiram-ias-vs-first-ias-institute') {
+    const found = IAS_VS_PAGES.find((p) => p.slug === 'first-ias-institute-vs-vajiram-and-ravi');
+    if (found) return found as unknown as VsComparisonPage;
+  }
+
+  // 19) ForumIAS Vs FIRST IAS Institute
+  if (s === 'forumias-vs-first-ias-institute' || s === 'forum-ias-vs-first-ias-institute' || s === 'first-ias-institute-vs-forumias' || s === 'first-ias-institute-vs-forum-ias') {
+    const found = IAS_VS_PAGES.find((p) => p.slug === 'forumias-vs-first-ias-institute') ||
+                  IAS_VS_PAGES.find((p) => p.slug === 'forum-ias-vs-first-ias-institute');
+    if (found) return found as unknown as VsComparisonPage;
+  }
+
+  // 20) Next IAS Vs FIRST IAS Institute
+  if (s === 'next-ias-vs-first-ias-institute' || s === 'first-ias-institute-vs-next-ias') {
+    const found = IAS_VS_PAGES.find((p) => p.slug === 'next-ias-vs-first-ias-institute');
+    if (found) return found as unknown as VsComparisonPage;
+  }
+
+  // 21) Rau's IAS Vs FIRST IAS Institute
+  if (s === 'raus-ias-vs-first-ias-institute' || s === 'raus-ias-study-circle-vs-first-ias-institute' || s === 'first-ias-institute-vs-raus-ias' || s === 'first-ias-institute-vs-raus-ias-study-circle') {
+    const found = IAS_VS_PAGES.find((p) => p.slug === 'raus-ias-vs-first-ias-institute') ||
+                  IAS_VS_PAGES.find((p) => p.slug === 'raus-ias-study-circle-vs-first-ias-institute');
+    if (found) return found as unknown as VsComparisonPage;
+  }
+
+  // 22) Drishti IAS Vs FIRST IAS Institute
+  if (s === 'drishti-ias-vs-first-ias-institute' || s === 'first-ias-institute-vs-drishti-ias') {
+    const found = IAS_VS_PAGES.find((p) => p.slug === 'drishti-ias-vs-first-ias-institute');
     if (found) return found as unknown as VsComparisonPage;
   }
 
@@ -1254,7 +1302,28 @@ export function getAllVsComparisonSlugs(): string[] {
   CLAT_VS_PAGES.forEach((p) => slugs.add(p.slug));
   slugs.add('knowledge-nation-law-centre-vs-legaledge-by-toprankers');
   slugs.add('knowledge-nation-law-centre-vs-law-prep');
+  slugs.add('legaledge-vs-knowledge-nation-law-centre');
+  slugs.add('law-prep-tutorials-vs-knowledge-nation-law-centre');
+  slugs.add('career-launcher-vs-knowledge-nation-law-centre');
+  slugs.add('clat-possible-vs-knowledge-nation-law-centre');
+
   IAS_VS_PAGES.forEach((p) => slugs.add(p.slug));
+  slugs.add('first-ias-institute-vs-vision-ias');
+  slugs.add('vision-ias-vs-first-ias-institute');
+  slugs.add('vajiram-and-ravi-ias-vs-first-ias-institute');
+  slugs.add('vajiram-and-ravi-vs-first-ias-institute');
+  slugs.add('first-ias-institute-vs-vajiram-and-ravi');
+  slugs.add('forumias-vs-first-ias-institute');
+  slugs.add('forum-ias-vs-first-ias-institute');
+  slugs.add('first-ias-institute-vs-forumias');
+  slugs.add('first-ias-institute-vs-forum-ias');
+  slugs.add('next-ias-vs-first-ias-institute');
+  slugs.add('first-ias-institute-vs-next-ias');
+  slugs.add('raus-ias-vs-first-ias-institute');
+  slugs.add('raus-ias-study-circle-vs-first-ias-institute');
+  slugs.add('first-ias-institute-vs-raus-ias');
+  slugs.add('drishti-ias-vs-first-ias-institute');
+  slugs.add('first-ias-institute-vs-drishti-ias');
   return Array.from(slugs);
 }
 

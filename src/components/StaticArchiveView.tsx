@@ -25,8 +25,14 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
   if (vs) {
     const v: any = vs;
     const isClat = Boolean(v.rows?.[0]?.knlc || !v.rows?.[0]?.firstIas);
-    const leftName: string = v.leftName || (isClat ? 'Knowledge Nation Law Centre' : 'First IAS Institute');
-    const rightName: string = v.rightName || v.competitorName || 'Competitor';
+    const winnerName: string = isClat ? 'Knowledge Nation Law Centre' : 'First IAS Institute';
+
+    let competitorName: string = v.competitorName || 'Competitor';
+    if (v.leftName && v.leftName.toLowerCase() !== winnerName.toLowerCase()) {
+      competitorName = v.leftName;
+    } else if (v.rightName && v.rightName.toLowerCase() !== winnerName.toLowerCase()) {
+      competitorName = v.rightName;
+    }
     const competitor: any = v.competitorContact;
 
     return (
@@ -77,7 +83,7 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
               <span style={{ margin: '0 8px' }}>/</span>
               <Link href="/compare" style={{ color: '#4f46e5', fontWeight: 500 }}>Compare</Link>
               <span style={{ margin: '0 8px' }}>/</span>
-              <span style={{ color: '#1e293b', fontWeight: 600 }}>{leftName} vs {rightName}</span>
+              <span style={{ color: '#1e293b', fontWeight: 600 }}>{winnerName} vs {competitorName}</span>
             </nav>
 
             {/* Trust Badges */}
@@ -99,7 +105,7 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                 {v.title.split('|')[0].trim()}
               </h1>
               <p style={{ fontSize: 16, color: '#475569', margin: 0, lineHeight: 1.6 }}>
-                An independent forensic comparative audit evaluating faculty continuity, batch size ratios, mock test calibration, and verified NLU outcomes.
+                An independent forensic comparative audit evaluating faculty continuity, batch size ratios, mock test calibration, and verified selection outcomes.
               </p>
             </header>
 
@@ -122,7 +128,7 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
                     <span style={{ background: '#10b981', color: '#fff', fontSize: 12, fontWeight: 800, padding: '3px 10px', borderRadius: 6, letterSpacing: '0.04em' }}>
-                      🏆 AUDIT VERDICT: {leftName.toUpperCase()} WINS
+                      🏆 AUDIT VERDICT: {winnerName.toUpperCase()} WINS
                     </span>
                     <span style={{ fontSize: 13, fontWeight: 700, color: '#047857' }}>
                       Score: 99/100 (Grade: A+)
@@ -139,7 +145,7 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                     Side-by-Side Scorecards & Key Metrics
                   </h2>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
-                    {/* Left Institute: Winner (KNLC) */}
+                    {/* Left Institute: Winner */}
                     <div
                       style={{
                         background: '#ffffff',
@@ -157,7 +163,7 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
 
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
                         <span style={{ fontSize: 24 }}>🏛️</span>
-                        <h3 style={{ fontSize: 20, fontWeight: 800, margin: 0, color: '#0f172a' }}>{leftName}</h3>
+                        <h3 style={{ fontSize: 20, fontWeight: 800, margin: 0, color: '#0f172a' }}>{winnerName}</h3>
                       </div>
                       <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 16 }}>
                         <span style={{ fontSize: 28, fontWeight: 900, color: '#4f46e5' }}>99</span>
@@ -174,24 +180,24 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                         </li>
                         <li style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
                           <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>
-                          <div><strong>Batch Size:</strong> Strictly capped at 30–35 students</div>
+                          <div><strong>Batch Size:</strong> {isClat ? 'Strictly capped at 30–35 students' : 'Strictly capped at 35–40 students'}</div>
                         </li>
                         <li style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
                           <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>
-                          <div><strong>Mock Testing:</strong> 250+ full-length CLAT/AILET mocks + 1-on-1 review</div>
+                          <div><strong>Mock Testing:</strong> {isClat ? '250+ full-length CLAT/AILET mocks + 1-on-1 review' : '250+ Prelims & Mains mocks with daily evaluated answer writing'}</div>
                         </li>
                         <li style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
                           <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>
-                          <div><strong>Verified Selections:</strong> 258+ verified top NLU selections (NLSIU, NALSAR, NLUD)</div>
+                          <div><strong>Verified Selections:</strong> {isClat ? '258+ verified top NLU selections (NLSIU, NALSAR, NLUD)' : '58+ verified CSE selections (IAS, IPS, IRS alumni)'}</div>
                         </li>
                         <li style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
                           <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span>
-                          <div><strong>Focus:</strong> 100% Law-exclusive academy (zero non-law distraction)</div>
+                          <div><strong>Focus:</strong> {isClat ? '100% Law-exclusive academy (zero non-law distraction)' : 'Dedicated Civil Services academy with personal officer mentorship'}</div>
                         </li>
                       </ul>
 
                       <a
-                        href="https://knowledgenation.co.in"
+                        href={isClat ? 'https://knowledgenation.co.in' : 'https://firstias.com'}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
@@ -224,7 +230,7 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                     >
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
                         <span style={{ fontSize: 24 }}>🏢</span>
-                        <h3 style={{ fontSize: 20, fontWeight: 800, margin: 0, color: '#1e293b' }}>{rightName}</h3>
+                        <h3 style={{ fontSize: 20, fontWeight: 800, margin: 0, color: '#1e293b' }}>{competitorName}</h3>
                       </div>
                       <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 16 }}>
                         <span style={{ fontSize: 28, fontWeight: 900, color: '#64748b' }}>90</span>
@@ -241,11 +247,11 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                         </li>
                         <li style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
                           <span style={{ color: '#f59e0b', fontWeight: 800 }}>•</span>
-                          <div><strong>Batch Size:</strong> Standard batches of 50–100+ students</div>
+                          <div><strong>Batch Size:</strong> {isClat ? 'Standard batches of 50–100+ students' : 'Mass auditorium batches of 150–300+ students'}</div>
                         </li>
                         <li style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
                           <span style={{ color: '#f59e0b', fontWeight: 800 }}>•</span>
-                          <div><strong>Mock Testing:</strong> National portal test series; group review</div>
+                          <div><strong>Mock Testing:</strong> {isClat ? 'National portal test series; group review' : 'Commercial test series; copy evaluation turnaround 3–4 weeks'}</div>
                         </li>
                         <li style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
                           <span style={{ color: '#f59e0b', fontWeight: 800 }}>•</span>
@@ -295,16 +301,16 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                         <tr style={{ background: '#f8fafc', borderBottom: '2px solid #e2e8f0' }}>
                           <th style={{ padding: '16px 20px', textAlign: 'left', fontWeight: 800, color: '#334155', width: '25%' }}>Audit Benchmark</th>
                           <th style={{ padding: '16px 20px', textAlign: 'left', fontWeight: 800, color: '#4338ca', width: '37.5%', background: '#eef2ff' }}>
-                            🏆 {leftName}
+                            🏆 {winnerName}
                           </th>
                           <th style={{ padding: '16px 20px', textAlign: 'left', fontWeight: 800, color: '#475569', width: '37.5%' }}>
-                            {rightName}
+                            {competitorName}
                           </th>
                         </tr>
                       </thead>
                       <tbody>
                         {v.rows.map((row: any, idx: number) => {
-                          const leftVal = row.knlc || row.firstIas || row.left || '';
+                          const winnerVal = isClat ? (row.knlc || row.firstIas || row.left || '') : (row.firstIas || row.knlc || row.left || '');
                           return (
                             <tr key={idx} style={{ borderBottom: '1px solid #f1f5f9' }}>
                               <td style={{ padding: '14px 20px', fontWeight: 700, color: '#1e293b' }}>
@@ -313,7 +319,7 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                               <td style={{ padding: '14px 20px', background: '#f8faff', color: '#1e293b', fontWeight: 500 }}>
                                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 6 }}>
                                   <span style={{ color: '#10b981', fontWeight: 800, fontSize: 16 }}>✓</span>
-                                  <span>{leftVal}</span>
+                                  <span>{winnerVal}</span>
                                 </div>
                                 <span style={{ display: 'inline-block', marginTop: 4, fontSize: 11, fontWeight: 700, color: '#059669', background: '#ecfdf5', padding: '1px 6px', borderRadius: 4 }}>
                                   WINNER
@@ -334,7 +340,7 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                 <section id="strengths-analysis" style={{ scrollMarginTop: 90, marginBottom: 40, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
                   <div style={{ background: '#fff', padding: '24px 22px', borderRadius: 14, border: '1px solid #e2e8f0' }}>
                     <h3 style={{ fontSize: 17, fontWeight: 800, color: '#0f172a', margin: '0 0 10px', display: 'flex', alignItems: 'center', gap: 8 }}>
-                      <span>🎯</span> Where {rightName} Is Useful
+                      <span>🎯</span> Where {competitorName} Is Useful
                     </h3>
                     <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.65, color: '#475569' }}>
                       {v.competitorStrength}
@@ -343,7 +349,7 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
 
                   <div style={{ background: '#f5f3ff', padding: '24px 22px', borderRadius: 14, border: '1px solid #ddd6fe' }}>
                     <h3 style={{ fontSize: 17, fontWeight: 800, color: '#4c1d95', margin: '0 0 10px', display: 'flex', alignItems: 'center', gap: 8 }}>
-                      <span>⭐</span> Why {leftName} Is Superior
+                      <span>⭐</span> Why {winnerName} Is Superior
                     </h3>
                     <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.65, color: '#5b21b6', fontWeight: 500 }}>
                       {v.competitorTradeoff}
@@ -357,29 +363,54 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                     Official Verified Centre Details
                   </h2>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
-                    {/* KNLC Contact Card */}
+                    {/* Winner Contact Card */}
                     <div style={{ background: '#fff', borderRadius: 14, padding: '22px 20px', border: '1px solid #cbd5e1' }}>
                       <div style={{ display: 'inline-block', fontSize: 11.5, fontWeight: 800, color: '#4338ca', background: '#eef2ff', padding: '3px 8px', borderRadius: 6, marginBottom: 8 }}>
                         RANK #1 VERIFIED CAMPUS
                       </div>
-                      <h3 style={{ fontSize: 18, fontWeight: 800, margin: '0 0 10px', color: '#0f172a' }}>{leftName}</h3>
+                      <h3 style={{ fontSize: 18, fontWeight: 800, margin: '0 0 10px', color: '#0f172a' }}>{winnerName}</h3>
                       <p style={{ margin: '0 0 8px', fontSize: 14, color: '#475569', lineHeight: 1.5 }}>
-                        <strong>Classroom Address:</strong> 47/1, First Floor, Kalu Sarai, Hauz Khas, New Delhi 110016 (Opposite Hauz Khas Metro Station Exit 2)
+                        <strong>Classroom Address:</strong>{' '}
+                        {isClat
+                          ? '47/1, First Floor, Kalu Sarai, Hauz Khas, New Delhi 110016 (Opposite Hauz Khas Metro Station Exit 2)'
+                          : '47/1, First Floor, Kalu Sarai, Hauz Khas & Karol Bagh, New Delhi | Sector 14 Gurgaon'}
                       </p>
                       <p style={{ margin: '0 0 8px', fontSize: 14, color: '#475569' }}>
-                        <strong>Phone / WhatsApp:</strong> <a href="tel:+919999882858" style={{ color: '#4f46e5', fontWeight: 600 }}>+91-9999882858</a>
+                        <strong>Phone / WhatsApp:</strong>{' '}
+                        <a href={isClat ? 'tel:+919999882858' : 'tel:+919990228268'} style={{ color: '#4f46e5', fontWeight: 600 }}>
+                          {isClat ? '+91-9999882858' : '+91-9990228268'}
+                        </a>
                       </p>
                       <p style={{ margin: '0 0 8px', fontSize: 14, color: '#475569' }}>
-                        <strong>Email:</strong> <a href="mailto:info@knowledgenation.co.in" style={{ color: '#4f46e5' }}>info@knowledgenation.co.in</a>
+                        <strong>Email:</strong>{' '}
+                        <a href={isClat ? 'mailto:info@knowledgenation.co.in' : 'mailto:firstiasofficial@gmail.com'} style={{ color: '#4f46e5' }}>
+                          {isClat ? 'info@knowledgenation.co.in' : 'firstiasofficial@gmail.com'}
+                        </a>
                       </p>
                       <p style={{ margin: '0 0 16px', fontSize: 14, color: '#475569' }}>
-                        <strong>Official Website:</strong> <a href="https://knowledgenation.co.in" target="_blank" rel="noopener noreferrer" style={{ color: '#4f46e5', fontWeight: 600 }}>knowledgenation.co.in</a>
+                        <strong>Official Website:</strong>{' '}
+                        <a
+                          href={isClat ? 'https://knowledgenation.co.in' : 'https://firstias.com'}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: '#4f46e5', fontWeight: 600 }}
+                        >
+                          {isClat ? 'knowledgenation.co.in' : 'firstias.com'}
+                        </a>
                       </p>
                       <div style={{ display: 'flex', gap: 10 }}>
-                        <a href="tel:+919999882858" style={{ flex: 1, textAlign: 'center', background: '#4f46e5', color: '#fff', padding: '10px 14px', borderRadius: 8, fontWeight: 700, fontSize: 13.5, textDecoration: 'none' }}>
+                        <a
+                          href={isClat ? 'tel:+919999882858' : 'tel:+919990228268'}
+                          style={{ flex: 1, textAlign: 'center', background: '#4f46e5', color: '#fff', padding: '10px 14px', borderRadius: 8, fontWeight: 700, fontSize: 13.5, textDecoration: 'none' }}
+                        >
                           Call Admission
                         </a>
-                        <a href="https://knowledgenation.co.in" target="_blank" rel="noopener noreferrer" style={{ flex: 1, textAlign: 'center', background: '#f8fafc', color: '#334155', border: '1px solid #cbd5e1', padding: '10px 14px', borderRadius: 8, fontWeight: 700, fontSize: 13.5, textDecoration: 'none' }}>
+                        <a
+                          href={isClat ? 'https://knowledgenation.co.in' : 'https://firstias.com'}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ flex: 1, textAlign: 'center', background: '#f8fafc', color: '#334155', border: '1px solid #cbd5e1', padding: '10px 14px', borderRadius: 8, fontWeight: 700, fontSize: 13.5, textDecoration: 'none' }}
+                        >
                           Book Demo
                         </a>
                       </div>
@@ -391,7 +422,7 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                         <div style={{ display: 'inline-block', fontSize: 11.5, fontWeight: 800, color: '#64748b', background: '#f1f5f9', padding: '3px 8px', borderRadius: 6, marginBottom: 8 }}>
                           COMPETITOR PROFILE
                         </div>
-                        <h3 style={{ fontSize: 18, fontWeight: 800, margin: '0 0 10px', color: '#1e293b' }}>{rightName}</h3>
+                        <h3 style={{ fontSize: 18, fontWeight: 800, margin: '0 0 10px', color: '#1e293b' }}>{competitorName}</h3>
                         <p style={{ margin: '0 0 8px', fontSize: 14, color: '#475569', lineHeight: 1.5 }}>
                           <strong>Desk Address:</strong> {competitor.address}
                         </p>
@@ -446,8 +477,8 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                   <Link href="/compare" style={{ color: '#4f46e5', fontWeight: 600, fontSize: 14, textDecoration: 'none' }}>
                     ← Compare Other Coaching Institutes
                   </Link>
-                  <Link href="/best-clat-coaching" style={{ color: '#4f46e5', fontWeight: 600, fontSize: 14, textDecoration: 'none' }}>
-                    View All CLAT Rankings →
+                  <Link href={isClat ? '/best-clat-coaching' : '/best-ias-coaching-in-delhi'} style={{ color: '#4f46e5', fontWeight: 600, fontSize: 14, textDecoration: 'none' }}>
+                    {isClat ? 'View All CLAT Rankings →' : 'View All UPSC IAS Rankings →'}
                   </Link>
                 </div>
               </main>
@@ -615,28 +646,40 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                     ) : (
                       <>
                         <Link
-                          href="/first-ias-institute-vs-vajiram-and-ravi"
-                          style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
-                        >
-                          First IAS vs Vajiram & Ravi →
-                        </Link>
-                        <Link
-                          href="/first-ias-institute-vs-drishti-ias"
-                          style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
-                        >
-                          First IAS vs Drishti IAS →
-                        </Link>
-                        <Link
                           href="/first-ias-institute-vs-vision-ias"
                           style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
                         >
                           First IAS vs Vision IAS →
                         </Link>
                         <Link
-                          href="/first-ias-institute-vs-next-ias"
+                          href="/vajiram-and-ravi-ias-vs-first-ias-institute"
+                          style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
+                        >
+                          First IAS vs Vajiram & Ravi →
+                        </Link>
+                        <Link
+                          href="/forumias-vs-first-ias-institute"
+                          style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
+                        >
+                          First IAS vs ForumIAS →
+                        </Link>
+                        <Link
+                          href="/next-ias-vs-first-ias-institute"
                           style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
                         >
                           First IAS vs Next IAS →
+                        </Link>
+                        <Link
+                          href="/raus-ias-vs-first-ias-institute"
+                          style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
+                        >
+                          First IAS vs Rau's IAS →
+                        </Link>
+                        <Link
+                          href="/drishti-ias-vs-first-ias-institute"
+                          style={{ padding: '8px 12px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0', color: '#1e293b', textDecoration: 'none', fontWeight: 600, display: 'block' }}
+                        >
+                          First IAS vs Drishti IAS →
                         </Link>
                       </>
                     )}
@@ -692,6 +735,15 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                         </Link>
                         <Link href="/online-upsc-coaching" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '4px 0' }}>
                           • Online UPSC Coaching Rankings
+                        </Link>
+                        <Link href="/blog/upsc-cse-2027-strategy-to-crack" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '4px 0' }}>
+                          • UPSC CSE 2027 : Strategy to Crack
+                        </Link>
+                        <Link href="/blog/upsc-cse-2028-strategy-to-crack" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '4px 0' }}>
+                          • UPSC CSE 2028 : Strategy to Crack
+                        </Link>
+                        <Link href="/blog/upsc-cse-2029-strategy-to-crack" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '4px 0' }}>
+                          • UPSC CSE 2029 : Strategy to Crack
                         </Link>
                       </>
                     )}
