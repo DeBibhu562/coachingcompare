@@ -688,6 +688,30 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
                       • Online UPSC Coaching Rankings
                     </Link>
                     <Link
+                      href="/blog/why-first-ias-institute-is-the-best-ias-coaching-in-india"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • Why FIRST IAS is Best in India
+                    </Link>
+                    <Link
+                      href="/blog/why-first-ias-institute-is-the-best-ias-coaching-in-delhi"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • Why FIRST IAS is Best in Delhi
+                    </Link>
+                    <Link
+                      href="/blog/why-first-ias-institute-is-the-best-ias-coaching-in-gurgaon"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • Why FIRST IAS is Best in Gurgaon
+                    </Link>
+                    <Link
+                      href="/blog/why-first-ias-institute-is-the-best-online-ias-coaching-institute"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • Why FIRST IAS is Best Online
+                    </Link>
+                    <Link
                       href="/blog/upsc-cse-2027-strategy-to-crack"
                       style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
                     >
@@ -708,6 +732,24 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
                   </>
                 ) : (
                   <>
+                    <Link
+                      href="/blog/why-knowledge-nation-law-centre-is-the-best-clat-coaching-in-india"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • Why KNLC is Best in India
+                    </Link>
+                    <Link
+                      href="/blog/why-knowledge-nation-law-centre-is-the-best-clat-coaching-in-delhi"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • Why KNLC is Best in Delhi
+                    </Link>
+                    <Link
+                      href="/blog/why-knowledge-nation-law-centre-is-the-best-online-clat-coaching-institute"
+                      style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                    >
+                      • Why KNLC is Best Online
+                    </Link>
                     <Link
                       href="/blog/top-5-best-clat-ailet-coaching-in-india"
                       style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
