@@ -183,7 +183,7 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
   }
 
   const headings = extractHeadings(post.content);
-  const isUpsc = post.relatedExam === 'upsc' || (post.category && post.category.toLowerCase().includes('upsc')) || post.slug.includes('upsc');
+  const isUpsc = ('relatedExam' in post && (post as any).relatedExam === 'upsc') || (Boolean(post.category) && post.category.toLowerCase().includes('upsc')) || post.slug.includes('upsc');
 
   const faqSchema =
     post.faqs && post.faqs.length > 0

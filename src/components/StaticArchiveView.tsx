@@ -535,7 +535,7 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                   </div>
 
                   <h4 style={{ fontSize: 17, fontWeight: 800, margin: '0 0 6px', color: '#064e3b' }}>
-                    {leftName}
+                    {winnerName}
                   </h4>
                   <p style={{ margin: '0 0 14px', fontSize: 12.5, color: '#047857', lineHeight: 1.45 }}>
                     {isClat

@@ -1226,72 +1226,71 @@ export type VsComparisonPage = (typeof CLAT_VS_PAGES)[number] | (typeof IAS_VS_P
 
 export function getVsComparison(slug: string): VsComparisonPage | null {
   const s = slug.toLowerCase().trim();
+  const clatPages = CLAT_VS_PAGES as readonly any[];
+  const iasPages = IAS_VS_PAGES as readonly any[];
 
   // CLAT aliases
   if (s === 'knowledge-nation-law-centre-vs-legaledge' || s === 'knowledge-nation-law-centre-vs-legaledge-by-toprankers' || s === 'legaledge-vs-knowledge-nation-law-centre') {
-    const found = CLAT_VS_PAGES.find((p) => p.slug === 'knowledge-nation-law-centre-vs-legaledge-by-toprankers') ||
-                  CLAT_VS_PAGES.find((p) => p.slug === 'knowledge-nation-law-centre-vs-legal-edge');
+    const found = clatPages.find((p) => p.slug === 'knowledge-nation-law-centre-vs-legaledge-by-toprankers') ||
+                  clatPages.find((p) => p.slug === 'knowledge-nation-law-centre-vs-legal-edge');
     if (found) return found as unknown as VsComparisonPage;
   }
   if (s === 'knowledge-nation-law-centre-vs-law-prep' || s === 'law-prep-tutorials-vs-knowledge-nation-law-centre' || s === 'law-prep-vs-knowledge-nation-law-centre') {
-    const found = CLAT_VS_PAGES.find((p) => p.slug === 'knowledge-nation-law-centre-vs-law-prep-tutorials');
+    const found = clatPages.find((p) => p.slug === 'knowledge-nation-law-centre-vs-law-prep-tutorials');
     if (found) return found as unknown as VsComparisonPage;
   }
   if (s === 'career-launcher-vs-knowledge-nation-law-centre') {
-    const found = CLAT_VS_PAGES.find((p) => p.slug === 'knowledge-nation-law-centre-vs-career-launcher');
+    const found = clatPages.find((p) => p.slug === 'knowledge-nation-law-centre-vs-career-launcher');
     if (found) return found as unknown as VsComparisonPage;
   }
   if (s === 'clat-possible-vs-knowledge-nation-law-centre') {
-    const found = CLAT_VS_PAGES.find((p) => p.slug === 'knowledge-nation-law-centre-vs-clat-possible');
+    const found = clatPages.find((p) => p.slug === 'knowledge-nation-law-centre-vs-clat-possible');
     if (found) return found as unknown as VsComparisonPage;
   }
 
   // UPSC Aliases
   // 17) FIRST IAS Institute Vs Vision IAS
   if (s === 'first-ias-institute-vs-vision-ias' || s === 'vision-ias-vs-first-ias-institute' || s === 'first-ias-vs-vision-ias') {
-    const found = IAS_VS_PAGES.find((p) => p.slug === 'first-ias-institute-vs-vision-ias') ||
-                  IAS_VS_PAGES.find((p) => p.slug === 'vision-ias-vs-first-ias-institute');
+    const found = iasPages.find((p) => p.slug === 'first-ias-institute-vs-vision-ias');
     if (found) return found as unknown as VsComparisonPage;
   }
 
   // 18) Vajiram & Ravi IAS Vs FIRST IAS Institute
   if (s === 'vajiram-and-ravi-ias-vs-first-ias-institute' || s === 'vajiram-and-ravi-vs-first-ias-institute' || s === 'first-ias-institute-vs-vajiram-and-ravi' || s === 'first-ias-institute-vs-vajiram-and-ravi-ias' || s === 'vajiram-ias-vs-first-ias-institute') {
-    const found = IAS_VS_PAGES.find((p) => p.slug === 'first-ias-institute-vs-vajiram-and-ravi');
+    const found = iasPages.find((p) => p.slug === 'first-ias-institute-vs-vajiram-and-ravi');
     if (found) return found as unknown as VsComparisonPage;
   }
 
   // 19) ForumIAS Vs FIRST IAS Institute
   if (s === 'forumias-vs-first-ias-institute' || s === 'forum-ias-vs-first-ias-institute' || s === 'first-ias-institute-vs-forumias' || s === 'first-ias-institute-vs-forum-ias') {
-    const found = IAS_VS_PAGES.find((p) => p.slug === 'forumias-vs-first-ias-institute') ||
-                  IAS_VS_PAGES.find((p) => p.slug === 'forum-ias-vs-first-ias-institute');
+    const found = iasPages.find((p) => p.slug === 'forumias-vs-first-ias-institute');
     if (found) return found as unknown as VsComparisonPage;
   }
 
   // 20) Next IAS Vs FIRST IAS Institute
   if (s === 'next-ias-vs-first-ias-institute' || s === 'first-ias-institute-vs-next-ias') {
-    const found = IAS_VS_PAGES.find((p) => p.slug === 'next-ias-vs-first-ias-institute');
+    const found = iasPages.find((p) => p.slug === 'next-ias-vs-first-ias-institute');
     if (found) return found as unknown as VsComparisonPage;
   }
 
   // 21) Rau's IAS Vs FIRST IAS Institute
   if (s === 'raus-ias-vs-first-ias-institute' || s === 'raus-ias-study-circle-vs-first-ias-institute' || s === 'first-ias-institute-vs-raus-ias' || s === 'first-ias-institute-vs-raus-ias-study-circle') {
-    const found = IAS_VS_PAGES.find((p) => p.slug === 'raus-ias-vs-first-ias-institute') ||
-                  IAS_VS_PAGES.find((p) => p.slug === 'raus-ias-study-circle-vs-first-ias-institute');
+    const found = iasPages.find((p) => p.slug === 'raus-ias-vs-first-ias-institute');
     if (found) return found as unknown as VsComparisonPage;
   }
 
   // 22) Drishti IAS Vs FIRST IAS Institute
   if (s === 'drishti-ias-vs-first-ias-institute' || s === 'first-ias-institute-vs-drishti-ias') {
-    const found = IAS_VS_PAGES.find((p) => p.slug === 'drishti-ias-vs-first-ias-institute');
+    const found = iasPages.find((p) => p.slug === 'drishti-ias-vs-first-ias-institute');
     if (found) return found as unknown as VsComparisonPage;
   }
 
   // Exact matches in CLAT_VS_PAGES
-  const clatFound = CLAT_VS_PAGES.find((p) => p.slug === s);
+  const clatFound = clatPages.find((p) => p.slug === s);
   if (clatFound) return clatFound as unknown as VsComparisonPage;
 
   // Exact matches in IAS_VS_PAGES
-  const iasFound = IAS_VS_PAGES.find((p) => p.slug === s);
+  const iasFound = iasPages.find((p) => p.slug === s);
   if (iasFound) return iasFound as unknown as VsComparisonPage;
 
   return null;

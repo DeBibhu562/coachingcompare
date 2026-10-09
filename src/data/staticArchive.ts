@@ -18,7 +18,7 @@ export function getStaticArchivePage(slug: string): StaticArchivePage | undefine
   const direct = bySlug.get(slug);
   if (direct) return direct;
 
-  const vs = getVsComparison(slug);
+  const vs: any = getVsComparison(slug);
   if (vs) {
     return {
       slug: vs.slug,
