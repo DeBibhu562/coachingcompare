@@ -654,17 +654,32 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 7, fontSize: 13 }}>
                     {isClat ? (
                       <>
-                        <Link href="/blog/clat-2027-strategy-to-crack" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '4px 0' }}>
+                        <Link href="/blog/top-5-best-clat-ailet-coaching-in-india" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}>
+                          • Top 5 CLAT + AILET in India
+                        </Link>
+                        <Link href="/blog/top-5-best-clat-ailet-coaching-in-delhi" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}>
+                          • Top 5 CLAT + AILET in Delhi
+                        </Link>
+                        <Link href="/blog/top-5-best-online-clat-ailet-coaching-institutes" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}>
+                          • Top 5 Online CLAT + AILET
+                        </Link>
+                        <Link href="/blog/top-5-best-clat-ailet-coaching-in-south-delhi" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}>
+                          • Top 5 CLAT in South Delhi
+                        </Link>
+                        <Link href="/blog/top-5-best-clat-ailet-coaching-in-gurgaon" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}>
+                          • Top 5 CLAT in Gurgaon
+                        </Link>
+                        <Link href="/blog/top-5-best-clat-ailet-coaching-in-delhi-ncr" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}>
+                          • Top 5 CLAT in Delhi NCR
+                        </Link>
+                        <Link href="/blog/clat-2027-strategy-to-crack" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}>
                           • CLAT 2027 Strategy Blueprint
                         </Link>
-                        <Link href="/blog/clat-2028-strategy-to-crack" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '4px 0' }}>
+                        <Link href="/blog/clat-2028-strategy-to-crack" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}>
                           • CLAT 2028 Foundation Plan
                         </Link>
-                        <Link href="/blog/clat-2029-strategy-to-crack" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '4px 0' }}>
+                        <Link href="/blog/clat-2029-strategy-to-crack" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}>
                           • CLAT 2029 4-Year Architecture
-                        </Link>
-                        <Link href="/best-clat-coaching-in-delhi" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '4px 0' }}>
-                          • Best CLAT Coaching in Delhi
                         </Link>
                       </>
                     ) : (

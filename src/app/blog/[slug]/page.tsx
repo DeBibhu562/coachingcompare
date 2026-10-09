@@ -521,44 +521,68 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
               </div>
             </div>
 
-            {/* 4. Target Year Blueprints Widget */}
+            {/* 4. Target Year Blueprints & Rankings Widget */}
             <div style={{ background: '#f8fafc', padding: '20px', borderRadius: 14, border: '1px solid #e2e8f0' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
                 <span style={{ fontSize: 17 }}>🎯</span>
                 <h4 style={{ fontSize: 14.5, fontWeight: 800, margin: 0, color: '#0f172a' }}>
-                  CLAT Year Roadmaps
+                  CLAT Rankings & Blueprints
                 </h4>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 7, fontSize: 13 }}>
                 <Link
+                  href="/blog/top-5-best-clat-ailet-coaching-in-india"
+                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                >
+                  • Top 5 CLAT + AILET in India
+                </Link>
+                <Link
+                  href="/blog/top-5-best-clat-ailet-coaching-in-delhi"
+                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                >
+                  • Top 5 CLAT + AILET in Delhi
+                </Link>
+                <Link
+                  href="/blog/top-5-best-online-clat-ailet-coaching-institutes"
+                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                >
+                  • Top 5 Online CLAT + AILET
+                </Link>
+                <Link
+                  href="/blog/top-5-best-clat-ailet-coaching-in-south-delhi"
+                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                >
+                  • Top 5 CLAT in South Delhi
+                </Link>
+                <Link
+                  href="/blog/top-5-best-clat-ailet-coaching-in-gurgaon"
+                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                >
+                  • Top 5 CLAT in Gurgaon
+                </Link>
+                <Link
+                  href="/blog/top-5-best-clat-ailet-coaching-in-delhi-ncr"
+                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
+                >
+                  • Top 5 CLAT in Delhi NCR
+                </Link>
+                <Link
                   href="/blog/clat-2027-strategy-to-crack"
-                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '4px 0' }}
+                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
                 >
                   • CLAT 2027 : 2-Year Roadmap
                 </Link>
                 <Link
                   href="/blog/clat-2028-strategy-to-crack"
-                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '4px 0' }}
+                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
                 >
                   • CLAT 2028 : 3-Year Foundation
                 </Link>
                 <Link
                   href="/blog/clat-2029-strategy-to-crack"
-                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '4px 0' }}
+                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}
                 >
                   • CLAT 2029 : 4-Year Architecture
-                </Link>
-                <Link
-                  href="/best-clat-coaching-in-delhi"
-                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '4px 0' }}
-                >
-                  • Best CLAT Coaching in Delhi
-                </Link>
-                <Link
-                  href="/best-clat-coaching"
-                  style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '4px 0' }}
-                >
-                  • All India CLAT Rankings
                 </Link>
               </div>
             </div>
