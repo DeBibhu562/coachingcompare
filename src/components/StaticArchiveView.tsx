@@ -95,7 +95,7 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                 ⚖️ Verified Selection Outcomes
               </span>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, padding: '4px 10px', background: '#fef3c7', color: '#b45309', borderRadius: 999, fontSize: 12, fontWeight: 700, border: '1px solid #fde68a' }}>
-                📅 Updated 2026–2027 Session
+                📅 Verified Forensic Audit Edition
               </span>
             </div>
 
@@ -725,13 +725,13 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                           • Top 5 CLAT in Delhi NCR
                         </Link>
                         <Link href="/blog/clat-2027-strategy-to-crack" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}>
-                          • CLAT 2027 Strategy Blueprint
+                          • 2-Year CLAT Strategy Roadmap
                         </Link>
                         <Link href="/blog/clat-2028-strategy-to-crack" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}>
-                          • CLAT 2028 Foundation Plan
+                          • 3-Year CLAT Foundation Plan
                         </Link>
                         <Link href="/blog/clat-2029-strategy-to-crack" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '3px 0' }}>
-                          • CLAT 2029 4-Year Architecture
+                          • 4-Year CLAT Architecture
                         </Link>
                       </>
                     ) : (
@@ -758,13 +758,13 @@ export default function StaticArchiveView({ page }: { page: StaticArchivePage })
                           • Why FIRST IAS is Best Online
                         </Link>
                         <Link href="/blog/upsc-cse-2027-strategy-to-crack" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '4px 0' }}>
-                          • UPSC CSE 2027 : Strategy to Crack
+                          • 2-Year UPSC Preparation Roadmap
                         </Link>
                         <Link href="/blog/upsc-cse-2028-strategy-to-crack" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '4px 0' }}>
-                          • UPSC CSE 2028 : Strategy to Crack
+                          • 3-Year UPSC Foundation Blueprint
                         </Link>
                         <Link href="/blog/upsc-cse-2029-strategy-to-crack" style={{ color: '#4338ca', textDecoration: 'none', fontWeight: 600, padding: '4px 0' }}>
-                          • UPSC CSE 2029 : Strategy to Crack
+                          • 4-Year UPSC Undergraduate Strategy
                         </Link>
                       </>
                     )}

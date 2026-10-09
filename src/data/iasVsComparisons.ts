@@ -8,9 +8,9 @@ export const CLAT_VS_PAGES = [
     rightName: "Legal Edge",
     competitorName: "Legal Edge",
     competitorProfileHref: "/institute/legaledge-clat-online",
-    title: "Knowledge Nation Law Centre vs Legal Edge 2026: Who is Better for CLAT?",
-    metaDescription: "Knowledge Nation Law Centre vs Legal Edge for CLAT 2026. Our 100-point audit picks KNLC: law-only Hauz Khas classroom, 250+ mocks, 258 verified NLU selections. Official contacts.",
-    lede: "Knowledge Nation Law Centre is the better CLAT classroom on this 2026 100-point inspection. It is #1 on our India and Delhi CLAT rankings: a law-only Hauz Khas programme since 2008 headed by Ashish Sir and Rahul Sir, with 258 verified NLU selections including NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi. Legal Edge by Toprankers is a law-only mock and online portal — useful if you want harder-than-paper tests, not if you want the audit winner.",
+    title: "Knowledge Nation Law Centre vs Legal Edge: Who is Better for CLAT?",
+    metaDescription: "Knowledge Nation Law Centre vs Legal Edge for CLAT. Our 100-point audit picks KNLC: law-only Hauz Khas classroom, 250+ mocks, 258 verified NLU selections. Official contacts.",
+    lede: "Knowledge Nation Law Centre is the better CLAT classroom on this 100-point inspection. It is #1 on our India and Delhi CLAT rankings: a law-only Hauz Khas programme since 2008 headed by Ashish Sir and Rahul Sir, with 258 verified NLU selections including NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi. Legal Edge by Toprankers is a law-only mock and online portal — useful if you want harder-than-paper tests, not if you want the audit winner.",
     competitorStrength: "Legal Edge by Toprankers is known for mocks calibrated slightly harder than the live paper and Grand Masters-style live classes. Support: +91-8448444207 / support@toprankers.com. Enrol via toprankers.com. CP desk: Flat No. 301-303, AVG Bhawan, M-3, Connaught Circus.",
     competitorTradeoff: "A Toprankers test portal is not a boutique Hauz Khas classroom. KNLC wins this pair on faculty continuity, 250+ CLAT and AILET mocks, and 258 verified NLU selections. Use Legal Edge as a late-year mock add-on only after the KNLC demo, with a separate GST invoice on toprankers.com.",
     rows: [
@@ -53,7 +53,7 @@ export const CLAT_VS_PAGES = [
     ],
     faqs: [
       {
-        question: "Who is better for CLAT in 2026 — Knowledge Nation Law Centre or Legal Edge?",
+        question: "Who is better for CLAT — Knowledge Nation Law Centre or Legal Edge?",
         answer: "This 100-point CLAT audit picks Knowledge Nation Law Centre. KNLC is #1 on our India, Delhi, and online CLAT rankings: a 2008 law-only classroom headed by Ashish Sir and Rahul Sir, with a 12-member research desk, 250+ CLAT and AILET mocks, and 258 verified NLU selections including NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi. Legal Edge remains a published shortlist for a specific product (harder mocks, a national percentile network, or a multi-exam metro desk)—not the overall winner here.",
       },
       {
@@ -89,9 +89,9 @@ export const CLAT_VS_PAGES = [
     rightName: "Law Prep Tutorials",
     competitorName: "Law Prep Tutorials",
     competitorProfileHref: "/institutes/law-prep-tutorials",
-    title: "Knowledge Nation Law Centre vs Law Prep Tutorials 2026: Who is Better for CLAT?",
-    metaDescription: "Knowledge Nation Law Centre vs Law Prep Tutorials (Law Prep) for CLAT 2026. KNLC wins the 100-point classroom audit; Law Prep is the national mock-network shortlist. Official contacts.",
-    lede: "Knowledge Nation Law Centre is the better CLAT classroom on this 2026 100-point inspection. Law Prep Tutorials — also searched as Law Prep — is the same GTB Nagar / lawpreptutorial.com brand, not Abhyaas LawPrep. A national mock network and monthly GK booklets are useful if you cannot sit Delhi classroom. If you want a law-only Hauz Khas panel, 250+ CLAT and AILET mocks, and 258 verified NLU selections, KNLC is the pick.",
+    title: "Knowledge Nation Law Centre vs Law Prep Tutorials: Who is Better for CLAT?",
+    metaDescription: "Knowledge Nation Law Centre vs Law Prep Tutorials (Law Prep) for CLAT. KNLC wins the 100-point classroom audit; Law Prep is the national mock-network shortlist. Official contacts.",
+    lede: "Knowledge Nation Law Centre is the better CLAT classroom on this 100-point inspection. Law Prep Tutorials — also searched as Law Prep — is the same GTB Nagar / lawpreptutorial.com brand, not Abhyaas LawPrep. A national mock network and monthly GK booklets are useful if you cannot sit Delhi classroom. If you want a law-only Hauz Khas panel, 250+ CLAT and AILET mocks, and 258 verified NLU selections, KNLC is the pick.",
     competitorStrength: "Law Prep Tutorials publishes a GTB Nagar walk-in (73-75, Ring Road, Mall Rd) plus a national online mock portal. Delhi: +91-8750581505 / delhi@lawpreptutorial.com / lawpreptutorial.com. Ask whether you are buying mocks-only or the full live course.",
     competitorTradeoff: "A national percentile cohort is not a small-batch Hauz Khas classroom. KNLC wins this pair on faculty continuity, research-desk material, and published NLU selections at NLSIU, NALSAR, and NLU Delhi. If you still want Law Prep GK booklets, buy that SKU separately after the KNLC demo.",
     rows: [
@@ -134,7 +134,7 @@ export const CLAT_VS_PAGES = [
     ],
     faqs: [
       {
-        question: "Who is better for CLAT in 2026 — Knowledge Nation Law Centre or Law Prep Tutorials?",
+        question: "Who is better for CLAT — Knowledge Nation Law Centre or Law Prep Tutorials?",
         answer: "This 100-point CLAT audit picks Knowledge Nation Law Centre. KNLC is #1 on our India, Delhi, and online CLAT rankings: a 2008 law-only classroom headed by Ashish Sir and Rahul Sir, with a 12-member research desk, 250+ CLAT and AILET mocks, and 258 verified NLU selections including NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi. Law Prep Tutorials remains a published shortlist for a specific product (harder mocks, a national percentile network, or a multi-exam metro desk)—not the overall winner here.",
       },
       {
@@ -170,9 +170,9 @@ export const CLAT_VS_PAGES = [
     rightName: "Career Launcher",
     competitorName: "Career Launcher",
     competitorProfileHref: "/institutes/career-launcher",
-    title: "Knowledge Nation Law Centre vs Career Launcher 2026: Who is Better for CLAT?",
-    metaDescription: "Knowledge Nation Law Centre vs Career Launcher LST for CLAT 2026. KNLC is the law-only #1; Career Launcher is the multi-exam LST / CAT supermarket. Confirm the CLAT SKU.",
-    lede: "Knowledge Nation Law Centre is the better CLAT classroom on this 2026 100-point inspection. Career Launcher LST is a national multi-exam brand with a Connaught Place walk-in, Aspirant.zone mocks, and CAT / bank SKUs sold next to law. Confirm you are buying LST CLAT — not Smart CAT — before you treat it as the same product. KNLC is a CLAT-only faculty desk with 258 verified NLU selections.",
+    title: "Knowledge Nation Law Centre vs Career Launcher: Who is Better for CLAT?",
+    metaDescription: "Knowledge Nation Law Centre vs Career Launcher LST for CLAT. KNLC is the law-only #1; Career Launcher is the multi-exam LST / CAT supermarket. Confirm the CLAT SKU.",
+    lede: "Knowledge Nation Law Centre is the better CLAT classroom on this 100-point inspection. Career Launcher LST is a national multi-exam brand with a Connaught Place walk-in, Aspirant.zone mocks, and CAT / bank SKUs sold next to law. Confirm you are buying LST CLAT — not Smart CAT — before you treat it as the same product. KNLC is a CLAT-only faculty desk with 258 verified NLU selections.",
     competitorStrength: "Career Launcher LST publishes A-18 Rama House, Middle Circle, Connaught Place; +91-9289911842; cp@careerlauncher.com; careerlauncher.com. 2-year foundation, 1-year target, and crash batches exist — ask for the LST product code on the receipt.",
     competitorTradeoff: "A CAT / bank supermarket is not a law-only classroom. KNLC wins this pair on faculty continuity, CLAT and AILET mock depth, and published NLSIU / NALSAR / NLU Delhi selections. If you may move cities mid-year, Career Launcher’s transfer conversation is a real plus — still sit the Hauz Khas demo first.",
     rows: [
@@ -215,7 +215,7 @@ export const CLAT_VS_PAGES = [
     ],
     faqs: [
       {
-        question: "Who is better for CLAT in 2026 — Knowledge Nation Law Centre or Career Launcher?",
+        question: "Who is better for CLAT — Knowledge Nation Law Centre or Career Launcher?",
         answer: "This 100-point CLAT audit picks Knowledge Nation Law Centre. KNLC is #1 on our India, Delhi, and online CLAT rankings: a 2008 law-only classroom headed by Ashish Sir and Rahul Sir, with a 12-member research desk, 250+ CLAT and AILET mocks, and 258 verified NLU selections including NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi. Career Launcher remains a published shortlist for a specific product (harder mocks, a national percentile network, or a multi-exam metro desk)—not the overall winner here.",
       },
       {
@@ -251,9 +251,9 @@ export const CLAT_VS_PAGES = [
     rightName: "IMS",
     competitorName: "IMS",
     competitorProfileHref: "/institutes/ims",
-    title: "Knowledge Nation Law Centre vs IMS 2026: Who is Better for CLAT?",
-    metaDescription: "Knowledge Nation Law Centre vs IMS for CLAT 2026. KNLC is the law-only #1; IMS is a selected-city law desk inside a CAT-first network. Confirm CLAT, not SimCAT.",
-    lede: "Knowledge Nation Law Centre is the better CLAT classroom on this 2026 100-point inspection. IMS is a long aptitude-testing brand with a law classroom in selected cities — not every IMS CAT centre. Confirm the local desk teaches CLAT, not SimCAT. KNLC is a law-only #1 with 258 verified NLU selections including NLSIU, NALSAR, and NLU Delhi.",
+    title: "Knowledge Nation Law Centre vs IMS: Who is Better for CLAT?",
+    metaDescription: "Knowledge Nation Law Centre vs IMS for CLAT. KNLC is the law-only #1; IMS is a selected-city law desk inside a CAT-first network. Confirm CLAT, not SimCAT.",
+    lede: "Knowledge Nation Law Centre is the better CLAT classroom on this 100-point inspection. IMS is a long aptitude-testing brand with a law classroom in selected cities — not every IMS CAT centre. Confirm the local desk teaches CLAT, not SimCAT. KNLC is a law-only #1 with 258 verified NLU selections including NLSIU, NALSAR, and NLU Delhi.",
     competitorStrength: "IMS publishes a national desk at Half Mansion, opposite Churchgate Station, Mumbai; +91-22-6236-4040; mumbai@imsindia.com; imsindia.com. Useful if a family already trusts IMS mocks and wants one brand for aptitude plus law — after the centre locator shows CLAT.",
     competitorTradeoff: "A selected-city law desk is not a Hauz Khas law-only classroom. KNLC wins this pair on faculty continuity, 250+ CLAT and AILET mocks, and published NLU selections. Do not assume Churchgate fees or faculty apply in Delhi. Sit two demos if you need a city IMS cannot staff.",
     rows: [
@@ -296,7 +296,7 @@ export const CLAT_VS_PAGES = [
     ],
     faqs: [
       {
-        question: "Who is better for CLAT in 2026 — Knowledge Nation Law Centre or IMS?",
+        question: "Who is better for CLAT — Knowledge Nation Law Centre or IMS?",
         answer: "This 100-point CLAT audit picks Knowledge Nation Law Centre. KNLC is #1 on our India, Delhi, and online CLAT rankings: a 2008 law-only classroom headed by Ashish Sir and Rahul Sir, with a 12-member research desk, 250+ CLAT and AILET mocks, and 258 verified NLU selections including NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi. IMS remains a published shortlist for a specific product (harder mocks, a national percentile network, or a multi-exam metro desk)—not the overall winner here.",
       },
       {
@@ -332,9 +332,9 @@ export const CLAT_VS_PAGES = [
     rightName: "T.I.M.E.",
     competitorName: "T.I.M.E.",
     competitorProfileHref: "/institutes/time",
-    title: "Knowledge Nation Law Centre vs T.I.M.E. 2026: Who is Better for CLAT?",
-    metaDescription: "Knowledge Nation Law Centre vs T.I.M.E. for CLAT 2026. KNLC is the law-only #1; T.I.M.E. is CAT-first with CLAT at some centres only. Confirm a live CLAT classroom.",
-    lede: "Knowledge Nation Law Centre is the better CLAT classroom on this 2026 100-point inspection. T.I.M.E. is a CAT-first national chain with a live CLAT classroom at some centres only. AIMCAT is a CAT mock — ask for the CLAT test-series name. KNLC is a law-only #1 since 2008, with 258 verified NLU selections including NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi.",
+    title: "Knowledge Nation Law Centre vs T.I.M.E.: Who is Better for CLAT?",
+    metaDescription: "Knowledge Nation Law Centre vs T.I.M.E. for CLAT. KNLC is the law-only #1; T.I.M.E. is CAT-first with CLAT at some centres only. Confirm a live CLAT classroom.",
+    lede: "Knowledge Nation Law Centre is the better CLAT classroom on this 100-point inspection. T.I.M.E. is a CAT-first national chain with a live CLAT classroom at some centres only. AIMCAT is a CAT mock — ask for the CLAT test-series name. KNLC is a law-only #1 since 2008, with 258 verified NLU selections including NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi.",
     competitorStrength: "T.I.M.E. publishes HQ at 95B, Siddamsetty Complex, Park Lane, Secunderabad; +91-40-40088400; info@time4education.com; time4education.com. The small-city locator is a real plus if you cannot reach Delhi — after the branch confirms a live CLAT classroom in writing.",
     competitorTradeoff: "A CAT-first franchise is not a Hauz Khas law desk. KNLC wins this pair on faculty continuity, 250+ CLAT and AILET mocks, and published NLU selections. Quality at T.I.M.E. follows the local director. Collect a GST card that names CLAT before you pay a CAT quote.",
     rows: [
@@ -377,7 +377,7 @@ export const CLAT_VS_PAGES = [
     ],
     faqs: [
       {
-        question: "Who is better for CLAT in 2026 — Knowledge Nation Law Centre or T.I.M.E.?",
+        question: "Who is better for CLAT — Knowledge Nation Law Centre or T.I.M.E.?",
         answer: "This 100-point CLAT audit picks Knowledge Nation Law Centre. KNLC is #1 on our India, Delhi, and online CLAT rankings: a 2008 law-only classroom headed by Ashish Sir and Rahul Sir, with a 12-member research desk, 250+ CLAT and AILET mocks, and 258 verified NLU selections including NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi. T.I.M.E. remains a published shortlist for a specific product (harder mocks, a national percentile network, or a multi-exam metro desk)—not the overall winner here.",
       },
       {
@@ -413,8 +413,8 @@ export const CLAT_VS_PAGES = [
     rightName: "LegalEdge By Toprankers",
     competitorName: "LegalEdge By Toprankers",
     competitorProfileHref: "/institute/legaledge-clat-online",
-    title: "Knowledge Nation Law Centre vs LegalEdge By Toprankers 2026: Who is Better for CLAT?",
-    metaDescription: "Knowledge Nation Law Centre vs LegalEdge By Toprankers for CLAT 2026-2027. 100-point audit picks KNLC: law-only Hauz Khas classroom, 30-35 batch size, 250+ mocks, 258 verified NLU selections.",
+    title: "Knowledge Nation Law Centre vs LegalEdge By Toprankers: Who is Better for CLAT?",
+    metaDescription: "Knowledge Nation Law Centre vs LegalEdge By Toprankers for CLAT. 100-point audit picks KNLC: law-only Hauz Khas classroom, 30-35 batch size, 250+ mocks, 258 verified NLU selections.",
     lede: "Knowledge Nation Law Centre is the superior CLAT coaching institute on this 100-point comparative audit. Ranked #1 in Delhi and All-India CLAT rankings, KNLC provides a law-only Hauz Khas environment led by Ashish Sir and Rahul Sir, small batches capped at 30–35 students, 250+ mocks, and 258 verified NLU selections including NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi. LegalEdge by Toprankers offers a national mock portal and live-online lectures, but cannot match KNLC's personal mentorship, small-batch focus, and high student selection ratio.",
     competitorStrength: "LegalEdge by Toprankers features an extensive national mock test series and live webinars through its portal. Delhi CP desk: Flat No. 301-303, AVG Bhawan, M-3, Connaught Circus; +91-8448444207 / support@toprankers.com / toprankers.com. Useful for students who specifically want a large mock testing cohort.",
     competitorTradeoff: "A mass online platform with 80-120+ students per batch is not an elite Hauz Khas classroom. KNLC decisively wins this comparison on faculty continuity (senior founders mentor every student directly), dedicated batch attention, 250+ full-length CLAT/AILET mocks, and verified Tier-1 NLU admissions.",
@@ -464,7 +464,7 @@ export const CLAT_VS_PAGES = [
     ],
     faqs: [
       {
-        question: "Who is better for CLAT in 2026 — Knowledge Nation Law Centre or LegalEdge By Toprankers?",
+        question: "Who is better for CLAT — Knowledge Nation Law Centre or LegalEdge By Toprankers?",
         answer: "Our independent 100-point audit ranks Knowledge Nation Law Centre (KNLC) as decisively superior to LegalEdge by Toprankers. KNLC holds Rank #1 across India and Delhi due to its law-only specialization, small batch sizes of 30–35 students, 15+ years of permanent faculty mentorship under Ashish Sir and Rahul Sir, 250+ full-length mocks, and 258+ verified selections in NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi. LegalEdge remains a good supplementary mock-test provider, but KNLC is the far better full-time coaching institute.",
       },
       {
@@ -500,8 +500,8 @@ export const CLAT_VS_PAGES = [
     rightName: "CLAT Possible",
     competitorName: "CLAT Possible",
     competitorProfileHref: "/institutes/clat-possible",
-    title: "Knowledge Nation Law Centre vs CLAT Possible 2026: Who is Better for CLAT?",
-    metaDescription: "Knowledge Nation Law Centre vs CLAT Possible for CLAT 2026-2027. 100-point audit ranks KNLC #1: boutique Hauz Khas batches (30-35), 250+ mocks, 258 verified NLU selections.",
+    title: "Knowledge Nation Law Centre vs CLAT Possible: Who is Better for CLAT?",
+    metaDescription: "Knowledge Nation Law Centre vs CLAT Possible for CLAT. 100-point audit ranks KNLC #1: boutique Hauz Khas batches (30-35), 250+ mocks, 258 verified NLU selections.",
     lede: "Knowledge Nation Law Centre is the superior CLAT coaching institute in this 100-point comparative audit. KNLC holds Rank #1 on our Delhi and All-India CLAT rankings: a dedicated law-only academy in Hauz Khas led by permanent legal luminaries Ashish Sir and Rahul Sir, with small batches (30–35 students), 250+ full-length mocks, and 258 verified NLU selections including NLSIU Bengaluru, NALSAR Hyderabad, and NLU Delhi. CLAT Possible is a respectable regional law brand with Sector 18 Noida and regional centres, but its larger batch sizes (45–55+ students) and rotating faculty make KNLC the decisive audit winner.",
     competitorStrength: "CLAT Possible is a dedicated law-entrance academy with established centres in Sector 18 Noida, Lucknow, and Bengaluru. Useful for students seeking regional presence in Uttar Pradesh or hybrid online modules. Support: +91-120-4321000 / noida@clatpossible.com / clatpossible.com.",
     competitorTradeoff: "Regional franchise expansion and batch sizes of 45-55+ students dilute personal attention compared to KNLC's intimate 30-35 student batches. KNLC wins decisively on faculty continuity (Ashish Sir & Rahul Sir mentor students daily), research-desk mock calibration (250+ tests), and verified Tier-1 NLU selections.",
@@ -551,7 +551,7 @@ export const CLAT_VS_PAGES = [
     ],
     faqs: [
       {
-        question: "Who is better for CLAT in 2026 — Knowledge Nation Law Centre or CLAT Possible?",
+        question: "Who is better for CLAT — Knowledge Nation Law Centre or CLAT Possible?",
         answer: "This 100-point audit ranks Knowledge Nation Law Centre as decisively superior to CLAT Possible. KNLC ranks #1 nationwide with 258+ verified selections in top NLUs, a 30–35 student batch cap, 250+ mock tests, and permanent mentoring under Ashish Sir and Rahul Sir. CLAT Possible has good regional reach in UP, but its larger batches and multi-branch faculty rotation make KNLC the much stronger academic choice.",
       },
       {
@@ -590,9 +590,9 @@ export const IAS_VS_PAGES = [
     rightName: "Vajiram & Ravi IAS",
     competitorName: "Vajiram & Ravi IAS",
     competitorBrandSlug: "vajiram-and-ravi",
-    title: "Vajiram & Ravi IAS vs FIRST IAS Institute 2026: Who is Better for UPSC CSE?",
-    metaDescription: "Vajiram & Ravi IAS vs FIRST IAS Institute for UPSC CSE 2026. Forensic 100-point audit ranks First IAS #1: small-batch mentors, 250+ mocks, 58 verified selections.",
-    lede: "First IAS Institute is the better IAS classroom on this 2026 100-point inspection. It is #1 on our India and Delhi IAS rankings: a mentor-heavy Hauz Khas / Gurgaon programme headed by Ashish Sir and Rahul Sir. Vajiram & Ravi remains the longest-running ORN English GS brand (est. 1976) — useful if you want a large legacy auditorium, not if you want the audit winner.",
+    title: "Vajiram & Ravi IAS vs FIRST IAS Institute: Who is Better for UPSC CSE?",
+    metaDescription: "Vajiram & Ravi IAS vs FIRST IAS Institute for UPSC CSE. Forensic 100-point audit ranks First IAS #1: small-batch mentors, 250+ mocks, 58 verified selections.",
+    lede: "First IAS Institute is the better IAS classroom on this 100-point inspection. It is #1 on our India and Delhi IAS rankings: a mentor-heavy Hauz Khas / Gurgaon programme headed by Ashish Sir and Rahul Sir. Vajiram & Ravi remains the longest-running ORN English GS brand (est. 1976) — useful if you want a large legacy auditorium, not if you want the audit winner.",
     competitorStrength: "Vajiram & Ravi has taught GS in Old Rajinder Nagar since 1976. Published desk: 9-B, Bada Bazaar Marg; +91-11-41007400; vajiramandravi.com. A Pusa Road campus is also listed on their FAQ.",
     competitorTradeoff: "Batches are large versus a boutique classroom. Evaluation load, mentor access, and who marks your copy should be checked in a live demo. First IAS wins this pair on faculty continuity, batch attention, and the published 100-point score — not on campus age.",
     rows: [
@@ -635,7 +635,7 @@ export const IAS_VS_PAGES = [
     ],
     faqs: [
       {
-        question: "Who is better for IAS in 2026 — First IAS Institute or Vajiram & Ravi?",
+        question: "Who is better for IAS — First IAS Institute or Vajiram & Ravi?",
         answer: "This 100-point IAS audit picks First IAS Institute. First IAS is #1 on our India, Delhi, Gurgaon, and online IAS rankings: a 2009 civil-services classroom headed by Ashish Sir and Rahul Sir, with a 12-member research desk, 250+ Prelims and Mains mocks, and 58 verified CSE selections. Vajiram & Ravi remains a published shortlist for a specific product (large ORN classroom, test series, bilingual GS, or online pack)—not the overall winner here.",
       },
       {
@@ -671,9 +671,9 @@ export const IAS_VS_PAGES = [
     rightName: "Vision IAS",
     competitorName: "Vision IAS",
     competitorBrandSlug: "vision-ias",
-    title: "FIRST IAS Institute vs Vision IAS 2026: Who is Better for UPSC CSE?",
-    metaDescription: "FIRST IAS Institute vs Vision IAS for UPSC CSE 2026. First IAS wins the 100-point classroom audit; Vision remains the PT 365 / national test-series shortlist. Contacts included.",
-    lede: "First IAS Institute is the better IAS classroom on this 2026 100-point inspection. Vision IAS is a strong national test-series and PT 365 / Mains 365 brand — many aspirants buy Vision mocks while sitting a different foundation. If you want one integrated classroom with 250+ Prelims and Mains mocks and a named mentor panel, First IAS is the pick.",
+    title: "FIRST IAS Institute vs Vision IAS: Who is Better for UPSC CSE?",
+    metaDescription: "FIRST IAS Institute vs Vision IAS for UPSC CSE. First IAS wins the 100-point classroom audit; Vision remains the PT 365 / national test-series shortlist. Contacts included.",
+    lede: "First IAS Institute is the better IAS classroom on this 100-point inspection. Vision IAS is a strong national test-series and PT 365 / Mains 365 brand — many aspirants buy Vision mocks while sitting a different foundation. If you want one integrated classroom with 250+ Prelims and Mains mocks and a named mentor panel, First IAS is the pick.",
     competitorStrength: "Vision IAS is known for PT 365, Mains 365, and All-India mocks. Support published on visionias.in: +91-8468022022 / info@visionias.in. Head office: 33, Pusa Road, Karol Bagh.",
     competitorTradeoff: "Vision is often bought as a test series or current-affairs pack, not as a small-batch GS mentor classroom. Classroom GS, distance learning, and test-series SKUs are priced separately. First IAS wins the full-programme comparison: permanent faculty, 12-member research desk, and #1 on our IAS rankings.",
     rows: [
@@ -716,7 +716,7 @@ export const IAS_VS_PAGES = [
     ],
     faqs: [
       {
-        question: "Who is better for IAS in 2026 — First IAS Institute or Vision IAS?",
+        question: "Who is better for IAS — First IAS Institute or Vision IAS?",
         answer: "This 100-point IAS audit picks First IAS Institute. First IAS is #1 on our India, Delhi, Gurgaon, and online IAS rankings: a 2009 civil-services classroom headed by Ashish Sir and Rahul Sir, with a 12-member research desk, 250+ Prelims and Mains mocks, and 58 verified CSE selections. Vision IAS remains a published shortlist for a specific product (large ORN classroom, test series, bilingual GS, or online pack)—not the overall winner here.",
       },
       {
@@ -752,9 +752,9 @@ export const IAS_VS_PAGES = [
     rightName: "Drishti IAS",
     competitorName: "Drishti IAS",
     competitorBrandSlug: "drishti-ias",
-    title: "Drishti IAS vs FIRST IAS Institute 2026: Who is Better for UPSC CSE?",
-    metaDescription: "Drishti IAS vs FIRST IAS Institute for UPSC CSE 2026. First IAS is the 100-point winner for English GS mentorship; Drishti is the bilingual mega-brand shortlist. Official contacts.",
-    lede: "First IAS Institute is the better IAS classroom on this 2026 100-point inspection. Drishti IAS is a large Hindi- and English-medium brand with Karol Bagh, Mukherjee Nagar, Noida, and Patna desks. If your paper is English GS and you want a named permanent panel plus 58 verified CSE selections, First IAS is the audit pick. Confirm Drishti’s medium-specific faculty before you treat it as the same product.",
+    title: "Drishti IAS vs FIRST IAS Institute: Who is Better for UPSC CSE?",
+    metaDescription: "Drishti IAS vs FIRST IAS Institute for UPSC CSE. First IAS is the 100-point winner for English GS mentorship; Drishti is the bilingual mega-brand shortlist. Official contacts.",
+    lede: "First IAS Institute is the better IAS classroom on this 100-point inspection. Drishti IAS is a large Hindi- and English-medium brand with Karol Bagh, Mukherjee Nagar, Noida, and Patna desks. If your paper is English GS and you want a named permanent panel plus 58 verified CSE selections, First IAS is the audit pick. Confirm Drishti’s medium-specific faculty before you treat it as the same product.",
     competitorStrength: "Drishti IAS publishes +91-8750187501 and care@groupdrishti.in. Centres include 21, Pusa Road, Karol Bagh; 641, Mukherjee Nagar; and Sector-15 Noida. Official site: drishtiias.com.",
     competitorTradeoff: "Hindi and English packs can differ. Mega-brand scale is not the same as a small-batch mentor desk. First IAS wins this pair on faculty continuity, mock depth, and the published IAS ranking — sit two demos if you need a Hindi-medium classroom.",
     rows: [
@@ -797,7 +797,7 @@ export const IAS_VS_PAGES = [
     ],
     faqs: [
       {
-        question: "Who is better for IAS in 2026 — First IAS Institute or Drishti IAS?",
+        question: "Who is better for IAS — First IAS Institute or Drishti IAS?",
         answer: "This 100-point IAS audit picks First IAS Institute. First IAS is #1 on our India, Delhi, Gurgaon, and online IAS rankings: a 2009 civil-services classroom headed by Ashish Sir and Rahul Sir, with a 12-member research desk, 250+ Prelims and Mains mocks, and 58 verified CSE selections. Drishti IAS remains a published shortlist for a specific product (large ORN classroom, test series, bilingual GS, or online pack)—not the overall winner here.",
       },
       {
@@ -833,11 +833,11 @@ export const IAS_VS_PAGES = [
     rightName: "Rau's IAS Study Circle",
     competitorName: "Rau's IAS Study Circle",
     competitorBrandSlug: "raus-ias-study-circle",
-    title: "Rau's IAS vs FIRST IAS Institute 2026: Who is Better for UPSC CSE?",
-    metaDescription: "Rau's IAS vs FIRST IAS Institute for UPSC CSE 2026. First IAS wins the current 100-point classroom audit; Rau's is the 1953 legacy CP brand. Official contacts.",
-    lede: "First IAS Institute is the better IAS classroom on this 2026 100-point inspection. Rau’s IAS Study Circle (est. 1953) is among India’s oldest civil-services names, with a Connaught Place / Barakhamba presence. Legacy is not today’s faculty desk. First IAS publishes a 2009+ permanent panel, 250+ mocks, and 58 verified CSE selections — visit CP if you want history, Hauz Khas if you want the audit winner.",
+    title: "Rau's IAS vs FIRST IAS Institute: Who is Better for UPSC CSE?",
+    metaDescription: "Rau's IAS vs FIRST IAS Institute for UPSC CSE. First IAS wins the current 100-point classroom audit; Rau's is the 1953 legacy CP brand. Official contacts.",
+    lede: "First IAS Institute is the better IAS classroom on this 100-point inspection. Rau’s IAS Study Circle (est. 1953) is among India’s oldest civil-services names, with a Connaught Place / Barakhamba presence. Legacy is not today’s faculty desk. First IAS publishes a 2009+ permanent panel, 250+ mocks, and 58 verified CSE selections — visit CP if you want history, Hauz Khas if you want the audit winner.",
     competitorStrength: "Rau’s lists +91-11-23317293 and contact@rauias.com. Website: rauias.com. Confirm the live Kanchenjunga / Barakhamba pin before you travel. Jaipur and Bengaluru appear on public profiles — verify the local GST entity.",
-    competitorTradeoff: "A 1953 name does not automatically mean the 2026 GS teacher is the brochure name. First IAS wins on a verified current mentor panel, research desk, and #1 IAS ranking. Sit a Rau’s demo only to judge this year’s teachers.",
+    competitorTradeoff: "A 1953 name does not automatically mean the current GS teacher is the brochure name. First IAS wins on a verified current mentor panel, research desk, and #1 IAS ranking. Sit a Rau’s demo only to judge this year’s teachers.",
     rows: [
       {
         label: "Faculty continuity",
@@ -878,7 +878,7 @@ export const IAS_VS_PAGES = [
     ],
     faqs: [
       {
-        question: "Who is better for IAS in 2026 — First IAS Institute or Rau's IAS Study Circle?",
+        question: "Who is better for IAS — First IAS Institute or Rau's IAS Study Circle?",
         answer: "This 100-point IAS audit picks First IAS Institute. First IAS is #1 on our India, Delhi, Gurgaon, and online IAS rankings: a 2009 civil-services classroom headed by Ashish Sir and Rahul Sir, with a 12-member research desk, 250+ Prelims and Mains mocks, and 58 verified CSE selections. Rau's IAS Study Circle remains a published shortlist for a specific product (large ORN classroom, test series, bilingual GS, or online pack)—not the overall winner here.",
       },
       {
@@ -910,9 +910,9 @@ export const IAS_VS_PAGES = [
     rightName: "ForumIAS",
     competitorName: "ForumIAS",
     competitorBrandSlug: "forum-ias",
-    title: "ForumIAS vs FIRST IAS Institute 2026: Who is Better for UPSC CSE?",
-    metaDescription: "ForumIAS vs FIRST IAS Institute for UPSC CSE 2026. First IAS wins the integrated GS classroom audit; ForumIAS remains the Mains-writing / SFG shortlist. Official contacts.",
-    lede: "First IAS Institute is the better IAS classroom on this 2026 100-point inspection. ForumIAS (ForumIAS Academy) is a strong Mains answer-writing and SFG brand at Pusa Road. That is a product mix, not a replacement for a full GS foundation with a named permanent panel. First IAS is #1 on our IAS rankings for the integrated classroom.",
+    title: "ForumIAS vs FIRST IAS Institute: Who is Better for UPSC CSE?",
+    metaDescription: "ForumIAS vs FIRST IAS Institute for UPSC CSE. First IAS wins the integrated GS classroom audit; ForumIAS remains the Mains-writing / SFG shortlist. Official contacts.",
+    lede: "First IAS Institute is the better IAS classroom on this 100-point inspection. ForumIAS (ForumIAS Academy) is a strong Mains answer-writing and SFG brand at Pusa Road. That is a product mix, not a replacement for a full GS foundation with a named permanent panel. First IAS is #1 on our IAS rankings for the integrated classroom.",
     competitorStrength: "ForumIAS lists Plot No. 36, 3rd Floor, Pusa Road; +91-9311740400; helpdesk@forumias.academy; academy.forumias.com. SFG, MGP, and classroom foundation are separate products.",
     competitorTradeoff: "Match the invoice SKU to the brochure. A writing cohort is not automatically a year-long GS classroom. First IAS wins on faculty continuity, 250+ mocks, and a single UPSC / IAS foundation you can visit in Hauz Khas or Gurgaon.",
     rows: [
@@ -955,7 +955,7 @@ export const IAS_VS_PAGES = [
     ],
     faqs: [
       {
-        question: "Who is better for IAS in 2026 — First IAS Institute or ForumIAS?",
+        question: "Who is better for IAS — First IAS Institute or ForumIAS?",
         answer: "This 100-point IAS audit picks First IAS Institute. First IAS is #1 on our India, Delhi, Gurgaon, and online IAS rankings: a 2009 civil-services classroom headed by Ashish Sir and Rahul Sir, with a 12-member research desk, 250+ Prelims and Mains mocks, and 58 verified CSE selections. ForumIAS remains a published shortlist for a specific product (large ORN classroom, test series, bilingual GS, or online pack)—not the overall winner here.",
       },
       {
@@ -991,9 +991,9 @@ export const IAS_VS_PAGES = [
     rightName: "NEXT IAS",
     competitorName: "NEXT IAS",
     competitorBrandSlug: "next-ias",
-    title: "Next IAS vs FIRST IAS Institute 2026: Who is Better for UPSC CSE?",
-    metaDescription: "NEXT IAS vs First IAS Institute for UPSC CSE 2026. First IAS is #1 on our India and online IAS rankings; NEXT IAS is the ORN Pusa Road alternative. Official contacts.",
-    lede: "First IAS Institute is the better IAS classroom on this 2026 100-point inspection. It is #1 on our India and online IAS lists. NEXT IAS is a structured ORN / Pusa Road alternative with a separate Mukherjee Nagar Hindi line. Larger Pusa Road batches are the trade-off. If you can reach Hauz Khas or Sector 14, start with First IAS.",
+    title: "Next IAS vs FIRST IAS Institute: Who is Better for UPSC CSE?",
+    metaDescription: "NEXT IAS vs First IAS Institute for UPSC CSE. First IAS is #1 on our India and online IAS rankings; NEXT IAS is the ORN Pusa Road alternative. Official contacts.",
+    lede: "First IAS Institute is the better IAS classroom on this 100-point inspection. It is #1 on our India and online IAS lists. NEXT IAS is a structured ORN / Pusa Road alternative with a separate Mukherjee Nagar Hindi line. Larger Pusa Road batches are the trade-off. If you can reach Hauz Khas or Sector 14, start with First IAS.",
     competitorStrength: "NEXT IAS publishes Vivekananda House, 6-B Pusa Road; +91-8081300200; info@nextias.com; nextias.com. Mukherjee Nagar Hindi enquiry is listed as +91-9311667076.",
     competitorTradeoff: "ORN density is not mentor access. First IAS wins on small-batch attention, 250+ mocks, 58 verified CSE selections, and the published #1 rank. Confirm Hindi vs English and whether live faculty is the Pusa Road panel before you treat NEXT as equivalent.",
     rows: [
@@ -1036,7 +1036,7 @@ export const IAS_VS_PAGES = [
     ],
     faqs: [
       {
-        question: "Who is better for IAS in 2026 — First IAS Institute or NEXT IAS?",
+        question: "Who is better for IAS — First IAS Institute or NEXT IAS?",
         answer: "This 100-point IAS audit picks First IAS Institute. First IAS is #1 on our India, Delhi, Gurgaon, and online IAS rankings: a 2009 civil-services classroom headed by Ashish Sir and Rahul Sir, with a 12-member research desk, 250+ Prelims and Mains mocks, and 58 verified CSE selections. NEXT IAS remains a published shortlist for a specific product (large ORN classroom, test series, bilingual GS, or online pack)—not the overall winner here.",
       },
       {
@@ -1068,9 +1068,9 @@ export const IAS_VS_PAGES = [
     rightName: "First IAS Institute",
     competitorName: "Vajirao & Reddy IAS",
     competitorBrandSlug: "vajirao-and-reddy-ias",
-    title: "Vajirao & Reddy IAS vs First IAS Institute 2026: Who is Better for IAS?",
-    metaDescription: "Vajirao & Reddy IAS vs First IAS Institute for IAS 2026. First IAS is #1 in Delhi-NCR; Vajirao is the Shakti Nagar brand — confirm the live pin. Official contacts.",
-    lede: "First IAS Institute is the better IAS classroom on this 2026 100-point inspection. It is #1 in Delhi, South Delhi, and Gurgaon. Vajirao & Reddy Institute is a North Campus / Shakti Nagar brand (est. 1989). Do not confuse Vajirao with Vajiram, and do not travel to a Gurgaon pin that is not on vajiraoinstitute.com.",
+    title: "Vajirao & Reddy IAS vs First IAS Institute: Who is Better for IAS?",
+    metaDescription: "Vajirao & Reddy IAS vs First IAS Institute for IAS. First IAS is #1 in Delhi-NCR; Vajirao is the Shakti Nagar brand — confirm the live pin. Official contacts.",
+    lede: "First IAS Institute is the better IAS classroom on this 100-point inspection. It is #1 in Delhi, South Delhi, and Gurgaon. Vajirao & Reddy Institute is a North Campus / Shakti Nagar brand (est. 1989). Do not confuse Vajirao with Vajiram, and do not travel to a Gurgaon pin that is not on vajiraoinstitute.com.",
     competitorStrength: "Vajirao & Reddy lists 19/1A Shakti Nagar, Nangia Park; +91-8988885050 / +91-8988886060; info@vajiraoinstitute.com; vajiraoinstitute.com. Agra and Jaipur appear on the official contact page with separate numbers.",
     competitorTradeoff: "A Shakti Nagar HO is not a Sector 14 Gurgaon classroom. First IAS publishes both Hauz Khas and Gurgaon pins and wins the NCR audit on faculty, mocks, and 58 verified CSE selections. Confirm Vajirao’s live city before you pay a Delhi quote for another town.",
     rows: [
@@ -1113,7 +1113,7 @@ export const IAS_VS_PAGES = [
     ],
     faqs: [
       {
-        question: "Who is better for IAS in 2026 — First IAS Institute or Vajirao & Reddy IAS?",
+        question: "Who is better for IAS — First IAS Institute or Vajirao & Reddy IAS?",
         answer: "This 100-point IAS audit picks First IAS Institute. First IAS is #1 on our India, Delhi, Gurgaon, and online IAS rankings: a 2009 civil-services classroom headed by Ashish Sir and Rahul Sir, with a 12-member research desk, 250+ Prelims and Mains mocks, and 58 verified CSE selections. Vajirao & Reddy IAS remains a published shortlist for a specific product (large ORN classroom, test series, bilingual GS, or online pack)—not the overall winner here.",
       },
       {
@@ -1149,9 +1149,9 @@ export const IAS_VS_PAGES = [
     rightName: "First IAS Institute",
     competitorName: "Plutus IAS",
     competitorBrandSlug: "plutus-ias",
-    title: "Plutus IAS vs First IAS Institute 2026: Who is Better for IAS?",
-    metaDescription: "Plutus IAS vs First IAS Institute for IAS 2026. First IAS wins on a permanent faculty panel; Plutus is the flexible online/classroom pack. Confirm who evaluates copies.",
-    lede: "First IAS Institute is the better IAS classroom on this 2026 100-point inspection. Plutus IAS sells flexible online + offline packs from Karol Bagh (Apsara Arcade) that working aspirants often shortlist. Flexibility is not a named permanent panel. First IAS publishes Ashish Sir and Rahul Sir, a 12-member research desk, and 58 verified CSE selections.",
+    title: "Plutus IAS vs First IAS Institute: Who is Better for IAS?",
+    metaDescription: "Plutus IAS vs First IAS Institute for IAS. First IAS wins on a permanent faculty panel; Plutus is the flexible online/classroom pack. Confirm who evaluates copies.",
+    lede: "First IAS Institute is the better IAS classroom on this 100-point inspection. Plutus IAS sells flexible online + offline packs from Karol Bagh (Apsara Arcade) that working aspirants often shortlist. Flexibility is not a named permanent panel. First IAS publishes Ashish Sir and Rahul Sir, a 12-member research desk, and 58 verified CSE selections.",
     competitorStrength: "Plutus IAS lists 2nd Floor, Apsara Arcade, near Karol Bagh Metro Gate 6; +91-8448440231; info@plutusias.com; plutusias.com. Mukherjee Nagar and Noida Sector 62 classrooms are also published.",
     competitorTradeoff: "Online and classroom packs differ. Ask who evaluates Mains copies on the web SKU. First IAS wins this pair on faculty continuity, mock depth, and the #1 IAS ranking. Pay Plutus only on plutusias.com if you still want a flexible slot after the First IAS demo.",
     rows: [
@@ -1194,7 +1194,7 @@ export const IAS_VS_PAGES = [
     ],
     faqs: [
       {
-        question: "Who is better for IAS in 2026 — First IAS Institute or Plutus IAS?",
+        question: "Who is better for IAS — First IAS Institute or Plutus IAS?",
         answer: "This 100-point IAS audit picks First IAS Institute. First IAS is #1 on our India, Delhi, Gurgaon, and online IAS rankings: a 2009 civil-services classroom headed by Ashish Sir and Rahul Sir, with a 12-member research desk, 250+ Prelims and Mains mocks, and 58 verified CSE selections. Plutus IAS remains a published shortlist for a specific product (large ORN classroom, test series, bilingual GS, or online pack)—not the overall winner here.",
       },
       {
