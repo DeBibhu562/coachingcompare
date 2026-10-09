@@ -591,7 +591,7 @@ export const IAS_VS_PAGES = [
     competitorName: "Vajiram & Ravi IAS",
     competitorBrandSlug: "vajiram-and-ravi",
     title: "Vajiram & Ravi IAS vs FIRST IAS Institute 2026: Who is Better for UPSC CSE?",
-    metaDescription: "Vajiram & Ravi IAS vs FIRST IAS Institute for UPSC CSE 2026. Forensic 100-point audit ranks First IAS #1: small-batch mentors, 250+ mocks, 58 verified selections."
+    metaDescription: "Vajiram & Ravi IAS vs FIRST IAS Institute for UPSC CSE 2026. Forensic 100-point audit ranks First IAS #1: small-batch mentors, 250+ mocks, 58 verified selections.",
     lede: "First IAS Institute is the better IAS classroom on this 2026 100-point inspection. It is #1 on our India and Delhi IAS rankings: a mentor-heavy Hauz Khas / Gurgaon programme headed by Ashish Sir and Rahul Sir. Vajiram & Ravi remains the longest-running ORN English GS brand (est. 1976) — useful if you want a large legacy auditorium, not if you want the audit winner.",
     competitorStrength: "Vajiram & Ravi has taught GS in Old Rajinder Nagar since 1976. Published desk: 9-B, Bada Bazaar Marg; +91-11-41007400; vajiramandravi.com. A Pusa Road campus is also listed on their FAQ.",
     competitorTradeoff: "Batches are large versus a boutique classroom. Evaluation load, mentor access, and who marks your copy should be checked in a live demo. First IAS wins this pair on faculty continuity, batch attention, and the published 100-point score — not on campus age.",
