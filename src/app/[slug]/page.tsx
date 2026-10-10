@@ -269,6 +269,24 @@ function parseSlug(slug: string) {
     };
   }
 
+  // Support Top 5 [Exam] Coaching Institutes in [City] pattern
+  const matchTop5 = slug.match(/^top-5-([a-z0-9-]+)-coaching-(?:institutes-in|in)-([a-z0-9-]+)$/);
+  if (matchTop5) {
+    const examSlug = matchTop5[1].replace(/^best-/, '');
+    const citySlug = matchTop5[2];
+    const canonicalSlug = `best-${examSlug}-coaching-in-${citySlug}`;
+    const livePage = getLiveRankingPage(canonicalSlug);
+    if (livePage) {
+      return { type: 'live-ranking' as const, page: livePage };
+    }
+  }
+
+  // Production parity: full live ranking archive (ItemList + FAQ recovered from frozen build)
+  const liveRanking = getLiveRankingPage(slug);
+  if (liveRanking) {
+    return { type: 'live-ranking' as const, page: liveRanking };
+  }
+
   // Dedicated IPMAT City ranking suites (Mumbai, Bangalore, Nagpur, Pune, Hyderabad, Indore, Jaipur, Lucknow, Kolkata, Chandigarh, Ahmedabad, etc.)
   const ipmatCityPage = getIpmatCityRankingPage(slug);
   if (ipmatCityPage) {
@@ -284,24 +302,6 @@ function parseSlug(slug: string) {
       fixedRank5: false,
       buildListings: buildCityListingsForPage,
     };
-  }
-
-  // Production parity: full live ranking archive (ItemList + FAQ recovered from frozen build)
-  const liveRanking = getLiveRankingPage(slug);
-  if (liveRanking) {
-    return { type: 'live-ranking' as const, page: liveRanking };
-  }
-
-  // Support Top 5 [Exam] Coaching Institutes in [City] pattern
-  const matchTop5 = slug.match(/^top-5-([a-z0-9-]+)-coaching-(?:institutes-in|in)-([a-z0-9-]+)$/);
-  if (matchTop5) {
-    const examSlug = matchTop5[1].replace(/^best-/, '');
-    const citySlug = matchTop5[2];
-    const canonicalSlug = `best-${examSlug}-coaching-in-${citySlug}`;
-    const livePage = getLiveRankingPage(canonicalSlug);
-    if (livePage) {
-      return { type: 'live-ranking' as const, page: livePage };
-    }
   }
 
   // Aliases for ranking slugs without leading 'best-' (e.g. online-upsc-coaching -> best-online-upsc-coaching)
