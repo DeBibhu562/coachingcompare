@@ -352,7 +352,8 @@ function parseSlug(slug: string) {
   // Pattern 2: best-[exam]-coaching-in-[city]
   const matchCatCity = slug.match(/^best-([a-z0-9-]+)-coaching-in-([a-z0-9-]+)$/);
   if (matchCatCity) {
-    const examSlug = matchCatCity[1];
+    const rawExam = matchCatCity[1];
+    const examSlug = rawExam === 'ias' ? 'upsc' : rawExam;
     const citySlug = matchCatCity[2];
     const exam = EXAM_CATEGORIES.find((e) => e.slug === examSlug);
     const city = CITIES_DATA.find((c) => c.slug === citySlug);
@@ -364,7 +365,8 @@ function parseSlug(slug: string) {
   // Pattern 3: best-[exam]-coaching
   const matchExam = slug.match(/^best-([a-z0-9-]+)-coaching$/);
   if (matchExam) {
-    const examSlug = matchExam[1];
+    const rawExam = matchExam[1];
+    const examSlug = rawExam === 'ias' ? 'upsc' : rawExam;
     const exam = EXAM_CATEGORIES.find((e) => e.slug === examSlug);
     if (exam) {
       return { type: 'exam-hub' as const, exam };
