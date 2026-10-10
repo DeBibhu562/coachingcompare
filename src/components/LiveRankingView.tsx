@@ -51,6 +51,7 @@ const CITY_NAMES: Record<string, string> = {
   kanpur: 'Kanpur',
   varanasi: 'Varanasi',
   dehradun: 'Dehradun',
+  jodhpur: 'Jodhpur',
   ranchi: 'Ranchi',
   guwahati: 'Guwahati',
   bhubaneswar: 'Bhubaneswar',
@@ -176,7 +177,7 @@ function extractContact(name: string, blurb: string, cityName: string) {
 }
 
 function buildListingFromLive(
-  inst: { rank: number; name: string; blurb: string; website?: string },
+  inst: { rank: number; name: string; blurb: string; website?: string; mapUrl?: string },
   examShort: string,
   cityName: string,
   knownListing?: InstituteListing,
@@ -190,6 +191,11 @@ function buildListingFromLive(
       rank,
       inspectionScore: score,
       description: inst.blurb || knownListing.description,
+      contact: {
+        ...knownListing.contact,
+        website: inst.website || knownListing.contact.website,
+        mapUrl: inst.mapUrl || knownListing.contact.mapUrl,
+      },
     };
   }
 
@@ -197,6 +203,9 @@ function buildListingFromLive(
   const contact = extractContact(inst.name, inst.blurb || '', cityName);
   if (inst.website) {
     contact.website = inst.website;
+  }
+  if (inst.mapUrl) {
+    contact.mapUrl = inst.mapUrl;
   }
 
   // Parse highlights from blurb sentences

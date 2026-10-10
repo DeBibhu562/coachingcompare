@@ -5,6 +5,10 @@ export type LiveRankedInstitute = {
   name: string;
   blurb: string;
   website?: string;
+  mapUrl?: string;
+  phone?: string;
+  email?: string;
+  address?: string;
 };
 
 export type LiveRankingPage = {

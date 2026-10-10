@@ -292,6 +292,18 @@ function parseSlug(slug: string) {
     return { type: 'live-ranking' as const, page: liveRanking };
   }
 
+  // Support Top 5 [Exam] Coaching Institutes in [City] pattern
+  const matchTop5 = slug.match(/^top-5-([a-z0-9-]+)-coaching-(?:institutes-in|in)-([a-z0-9-]+)$/);
+  if (matchTop5) {
+    const examSlug = matchTop5[1].replace(/^best-/, '');
+    const citySlug = matchTop5[2];
+    const canonicalSlug = `best-${examSlug}-coaching-in-${citySlug}`;
+    const livePage = getLiveRankingPage(canonicalSlug);
+    if (livePage) {
+      return { type: 'live-ranking' as const, page: livePage };
+    }
+  }
+
   // Aliases for ranking slugs without leading 'best-' (e.g. online-upsc-coaching -> best-online-upsc-coaching)
   if (!slug.startsWith('best-')) {
     const withBest = `best-${slug}`;
@@ -416,6 +428,15 @@ export async function generateStaticParams() {
     .forEach((s) => {
       add(s.replace(/^best-/, ''));
     });
+
+  // Regional Top 5 aliases for live ranking pages (e.g. top-5-clat-coaching-institutes-in-bhopal)
+  getAllLiveRankingSlugs().forEach((s) => {
+    const match = s.match(/^best-([a-z0-9-]+)-coaching-in-([a-z0-9-]+)$/);
+    if (match) {
+      add(`top-5-${match[1]}-coaching-institutes-in-${match[2]}`);
+      add(`top-5-${match[1]}-coaching-in-${match[2]}`);
+    }
+  });
 
   // Legal + institute-vs pages from production archive and comparison definitions
   getAllStaticArchiveSlugs().forEach(add);

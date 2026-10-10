@@ -1596,6 +1596,22 @@ export const CITIES_DATA = [
 ],
     overview: "Commercial capital of Kerala with top study abroad, CAT, and professional test prep institutes.",
   },
+  {
+    slug: "jodhpur",
+    name: "Jodhpur",
+    state: "Rajasthan",
+    isPopular: false,
+    symbol: "🏰",
+    totalExams: 15,
+    majorHubs: [
+      "Sardarpura",
+      "Ratanada",
+      "Paota",
+      "Shastri Nagar",
+      "Residency Road"
+    ],
+    overview: "Western Rajasthan’s leading education hub, home to NLU Jodhpur and premier coaching centres for CLAT, IPMAT, JEE, and NEET.",
+  },
 ] as const;
 
 export const CLAT_DELHI_ARCHIVE_LISTINGS = [
