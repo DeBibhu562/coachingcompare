@@ -90,11 +90,17 @@ import {
   getStaticArchivePage,
   type StaticArchivePage,
 } from '@/data/staticArchive';
+import {
+  getAllIasGurgaonRankingSlugs,
+  getIasGurgaonRankingPage,
+  type IasGurgaonRankingPage,
+} from '@/data/iasGurgaonRankings';
 import { getAllVsComparisonSlugs } from '@/data/iasVsComparisons';
 import { BLOG_POSTS } from '@/data/blogPosts';
 import CoachingCard from '@/components/CoachingCard';
 import LiveRankingView from '@/components/LiveRankingView';
 import StaticArchiveView from '@/components/StaticArchiveView';
+import IasGurgaonRankingView from '@/components/IasGurgaonRankingView';
 import { Icons } from '@/components/Icons';
 
 type ExamCityRankingPage =
@@ -116,6 +122,15 @@ interface PageProps {
 
 // Helper to parse slug patterns
 function parseSlug(slug: string) {
+  // UPSC / IAS Gurgaon ranking suite (Top 3 institutes + as-per evaluation facets) — priority routing
+  const iasGurgaonPage = getIasGurgaonRankingPage(slug);
+  if (iasGurgaonPage) {
+    return {
+      type: 'ias-gurgaon-ranking' as const,
+      page: iasGurgaonPage,
+    };
+  }
+
   // Exam city ranking suites (classroom, online, as-per facets) — check first to avoid duplicates
   const ipmatDelhiPage = getIpmatDelhiRankingPage(slug);
   if (ipmatDelhiPage) {
@@ -420,6 +435,7 @@ export async function generateStaticParams() {
   getAllLlmIndiaRankingSlugs().forEach(add);
   getAllIpmatIndiaRankingSlugs().forEach(add);
   getAllIpmatCityRankingSlugs().forEach(add);
+  getAllIasGurgaonRankingSlugs().forEach(add);
 
   // Full production ranking archive (737 best-* URLs)
   getAllLiveRankingSlugs().forEach(add);
@@ -506,6 +522,26 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: page.title,
       description: page.description || page.title,
       alternates: { canonical: `/${page.slug}` },
+    };
+  }
+
+  if (parsed.type === 'ias-gurgaon-ranking') {
+    const { page } = parsed;
+    return {
+      title: page.title,
+      description: page.metaDescription,
+      alternates: { canonical: `/${page.slug}` },
+      openGraph: {
+        title: page.title,
+        description: page.metaDescription,
+        url: `https://coachingcompare.in/${page.slug}`,
+        type: 'article',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: page.title,
+        description: page.metaDescription,
+      },
     };
   }
 
@@ -620,6 +656,10 @@ export default async function DynamicSlugPage({ params }: PageProps) {
 
   if (parsed.type === 'blog-redirect') {
     redirect(`/blog/${slug}`);
+  }
+
+  if (parsed.type === 'ias-gurgaon-ranking') {
+    return <IasGurgaonRankingView page={parsed.page} currentSlug={slug} />;
   }
 
   if (parsed.type === 'live-ranking') {
