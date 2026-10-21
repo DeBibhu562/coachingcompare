@@ -66,16 +66,20 @@ const CITY_NAMES: Record<string, string> = {
 };
 
 const CRITERION_LABELS: Record<string, string> = {
-  results: 'Results & Selections',
+  results: 'Results',
   'faculty-experience': 'Faculty Experience',
-  'study-material': 'Study Material Quality',
+  'study-material': 'Study Material',
   'mock-test-series': 'Mock Test Series',
-  'batch-size': 'Batch Size Ratio',
-  alumni: 'Alumni Network',
+  'batch-size': 'Batch Size',
+  alumni: 'Alumni',
   'clat-toppers': 'Toppers Mentorship',
   'ipm-toppers': 'IPM Toppers',
+  'cse-toppers': 'Toppers Mentorship',
+  toppers: 'Toppers',
   'selection-rate': 'Selection Rate',
+  'selection-ratio': 'Selection Ratio',
   teachers: 'Teacher Quality',
+  faculty: 'Faculty',
   'google-reviews': 'Google Reviews',
   'google-ratings': 'Google Ratings',
 };
@@ -283,7 +287,13 @@ export default function LiveRankingView({
   });
 
   const leader = listings[0]?.name || 'Rank 1';
-  const cleanTitle = page.title.replace(/\s*\|\s*CoachingCompare\.in$/, '');
+  const rawTitle = page.title.replace(/\s*\|\s*CoachingCompare\.in$/, '');
+  const cleanTitle =
+    facetLabel && !rawTitle.toLowerCase().includes('as per')
+      ? rawTitle.includes(' 2026')
+        ? rawTitle.replace(/ 2026/, ` As per ${facetLabel} 2026`)
+        : `${rawTitle} As per ${facetLabel} 2026`
+      : rawTitle;
   const hubHref = cityKey === 'india' ? `/best-${examSlug}-coaching` : `/coaching-centres-in-${cityKey}`;
   const hubLabel = `${cityName} Coaching`;
 
@@ -377,6 +387,7 @@ export default function LiveRankingView({
       : []),
     { href: `/best-${examSlug}-coaching-in-delhi`, label: `Best ${examShort} coaching in Delhi` },
     { href: `/best-${examSlug}-coaching-in-gurgaon`, label: `Best ${examShort} coaching in Gurgaon` },
+    { href: `/best-${examSlug}-coaching-in-${cityKey}`, label: `Overall Best (${cityName})` },
     { href: `/best-${examSlug}-coaching-in-${cityKey}-as-per-results`, label: 'As per Results' },
     { href: `/best-${examSlug}-coaching-in-${cityKey}-as-per-faculty-experience`, label: 'As per Faculty Experience' },
     { href: `/best-${examSlug}-coaching-in-${cityKey}-as-per-google-reviews`, label: 'As per Google Reviews' },
@@ -393,11 +404,11 @@ export default function LiveRankingView({
   ];
 
   const criteriaLinks = sidebarLinks.filter((l) =>
-    l.label.toLowerCase().startsWith('as per')
+    l.label.toLowerCase().startsWith('as per') || l.label.toLowerCase().startsWith('overall')
   );
   const otherCityLinks = sidebarLinks.filter(
     (l) =>
-      !l.label.toLowerCase().startsWith('as per') &&
+      !criteriaLinks.includes(l) &&
       (l.label.toLowerCase().includes('in ') || l.label.toLowerCase().includes('coaching in')) &&
       !l.label.toLowerCase().includes(cityName.toLowerCase())
   );

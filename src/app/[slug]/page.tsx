@@ -2,6 +2,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
+
+export const dynamicParams = true;
 import {
   CITIES_DATA,
   EXAM_CATEGORIES,
@@ -446,6 +448,23 @@ export async function generateStaticParams() {
     .forEach((s) => {
       add(s.replace(/^best-/, ''));
     });
+
+  // Pre-render common evaluation criteria facets for city ranking pages (e.g. best-du-llb-coaching-in-mumbai-as-per-results)
+  const SIDEBAR_FACETS = [
+    'results',
+    'faculty-experience',
+    'alumni',
+    'google-reviews',
+    'mock-test-series',
+    'batch-size',
+  ];
+  getAllLiveRankingSlugs().forEach((s) => {
+    if (!s.includes('-as-per-') && s.includes('-coaching-in-')) {
+      SIDEBAR_FACETS.forEach((f) => {
+        add(`${s}-as-per-${f}`);
+      });
+    }
+  });
 
   // Regional Top 5 aliases for live ranking pages (e.g. top-5-clat-coaching-institutes-in-bhopal)
   getAllLiveRankingSlugs().forEach((s) => {
