@@ -6,6 +6,7 @@
 export type IpmatIndiaInstituteKey =
   | 'ipmat-mantra'
   | 'aceipm'
+  | 'supergrads'
   | 'ims'
   | 'career-launcher'
   | 'time'
@@ -381,6 +382,38 @@ const INSTITUTES: Record<IpmatIndiaInstituteKey, InstituteBase> = {
       'Hybrid online learning option with live doubt sessions',
     ],
   },
+  supergrads: {
+    key: 'supergrads',
+    name: 'Supergrads by Toprankers',
+    brandSlug: 'supergrads',
+    rating: 4.8,
+    reviewCount: 220,
+    estYear: 2016,
+    studentsCount: 'Pan-India Online + NCR Centres',
+    batchSize: '25 - 40 Students',
+    feesEstimate: 'Confirm on toprankers.com',
+    contact: {
+      address: 'Flat No. 301-303, 3rd Floor, AVG Bhawan, M-3, Connaught Circus, Middle Circle, New Delhi 110001',
+      locality: 'Connaught Place / PAN India Online',
+      phone: '+91-8448444207',
+      email: 'support@toprankers.com',
+      website: 'https://www.toprankers.com',
+      timing: 'Mon-Sat: 10:00am - 7:00pm',
+      mapUrl: 'https://maps.google.com/?q=Supergrads+Toprankers+Connaught+Place+Delhi',
+    },
+    baseHighlights: [
+      'Supergrads (Toprankers) publishes dedicated IPMAT / BBA entrance products',
+      'PAN India online platform + classroom presence in Delhi-NCR',
+      'High-yield mock test series with All-India benchmarking',
+      'Structured WAT–PI and personal interview preparation for IIM Indore & Rohtak',
+    ],
+    onlineHighlights: [
+      'Toprankers portal with live IPMAT classes, recorded sessions, and topic tests',
+      'Dedicated Indore & Rohtak pattern mocks with in-depth analytics',
+      'Pay only on toprankers.com / published Supergrads checkout',
+      'Support desk +91-8448444207 / support@toprankers.com',
+    ],
+  },
 };
 
 function breakdownForRank(rank: number): IpmatScoreBreakdown {
@@ -408,6 +441,9 @@ function criterionBlurb(
   const scope = criterionLabel ? ` as per ${criterionLabel}` : '';
   if (rank === 1) {
     return `${inst.name} is the #1 ${mode === 'online' ? 'online ' : ''}IPMAT coaching institute in India${scope} on this 2026 audit. Offline centres in Delhi (Hauz Khas) & Gurgaon (Sector 14) + Pan-India Online Live / Recorded classes via ipmatmantra.com. 300+ full mocks, 550+ sectionals, and comprehensive interview / WAT preparation. Official website: http://ipmatmantra.com/.`;
+  }
+  if (key === 'supergrads') {
+    return `${inst.name} is ranked #${rank} among the best ${place}${scope} on this 2026 audit. Enrol via toprankers.com; support +91-8448444207 / support@toprankers.com. Dedicated IPMAT / BBA live interactive batches, high-difficulty mocks, and interview mentorship. Confirm the live IPMAT SKU name on the invoice.`;
   }
   if (key === 'aceipm') {
     return `${inst.name} is ranked #${rank} among the best ${place}${scope} on this 2026 audit. Offline in Noida (B-77, Sector 2) + Online PAN India; 07999917171 / support@aceipm.com / aceipm.com. Fees ₹18,997–₹59,997. 2026: 36 IIM Indore + 45 IIM Rohtak admits; 1,400+ cumulative IIM selections over 6 years. IPMAT + CUET.`;
@@ -518,18 +554,18 @@ export const IPMAT_INDIA_RANKING_PAGES: IpmatIndiaRankingPage[] = [
     criterionKey: null,
     criterionLabel: null,
     mode: 'classroom',
-    title: 'Top 5 Best IPMAT Coaching in India 2026 | CoachingCompare.in',
+    title: 'Top 6 Best IPMAT Coaching in India 2026 | CoachingCompare.in',
     metaDescription:
-      'Top 5 IPMAT coaching institutes in India 2026: IPMAT Mantra #1, AceIPM #2, then IMS, Career Launcher, T.I.M.E. 100-point inspection, fees, mocks, and FAQs.',
-    badge: 'Top 5 · India Classroom',
-    h1: 'Top 5 Best IPMAT Coaching in India 2026',
-    lede: 'Looking for the best IPMAT coaching in India? Our independent panel ranked national options using a 100-point inspection — faculty, results, study material, mocks, infrastructure, batch size, and doubt support. IPMAT Mantra leads this 2026 classroom shortlist; AceIPM is #2.',
+      'Top 6 IPMAT coaching institutes in India 2026: IPMAT Mantra #1, AceIPM #2, Supergrads by Toprankers #3, then IMS, Career Launcher, T.I.M.E. 100-point inspection, fees, mocks, and FAQs.',
+    badge: 'Top 6 · India Classroom',
+    h1: 'Top 6 Best IPMAT Coaching in India 2026',
+    lede: 'Looking for the best IPMAT coaching in India? Our independent panel ranked national options using a 100-point inspection — faculty, results, study material, mocks, infrastructure, batch size, and doubt support. IPMAT Mantra leads this 2026 classroom shortlist; AceIPM is #2; Supergrads by Toprankers is #3.',
     comparisonTitle: 'Comparison Matrix: Top IPMAT Institutes in India',
     guideTitle: 'How to Choose IPMAT Coaching in India',
     guideBody:
       'Sit two demos in the same week. Confirm Indore + Rohtak mocks, batch size, and GST name on the fee card. Do not buy a CAT pack and assume it covers IPMAT.',
     faqHeading: 'Frequently Asked Questions (India IPMAT Coaching)',
-    order: ['ipmat-mantra', 'aceipm', 'ims', 'career-launcher', 'time'],
+    order: ['ipmat-mantra', 'aceipm', 'supergrads', 'ims', 'career-launcher', 'time'],
     faqs: pageFaqs(null, 'IPMAT Mantra'),
     sidebarLinks: SHARED_SIDEBAR,
   },
@@ -538,18 +574,18 @@ export const IPMAT_INDIA_RANKING_PAGES: IpmatIndiaRankingPage[] = [
     criterionKey: null,
     criterionLabel: null,
     mode: 'online',
-    title: 'Top 5 Best Online IPMAT Coaching Institutes 2026 | CoachingCompare.in',
+    title: 'Top 6 Best Online IPMAT Coaching Institutes 2026 | CoachingCompare.in',
     metaDescription:
-      'Top 5 online / hybrid IPMAT coaching in India 2026: IPMAT Mantra #1, AceIPM #2, then Rodha, IMS, Career Launcher. Compare live SKUs and mocks.',
-    badge: 'Top 5 · Online / Hybrid',
-    h1: 'Top 5 Best Online IPMAT Coaching Institutes 2026',
-    lede: 'Best online IPMAT coaching for India learners balances live hours with school. This 2026 audit ranks five hybrid-ready brands — led by IPMAT Mantra, with AceIPM at #2 — after checking live SKU names, recording windows, and Indore / Rohtak mock coverage.',
+      'Top 6 online / hybrid IPMAT coaching in India 2026: IPMAT Mantra #1, AceIPM #2, Supergrads by Toprankers #3, then Rodha, IMS, Career Launcher. Compare live SKUs and mocks.',
+    badge: 'Top 6 · Online / Hybrid',
+    h1: 'Top 6 Best Online IPMAT Coaching Institutes 2026',
+    lede: 'Best online IPMAT coaching for India learners balances live hours with school. This 2026 audit ranks hybrid-ready brands — led by IPMAT Mantra, with AceIPM at #2 and Supergrads by Toprankers at #3 — after checking live SKU names, recording windows, and Indore / Rohtak mock coverage.',
     comparisonTitle: 'Comparison Matrix: Top Online IPMAT Options for India',
     guideTitle: 'How to Choose Online IPMAT Coaching in India',
     guideBody:
       'Open the cart before you pay. The SKU must say IPMAT (Indore / Rohtak)—not CAT SimCAT. Write down refund windows and doubt-desk hours.',
     faqHeading: 'Frequently Asked Questions (Online IPMAT · India)',
-    order: ['ipmat-mantra', 'aceipm', 'rodha', 'ims', 'career-launcher'],
+    order: ['ipmat-mantra', 'aceipm', 'supergrads', 'rodha', 'ims', 'career-launcher'],
     faqs: pageFaqs(null, 'IPMAT Mantra').map((f) =>
       f.question.includes('classroom or online')
         ? f
@@ -565,18 +601,18 @@ export const IPMAT_INDIA_RANKING_PAGES: IpmatIndiaRankingPage[] = [
     criterionKey: null,
     criterionLabel: null,
     mode: 'classroom',
-    title: 'Top 5 Best IPMAT Coaching in India 2026 | CoachingCompare.in',
+    title: 'Top 6 Best IPMAT Coaching in India 2026 | CoachingCompare.in',
     metaDescription:
-      'Top 5 IPMAT coaching institutes in India 2026: IPMAT Mantra #1, AceIPM #2, then IMS, Career Launcher, T.I.M.E. 100-point inspection, fees, mocks, and FAQs.',
-    badge: 'Top 5 · India Classroom',
-    h1: 'Top 5 Best IPMAT Coaching in India 2026',
-    lede: 'Looking for the best IPMAT coaching in India? Our independent panel ranked national options using a 100-point inspection — faculty, results, study material, mocks, infrastructure, batch size, and doubt support. IPMAT Mantra leads this 2026 classroom shortlist.',
+      'Top 6 IPMAT coaching institutes in India 2026: IPMAT Mantra #1, AceIPM #2, Supergrads by Toprankers #3, then IMS, Career Launcher, T.I.M.E. 100-point inspection, fees, mocks, and FAQs.',
+    badge: 'Top 6 · India Classroom',
+    h1: 'Top 6 Best IPMAT Coaching in India 2026',
+    lede: 'Looking for the best IPMAT coaching in India? Our independent panel ranked national options using a 100-point inspection — faculty, results, study material, mocks, infrastructure, batch size, and doubt support. IPMAT Mantra leads this 2026 classroom shortlist; AceIPM is #2; Supergrads by Toprankers is #3.',
     comparisonTitle: 'Comparison Matrix: Top IPMAT Institutes in India',
     guideTitle: 'How to Choose IPMAT Coaching in India',
     guideBody:
       'Sit two demos in the same week. Confirm Indore + Rohtak mocks, batch size, and GST name on the fee card. Do not buy a CAT pack and assume it covers IPMAT.',
     faqHeading: 'Frequently Asked Questions (India IPMAT Coaching)',
-    order: ['ipmat-mantra', 'aceipm', 'ims', 'career-launcher', 'time'],
+    order: ['ipmat-mantra', 'aceipm', 'supergrads', 'ims', 'career-launcher', 'time'],
     faqs: pageFaqs(null, 'IPMAT Mantra'),
     sidebarLinks: SHARED_SIDEBAR,
   },
@@ -585,18 +621,18 @@ export const IPMAT_INDIA_RANKING_PAGES: IpmatIndiaRankingPage[] = [
     criterionKey: null,
     criterionLabel: null,
     mode: 'online',
-    title: 'Top 5 Best Online IPMAT Coaching Institutes in India 2026 | CoachingCompare.in',
+    title: 'Top 6 Best Online IPMAT Coaching Institutes in India 2026 | CoachingCompare.in',
     metaDescription:
-      'Top 5 online / hybrid IPMAT coaching in India 2026: IPMAT Mantra #1, AceIPM #2, then Rodha, IMS, Career Launcher. Compare live SKUs and mocks.',
-    badge: 'Top 5 · Online / Hybrid',
-    h1: 'Top 5 Best Online IPMAT Coaching Institutes in India 2026',
-    lede: 'Best online IPMAT coaching for India learners balances live hours with school. This 2026 audit ranks hybrid-ready brands — led by IPMAT Mantra, with AceIPM at #2 — after checking live SKU names, recording windows, and Indore / Rohtak mock coverage.',
+      'Top 6 online / hybrid IPMAT coaching in India 2026: IPMAT Mantra #1, AceIPM #2, Supergrads by Toprankers #3, then Rodha, IMS, Career Launcher. Compare live SKUs and mocks.',
+    badge: 'Top 6 · Online / Hybrid',
+    h1: 'Top 6 Best Online IPMAT Coaching Institutes in India 2026',
+    lede: 'Best online IPMAT coaching for India learners balances live hours with school. This 2026 audit ranks hybrid-ready brands — led by IPMAT Mantra, with AceIPM at #2 and Supergrads by Toprankers at #3 — after checking live SKU names, recording windows, and Indore / Rohtak mock coverage.',
     comparisonTitle: 'Comparison Matrix: Top Online IPMAT Options in India',
     guideTitle: 'How to Choose Online IPMAT Coaching in India',
     guideBody:
       'Open the cart before you pay. The SKU must say IPMAT (Indore / Rohtak)—not generic CAT. Write down refund windows and doubt-desk hours.',
     faqHeading: 'Frequently Asked Questions (Online IPMAT · India)',
-    order: ['ipmat-mantra', 'aceipm', 'rodha', 'ims', 'career-launcher'],
+    order: ['ipmat-mantra', 'aceipm', 'supergrads', 'rodha', 'ims', 'career-launcher'],
     faqs: pageFaqs(null, 'IPMAT Mantra'),
     sidebarLinks: SHARED_SIDEBAR,
   },
@@ -725,18 +761,18 @@ export const IPMAT_INDIA_RANKING_PAGES: IpmatIndiaRankingPage[] = [
     criterionKey: 'results',
     criterionLabel: 'Results',
     mode: 'classroom',
-    title: '7 Best IPMAT Coaching in India As per Results 2026 | CoachingCompare.in',
+    title: '8 Best IPMAT Coaching in India As per Results 2026 | CoachingCompare.in',
     metaDescription:
-      'Best IPMAT coaching in India by results 2026: IPMAT Mantra (#1), Career Launcher, IMS, T.I.M.E., PW Live, Rodha, Aapt Prep. Verified selections.',
-    badge: 'Top 7 · Proven Results',
-    h1: '7 Best IPMAT Coaching in India As per Results 2026',
-    lede: 'Verifiable selection track record across IIM Indore, Rohtak, Ranchi, and top BBA programs. IPMAT Mantra leads this 2026 results audit.',
+      'Best IPMAT coaching in India by results 2026: IPMAT Mantra (#1), Supergrads by Toprankers (#2), Career Launcher (#3), IMS, T.I.M.E., PW Live, Rodha, Aapt Prep. Verified selections.',
+    badge: 'Top 8 · Proven Results',
+    h1: '8 Best IPMAT Coaching in India As per Results 2026',
+    lede: 'Verifiable selection track record across IIM Indore, Rohtak, Ranchi, and top BBA programs. IPMAT Mantra leads this 2026 results audit, with Supergrads by Toprankers at #2.',
     comparisonTitle: 'Comparison Matrix: Top IPMAT Institutes in India (Results)',
     guideTitle: 'Auditing IPMAT Coaching Results',
     guideBody:
       'Request verifiable admit letters and match student rolls with registration numbers. Beware of unverified brochure marketing claims.',
     faqHeading: 'Frequently Asked Questions (Results)',
-    order: ['ipmat-mantra', 'career-launcher', 'ims', 'time', 'pw-live', 'rodha', 'aapt-prep'],
+    order: ['ipmat-mantra', 'supergrads', 'career-launcher', 'ims', 'time', 'pw-live', 'rodha', 'aapt-prep'],
     faqs: pageFaqs('Results', 'IPMAT Mantra'),
     sidebarLinks: SHARED_SIDEBAR,
   },
