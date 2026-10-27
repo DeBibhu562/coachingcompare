@@ -8457,13 +8457,20 @@ export function getListingsForCategoryAndCity(examSlug: string, citySlug: string
     switch (exam.slug) {
       case 'ipmat':
         return [
-          { name: 'IPMAT Mantra', score: 99, rank: 1, fee: '₹70,000 - ₹1,20,000', est: 2016, rating: 4.9, reviews: 310, isMantra: true, website: 'http://ipmatmantra.com/', phone: '+91-9876543210' },
-          { name: 'AceIPM', score: 96, rank: 2, fee: '₹18,997 - ₹59,997', est: 2019, rating: 4.9, reviews: 280, isMantra: false, website: 'https://aceipm.com', phone: '+91-8882042042' },
-          { name: 'IMS', score: 94, rank: 3, fee: '₹45,000 - ₹1,00,000', est: 1977, rating: 4.7, reviews: 220, isMantra: false, website: 'https://imsindia.com', phone: '+91-22-62364040' },
-          { name: 'Career Launcher', score: 92, rank: 4, fee: '₹45,000 - ₹1,05,000', est: 1995, rating: 4.6, reviews: 210, isMantra: false, website: 'https://careerlauncher.com', phone: '+91-9289911842' },
-          { name: 'T.I.M.E.', score: 90, rank: 5, fee: '₹40,000 - ₹95,000', est: 1992, rating: 4.6, reviews: 190, isMantra: false, website: 'https://www.time4education.com', phone: '+91-40-40088400' },
+          { name: 'SuperGrads by Toprankers', score: 99, rank: 1, fee: '₹40,000 - ₹90,000', est: 2016, rating: 4.9, reviews: 310, isMantra: false, website: 'https://www.toprankers.com/ipmat-coaching', phone: '+91-8448444207' },
+          { name: 'IPMAT Mantra', score: 96, rank: 2, fee: '₹70,000 - ₹1,20,000', est: 2016, rating: 4.9, reviews: 310, isMantra: true, website: 'http://ipmatmantra.com/', phone: '+91-9876543210' },
+          { name: 'AceIPM', score: 94, rank: 3, fee: '₹18,997 - ₹59,997', est: 2019, rating: 4.9, reviews: 280, isMantra: false, website: 'https://aceipm.com', phone: '+91-8882042042' },
+          { name: 'IMS', score: 92, rank: 4, fee: '₹45,000 - ₹1,00,000', est: 1977, rating: 4.7, reviews: 220, isMantra: false, website: 'https://imsindia.com', phone: '+91-22-62364040' },
+          { name: 'Career Launcher', score: 90, rank: 5, fee: '₹45,000 - ₹1,05,000', est: 1995, rating: 4.6, reviews: 210, isMantra: false, website: 'https://careerlauncher.com', phone: '+91-9289911842' },
         ];
       case 'clat':
+        return [
+          { name: 'LegalEdge by Toprankers', score: 99, rank: 1, fee: '₹65,000 - ₹1,45,000', est: 2011, rating: 4.9, reviews: 340, isMantra: false, isKnlc: false, website: 'https://www.toprankers.com/clat-coaching', phone: '+91-7676564400' },
+          { name: 'Knowledge Nation Law Centre', score: 96, rank: 2, fee: '₹70,000 - ₹1,40,000', est: 2008, rating: 4.9, reviews: 340, isMantra: false, isKnlc: true, website: 'https://knowledgenation.co.in/', phone: '+91-9999882858' },
+          { name: 'CLAT Possible', score: 94, rank: 3, fee: '₹65,000 - ₹1,35,000', est: 2012, rating: 4.8, reviews: 290, isMantra: false, website: 'https://clatpossible.com', phone: '+91-7880888832' },
+          { name: 'Career Launcher', score: 92, rank: 4, fee: '₹55,000 - ₹1,25,000', est: 1995, rating: 4.6, reviews: 230, isMantra: false, website: 'https://careerlauncher.com', phone: '+91-9289911842' },
+          { name: 'IMS', score: 90, rank: 5, fee: '₹50,000 - ₹1,20,000', est: 1977, rating: 4.5, reviews: 210, isMantra: false, website: 'https://imsindia.com', phone: '+91-22-62364040' },
+        ];
       case 'ailet':
       case 'du-llb':
       case 'cuet-pg-law':

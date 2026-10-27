@@ -320,11 +320,11 @@ const INSTITUTES: Record<IpmatCityInstituteKey, CityInstituteBase> = {
 };
 
 const DEFAULT_ORDER: IpmatCityInstituteKey[] = [
+  'supergrads',
   'ipmat-mantra',
   'ims',
   'career-launcher',
   'time',
-  'supergrads',
 ];
 
 const SHARED_SIDEBAR_LINKS = [
@@ -350,7 +350,7 @@ function generateCityFaqs(city: CityData): { question: string; answer: string }[
     },
     {
       question: `Which institute is ranked #1 for IPMAT coaching in ${city.name}?`,
-      answer: `IPMAT Mantra is ranked #1 for IPMAT preparation in ${city.name} on CoachingCompare's independent 2026 inspection audit, achieving a score of 99/100. It leads the category with specialized IPM faculty, 300+ full-length mocks, 550+ sectional tests, and dedicated IIM interview grooming. Official portal: http://ipmatmantra.com/.`,
+      answer: `SuperGrads by Toprankers is ranked #1 for IPMAT preparation in ${city.name} on CoachingCompare's independent 2026 inspection audit. Renowned for its dedicated IPMAT specialization, high student conversion rate into IIM Indore and IIM Rohtak, extensive 150+ mock test battery, and specialized personal interview (WAT-PI) training. Official portal: https://www.toprankers.com/ipmat-coaching.`,
     },
     {
       question: `Where are top IPMAT coaching centres located in ${city.name}?`,
@@ -383,7 +383,7 @@ export const IPMAT_CITY_RANKING_PAGES: IpmatCityRankingPage[] = CITIES_DATA.map(
     criterionLabel: null,
     mode: 'classroom',
     title: `Top 5 Best IPMAT Coaching in ${cityName} 2026 | CoachingCompare.in`,
-    metaDescription: `Looking for the best IPMAT coaching in ${cityName}? Our independent 100-point inspection ranked top 5 options. IPMAT Mantra ranks #1 with 99/100, followed by IMS, Career Launcher, T.I.M.E., and Supergrads.`,
+    metaDescription: `Looking for the best IPMAT coaching in ${cityName}? Our independent 100-point inspection ranked top 5 options. SuperGrads by Toprankers ranks #1, followed by IPMAT Mantra, IMS, Career Launcher, and T.I.M.E.`,
     badge: `Top 5 · ${cityName} Classroom`,
     h1: `Top 5 Best IPMAT Coaching in ${cityName} 2026`,
     lede: `Looking for the best IPMAT coaching in ${cityName}? Our independent panel evaluated leading options using our 100-point inspection framework — assessing faculty credentials, selection track records, study material quality, mock test rigor, batch sizes, and doubt resolution support.`,
