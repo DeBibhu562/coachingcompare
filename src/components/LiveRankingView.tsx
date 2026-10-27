@@ -155,6 +155,18 @@ function extractContact(name: string, blurb: string, cityName: string) {
     };
   }
 
+  if (name.includes('Supergrads')) {
+    return {
+      address: 'Flat No: 303, Third Floor, AVG Bhawan, M-3, Middle Cir, above The Variety Book Depot, Block M, Connaught Place, New Delhi, Delhi 110001',
+      locality: 'Connaught Place',
+      phone: '+91-6363286363',
+      email: 'support@toprankers.com',
+      website: 'https://www.toprankers.com/ipmat-online-coaching',
+      timing: 'Mon-Sat: 10:00am - 7:00pm',
+      mapUrl: 'https://share.google/rg6FM8OzMQ8oXHVhi',
+    };
+  }
+
   // Extract phone number from blurb
   const phoneMatch = blurb.match(/(\+91[-\s]?\d{2,5}[-\s]?\d{6,8}|\+91[-\s]?\d{10}|\b\d{10}\b)/);
   const phone = phoneMatch ? phoneMatch[0] : '+91-11-45678900';

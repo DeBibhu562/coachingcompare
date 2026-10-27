@@ -393,25 +393,25 @@ const INSTITUTES: Record<IpmatIndiaInstituteKey, InstituteBase> = {
     batchSize: '25 - 40 Students',
     feesEstimate: 'Confirm on toprankers.com',
     contact: {
-      address: 'Flat No. 301-303, 3rd Floor, AVG Bhawan, M-3, Connaught Circus, Middle Circle, New Delhi 110001',
-      locality: 'Connaught Place / PAN India Online',
-      phone: '+91-8448444207',
+      address: 'Flat No: 303, Third Floor, AVG Bhawan, M-3, Middle Cir, above The Variety Book Depot, Block M, Connaught Place, New Delhi, Delhi 110001',
+      locality: 'Connaught Place',
+      phone: '+91-6363286363',
       email: 'support@toprankers.com',
-      website: 'https://www.toprankers.com',
+      website: 'https://www.toprankers.com/ipmat-online-coaching',
       timing: 'Mon-Sat: 10:00am - 7:00pm',
-      mapUrl: 'https://maps.google.com/?q=Supergrads+Toprankers+Connaught+Place+Delhi',
+      mapUrl: 'https://share.google/rg6FM8OzMQ8oXHVhi',
     },
     baseHighlights: [
       'Supergrads (Toprankers) publishes dedicated IPMAT / BBA entrance products',
-      'PAN India online platform + classroom presence in Delhi-NCR',
+      'PAN India online platform + classroom presence in Delhi-NCR (Connaught Place)',
       'High-yield mock test series with All-India benchmarking',
       'Structured WAT–PI and personal interview preparation for IIM Indore & Rohtak',
     ],
     onlineHighlights: [
       'Toprankers portal with live IPMAT classes, recorded sessions, and topic tests',
       'Dedicated Indore & Rohtak pattern mocks with in-depth analytics',
-      'Pay only on toprankers.com / published Supergrads checkout',
-      'Support desk +91-8448444207 / support@toprankers.com',
+      'Enrol on https://www.toprankers.com/ipmat-online-coaching',
+      'Support desk +91-6363286363 / support@toprankers.com',
     ],
   },
 };
@@ -443,7 +443,7 @@ function criterionBlurb(
     return `${inst.name} is the #1 ${mode === 'online' ? 'online ' : ''}IPMAT coaching institute in India${scope} on this 2026 audit. Offline centres in Delhi (Hauz Khas) & Gurgaon (Sector 14) + Pan-India Online Live / Recorded classes via ipmatmantra.com. 300+ full mocks, 550+ sectionals, and comprehensive interview / WAT preparation. Official website: http://ipmatmantra.com/.`;
   }
   if (key === 'supergrads') {
-    return `${inst.name} is ranked #${rank} among the best ${place}${scope} on this 2026 audit. Enrol via toprankers.com; support +91-8448444207 / support@toprankers.com. Dedicated IPMAT / BBA live interactive batches, high-difficulty mocks, and interview mentorship. Confirm the live IPMAT SKU name on the invoice.`;
+    return `${inst.name} is ranked #${rank} among the best ${place}${scope} on this 2026 audit. Address: Flat No: 303, Third Floor, AVG Bhawan, M-3, Middle Cir, above The Variety Book Depot, Block M, Connaught Place, New Delhi, Delhi 110001. Enrol via https://www.toprankers.com/ipmat-online-coaching; support +91-6363286363 / support@toprankers.com. Google Maps: https://share.google/rg6FM8OzMQ8oXHVhi. Dedicated IPMAT / BBA live interactive batches, high-difficulty mocks, and interview mentorship.`;
   }
   if (key === 'aceipm') {
     return `${inst.name} is ranked #${rank} among the best ${place}${scope} on this 2026 audit. Offline in Noida (B-77, Sector 2) + Online PAN India; 07999917171 / support@aceipm.com / aceipm.com. Fees ₹18,997–₹59,997. 2026: 36 IIM Indore + 45 IIM Rohtak admits; 1,400+ cumulative IIM selections over 6 years. IPMAT + CUET.`;
